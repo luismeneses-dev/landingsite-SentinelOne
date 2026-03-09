@@ -205,6 +205,27 @@
         .advantage-item.active [data-lucide="chevron-down"] {
             transform: rotate(180deg);
         }
+
+        /* Puma Head Floating Animation */
+        @keyframes puma-float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+            }
+
+            33% {
+                transform: translate(-10px, -20px) scale(1.03) rotate(1deg);
+            }
+
+            66% {
+                transform: translate(10px, -10px) scale(0.97) rotate(-1deg);
+            }
+        }
+
+        .animate-puma-head {
+            animation: puma-float 10s ease-in-out infinite;
+        }
     </style>
 </head>
 
@@ -809,69 +830,83 @@
     <section class="relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0">
-            <!-- SentinelOne Jaguar Motif background -->
-            <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-25 mix-blend-screen"
-                style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.jpg'); filter: blur(4px);">
+            <!-- Cyber Puma Head: Guardian de Fondo (Sustituye a la silueta anterior) -->
+            <div
+                class="absolute xl:-left-[35%] 2xl:-left-[40%] top-1/2 -translate-y-1/2 w-[900px] pointer-events-none reveal-left hidden xl:flex items-center justify-center opacity-70">
+                <div class="relative w-full">
+                    <div class="absolute inset-0 bg-scheme-primary/5 blur-[120px] rounded-full opacity-30"></div>
+                    <img src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Close-up_of_a_cybernetic_j-0.jpg"
+                        class="w-full h-auto mix-blend-screen animate-puma-head filter brightness-105 contrast-110"
+                        alt="SentinelOne Cyber Puma"
+                        style="mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 80%);" />
+                </div>
             </div>
+
+            <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(139,92,246,0.15),transparent_70%)] opacity-40">
+            </div>
+
             <div
                 class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/80 pointer-events-none">
             </div>
         </div>
 
         <div class="relative z-10 max-w-5xl mx-auto">
+
+
             <div class="reveal-up text-center mb-16">
                 <img src="https://www.sentinelone.com/wp-content/themes/sentinelone/assets/svg/header-logo-dark.svg"
                     alt="SentinelOne" class="h-6 mx-auto mb-6 filter brightness-0 invert opacity-60" />
-                <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-6 leading-tight">
+                <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-6 leading-tight text-white">
                     ¿Aún usas tecnología del pasado?
                 </h2>
-                <p class="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
                     Compara el antivirus tradicional que ya ha fallado, contra la plataforma que detiene ataques en
                     milisegundos.
                 </p>
             </div>
 
-            <div class="reveal-scale overflow-x-auto rounded-3xl border bg-white/[0.02] backdrop-blur-md"
-                style="border-color: rgba(255,255,255,0.1);">
+            <div class="reveal-scale overflow-x-auto rounded-3xl border bg-white/[0.03] backdrop-blur-xl"
+                style="border-color: rgba(255,255,255,0.15);">
                 <table class="w-full min-w-[700px] text-left border-collapse border-hidden">
                     <thead>
-                        <tr class="bg-white/[0.05]">
-                            <th class="px-8 py-6 text-xl font-medium text-white/90 border-b border-white/10 w-1/3">
+                        <tr class="bg-white/[0.08]">
+                            <th class="px-8 py-6 text-xl font-bold text-white border-b border-white/20 w-1/3">
                                 Capacidad</th>
                             <th
-                                class="px-8 py-6 text-xl font-medium text-white/90 border-b border-white/10 w-1/3 text-center">
+                                class="px-8 py-6 text-xl font-bold text-white border-b border-white/20 w-1/3 text-center">
                                 Antivirus tradicional</th>
-                            <th class="px-8 py-6 text-xl font-medium border-b w-1/3 text-center"
-                                style="background-color: rgba(0,217,255,0.1); border-color: rgba(0,217,255,0.3); color: white; border-left: 1px solid rgba(0,217,255,0.3);">
+                            <th class="px-8 py-6 text-xl font-black border-b w-1/3 text-center"
+                                style="background-color: rgba(0,217,255,0.15); border-color: rgba(0,217,255,0.4); color: white; border-left: 1px solid rgba(0,217,255,0.4);">
                                 SentinelOne
                             </th>
                         </tr>
                     </thead>
                     <tbody class="text-lg">
-                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                            <td class="px-8 py-6 text-white/80">Detección por IA Conductual</td>
-                            <td class="px-8 py-6 text-center text-white/60">
+                        <tr class="border-b border-white/5 hover:bg-white/[0.04] transition-colors">
+                            <td class="px-8 py-6 text-white font-medium">Detección por IA Conductual</td>
+                            <td class="px-8 py-6 text-center text-white/90">
                                 <span class="flex items-center justify-center gap-2">
                                     <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Deficiente
                                 </span>
                             </td>
-                            <td class="px-8 py-6 text-center font-bold"
-                                style="background-color: rgba(0,217,255,0.05); border-left: 1px solid rgba(0,217,255,0.3);">
+                            <td class="px-8 py-6 text-center font-black"
+                                style="background-color: rgba(0,217,255,0.08); border-left: 1px solid rgba(0,217,255,0.4);">
                                 <span class="flex items-center justify-center gap-2">
                                     <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> Máxima
                                     Precisión
                                 </span>
                             </td>
                         </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                            <td class="px-8 py-6 text-white/80">Respuesta Autónoma sin Humanos</td>
-                            <td class="px-8 py-6 text-center text-white/60">
+                        <tr class="border-b border-white/5 hover:bg-white/[0.04] transition-colors">
+                            <td class="px-8 py-6 text-white font-medium">Respuesta Autónoma sin Humanos</td>
+                            <td class="px-8 py-6 text-center text-white/90">
                                 <span class="flex items-center justify-center gap-2">
                                     <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Requiere intervención
                                 </span>
                             </td>
-                            <td class="px-8 py-6 text-center font-bold"
-                                style="background-color: rgba(0,217,255,0.05); border-left: 1px solid rgba(0,217,255,0.3);">
+                            <td class="px-8 py-6 text-center font-black"
+                                style="background-color: rgba(0,217,255,0.08); border-left: 1px solid rgba(0,217,255,0.4);">
                                 <span class="flex items-center justify-center gap-2">
                                     <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> En
                                     Milisegundos
@@ -1012,20 +1047,20 @@
                 </p>
             </div>
 
-            <div class="flex flex-col lg:flex-row gap-16 items-center">
-                <!-- Columna Izquierda: Imagen Nítida y MÁS GRANDE -->
-                <div class="reveal-left w-full lg:w-[60%]">
-                    <div class="relative group">
+            <div class="flex flex-col lg:flex-row gap-16 items-stretch">
+                <!-- Columna Izquierda: Imagen Nítida y MÁS GRANDE (Matching height) -->
+                <div class="reveal-left w-full lg:w-[60%] flex">
+                    <div class="relative group w-full h-full flex flex-col">
                         <!-- Brillo perimetral sutil -->
                         <div
                             class="absolute -inset-1.5 bg-gradient-to-r from-scheme-primary/30 to-scheme-secondary/30 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000">
                         </div>
 
                         <div
-                            class="relative bg-black rounded-3xl border border-white/10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+                            class="relative flex-grow bg-black rounded-3xl border border-white/10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                             <img src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Multiple_layers_of_semi-tr-0 (1).jpg"
                                 alt="SentinelOne Singularity Layers"
-                                class="w-full h-auto object-cover transform scale-100 group-hover:scale-[1.03] transition-transform duration-1000"
+                                class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
                                 style="filter: none; opacity: 1;" />
 
                             <!-- Overlay de información técnica nítida -->
