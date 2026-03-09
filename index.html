@@ -96,6 +96,10 @@
 
         body {
             font-family: 'Panton', sans-serif;
+            background-image: url('./public/images/fondo-landing.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             background-color: #000;
             color: #fff;
             scroll-behavior: smooth;
@@ -152,6 +156,20 @@
         .delay-500 {
             transition-delay: 500ms;
         }
+
+        /* Separador Cian Ultrafino Premium */
+        .divider-cyan {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.5), transparent);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+            z-index: 30;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -189,7 +207,7 @@
                 style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_panoramic_horizon_line_m-0.jpg');">
             </div>
             <!-- Mascara de gradiente mínima para máximo impacto visual -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80"></div>
 
             <div
                 class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-[120px] opacity-20 bg-scheme-primary">
@@ -323,7 +341,8 @@
 
     <!-- THREAT PROTECTION (Problema) -->
     <section class="relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
-        <div class="absolute inset-0 bg-black">
+        <div class="divider-cyan"></div>
+        <div class="absolute inset-0">
             <!-- Background image with feathered edges (vignette/blur effect) -->
             <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-50"
                 style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_low-angle_shot_of_a_high-0.jpg'); mask-image: radial-gradient(circle at center, black 70%, transparent 98%); -webkit-mask-image: radial-gradient(circle at center, black 70%, transparent 98%);">
@@ -415,8 +434,8 @@
     </section>
 
     <!-- FEATURES (Solución) - SENTINELONE MAJESTIC PUMA -->
-    <section
-        class="py-24 border-y border-white/5 bg-black text-white relative overflow-hidden min-h-screen flex items-center">
+    <section class="py-24 border-y border-white/5 text-white relative overflow-hidden min-h-screen flex items-center">
+        <div class="divider-cyan"></div>
         <!-- Partículas de Carrera (Moradas/Cian) Canvas -->
         <canvas id="pumaParticles" class="absolute inset-0 z-0 pointer-events-none"></canvas>
 
@@ -533,6 +552,7 @@
 
     <!-- SECURITY LAYERS (Diferenciador) -->
     <section class="relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
+        <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0">
             <!-- Imagen elegante fondo (Sin Blur) -->
             <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-40 mix-blend-lighten"
@@ -549,7 +569,7 @@
             <div class="absolute inset-0 opacity-30"
                 style="background: radial-gradient(circle at center, #8B5CF6 0%, transparent 70%); filter: blur(80px);">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/60"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto">
@@ -635,11 +655,12 @@
 
     <!-- SERVICES (Industrias) -->
     <section class="relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
-        <div class="absolute inset-0 z-0 bg-black">
+        <div class="divider-cyan"></div>
+        <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 opacity-40 mix-blend-screen"
                 style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_3D_composition_of-0.jpg'); background-size: cover; background-position: center; background-attachment: fixed; filter: blur(10px);">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black/95"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto">
@@ -751,12 +772,14 @@
 
     <!-- STATS (Comparativa) -->
     <section class="relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
-        <div class="absolute inset-0 z-0 bg-black">
+        <div class="divider-cyan"></div>
+        <div class="absolute inset-0 z-0">
             <!-- SentinelOne Jaguar Motif background -->
             <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-25 mix-blend-screen"
                 style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.jpg'); filter: blur(4px);">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/90 pointer-events-none">
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/80 pointer-events-none">
             </div>
         </div>
 
@@ -857,7 +880,8 @@
     </section>
 
     <!-- LICENSING COMPARISON (Core, Control, Complete) -->
-    <section class="relative min-h-screen flex items-center py-24 px-6 overflow-hidden bg-black">
+    <section class="relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
+        <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 opacity-10"
                 style="background: radial-gradient(circle at center, var(--secondary) 0%, transparent 80%); filter: blur(120px);">
@@ -928,18 +952,10 @@
     </section>
 
     <!-- SINGULARITY PLATFORM (Detalle Avanzado) -->
-    <section
-        class="relative min-h-screen flex items-center py-32 px-6 overflow-hidden bg-black border-y border-white/5">
-        <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent opacity-50 z-10"></div>
-        <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent opacity-50 z-10">
-        </div>
-
-        <!-- Líneas divisoras elegantes -->
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-scheme-primary/30 to-transparent">
-        </div>
-        <div
-            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-scheme-primary/30 to-transparent">
+    <section class="relative min-h-screen flex items-center py-32 px-6 overflow-hidden border-y border-white/5">
+        <div class="divider-cyan"></div>
+        <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent z-10"></div>
+        <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-10">
         </div>
 
         <div class="absolute inset-0 z-0">
@@ -1075,8 +1091,9 @@
         </div>
     </section>
 
-    <!-- CONFIANZA COMPROBADA (Testimonios y Métricas) -->
+    <!-- RECONOCIMIENTO DE LA INDUSTRIA (Métricas y Líderes) -->
     <section class="relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
+        <div class="divider-cyan"></div>
         <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
         </div>
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -1087,92 +1104,118 @@
                     alt="Hawk visualization" class="w-full h-full object-contain object-right" />
             </div>
             <!-- Gradiente de desvanecimiento a la izquierda para la imagen -->
-            <div class="absolute inset-y-0 right-[40%] left-0 bg-gradient-to-r from-black via-black/80 to-transparent">
+            <div
+                class="absolute inset-y-0 right-[40%] left-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent">
             </div>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto">
+        <div class="relative z-10 max-w-7xl mx-auto w-full">
 
-            <!-- Confianza Comprobada -->
-            <div class="mb-24">
-                <div class="reveal-up text-left mb-16 max-w-2xl">
-                    <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 leading-tight">Confianza comprobada
-                    </h2>
-                    <p class="text-lg md:text-xl text-white/70 leading-relaxed">
-                        Adoptado por líderes de industria para la protección absoluta de sus operaciones corporativas
-                        globales.
-                    </p>
-                </div>
+            <!-- Encabezado de Sección -->
+            <div class="reveal-up text-left mb-16 max-w-3xl">
+                <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6 leading-tight">
+                    Liderazgo y <span class="font-bold text-scheme-primary">Reconocimiento</span> de la Industria
+                </h2>
+                <p class="text-lg md:text-xl text-white/70 leading-relaxed">
+                    SentinelOne es validado continuamente por las firmas de análisis más prestigiosas del mundo,
+                    estableciendo el estándar de oro en ciberseguridad autónoma.
+                </p>
+            </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <div class="flex flex-col gap-8 max-w-xl">
-                        <!-- Testimonial -->
-                        <div class="reveal-left p-10 rounded-2xl border bg-white/[0.03] backdrop-blur-sm relative overflow-hidden"
-                            style="border-color: rgba(255,255,255,0.1);">
-                            <i data-lucide="quote"
-                                class="absolute right-[-20px] top-[-20px] w-32 h-32 text-white/[0.03]"
-                                stroke-width="2"></i>
-
-                            <div class="flex gap-1 text-yellow-500 mb-6">
-                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                <!-- Columna Izquierda: Líderes y Logos -->
+                <div class="flex flex-col gap-6">
+                    <div class="reveal-left grid grid-cols-2 gap-4">
+                        <!-- Gartner -->
+                        <div
+                            class="p-6 rounded-2xl border bg-white/[0.03] backdrop-blur-sm border-white/10 flex flex-col items-center text-center group hover:bg-white/[0.05] transition-all">
+                            <div class="text-scheme-primary font-bold text-xs tracking-widest uppercase mb-4">Gartner®
                             </div>
-
-                            <p class="text-xl leading-relaxed text-white italic relative mb-10 z-10">
-                                "En 90 días mejoramos visibilidad y contención a niveles récord. Nuestro
-                                equipo de TI
-                                dejó
-                                de 'perseguir falsas alarmas' y pudo enfocarse por fin en la operación
-                                estratégica del
-                                negocio."
-                            </p>
-
-                            <div class="flex items-center gap-4 z-10 relative">
-                                <div
-                                    class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-black bg-scheme-primary">
-                                    CISO
-                                </div>
-                                <div>
-                                    <div class="font-bold text-white">Líder de Seguridad</div>
-                                    <div class="text-sm text-white/60">Empresa Manufacturera Top 100</div>
-                                </div>
+                            <div class="text-xl font-medium mb-2 text-white/90">Líder Quadrant</div>
+                            <div class="text-sm text-white/50 italic">Elegido Líder por 4 años consecutivos en EPP</div>
+                        </div>
+                        <!-- MITRE -->
+                        <div
+                            class="p-6 rounded-2xl border bg-white/[0.03] backdrop-blur-sm border-white/10 flex flex-col items-center text-center group hover:bg-white/[0.05] transition-all">
+                            <div class="text-scheme-secondary font-bold text-xs tracking-widest uppercase mb-4">MITRE
+                                Engenuity</div>
+                            <div class="text-xl font-medium mb-2 text-white/90">100% Visibilidad</div>
+                            <div class="text-sm text-white/50 italic">Cero detecciones atrasadas en ATT&CK evaluaciones
                             </div>
                         </div>
+                        <!-- IDC -->
+                        <div
+                            class="p-6 rounded-2xl border bg-white/[0.03] backdrop-blur-sm border-white/10 flex flex-col items-center text-center group hover:bg-white/[0.05] transition-all">
+                            <div class="text-white font-bold text-xs tracking-widest uppercase mb-4">IDC MarketScape
+                            </div>
+                            <div class="text-xl font-medium mb-2 text-white/90">Líder Global</div>
+                            <div class="text-sm text-white/50 italic">Estrategia y capacidades de Endpoint líderes</div>
+                        </div>
+                        <!-- SE LABS -->
+                        <div
+                            class="p-6 rounded-2xl border bg-white/[0.03] backdrop-blur-sm border-white/10 flex flex-col items-center text-center group hover:bg-white/[0.05] transition-all">
+                            <div class="text-scheme-primary font-bold text-xs tracking-widest uppercase mb-4">SE Labs
+                            </div>
+                            <div class="text-xl font-medium mb-2 text-white/90">Rating AAA</div>
+                            <div class="text-sm text-white/50 italic">Precisión del 100% en detección de amenazas</div>
+                        </div>
+                    </div>
 
-                        <!-- Resultados -->
-                        <div class="reveal-right p-10 rounded-2xl border bg-white/[0.03] backdrop-blur-sm flex flex-col justify-center"
-                            style="border-color: rgba(255,255,255,0.1);">
-                            <h3 class="text-2xl font-medium mb-8">Resultados Medibles</h3>
-
-                            <ul class="space-y-8">
-                                <li>
-                                    <div class="text-5xl font-black mb-2 text-scheme-secondary">&gt;85%
-                                    </div>
-                                    <div class="text-lg text-white/60">Reducción del tiempo de investigación
-                                        y
-                                        contención de
-                                        amenazas críticas.</div>
-                                </li>
-                                <li>
-                                    <div class="text-5xl font-black mb-2 text-scheme-primary">0</div>
-                                    <div class="text-lg text-white/60">Incidentes de ransomware exitosos
-                                        tras la
-                                        implementación del EDR.</div>
-                                </li>
-                            </ul>
+                    <!-- Frost & Sullivan Banner -->
+                    <div
+                        class="reveal-up p-8 rounded-2xl border bg-gradient-to-r from-purple-500/10 to-transparent backdrop-blur-sm border-white/10">
+                        <div class="flex items-center gap-6">
+                            <i data-lucide="award" class="w-12 h-12 text-scheme-secondary shrink-0"></i>
+                            <div>
+                                <h4 class="text-xl font-medium text-white/90 mb-1">Frost & Sullivan</h4>
+                                <p class="text-white/60">Reconocido como el Líder en Innovación y Crecimiento en XDR y
+                                    EPP.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Columna Derecha: Métricas de Alto Impacto -->
+                <div class="reveal-right p-10 rounded-2xl border bg-white/[0.03] backdrop-blur-sm border-white/10 flex flex-col justify-between"
+                    style="border-color: rgba(255,255,255,0.1);">
+                    <div>
+                        <h3 class="text-2xl font-medium mb-12 flex items-center gap-3">
+                            <i data-lucide="bar-chart-3" class="w-6 h-6 text-scheme-primary"></i> Desempeño en el Mundo
+                            Real
+                        </h3>
+
+                        <div class="space-y-12">
+                            <div>
+                                <div class="text-6xl font-black mb-3 text-scheme-secondary">100%</div>
+                                <div class="text-xl font-medium text-white/90 mb-2">Detección y Prevención</div>
+                                <p class="text-white/50 text-base">Basado en las evaluaciones MITRE Engenuity ATT&CK®.
+                                    Sin configuraciones manuales.</p>
+                            </div>
+
+                            <div>
+                                <div class="text-6xl font-black mb-3 text-scheme-primary">3.3 min</div>
+                                <div class="text-xl font-medium text-white/90 mb-2">MTTD Promedio</div>
+                                <p class="text-white/50 text-base">La velocidad más rápida de la industria para detener
+                                    ataques en progreso antes de que se propaguen.</p>
+                            </div>
+
+                            <div>
+                                <div class="text-6xl font-black mb-3 text-white">Líder</div>
+                                <div class="text-xl font-medium text-white/90 mb-2">Cuadrante Mágico de Gartner®</div>
+                                <p class="text-white/50 text-base">Por 4 años consecutivos, SentinelOne ha sido
+                                    posicionado como Líder en plataformas EPP.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
     </section>
 
     <!-- CONTACTO (Toma el Control - Estilo SentinelOne) -->
-    <section class="relative min-h-screen flex items-center py-20 px-6 overflow-hidden border-t border-white/5 bg-black"
+    <section class="relative min-h-screen flex items-center py-20 px-6 overflow-hidden border-t border-white/5"
         id="contacto">
+        <div class="divider-cyan"></div>
         <!-- Fondo con Patrón Hexagonal y Resplandores -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-30 select-none pointer-events-none"
