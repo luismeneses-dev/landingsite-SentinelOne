@@ -1,0 +1,162 @@
+/* 
+=====================================
+PANTON TYPEFACE (Local Fonts)
+=====================================
+*/
+
+/* Panton Thin */
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-ThinItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Panton ExtraLight */
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-ExtraLightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Panton Light */
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Panton Regular */
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Panton SemiBold */
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Panton Bold */
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Panton ExtraBold */
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Panton Black */
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Panton ExtraBlack */
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-ExtraBlack.otf') format('opentype');
+  font-weight: 950;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('/fonts/Panton-ExtraBlackItalic.otf') format('opentype');
+  font-weight: 950;
+  font-style: italic;
+}
+
+/* Panton Icons (Optional usage) */
+@font-face {
+  font-family: 'PantonIconsA';
+  src: url('/fonts/PantonIconsA-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PantonIconsA';
+  src: url('/fonts/PantonIconsA-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+
+/* Google Fonts - Space Grotesk (Alternativa similar a Panton) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Google Fonts - Rajdhani (Alternativa tech/futurista) */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* Google Fonts - Exo 2 (Alternativa con muchos pesos) */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');

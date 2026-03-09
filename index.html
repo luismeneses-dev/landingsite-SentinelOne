@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faroprotec | SentinelOne | Protección Endpoint Autónoma</title>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts para las alternativas tipográficas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        scheme: {
+                            primary: '#00D9FF',
+                            secondary: '#8B5CF6',
+                            accent: '#06B6D4'
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin 3s linear infinite',
+                        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Tipografías Locales */
+        @font-face {
+            font-family: 'Panton';
+            src: url('./public/fonts/Panton-Thin.otf') format('opentype');
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Panton';
+            src: url('./public/fonts/Panton-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Panton';
+            src: url('./public/fonts/Panton-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Panton';
+            src: url('./public/fonts/Panton-SemiBold.otf') format('opentype');
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Panton';
+            src: url('./public/fonts/Panton-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Panton';
+            src: url('./public/fonts/Panton-ExtraBold.otf') format('opentype');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Panton';
+            src: url('./public/fonts/Panton-Black.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        :root {
+            --primary: #00D9FF;
+            --secondary: #8B5CF6;
+        }
+
+        body {
+            font-family: 'Panton', sans-serif;
+            background-color: #000;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Animaciones para Reveal con IntersectionObserver (remplazo de framer-motion) */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease-out;
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.7s ease-out;
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.7s ease-out;
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.7s ease-out;
+        }
+
+        .reveal-active {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+
+        /* Custom delays utility classes */
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
+
+        .delay-500 {
+            transition-delay: 500ms;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+
+    <!-- SELECTOR DE TIPOGRAFÍAS (Colapsable) -->
+    <div class="fixed top-6 right-6 z-50 flex flex-col items-end gap-2">
+        <!-- Botón disparador -->
+        <button id="fontMenuToggle"
+            class="flex items-center gap-2 px-4 py-2 bg-black/80 backdrop-blur-md border border-scheme-primary/50 rounded-full text-scheme-primary shadow-lg hover:scale-105 transition-all">
+            <i data-lucide="type" class="w-4 h-4"></i>
+            <span class="text-xs font-semibold uppercase tracking-wider">Ajustar Tipografía</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="fontChevron"></i>
+        </button>
+
+        <!-- Panel desplegable -->
+        <div id="fontMenuPanel"
+            class="hidden w-64 bg-black/90 backdrop-blur-md border-2 border-scheme-primary/30 rounded-xl p-4 shadow-2xl shadow-scheme-primary/20 animate-in fade-in slide-in-from-top-4 duration-300">
+            <h3 class="text-sm mb-3 text-scheme-primary font-semibold flex items-center gap-2">
+                <i data-lucide="settings" class="w-4 h-4"></i> Selector Visual
+            </h3>
+            <p class="text-[10px] text-white/50 mb-3 leading-tight">Alternativas similares a Panton para
+                previsualización.</p>
+            <div class="grid grid-cols-1 gap-1.5 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar" id="fontGrid">
+                <!-- Se inyectan los botones vía JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Imagen panorámica Hero con presencia intensa -->
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 select-none"
+                style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_panoramic_horizon_line_m-0.jpg');">
+            </div>
+            <!-- Mascara de gradiente mínima para máximo impacto visual -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black"></div>
+
+            <div
+                class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-[120px] opacity-20 bg-scheme-primary">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-[100px] opacity-20 bg-scheme-secondary">
+            </div>
+            <div
+                class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <div class="flex flex-col items-center gap-12">
+
+                <div class="w-full">
+                    <div class="reveal-up inline-flex items-center gap-3 px-4 py-2 rounded-full mb-8"
+                        style="background-color: rgba(0,217,255,0.15); border: 1px solid rgba(0,217,255,0.4); color: var(--primary);">
+                        <div class="w-2.5 h-2.5 rounded-full bg-scheme-primary"
+                            style="box-shadow: 0 0 0 4px rgba(0,217,255,0.3);"></div>
+                        <span class="text-sm font-medium">Respuesta autónoma contra ransomware · Implementación
+                            local</span>
+                    </div>
+
+                    <h1 class="reveal-up delay-100 text-6xl md:text-7xl tracking-tight mb-6 font-bold">
+                        <span
+                            class="bg-gradient-to-r from-scheme-primary to-scheme-secondary bg-clip-text text-transparent">
+                            Protege tu empresa
+                        </span> con <br />
+                        <img src="https://www.sentinelone.com/wp-content/themes/sentinelone/assets/svg/header-logo-dark.svg"
+                            alt="SentinelOne" class="h-16 md:h-20 inline-block mt-4 filter brightness-0 invert" />
+                    </h1>
+
+                    <p class="reveal-up delay-200 text-xl text-white/70 max-w-2xl mx-auto mb-10">
+                        Implementación experta en México para empresas industriales, corporativas y entornos críticos.
+                    </p>
+
+                    <div class="reveal-up delay-300 flex flex-wrap gap-4 justify-center mb-10">
+                        <button class="px-8 py-4 rounded-xl text-white transition-all hover:scale-105"
+                            style="background: linear-gradient(135deg, var(--primary), var(--secondary)); box-shadow: 0 10px 30px rgba(0,217,255,0.4);">
+                            Solicitar diagnóstico gratuito
+                        </button>
+                        <button
+                            class="px-8 py-4 rounded-xl border border-white/20 hover:border-white/50 bg-white/5 transition-all">
+                            Hablar con un especialista
+                        </button>
+                    </div>
+
+                    <div class="reveal-up delay-400 flex flex-wrap justify-center gap-6 text-sm text-white/60 mb-16">
+                        <span class="flex items-center gap-2"><i data-lucide="check-circle"
+                                class="w-4 h-4 text-scheme-primary"></i> Respuesta en &lt;24h</span>
+                        <span class="flex items-center gap-2"><i data-lucide="check-circle"
+                                class="w-4 h-4 text-scheme-primary"></i> Sin compromiso</span>
+                        <span class="flex items-center gap-2"><i data-lucide="check-circle"
+                                class="w-4 h-4 text-scheme-primary"></i> Asesoría confidencial</span>
+                    </div>
+                </div>
+
+                <div class="reveal-up delay-500 w-full max-w-4xl" style="perspective: 1000px;">
+                    <div class="relative p-6 rounded-2xl border backdrop-blur-md overflow-hidden"
+                        style="border-color: rgba(0,217,255,0.3); box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-screen"
+                            style="background-image: url('./public/images/A futuristic cyber network bathed in a soft dreamy atmosphere with bright vibrant colors, where a glowing artificial intelligence wave neutralizes incoming red threat signals across a digital infrastructure, .jpg'); filter: blur(3px);">
+                        </div>
+                        <div class="absolute inset-0 bg-black/60"></div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
+                            <!-- KPI 1 -->
+                            <div class="p-4 rounded-xl border flex flex-col items-center justify-center bg-black/40"
+                                style="border-color: rgba(0,217,255,0.5); box-shadow: 0 0 20px rgba(0,217,255,0.2);">
+                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Amenazas</div>
+                                <i data-lucide="shield-check" class="w-10 h-10 mb-2 text-scheme-primary"></i>
+                                <div
+                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                    Contención</div>
+                            </div>
+                            <!-- KPI 2 -->
+                            <div
+                                class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
+                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Impacto</div>
+                                <div class="flex items-end gap-1 h-10 mb-2">
+                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 40%;"></div>
+                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 80%;"></div>
+                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 60%;"></div>
+                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 100%;"></div>
+                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 30%;"></div>
+                                </div>
+                                <div
+                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                    ↓ Incidentes</div>
+                            </div>
+                            <!-- KPI 3 -->
+                            <div
+                                class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
+                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Resiliencia</div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <i data-lucide="file-text" class="w-8 h-8 text-white/80"></i>
+                                    <i data-lucide="refresh-cw"
+                                        class="w-8 h-8 animate-spin-slow text-scheme-primary"></i>
+                                </div>
+                                <div
+                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                    Rollback OK</div>
+                            </div>
+                            <!-- KPI 4 -->
+                            <div
+                                class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
+                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Cobertura</div>
+                                <div class="relative w-full h-10 mb-2">
+                                    <div
+                                        class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[10%] left-[10%] animate-pulse bg-scheme-secondary text-scheme-secondary">
+                                    </div>
+                                    <div class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[60%] left-[80%] animate-pulse bg-scheme-secondary text-scheme-secondary"
+                                        style="animation-delay: 0.5s;"></div>
+                                    <div class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[80%] left-[20%] animate-pulse bg-scheme-secondary text-scheme-secondary"
+                                        style="animation-delay: 1s;"></div>
+                                </div>
+                                <div
+                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                    Visibilidad</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-[11px] text-white/40 text-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THREAT PROTECTION (Problema) -->
+    <section class="relative py-24 px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-black">
+            <!-- Background image with feathered edges (vignette/blur effect) -->
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-50"
+                style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_low-angle_shot_of_a_high-0.jpg'); mask-image: radial-gradient(circle at center, black 70%, transparent 98%); -webkit-mask-image: radial-gradient(circle at center, black 70%, transparent 98%);">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-black/20 to-black"></div>
+        </div>
+        <div class="relative max-w-6xl mx-auto">
+            <div class="reveal-up text-center mb-16">
+                <h2 class="text-4xl md:text-5xl mb-6 tracking-tight font-light">
+                    Ransomware: El final de tu
+                    <span
+                        class="bg-gradient-to-r from-scheme-primary to-scheme-secondary bg-clip-text text-transparent font-bold">
+                        continuidad operativa
+                    </span>
+                </h2>
+                <p class="text-xl text-white/70 max-w-3xl mx-auto">
+                    El 70% de las empresas atacadas quedan paralizadas por días. Sin respuesta autónoma, tu empresa no
+                    es segura: es el próximo objetivo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                <!-- Threat Box -->
+                <div class="reveal-left p-8 rounded-2xl border backdrop-blur-sm relative overflow-hidden group"
+                    style="border-color: rgba(239, 68, 68, 0.2); background: linear-gradient(135deg, rgba(239,68,68,0.05), rgba(255,255,255,0.02));">
+                    <div class="absolute inset-0 opacity-20 pointer-events-none"
+                        style="background: radial-gradient(circle at center, rgb(239,68,68) 0%, transparent 70%); filter: blur(60px);">
+                    </div>
+
+                    <div
+                        class="relative w-full h-48 mb-8 rounded-xl overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 z-10" style="box-shadow: inset 0 0 40px black;"></div>
+                        <img src="./public/images/threat.png" alt="Empresa vulnerada"
+                            class="w-full h-full object-cover filter grayscale contrast-125"
+                            style="mask-image: radial-gradient(circle, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(circle, black 30%, transparent 80%);"
+                            onerror="this.src='https://images.unsplash.com/photo-1614064641936-38998970c926?auto=format&fit=crop&q=80'" />
+                    </div>
+
+                    <h3 class="text-2xl font-semibold mb-6">La realidad del ataque</h3>
+                    <ul class="space-y-4 text-lg text-white/80">
+                        <li class="flex items-start gap-4"><i data-lucide="alert-triangle"
+                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Crisis operativa
+                                inmediata</span></li>
+                        <li class="flex items-start gap-4"><i data-lucide="database-zap"
+                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Fuga de datos y extorsión</span>
+                        </li>
+                        <li class="flex items-start gap-4"><i data-lucide="trending-down"
+                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Costos de quiebra</span></li>
+                        <li class="flex items-start gap-4"><i data-lucide="shield-off"
+                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>AV Tradicional: Inútil
+                                hoy</span></li>
+                    </ul>
+                </div>
+
+                <!-- Safe Box -->
+                <div class="reveal-right p-8 rounded-2xl border backdrop-blur-sm relative overflow-hidden group"
+                    style="border-color: rgba(0, 217, 255, 0.4); background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(255,255,255,0.02));">
+                    <div class="absolute inset-0 opacity-20 pointer-events-none"
+                        style="background: radial-gradient(circle at center, var(--primary) 0%, transparent 70%); filter: blur(60px);">
+                    </div>
+
+                    <div
+                        class="relative w-full h-48 mb-8 rounded-xl overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 z-10" style="box-shadow: inset 0 0 40px black;"></div>
+                        <img src="./public/images/safe.png" alt="Empresa protegida"
+                            class="w-full h-full object-cover filter contrast-125"
+                            style="mask-image: radial-gradient(circle, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(circle, black 30%, transparent 80%);"
+                            onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80'" />
+                    </div>
+
+                    <h3 class="text-2xl font-semibold mb-6">El blindaje definitivo</h3>
+                    <ul class="space-y-4 text-lg text-white/80">
+                        <li class="flex items-start gap-4"><i data-lucide="zap"
+                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Contención en
+                                milisegundos</span></li>
+                        <li class="flex items-start gap-4"><i data-lucide="shield"
+                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Cero superficie de
+                                ataque</span></li>
+                        <li class="flex items-start gap-4"><i data-lucide="eye"
+                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Control y visibilidad
+                                total</span></li>
+                        <li class="flex items-start gap-4"><i data-lucide="history"
+                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Rollback: Regreso
+                                seguro</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES (Solución) - SENTINELONE MAJESTIC PUMA -->
+    <section
+        class="py-24 border-y border-white/5 bg-black text-white relative overflow-hidden min-h-[850px] flex items-center">
+        <!-- Partículas de Carrera (Moradas/Cian) Canvas -->
+        <canvas id="pumaParticles" class="absolute inset-0 z-0 pointer-events-none"></canvas>
+
+        <div class="absolute inset-0 z-0 w-full h-full opacity-10 select-none bg-cover bg-center transition-all duration-1000"
+            style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_futuristic_architectural-0.jpg'); mix-blend-mode: overlay;">
+        </div>
+
+        <!-- EL PUMA (JAGUAR) - POSICIÓN Y ESTÉTICA MEJORADA -->
+        <div
+            class="absolute right-[-5%] top-1/2 -translate-y-1/2 w-full lg:w-[70%] h-[90%] z-0 pointer-events-none overflow-visible">
+            <img src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.jpg"
+                alt="SentinelOne Predator"
+                class="w-full h-full object-contain object-right opacity-100 scale-125 drop-shadow-[0_0_100px_rgba(168,85,247,0.5)]"
+                style="filter: contrast(1.2) brightness(1.1); 
+                        -webkit-mask-image: radial-gradient(ellipse at center right, black 20%, transparent 85%);
+                        mask-image: radial-gradient(ellipse at center right, black 20%, transparent 85%);" />
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <div class="reveal-up text-left mb-16 lg:mb-24 max-w-2xl">
+                <div class="flex items-center gap-4 mb-8">
+                    <img src="https://www.sentinelone.com/wp-content/themes/sentinelone/assets/svg/header-logo-dark.svg"
+                        alt="SentinelOne" class="h-10 filter brightness-0 invert" />
+                </div>
+                <h2 class="text-4xl md:text-7xl font-light tracking-tight mb-8">
+                    ¿Qué es <span class="font-bold text-scheme-primary">SentinelOne</span>?
+                </h2>
+                <div
+                    class="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-semibold mb-6">
+                    VELOCIDAD DE RESPUESTA AUTÓNOMA
+                </div>
+                <p class="text-xl md:text-3xl text-white/90 leading-relaxed mb-6">
+                    El depredador definitivo que no solo detecta, <span class="text-purple-400">caza</span> las
+                    amenazas. Dando protección a tus endpoints.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 max-w-3xl">
+                <!-- F1 -->
+                <div class="reveal-up delay-100 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
+                    style="border-color: rgba(255,255,255,0.1);">
+                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
+                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_flawless_glowing_archite-0.jpg'); mix-blend-mode: color-dodge; filter: blur(3px);">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
+                            <i data-lucide="brain" class="w-7 h-7 text-scheme-primary"></i>
+                        </div>
+                        <h3 class="text-xl mb-3 font-medium">IA y comportamiento</h3>
+                        <p
+                            class="text-white/60 leading-relaxed text-sm md:text-base transition-colors group-hover:text-white/80">
+                            Detecta amenazas conocidas y desconocidas con análisis de comportamiento.
+                        </p>
+                    </div>
+                </div>
+                <!-- F2 -->
+                <div class="reveal-up delay-200 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
+                    style="border-color: rgba(255,255,255,0.1);">
+                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
+                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_sleek_professional_cyber-0.jpg'); mix-blend-mode: color-dodge; filter: blur(3px);">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
+                            <i data-lucide="zap" class="w-7 h-7 text-scheme-primary"></i>
+                        </div>
+                        <h3 class="text-xl mb-3 font-medium">Respuesta autónoma</h3>
+                        <p
+                            class="text-white/60 leading-relaxed text-sm md:text-base transition-colors group-hover:text-white/80">
+                            Contiene el ataque sin depender de acciones manuales en el momento crítico.
+                        </p>
+                    </div>
+                </div>
+                <!-- F3 -->
+                <div class="reveal-up delay-300 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
+                    style="border-color: rgba(255,255,255,0.1);">
+                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
+                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_art_representing_-0.jpg'); mix-blend-mode: color-dodge; filter: blur(3px);">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10">
+                            <i data-lucide="cpu" class="w-7 h-7 text-scheme-primary"></i>
+                        </div>
+                        <h3 class="text-xl mb-3 font-medium">Agente super ligero</h3>
+                        <p class="text-white/60 leading-relaxed text-sm">
+                            Singularity Agent corre de forma fluida y silenciosa en Windows, Linux y macOS sin impactar
+                            el rendimiento.
+                        </p>
+                    </div>
+                </div>
+                <!-- F4 -->
+                <div class="reveal-up delay-400 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
+                    style="border-color: rgba(255,255,255,0.1);">
+                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
+                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_panoramic_horizon_line_m-0.jpg'); mix-blend-mode: color-dodge; filter: blur(3px);">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
+                            <i data-lucide="search" class="w-7 h-7 text-scheme-primary"></i>
+                        </div>
+                        <h3 class="text-xl mb-3 font-medium">Visibilidad centralizada</h3>
+                        <p
+                            class="text-white/60 leading-relaxed text-sm md:text-base transition-colors group-hover:text-white/80">
+                            Inventario, actividad y trazabilidad en endpoints, servidores y cloud.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURITY LAYERS (Diferenciador) -->
+    <section class="relative py-24 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Imagen elegante fondo (Sin Blur) -->
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-40 mix-blend-screen"
+                style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_3D_render_of_a_lu-0.jpg');">
+            </div>
+            <div class="absolute inset-x-0 h-px top-0"
+                style="background: linear-gradient(90deg, transparent, rgba(0,217,255,0.6), transparent);"></div>
+            <div class="absolute inset-0 opacity-10"
+                style="background: radial-gradient(circle at center, var(--primary) 0%, transparent 80%); filter: blur(100px);">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
+            <div class="reveal-up text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-light tracking-tight max-w-4xl mx-auto mb-6">
+                    ¿Por qué conformarte con alertas, si puedes tener resiliencia absoluta?
+                </h2>
+            </div>
+
+            <!-- Grid de contenido centrado -->
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="reveal-left flex flex-col items-start md:items-center text-left md:text-left">
+                    <div class="w-full">
+                        <h3 class="text-2xl font-medium mb-8 flex items-center gap-3">
+                            <i data-lucide="layers" class="w-8 h-8 text-scheme-secondary"></i> Entrega técnica
+                        </h3>
+                        <ul class="space-y-6 text-lg text-white/80">
+                            <li class="flex items-start gap-4"><i data-lucide="check-circle"
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Despliegue ágil en
+                                    cada
+                                    endpoint</span></li>
+                            <li class="flex items-start gap-4"><i data-lucide="check-circle"
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Políticas
+                                    optimizadas
+                                    desde el día 1</span></li>
+                            <li class="flex items-start gap-4"><i data-lucide="check-circle"
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Integración total
+                                    con
+                                    SIEM/SOC</span></li>
+                            <li class="flex items-start gap-4"><i data-lucide="check-circle"
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Playbooks de
+                                    respuesta
+                                    a medida</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="reveal-right flex flex-col items-start md:items-center text-left md:text-left">
+                    <div class="w-full">
+                        <h3 class="text-2xl font-medium mb-8 flex items-center gap-3">
+                            <i data-lucide="shield" class="w-8 h-8 text-scheme-primary"></i> Resiliencia Operativa
+                        </h3>
+                        <ul class="space-y-6 text-lg text-white/80">
+                            <li class="flex items-start gap-4"><i data-lucide="check-circle"
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Recuperación
+                                    automática
+                                    (Rollback)</span></li>
+                            <li class="flex items-start gap-4"><i data-lucide="check-circle"
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>RTO/RPO medido en
+                                    minutos</span></li>
+                            <li class="flex items-start gap-4"><i data-lucide="check-circle"
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Simulacros de ataque
+                                    de
+                                    alto impacto</span></li>
+                            <li class="flex items-start gap-4"><i data-lucide="check-circle"
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Capacitación experta
+                                    para
+                                    tu equipo TI</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal-up mt-8 p-6 text-center text-lg">
+                <b class="font-semibold text-white">Tu tranquilidad no es opcional: </b>
+                <span class="text-white/70">Pasamos de la detección a la respuesta automática. <b
+                        class="text-[#00D9FF]">Tu operación no se detendrá.</b></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES (Industrias) -->
+    <section class="relative py-24 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-black">
+            <div class="absolute inset-0 opacity-40 mix-blend-screen"
+                style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_3D_composition_of-0.jpg'); background-size: cover; background-position: center; background-attachment: fixed; filter: blur(10px);">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black/95"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
+            <div class="reveal-up mb-16">
+                <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-6">Blindaje diseñado para tu industria</h2>
+                <p class="text-xl text-white/70 max-w-3xl">
+                    No creemos en soluciones genéricas. Cada sector tiene vulnerabilidades únicas que nosotros
+                    interceptamos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Industria -->
+                <div class="reveal-up delay-100 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
+                    style="border-color: rgba(255,255,255,0.1);">
+                    <!-- Fondo de imagen claro y enfocado -->
+                    <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_3D_composition_of-0.jpg');">
+                    </div>
+                    <!-- Overlay para legibilidad -->
+                    <div
+                        class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
+                    </div>
+
+                    <div class="relative z-20 flex flex-col h-full">
+                        <i data-lucide="factory" class="w-12 h-12 mb-6 text-scheme-secondary"></i>
+                        <h3 class="text-2xl font-medium mb-4">Industria y Manufactura</h3>
+                        <p class="text-lg text-white/90 flex-grow mb-8 font-medium">
+                            <!-- Texto un poco más grueso para leerse mejor sobre imagen -->
+                            Aseguramos continuidad en plantas de producción y servidores críticos contra paros
+                            operativos letales.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">OT/IT</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Cero
+                                Paros</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Segmentación</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financiero -->
+                <div class="reveal-up delay-200 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
+                    style="border-color: rgba(255,255,255,0.1);">
+                    <!-- Fondo de imagen claro y enfocado -->
+                    <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_3D_render_of_a_floating_-0.jpg');">
+                    </div>
+                    <!-- Overlay para legibilidad -->
+                    <div
+                        class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
+                    </div>
+
+                    <div class="relative z-20 flex flex-col h-full">
+                        <i data-lucide="landmark" class="w-12 h-12 mb-6 text-scheme-primary"></i>
+                        <h3 class="text-2xl font-medium mb-4">Servicios Financieros</h3>
+                        <p class="text-lg text-white/90 flex-grow mb-8 font-medium">
+                            <!-- Texto un poco más grueso para leerse mejor sobre imagen -->
+                            Máxima trazabilidad, cumplimiento regulatorio y políticas estrictas para la banca moderna.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Cumplimiento</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Auditoría</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Visibilidad</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporativos -->
+                <div class="reveal-up delay-300 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
+                    style="border-color: rgba(255,255,255,0.1);">
+                    <!-- Fondo de imagen claro y enfocado -->
+                    <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_minimalist_visual-0.jpg');">
+                    </div>
+                    <!-- Overlay para legibilidad -->
+                    <div
+                        class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
+                    </div>
+
+                    <div class="relative z-20 flex flex-col h-full">
+                        <i data-lucide="building-2" class="w-12 h-12 mb-6 text-white"></i>
+                        <h3 class="text-2xl font-medium mb-4">Corporativos Locales</h3>
+                        <p class="text-lg text-white/90 flex-grow mb-8 font-medium">
+                            <!-- Texto un poco más grueso para leerse mejor sobre imagen -->
+                            Plataforma unificada que reduce drásticamente la carga operativa sin requerir un SOC
+                            gigante.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Automatizado</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Ligero</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Rápido</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS (Comparativa) -->
+    <section class="relative py-24 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-black">
+            <!-- SentinelOne Jaguar Motif background -->
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-25 mix-blend-screen"
+                style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.jpg'); filter: blur(4px);">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/90 pointer-events-none">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto">
+            <div class="reveal-up text-center mb-16">
+                <img src="https://www.sentinelone.com/wp-content/themes/sentinelone/assets/svg/header-logo-dark.svg"
+                    alt="SentinelOne" class="h-8 mx-auto mb-6 filter brightness-0 invert opacity-60" />
+                <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-6">
+                    ¿Aún usas tecnología del pasado?
+                </h2>
+                <p class="text-xl text-white/70 max-w-3xl mx-auto">
+                    Compara el antivirus tradicional que ya ha fallado, contra la plataforma que detiene ataques en
+                    milisegundos.
+                </p>
+            </div>
+
+            <div class="reveal-scale overflow-x-auto rounded-3xl border bg-white/[0.02] backdrop-blur-md"
+                style="border-color: rgba(255,255,255,0.1);">
+                <table class="w-full min-w-[700px] text-left border-collapse border-hidden">
+                    <thead>
+                        <tr class="bg-white/[0.05]">
+                            <th class="px-8 py-6 text-xl font-medium text-white/90 border-b border-white/10 w-1/3">
+                                Capacidad</th>
+                            <th
+                                class="px-8 py-6 text-xl font-medium text-white/90 border-b border-white/10 w-1/3 text-center">
+                                Antivirus tradicional</th>
+                            <th class="px-8 py-6 text-xl font-medium border-b w-1/3 text-center"
+                                style="background-color: rgba(0,217,255,0.1); border-color: rgba(0,217,255,0.3); color: white; border-left: 1px solid rgba(0,217,255,0.3);">
+                                SentinelOne
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-lg">
+                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                            <td class="px-8 py-6 text-white/80">Detección por IA Conductual</td>
+                            <td class="px-8 py-6 text-center text-white/60">
+                                <span class="flex items-center justify-center gap-2">
+                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Deficiente
+                                </span>
+                            </td>
+                            <td class="px-8 py-6 text-center font-bold"
+                                style="background-color: rgba(0,217,255,0.05); border-left: 1px solid rgba(0,217,255,0.3);">
+                                <span class="flex items-center justify-center gap-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> Máxima
+                                    Precisión
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                            <td class="px-8 py-6 text-white/80">Respuesta Autónoma sin Humanos</td>
+                            <td class="px-8 py-6 text-center text-white/60">
+                                <span class="flex items-center justify-center gap-2">
+                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Requiere intervención
+                                </span>
+                            </td>
+                            <td class="px-8 py-6 text-center font-bold"
+                                style="background-color: rgba(0,217,255,0.05); border-left: 1px solid rgba(0,217,255,0.3);">
+                                <span class="flex items-center justify-center gap-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> En
+                                    Milisegundos
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                            <td class="px-8 py-6 text-white/80">Rollback: Restauración post-ataque</td>
+                            <td class="px-8 py-6 text-center text-white/60">
+                                <span class="flex items-center justify-center gap-2">
+                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Inexistente
+                                </span>
+                            </td>
+                            <td class="px-8 py-6 text-center font-bold"
+                                style="background-color: rgba(0,217,255,0.05); border-left: 1px solid rgba(0,217,255,0.3);">
+                                <span class="flex items-center justify-center gap-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> One-Click
+                                    Integrado
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02] transition-colors">
+                            <td class="px-8 py-6 text-white/80">Visibilidad Forense Centralizada</td>
+                            <td class="px-8 py-6 text-center text-white/60">
+                                <span class="flex items-center justify-center gap-2">
+                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Fragmentada
+                                </span>
+                            </td>
+                            <td class="px-8 py-6 text-center font-bold rounded-br-3xl"
+                                style="background-color: rgba(0,217,255,0.05); border-left: 1px solid rgba(0,217,255,0.3);">
+                                <span class="flex items-center justify-center gap-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> Absoluta
+                                    (Storyline)
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SINGULARITY PLATFORM (Detalle Avanzado) -->
+    <section class="relative py-32 px-6 overflow-hidden bg-black border-y border-white/5 mt-20">
+        <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent opacity-50 z-10"></div>
+        <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent opacity-50 z-10">
+        </div>
+
+        <!-- Líneas divisoras elegantes -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-scheme-primary/30 to-transparent">
+        </div>
+        <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-scheme-primary/30 to-transparent">
+        </div>
+
+        <div class="absolute inset-0 z-0">
+            <!-- Patrón Geométrico de fondo muy sutil -->
+            <div class="absolute top-0 right-0 w-1/3 h-full opacity-[0.03] pointer-events-none"
+                style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22%3E%3Cpath d=%22M20 0l20 40H0z%22 fill=%22%23ffffff%22/%3E%3C/svg%3E'); background-size: 40px;">
+            </div>
+        </div>
+
+        <div class="relative z-20 max-w-7xl mx-auto">
+            <div class="reveal-up text-center mb-24">
+                <h2 class="text-4xl md:text-5xl font-light tracking-tight max-w-4xl mx-auto mb-8">
+                    Singularity Platform: <span class="text-scheme-primary font-bold">Ciberseguridad
+                        Inteligente</span>
+                </h2>
+                <p class="text-xl text-white/50 max-w-3xl mx-auto leading-relaxed font-light">
+                    SentinelOne Singularity unifica protección y respuesta mediante inteligencia artificial
+                    multinivel nítida y precisa.
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <!-- Columna Izquierda: Imagen Nítida y MÁS GRANDE -->
+                <div class="reveal-left w-full lg:w-[60%]">
+                    <div class="relative group">
+                        <!-- Brillo perimetral sutil -->
+                        <div
+                            class="absolute -inset-1.5 bg-gradient-to-r from-scheme-primary/30 to-scheme-secondary/30 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000">
+                        </div>
+
+                        <div
+                            class="relative bg-black rounded-3xl border border-white/10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+                            <img src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Multiple_layers_of_semi-tr-0 (1).jpg"
+                                alt="SentinelOne Singularity Layers"
+                                class="w-full h-auto object-cover transform scale-100 group-hover:scale-[1.03] transition-transform duration-1000"
+                                style="filter: none; opacity: 1;" />
+
+                            <!-- Overlay de información técnica nítida -->
+                            <div
+                                class="absolute bottom-0 inset-x-0 p-10 bg-gradient-to-t from-black via-black/40 to-transparent">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-3 h-3 rounded-full bg-scheme-primary animate-pulse shadow-[0_0_10px_rgba(0,217,255,0.8)]">
+                                    </div>
+                                    <span class="text-xs uppercase tracking-[0.25em] font-bold text-white">Arquitectura
+                                        Multinivel Activa de SentinelOne</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Contenido Refinado -->
+                <div class="reveal-right w-full lg:w-[40%]">
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                            <!-- Items de características con diseño más premium -->
+                            <div
+                                class="p-6 rounded-2xl border border-white/5 bg-white/[0.03] hover:border-scheme-primary/30 transition-all duration-500">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
+                                        <i data-lucide="shield-check" class="w-5 h-5 text-scheme-primary"></i>
+                                    </div>
+                                    <h3 class="text-lg font-semibold">IA Estática</h3>
+                                </div>
+                                <p class="text-white/40 text-sm leading-relaxed">Protección de pre-ejecución
+                                    inmediata ante malware conocido y desconocido.</p>
+                            </div>
+
+                            <div
+                                class="p-6 rounded-2xl border border-white/5 bg-white/[0.03] hover:border-scheme-primary/30 transition-all duration-500">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
+                                        <i data-lucide="brain-circuit" class="w-5 h-5 text-scheme-primary"></i>
+                                    </div>
+                                    <h3 class="text-lg font-semibold">IA Comportamental</h3>
+                                </div>
+                                <p class="text-white/40 text-sm leading-relaxed">Monitoreo de procesos vivos
+                                    para detener ransomware en plena acción.</p>
+                            </div>
+
+                            <div
+                                class="p-6 rounded-2xl border border-white/5 bg-white/[0.03] hover:border-scheme-primary/30 transition-all duration-500">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
+                                        <i data-lucide="rotate-ccw" class="w-5 h-5 text-scheme-primary"></i>
+                                    </div>
+                                    <h3 class="text-lg font-semibold">Rollback Activo</h3>
+                                </div>
+                                <p class="text-white/40 text-sm leading-relaxed">Reversión automática con un
+                                    solo clic de cualquier daño causado al endpoint.</p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div
+                                    class="p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-scheme-primary/30 transition-all duration-500">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <i data-lucide="network" class="w-4 h-4 text-scheme-primary"></i>
+                                        <h4 class="text-sm font-semibold">Control de Dispositivos</h4>
+                                    </div>
+                                    <p class="text-[11px] text-white/30 leading-tight">Gestiona políticas de red y
+                                        periféricos autorizados.</p>
+                                </div>
+                                <div
+                                    class="p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-scheme-primary/30 transition-all duration-500">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <i data-lucide="scan" class="w-4 h-4 text-scheme-primary"></i>
+                                        <h4 class="text-sm font-semibold">Ranger (Visibilidad)</h4>
+                                    </div>
+                                    <p class="text-[11px] text-white/30 leading-tight">Identifica dispositivos no
+                                        gestionados en la red.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-8 rounded-3xl border border-scheme-primary/10 bg-gradient-to-br from-scheme-primary/5 to-transparent relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-2 opacity-10">
+                                <i data-lucide="zap" class="w-20 h-20 text-scheme-primary"></i>
+                            </div>
+                            <p class="text-white/60 text-base leading-relaxed relative z-10">
+                                <b class="text-white font-bold italic block mb-2">Visibilidad Storyline™</b>
+                                Contexto absoluto que conecta cada punto de la red automáticamente para una
+                                respuesta sin humanos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONFIANZA COMPROBADA (Testimonios y Métricas) -->
+    <section class="relative py-24 px-6 overflow-hidden">
+        <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
+        </div>
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div class="absolute bg-white/[0.01] inset-0"></div>
+            <!-- IMAGEN HALLMARK A LA DERECHA (GRANDE Y CLARA) -->
+            <div class="absolute -right-20 inset-y-0 w-[60%] opacity-80" style="filter: contrast(1.1) brightness(1.1);">
+                <img src="./public/images/gemini-2.5-flash-image_A_elegant_minimalist_image_for_HERO_section_of_a_webpage_IN_THE_RIGHT_BORDER_._A-0.jpg"
+                    alt="Hawk visualization" class="w-full h-full object-contain object-right" />
+            </div>
+            <!-- Gradiente de desvanecimiento a la izquierda para la imagen -->
+            <div class="absolute inset-y-0 right-[40%] left-0 bg-gradient-to-r from-black via-black/80 to-transparent">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
+
+            <!-- Confianza Comprobada -->
+            <div class="mb-24">
+                <div class="reveal-up text-left mb-16 max-w-2xl">
+                    <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-6">Confianza comprobada</h2>
+                    <p class="text-xl text-white/70">
+                        Adoptado por líderes de industria para la protección absoluta de sus operaciones corporativas
+                        globales.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="flex flex-col gap-8 max-w-xl">
+                        <!-- Testimonial -->
+                        <div class="reveal-left p-10 rounded-2xl border bg-white/[0.03] backdrop-blur-sm relative overflow-hidden"
+                            style="border-color: rgba(255,255,255,0.1);">
+                            <i data-lucide="quote"
+                                class="absolute right-[-20px] top-[-20px] w-32 h-32 text-white/[0.03]"
+                                stroke-width="2"></i>
+
+                            <div class="flex gap-1 text-yellow-500 mb-6">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+
+                            <p class="text-xl leading-relaxed text-white italic relative mb-10 z-10">
+                                "En 90 días mejoramos visibilidad y contención a niveles récord. Nuestro
+                                equipo de TI
+                                dejó
+                                de 'perseguir falsas alarmas' y pudo enfocarse por fin en la operación
+                                estratégica del
+                                negocio."
+                            </p>
+
+                            <div class="flex items-center gap-4 z-10 relative">
+                                <div
+                                    class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-black bg-scheme-primary">
+                                    CISO
+                                </div>
+                                <div>
+                                    <div class="font-bold text-white">Líder de Seguridad</div>
+                                    <div class="text-sm text-white/60">Empresa Manufacturera Top 100</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resultados -->
+                        <div class="reveal-right p-10 rounded-2xl border bg-white/[0.03] backdrop-blur-sm flex flex-col justify-center"
+                            style="border-color: rgba(255,255,255,0.1);">
+                            <h3 class="text-2xl font-medium mb-8">Resultados Medibles</h3>
+
+                            <ul class="space-y-8">
+                                <li>
+                                    <div class="text-5xl font-black mb-2 text-scheme-secondary">&gt;85%
+                                    </div>
+                                    <div class="text-lg text-white/60">Reducción del tiempo de investigación
+                                        y
+                                        contención de
+                                        amenazas críticas.</div>
+                                </li>
+                                <li>
+                                    <div class="text-5xl font-black mb-2 text-scheme-primary">0</div>
+                                    <div class="text-lg text-white/60">Incidentes de ransomware exitosos
+                                        tras la
+                                        implementación del EDR.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <!-- CONTACTO & VIDEO (Toma el Control) -->
+    <section class="relative py-32 px-6 overflow-hidden border-t border-white/5 mt-20">
+        <!-- Imagen de Fondo Dinámica (Ciberseguridad V2) -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-60 select-none pointer-events-none"
+                style="background-image: url('./public/images/A_sleek_professional_cyberV2.jpg'); filter: blur(3px);">
+            </div>
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent opacity-50 z-0"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
+            <div
+                class="flex flex-col lg:flex-row items-stretch gap-0 rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+
+                <!-- Lado Izquierdo: Video Empotrado -->
+                <div class="relative w-full lg:w-1/2 min-h-[400px] bg-black">
+                    <video autoplay loop muted playsinline class="absolute w-full h-full object-cover opacity-80"
+                        style="filter: brightness(1.1) contrast(1.1);">
+                        <source
+                            src="./public/videos/motion2Fast_Outer_ring_rotates_360_degrees_Background_particle_0.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black z-10"></div>
+
+                    <div class="absolute inset-x-0 bottom-0 p-12 z-20">
+                        <h3 class="text-3xl font-bold text-white mb-4 line-height-tight">
+                            Tecnología de Vanguardia <br /> <span class="text-scheme-primary">Lista para tu
+                                Empresa</span>
+                        </h3>
+                        <p class="text-white/40 text-sm max-w-xs">
+                            Nuestros ingenieros certficados te ayudarán a implementar la plataforma líder en el mercado.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Lado Derecho: Formulario -->
+                <div class="w-full lg:w-1/2 p-10 md:p-14 bg-white/[0.01] backdrop-blur-xl relative">
+                    <div class="mb-10">
+                        <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4">Toma el control hoy mismo</h2>
+                        <p class="text-white/50">
+                            Pide tu diagnóstico inicial estructurado. Te responderemos en menos de 2 horas.
+                        </p>
+                    </div>
+
+                    <form class="space-y-6" onsubmit="event.preventDefault();">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm text-white/70 mb-2 font-medium">Nombre completo</label>
+                                <input type="text" placeholder="Tu nombre"
+                                    class="w-full bg-white/5 border px-4 py-3 rounded-xl outline-none text-white transition-all hover:bg-white/10 focus:bg-white/10"
+                                    style="border-color: rgba(255,255,255,0.1);" />
+                            </div>
+                            <div>
+                                <label class="block text-sm text-white/70 mb-2 font-medium">Email corporativo</label>
+                                <input type="email" placeholder="email@tuempresa.com"
+                                    class="w-full bg-white/5 border px-4 py-3 rounded-xl outline-none text-white transition-all hover:bg-white/10 focus:bg-white/10"
+                                    style="border-color: rgba(255,255,255,0.1);" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm text-white/70 mb-2 font-medium">Cargo / Puesto</label>
+                                <input type="text" placeholder="Ej. IT Manager, CISO"
+                                    class="w-full bg-white/5 border px-4 py-3 rounded-xl outline-none text-white transition-all hover:bg-white/10 focus:bg-white/10"
+                                    style="border-color: rgba(255,255,255,0.1);" />
+                            </div>
+                            <div>
+                                <label class="block text-sm text-white/70 mb-2 font-medium">Endpoints
+                                    aproximados</label>
+                                <select
+                                    class="w-full bg-white/5 border px-4 py-3 rounded-xl outline-none text-white appearance-none transition-all hover:bg-white/10 focus:bg-white/10"
+                                    style="border-color: rgba(255,255,255,0.1);">
+                                    <option value="" disabled selected class="text-black">Selecciona un rango...
+                                    </option>
+                                    <option class="text-black">Menos de 100</option>
+                                    <option class="text-black">100 - 500</option>
+                                    <option class="text-black">500 - 1000</option>
+                                    <option class="text-black">Más de 1000</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full py-4 rounded-xl text-black font-bold text-lg mt-4 transition-all hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,217,255,0.4)]"
+                            style="background-color: var(--primary); box-shadow: 0 15px 30px rgba(0,217,255,0.3);">
+                            Solicitar evaluación técnica confidencial
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPTS MÁGICOS -->
+    <script>
+        // 1. Iniciar Lucide Icons
+        lucide.createIcons();
+
+        // 2. Animaciones de scroll (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // 3. Lógica del Selector de Tipografías Dinámico
+        const fonts = {
+            pantonThin: { name: 'Panton Thin', family: 'Panton', weight: 100, italic: false },
+            pantonLight: { name: 'Panton Light', family: 'Panton', weight: 300, italic: false },
+            pantonRegular: { name: 'Panton Regular', family: 'Panton', weight: 400, italic: false },
+            pantonSemiBold: { name: 'Panton SemiBold', family: 'Panton', weight: 600, italic: false },
+            pantonBold: { name: 'Panton Bold', family: 'Panton', weight: 700, italic: false },
+            pantonExtraBold: { name: 'Panton ExtraBold', family: 'Panton', weight: 800, italic: false },
+            pantonBlack: { name: 'Panton Black', family: 'Panton', weight: 900, italic: false },
+
+            spaceLight: { name: 'Space Grotesk Light', family: 'Space Grotesk', weight: 300, italic: false },
+            spaceRegular: { name: 'Space Grotesk Regular', family: 'Space Grotesk', weight: 400, italic: false },
+            spaceMedium: { name: 'Space Grotesk Medium', family: 'Space Grotesk', weight: 500, italic: false },
+            spaceSemiBold: { name: 'Space Grotesk SemiBold', family: 'Space Grotesk', weight: 600, italic: false },
+            spaceBold: { name: 'Space Grotesk Bold', family: 'Space Grotesk', weight: 700, italic: false },
+
+            rajdhaniLight: { name: 'Rajdhani Light', family: 'Rajdhani', weight: 300, italic: false },
+            rajdhaniRegular: { name: 'Rajdhani Regular', family: 'Rajdhani', weight: 400, italic: false },
+            rajdhaniMedium: { name: 'Rajdhani Medium', family: 'Rajdhani', weight: 500, italic: false },
+            rajdhaniSemiBold: { name: 'Rajdhani SemiBold', family: 'Rajdhani', weight: 600, italic: false },
+            rajdhaniBold: { name: 'Rajdhani Bold', family: 'Rajdhani', weight: 700, italic: false },
+
+            exoExtraLight: { name: 'Exo 2 ExtraLight', family: 'Exo 2', weight: 200, italic: false },
+            exoLight: { name: 'Exo 2 Light', family: 'Exo 2', weight: 300, italic: false },
+            exoRegular: { name: 'Exo 2 Regular', family: 'Exo 2', weight: 400, italic: false },
+            exoMedium: { name: 'Exo 2 Medium', family: 'Exo 2', weight: 500, italic: false },
+            exoSemiBold: { name: 'Exo 2 SemiBold', family: 'Exo 2', weight: 600, italic: false },
+            exoBold: { name: 'Exo 2 Bold', family: 'Exo 2', weight: 700, italic: false },
+            exoExtraBold: { name: 'Exo 2 ExtraBold', family: 'Exo 2', weight: 800, italic: false },
+            exoBlack: { name: 'Exo 2 Black', family: 'Exo 2', weight: 900, italic: false },
+        };
+
+        let activeFontKey = 'pantonRegular';
+        const fontGrid = document.getElementById('fontGrid');
+
+        function renderFontButtons() {
+            fontGrid.innerHTML = '';
+            for (const [key, fontDef] of Object.entries(fonts)) {
+                const isActive = key === activeFontKey;
+
+                const btn = document.createElement('button');
+                btn.className = `px-3 py-2.5 rounded-md border transition-all text-left ${isActive ? 'border-scheme-primary bg-scheme-primary/20 text-[#00D9FF]' : 'border-white/20 hover:border-scheme-primary/50 text-white/70 hover:text-white'}`;
+                btn.style.fontFamily = `'${fontDef.family}', sans-serif`;
+                btn.style.fontWeight = fontDef.weight;
+                if (isActive) btn.style.boxShadow = '0 0 15px rgba(0, 217, 255, 0.3)';
+
+                btn.innerHTML = `<span class="text-xs">${fontDef.name}</span>`;
+
+                btn.addEventListener('click', () => {
+                    activeFontKey = key;
+                    applyFont(key);
+                    renderFontButtons(); // Re-render for active state
+                });
+
+                fontGrid.appendChild(btn);
+            }
+        }
+
+        function applyFont(key) {
+            const font = fonts[key];
+            const fontFamily = `'${font.family}', sans-serif`;
+            const fontWeight = font.weight;
+            const fontStyle = font.italic ? 'italic' : 'normal';
+
+            // Actualizar el body por defecto
+            document.body.style.fontFamily = fontFamily;
+            document.body.style.fontWeight = fontWeight;
+            document.body.style.fontStyle = fontStyle;
+
+            // Inyectar estilos globales para forzar en títulos y elementos con clases de peso
+            let dynamicStyle = document.getElementById('dynamic-font-overrides');
+            if (!dynamicStyle) {
+                dynamicStyle = document.createElement('style');
+                dynamicStyle.id = 'dynamic-font-overrides';
+                document.head.appendChild(dynamicStyle);
+            }
+
+            dynamicStyle.innerHTML = `
+                h1, h2, h3, h4, h5, h6, 
+                .font-light, .font-normal, .font-medium, .font-semibold, .font-bold, .font-black,
+                button, .btn-primary { 
+                    font-family: ${fontFamily} !important;
+                    font-weight: ${fontWeight} !important;
+                    font-style: ${fontStyle} !important;
+                }
+            `;
+        }
+
+        // Initialize
+        applyFont(activeFontKey);
+        renderFontButtons();
+
+        // 4. Lógica de Colapso del Menú
+        const fontToggle = document.getElementById('fontMenuToggle');
+        const fontPanel = document.getElementById('fontMenuPanel');
+        const fontChevron = document.getElementById('fontChevron');
+
+        fontToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isHidden = fontPanel.classList.contains('hidden');
+            if (isHidden) {
+                fontPanel.classList.remove('hidden');
+                fontChevron.style.transform = 'rotate(180deg)';
+                fontToggle.style.borderColor = 'var(--primary)';
+            } else {
+                fontPanel.classList.add('hidden');
+                fontChevron.style.transform = 'rotate(0deg)';
+                fontToggle.style.borderColor = 'rgba(0,217,255,0.5)';
+            }
+        });
+
+        // Cerrar al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!fontPanel.contains(e.target) && !fontToggle.contains(e.target)) {
+                fontPanel.classList.add('hidden');
+                fontChevron.style.transform = 'rotate(0deg)';
+                fontToggle.style.borderColor = 'rgba(0,217,255,0.5)';
+            }
+        });
+
+        // 5. Partículas del Puma (Running Effect)
+        function initPumaParticles() {
+            const canvas = document.getElementById('pumaParticles');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let w, h;
+
+            function resize() {
+                const parent = canvas.parentElement;
+                w = canvas.width = parent.offsetWidth;
+                h = canvas.height = parent.offsetHeight;
+            }
+
+            class Particle {
+                constructor() {
+                    this.reset();
+                }
+                reset() {
+                    // Aparecen mayormente por la derecha para simular avance
+                    this.x = Math.random() * w;
+                    this.y = Math.random() * h;
+                    // Velocidad horizontal alta hacia la izquierda (simula que el puma va a la derecha)
+                    this.vx = -(Math.random() * 5 + 2);
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.size = Math.random() * 2 + 0.5;
+                    // Colores morados y cian
+                    const isPurple = Math.random() > 0.5;
+                    this.color = isPurple ? '168, 85, 247' : '0, 217, 255';
+                    this.alpha = Math.random() * 0.6 + 0.2;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < -10) this.x = w + 10;
+                    if (this.y < 0 || this.y > h) this.reset();
+                }
+                draw() {
+                    ctx.beginPath();
+                    // Dibujar una pequeña estela (streak) para dinamismo
+                    ctx.moveTo(this.x, this.y);
+                    ctx.lineTo(this.x - this.vx * 2, this.y);
+                    ctx.strokeStyle = `rgba(${this.color}, ${this.alpha})`;
+                    ctx.lineWidth = this.size;
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                resize();
+                particles = [];
+                for (let i = 0; i < 150; i++) particles.push(new Particle());
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, w, h);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                requestAnimationFrame(animate);
+            }
+
+            window.addEventListener('resize', resize);
+            init();
+            animate();
+        }
+
+        initPumaParticles();
+    </script>
+</body>
+
+</html>
