@@ -157,18 +157,53 @@
             transition-delay: 500ms;
         }
 
-        /* Separador Cian Ultrafino Premium */
-        .divider-cyan {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.5), transparent);
-            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
-            z-index: 30;
-            pointer-events: none;
+        /* Animación Desplegable para Ventajas */
+        .advantage-item {
+            cursor: pointer;
+            transition: all 0.50s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: 100px;
+            overflow: hidden;
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .advantage-item.active {
+            max-height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .advantage-item:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .advantage-item .icon-wrapper {
+            transition: all 0.4s ease;
+        }
+
+        .advantage-item.active .icon-wrapper {
+            background: rgba(var(--primary-rgb, 0, 217, 255), 0.2);
+            transform: scale(1.1);
+        }
+
+        .advantage-content {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease 0.1s;
+        }
+
+        .advantage-item.active .advantage-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Chevron Rotation via CSS */
+        .advantage-item [data-lucide="chevron-down"] {
+            transition: transform 0.3s ease;
+        }
+
+        .advantage-item.active [data-lucide="chevron-down"] {
+            transform: rotate(180deg);
         }
     </style>
 </head>
@@ -1091,121 +1126,140 @@
         </div>
     </section>
 
-    <!-- RECONOCIMIENTO DE LA INDUSTRIA (Métricas y Líderes) -->
+    <!-- VENTAJAS FAROPROTEC + SENTINELONE (Alianza y Soporte) -->
     <section class="relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
         </div>
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <div class="absolute bg-white/[0.01] inset-0"></div>
-            <!-- IMAGEN HALLMARK A LA DERECHA (GRANDE Y CLARA) -->
-            <div class="absolute -right-20 inset-y-0 w-[60%] opacity-80" style="filter: contrast(1.1) brightness(1.1);">
-                <img src="./public/images/gemini-2.5-flash-image_A_elegant_minimalist_image_for_HERO_section_of_a_webpage_IN_THE_RIGHT_BORDER_._A-0.jpg"
-                    alt="Hawk visualization" class="w-full h-full object-contain object-right" />
+            <!-- New Full Section Background -->
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center brightness-[0.4] contrast-[1.1]"
+                style="background-image: url('./public/images/universal_upscale_0_9e00dc8e-af3c-45f5-a531-c4826933abfb_0.jpg');">
             </div>
-            <!-- Gradiente de desvanecimiento a la izquierda para la imagen -->
-            <div
-                class="absolute inset-y-0 right-[40%] left-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent">
+            <!-- Vignette for depth and contrast -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)] opacity-60">
             </div>
+            <!-- Top/Bottom feathered edges for smooth transition -->
+            <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full">
 
-            <!-- Encabezado de Sección -->
-            <div class="reveal-up text-left mb-16 max-w-3xl">
-                <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6 leading-tight">
-                    Liderazgo y <span class="font-bold text-scheme-primary">Reconocimiento</span> de la Industria
-                </h2>
-                <p class="text-lg md:text-xl text-white/70 leading-relaxed">
-                    SentinelOne es validado continuamente por las firmas de análisis más prestigiosas del mundo,
-                    estableciendo el estándar de oro en ciberseguridad autónoma.
-                </p>
-            </div>
+            <h2 class="text-4xl md:text-6xl font-light tracking-tight mb-8 leading-tight">
+                Ventajas de <br />
+                <span class="font-bold text-scheme-primary">Faroprotec</span> +
+                <span class="text-scheme-secondary font-bold">SentinelOne</span>
+            </h2>
+            <p class="text-xl text-white/60 leading-relaxed border-l-2 border-scheme-primary/30 pl-6 py-2">
+                Acompañamiento experto y soporte humano en cada fase de tu ciber-resiliencia.
+            </p>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-                <!-- Columna Izquierda: Líderes y Logos -->
-                <div class="flex flex-col gap-6">
-                    <div class="reveal-left grid grid-cols-2 gap-4">
-                        <!-- Gartner -->
-                        <div
-                            class="p-6 rounded-2xl border bg-white/[0.03] backdrop-blur-sm border-white/10 flex flex-col items-center text-center group hover:bg-white/[0.05] transition-all">
-                            <div class="text-scheme-primary font-bold text-xs tracking-widest uppercase mb-4">Gartner®
+            <!-- Dashboard Interactivo (Split Layout) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                <!-- Columna Izquierda: Menú Desplegable (7 Cols) -->
+                <div class="lg:col-span-7 space-y-4 relative">
+
+                    <!-- Soporte Humano -->
+                    <div class="advantage-item active p-6 rounded-2xl border backdrop-blur-md bg-white/[0.02]"
+                        onclick="toggleAdvantage(this)">
+                        <div class="flex items-center gap-6 mb-4">
+                            <div
+                                class="icon-wrapper w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                                <i data-lucide="headphones" class="w-7 h-7 text-scheme-primary"></i>
                             </div>
-                            <div class="text-xl font-medium mb-2 text-white/90">Líder Quadrant</div>
-                            <div class="text-sm text-white/50 italic">Elegido Líder por 4 años consecutivos en EPP</div>
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-medium text-white">Servicio Post-Adquisición</h3>
+                                <p class="text-white/40 text-sm">Soporte humano 24/7</p>
+                            </div>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-white/20"></i>
                         </div>
-                        <!-- MITRE -->
-                        <div
-                            class="p-6 rounded-2xl border bg-white/[0.03] backdrop-blur-sm border-white/10 flex flex-col items-center text-center group hover:bg-white/[0.05] transition-all">
-                            <div class="text-scheme-secondary font-bold text-xs tracking-widest uppercase mb-4">MITRE
-                                Engenuity</div>
-                            <div class="text-xl font-medium mb-2 text-white/90">100% Visibilidad</div>
-                            <div class="text-sm text-white/50 italic">Cero detecciones atrasadas en ATT&CK evaluaciones
+                        <div class="advantage-content pt-4 border-t border-white/5 pb-2">
+                            <p class="text-white/70 leading-relaxed mb-6">
+                                Nuestro compromiso no termina con la licencia. Faroprotec se integra con tu equipo de TI
+                                para la gestión diaria y respuesta ante incidentes, asegurando que nunca enfrentes una
+                                amenaza solo.
+                            </p>
+                            <!-- Mini Metrics integrated -->
+                            <div class="flex gap-8">
+                                <div>
+                                    <div class="text-2xl font-bold text-scheme-primary">&lt;15 min</div>
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Respuesta Crítica
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-white">98%</div>
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Retención Anual
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <!-- IDC -->
-                        <div
-                            class="p-6 rounded-2xl border bg-white/[0.03] backdrop-blur-sm border-white/10 flex flex-col items-center text-center group hover:bg-white/[0.05] transition-all">
-                            <div class="text-white font-bold text-xs tracking-widest uppercase mb-4">IDC MarketScape
-                            </div>
-                            <div class="text-xl font-medium mb-2 text-white/90">Líder Global</div>
-                            <div class="text-sm text-white/50 italic">Estrategia y capacidades de Endpoint líderes</div>
-                        </div>
-                        <!-- SE LABS -->
-                        <div
-                            class="p-6 rounded-2xl border bg-white/[0.03] backdrop-blur-sm border-white/10 flex flex-col items-center text-center group hover:bg-white/[0.05] transition-all">
-                            <div class="text-scheme-primary font-bold text-xs tracking-widest uppercase mb-4">SE Labs
-                            </div>
-                            <div class="text-xl font-medium mb-2 text-white/90">Rating AAA</div>
-                            <div class="text-sm text-white/50 italic">Precisión del 100% en detección de amenazas</div>
                         </div>
                     </div>
 
-                    <!-- Frost & Sullivan Banner -->
-                    <div
-                        class="reveal-up p-8 rounded-2xl border bg-gradient-to-r from-purple-500/10 to-transparent backdrop-blur-sm border-white/10">
-                        <div class="flex items-center gap-6">
-                            <i data-lucide="award" class="w-12 h-12 text-scheme-secondary shrink-0"></i>
-                            <div>
-                                <h4 class="text-xl font-medium text-white/90 mb-1">Frost & Sullivan</h4>
-                                <p class="text-white/60">Reconocido como el Líder en Innovación y Crecimiento en XDR y
-                                    EPP.</p>
+                    <!-- Consultoría -->
+                    <div class="advantage-item p-6 rounded-2xl border backdrop-blur-md bg-white/[0.02]"
+                        onclick="toggleAdvantage(this)">
+                        <div class="flex items-center gap-6 mb-4">
+                            <div
+                                class="icon-wrapper w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                                <i data-lucide="shield-check" class="w-7 h-7 text-scheme-secondary"></i>
                             </div>
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-medium text-white">Consultoría Experta</h3>
+                                <p class="text-white/40 text-sm">Ingeniería Certificada</p>
+                            </div>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-white/20"></i>
+                        </div>
+                        <div class="advantage-content pt-4 border-t border-white/5 pb-2">
+                            <p class="text-white/70 leading-relaxed mb-6">
+                                Obtén acceso directo a ingenieros certificados por SentinelOne que
+                                entienden tu infraestructura y optimizan tu defensa.
+                            </p>
+                            <div class="flex gap-8">
+                                <div>
+                                    <div class="text-2xl font-bold text-white">+500</div>
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Casos de Éxito
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-scheme-secondary">100%</div>
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Continuidad
+                                        Operativa</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Implementación -->
+                    <div class="advantage-item p-6 rounded-2xl border backdrop-blur-md bg-white/[0.02]"
+                        onclick="toggleAdvantage(this)">
+                        <div class="flex items-center gap-6 mb-4">
+                            <div
+                                class="icon-wrapper w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                                <i data-lucide="zap" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-medium text-white">Despliegue Garantizado</h3>
+                                <p class="text-white/40 text-sm">Acompañamiento en el Rollout</p>
+                            </div>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-white/20"></i>
+                        </div>
+                        <div class="advantage-content pt-4 border-t border-white/5 pb-2">
+                            <p class="text-white/70 leading-relaxed mb-6">
+                                Aseguramos que el agente Singularity esté desplegado al 100% en tu infraestructura desde
+                                la primera semana. Todo bajo control empresarial.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Métricas de Alto Impacto -->
-                <div class="reveal-right p-10 rounded-2xl border bg-white/[0.03] backdrop-blur-sm border-white/10 flex flex-col justify-between"
-                    style="border-color: rgba(255,255,255,0.1);">
-                    <div>
-                        <h3 class="text-2xl font-medium mb-12 flex items-center gap-3">
-                            <i data-lucide="bar-chart-3" class="w-6 h-6 text-scheme-primary"></i> Desempeño en el Mundo
-                            Real
-                        </h3>
-
-                        <div class="space-y-12">
-                            <div>
-                                <div class="text-6xl font-black mb-3 text-scheme-secondary">100%</div>
-                                <div class="text-xl font-medium text-white/90 mb-2">Detección y Prevención</div>
-                                <p class="text-white/50 text-base">Basado en las evaluaciones MITRE Engenuity ATT&CK®.
-                                    Sin configuraciones manuales.</p>
-                            </div>
-
-                            <div>
-                                <div class="text-6xl font-black mb-3 text-scheme-primary">3.3 min</div>
-                                <div class="text-xl font-medium text-white/90 mb-2">MTTD Promedio</div>
-                                <p class="text-white/50 text-base">La velocidad más rápida de la industria para detener
-                                    ataques en progreso antes de que se propaguen.</p>
-                            </div>
-
-                            <div>
-                                <div class="text-6xl font-black mb-3 text-white">Líder</div>
-                                <div class="text-xl font-medium text-white/90 mb-2">Cuadrante Mágico de Gartner®</div>
-                                <p class="text-white/50 text-base">Por 4 años consecutivos, SentinelOne ha sido
-                                    posicionado como Líder en plataformas EPP.</p>
-                            </div>
-                        </div>
+                <!-- Columna Derecha: LADO LIMPIO PARA EL LOGO (5 Cols) -->
+                <div
+                    class="lg:col-span-5 h-full flex flex-col justify-center items-center lg:items-end pointer-events-none p-12">
+                    <div
+                        class="reveal-scale opacity-10 transform lg:-rotate-90 text-[10px] uppercase tracking-[1.5rem] whitespace-nowrap text-white hidden md:block">
+                        Blindaje + Soporte Humano
                     </div>
                 </div>
             </div>
@@ -1655,6 +1709,21 @@
         }
 
         initPumaParticles();
+    </script>
+    <script>
+        // Lógica de Ventajas Desplegables
+        function toggleAdvantage(element) {
+            const items = document.querySelectorAll('.advantage-item');
+            const isActive = element.classList.contains('active');
+
+            // Cerrar todos primero
+            items.forEach(item => item.classList.remove('active'));
+
+            // Si el que clickeamos no estaba activo, lo activamos
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
     </script>
 </body>
 
