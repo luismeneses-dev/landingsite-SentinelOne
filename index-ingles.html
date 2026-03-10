@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faroprotec | SentinelOne | Protección Endpoint Autónoma</title>
+    <title>Faroprotec | SentinelOne | Autonomous Endpoint Protection</title>
 
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -231,20 +231,19 @@
 
 <body class="min-h-screen">
     <script>
-            // Language Detection and Redirection Logic
+            // Language Detection and Redirection Logic (EN)
             (function () {
-                // Check if the user has manually selected a language preference in this session
+                // Check if the user has manually selected a language preference
                 const manualLang = sessionStorage.getItem('manualLang');
 
                 // Get browser language
                 const browserLang = navigator.language || navigator.userLanguage;
-                const isEnglish = browserLang.startsWith('en');
+                const isSpanish = browserLang.startsWith('es');
 
                 // Only redirect if no manual choice has been made
-                if (!manualLang && isEnglish) {
-                    // Redirect to English page if on Spanish page
-                    if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
-                        window.location.href = 'index-ingles.html';
+                if (!manualLang && isSpanish) {
+                    if (window.location.pathname.endsWith('index-ingles.html')) {
+                        window.location.href = 'index.html';
                     }
                 }
             })();
@@ -256,25 +255,25 @@
         <button id="fontMenuToggle"
             class="flex items-center gap-2 px-4 py-2 bg-black/80 backdrop-blur-md border border-scheme-primary/50 rounded-full text-scheme-primary shadow-lg hover:scale-105 transition-all">
             <i data-lucide="type" class="w-4 h-4"></i>
-            <span class="text-xs font-semibold uppercase tracking-wider">Ajustar Tipografía</span>
+            <span class="text-xs font-semibold uppercase tracking-wider">Adjust Typography</span>
             <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="fontChevron"></i>
         </button>
 
-        <!-- Botón Idioma -->
-        <a href="index-ingles.html" onclick="sessionStorage.setItem('manualLang', 'en')"
+        <!-- Language Button (To ES) -->
+        <a href="index.html" onclick="sessionStorage.setItem('manualLang', 'es')"
             class="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/20 rounded-full text-white/70 shadow-lg hover:scale-105 transition-all hover:bg-white/10">
             <i data-lucide="languages" class="w-4 h-4"></i>
-            <span class="text-xs font-semibold uppercase tracking-wider">English</span>
+            <span class="text-xs font-semibold uppercase tracking-wider">Español</span>
         </a>
 
         <!-- Panel desplegable -->
         <div id="fontMenuPanel"
             class="hidden w-64 bg-black/90 backdrop-blur-md border-2 border-scheme-primary/30 rounded-xl p-4 shadow-2xl shadow-scheme-primary/20 animate-in fade-in slide-in-from-top-4 duration-300">
             <h3 class="text-sm mb-3 text-scheme-primary font-semibold flex items-center gap-2">
-                <i data-lucide="settings" class="w-4 h-4"></i> Selector Visual
+                <i data-lucide="settings" class="w-4 h-4"></i> Visual Selector
             </h3>
-            <p class="text-[10px] text-white/50 mb-3 leading-tight">Alternativas similares a Panton para
-                previsualización.</p>
+            <p class="text-[10px] text-white/50 mb-3 leading-tight">Similar alternatives to Panton for
+                previewing.</p>
             <div class="grid grid-cols-1 gap-1.5 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar" id="fontGrid">
                 <!-- Se inyectan los botones vía JS -->
             </div>
@@ -310,42 +309,43 @@
                         style="background-color: rgba(0,217,255,0.15); border: 1px solid rgba(0,217,255,0.4); color: var(--primary);">
                         <div class="w-2 h-2 rounded-full bg-scheme-primary"
                             style="box-shadow: 0 0 0 4px rgba(0,217,255,0.3);"></div>
-                        <span class="text-xs md:text-sm font-medium tracking-wide">Respuesta autónoma contra ransomware
-                            · Implementación local</span>
+                        <span class="text-xs md:text-sm font-medium tracking-wide">Autonomous response against
+                            ransomware
+                            · Local implementation</span>
                     </div>
 
                     <h1 class="reveal-up delay-100 text-5xl md:text-6xl tracking-tight mb-6 font-bold leading-tight">
                         <span
                             class="bg-gradient-to-r from-scheme-primary to-scheme-secondary bg-clip-text text-transparent">
-                            Protege tu empresa
-                        </span> con <br />
+                            Protect your company
+                        </span> with <br />
                         <img src="https://www.sentinelone.com/wp-content/themes/sentinelone/assets/svg/header-logo-dark.svg"
                             alt="SentinelOne" class="h-12 md:h-16 inline-block mt-4 filter brightness-0 invert" />
                     </h1>
 
                     <p
                         class="reveal-up delay-200 text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-                        Implementación experta en México para empresas industriales, corporativas y entornos críticos.
+                        Expert implementation in Mexico for industrial, corporate, and critical environments.
                     </p>
 
                     <div class="reveal-up delay-300 flex flex-wrap gap-4 justify-center mb-10">
                         <button class="px-6 py-3.5 rounded-xl text-white font-semibold transition-all hover:scale-105"
                             style="background: linear-gradient(135deg, var(--primary), var(--secondary)); box-shadow: 0 10px 30px rgba(0,217,255,0.4);">
-                            Solicitar diagnóstico gratuito
+                            Request free diagnostic
                         </button>
                         <button
                             class="px-6 py-3.5 rounded-xl border border-white/20 hover:border-white/50 bg-white/5 font-semibold transition-all">
-                            Hablar con un especialista
+                            Talk to a specialist
                         </button>
                     </div>
 
                     <div class="reveal-up delay-400 flex flex-wrap justify-center gap-6 text-base text-white/80 mb-16">
                         <span class="flex items-center gap-2"><i data-lucide="check-circle"
-                                class="w-4 h-4 text-scheme-primary"></i> Respuesta en &lt;24h</span>
+                                class="w-4 h-4 text-scheme-primary"></i> Response in &lt;24h</span>
                         <span class="flex items-center gap-2"><i data-lucide="check-circle"
-                                class="w-4 h-4 text-scheme-primary"></i> Sin compromiso</span>
+                                class="w-4 h-4 text-scheme-primary"></i> No commitment</span>
                         <span class="flex items-center gap-2"><i data-lucide="check-circle"
-                                class="w-4 h-4 text-scheme-primary"></i> Asesoría confidencial</span>
+                                class="w-4 h-4 text-scheme-primary"></i> Confidential advice</span>
                     </div>
                 </div>
 
@@ -360,64 +360,59 @@
                             <!-- KPI 1 -->
                             <div class="p-4 rounded-xl border flex flex-col items-center justify-center bg-black/40"
                                 style="border-color: rgba(0,217,255,0.5); box-shadow: 0 0 20px rgba(0,217,255,0.2);">
-                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Amenazas</div>
-                                <i data-lucide="shield-check" class="w-10 h-10 mb-2 text-scheme-primary"></i>
-                                <div
-                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
-                                    Contención</div>
-                            </div>
-                            <!-- KPI 2 -->
-                            <div
-                                class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
-                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Impacto</div>
-                                <div class="flex items-end gap-1 h-10 mb-2">
-                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 40%;"></div>
-                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 80%;"></div>
-                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 60%;"></div>
-                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 100%;"></div>
-                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 30%;"></div>
-                                </div>
-                                <div
-                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
-                                    ↓ Incidentes</div>
-                            </div>
-                            <!-- KPI 3 -->
-                            <div
-                                class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
-                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Resiliencia</div>
-                                <div class="flex items-center gap-3 mb-2">
-                                    <i data-lucide="file-text" class="w-8 h-8 text-white/80"></i>
-                                    <i data-lucide="refresh-cw"
-                                        class="w-8 h-8 animate-spin-slow text-scheme-primary"></i>
-                                </div>
-                                <div
-                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
-                                    Rollback OK</div>
-                            </div>
-                            <!-- KPI 4 -->
-                            <div
-                                class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
-                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Cobertura</div>
-                                <div class="relative w-full h-10 mb-2">
-                                    <div
-                                        class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[10%] left-[10%] animate-pulse bg-scheme-secondary text-scheme-secondary">
-                                    </div>
-                                    <div class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[60%] left-[80%] animate-pulse bg-scheme-secondary text-scheme-secondary"
-                                        style="animation-delay: 0.5s;"></div>
-                                    <div class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[80%] left-[20%] animate-pulse bg-scheme-secondary text-scheme-secondary"
-                                        style="animation-delay: 1s;"></div>
-                                </div>
-                                <div
-                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
-                                    Visibilidad</div>
-                            </div>
+                                Containment</div>
                         </div>
-                        <div class="mt-4 text-[11px] text-white/40 text-center">
+                        <!-- KPI 2 -->
+                        <div
+                            class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
+                            <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Impact</div>
+                            <div class="flex items-end gap-1 h-10 mb-2">
+                                <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 40%;"></div>
+                                <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 80%;"></div>
+                                <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 60%;"></div>
+                                <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 100%;"></div>
+                                <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 30%;"></div>
+                            </div>
+                            <div
+                                class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                ↓ Incidents</div>
+                        </div>
+                        <!-- KPI 3 -->
+                        <div
+                            class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
+                            <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Resilience</div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="file-text" class="w-8 h-8 text-white/80"></i>
+                                <i data-lucide="refresh-cw" class="w-8 h-8 animate-spin-slow text-scheme-primary"></i>
+                            </div>
+                            <div
+                                class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                Rollback OK</div>
+                        </div>
+                        <!-- KPI 4 -->
+                        <div
+                            class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
+                            <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Coverage</div>
+                            <div class="relative w-full h-10 mb-2">
+                                <div
+                                    class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[10%] left-[10%] animate-pulse bg-scheme-secondary text-scheme-secondary">
+                                </div>
+                                <div class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[60%] left-[80%] animate-pulse bg-scheme-secondary text-scheme-secondary"
+                                    style="animation-delay: 0.5s;"></div>
+                                <div class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[80%] left-[20%] animate-pulse bg-scheme-secondary text-scheme-secondary"
+                                    style="animation-delay: 1s;"></div>
+                            </div>
+                            <div
+                                class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                Visibility</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-[11px] text-white/40 text-center">
 
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -434,15 +429,15 @@
         <div class="relative max-w-7xl mx-auto">
             <div class="reveal-up text-center mb-16">
                 <h2 class="text-3xl md:text-4xl mb-6 tracking-tight font-light leading-tight">
-                    Ransomware: El final de tu
+                    Ransomware: The end of your
                     <span
                         class="bg-gradient-to-r from-scheme-primary to-scheme-secondary bg-clip-text text-transparent font-bold">
-                        continuidad operativa
+                        operational continuity
                     </span>
                 </h2>
                 <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                    El 70% de las empresas atacadas quedan paralizadas por días. Sin respuesta autónoma, tu empresa no
-                    es segura: es el próximo objetivo.
+                    70% of attacked companies stay paralyzed for days. Without autonomous response, your company is not
+                    secure: it's the next target.
                 </p>
             </div>
 
@@ -463,19 +458,19 @@
                             onerror="this.src='https://images.unsplash.com/photo-1614064641936-38998970c926?auto=format&fit=crop&q=80'" />
                     </div>
 
-                    <h3 class="text-2xl font-semibold mb-6">La realidad del ataque</h3>
+                    <h3 class="text-2xl font-semibold mb-6">The reality of the attack</h3>
                     <ul class="space-y-4 text-lg text-white/80">
                         <li class="flex items-start gap-4"><i data-lucide="alert-triangle"
-                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Crisis operativa
-                                inmediata</span></li>
+                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Immediate operational
+                                crisis</span></li>
                         <li class="flex items-start gap-4"><i data-lucide="database-zap"
-                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Fuga de datos y extorsión</span>
+                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Data leak and extortion</span>
                         </li>
                         <li class="flex items-start gap-4"><i data-lucide="trending-down"
-                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Costos de quiebra</span></li>
+                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Bankruptcy costs</span></li>
                         <li class="flex items-start gap-4"><i data-lucide="shield-off"
-                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>AV Tradicional: Inútil
-                                hoy</span></li>
+                                class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Traditional AV: Useless
+                                today</span></li>
                     </ul>
                 </div>
 
@@ -1471,13 +1466,12 @@
                                     <button
                                         class="w-full py-4 rounded-full text-white font-bold text-lg shadow-[0_15px_40px_rgba(0,217,255,0.3)] hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,217,255,0.4)] transition-all duration-300 active:scale-95"
                                         style="background: linear-gradient(135deg, var(--primary), #06B6D4);">
-                                        Enviar Solicitud
+                                        Send Request
                                     </button>
 
                                     <p class="text-sm text-white/50 text-center mt-4 leading-relaxed px-4">
-                                        Al enviar este formulario, aceptas que SentinelOne trate tus datos personales de
-                                        acuerdo con su Política de Privacidad. Puedes retirar tu consentimiento en
-                                        cualquier momento.
+                                        By sending this form, you agree that SentinelOne treats your personal data
+                                        according to its Privacy Policy. You can withdraw your consent at any time.
                                     </p>
                                 </div>
                             </form>
