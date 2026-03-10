@@ -231,23 +231,34 @@
 
 <body class="min-h-screen">
     <script>
-            // Language Detection and Redirection Logic
-            (function () {
-                // Check if the user has manually selected a language preference in this session
-                const manualLang = sessionStorage.getItem('manualLang');
+        // IP-Based Geolocation and Redirection Logic (IP-API.com)
+        async function detectLanguageAndRedirect() {
+            const manualLang = sessionStorage.getItem('manualLang');
+            if (manualLang) return; // User made a choice, don't auto-redirect
 
-                // Get browser language
-                const browserLang = navigator.language || navigator.userLanguage;
-                const isEnglish = browserLang.startsWith('en');
+            try {
+                const response = await fetch('http://ip-api.com/json/');
+                const data = await response.json();
 
-                // Only redirect if no manual choice has been made
-                if (!manualLang && isEnglish) {
-                    // Redirect to English page if on Spanish page
+                // Redirigir si no es un país hispanohablante
+                const spanishSpeakingCountries = ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'];
+
+                if (data.status === 'success' && !spanishSpeakingCountries.includes(data.countryCode)) {
                     if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
                         window.location.href = 'index-ingles.html';
                     }
                 }
-            })();
+            } catch (error) {
+                // Fallback to browser language if API fails
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang.startsWith('en')) {
+                    if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+                        window.location.href = 'index-ingles.html';
+                    }
+                }
+            }
+        }
+        detectLanguageAndRedirect();
     </script>
 
     <!-- SELECTOR DE TIPOGRAFÍAS (Colapsable) -->

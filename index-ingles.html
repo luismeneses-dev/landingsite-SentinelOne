@@ -231,22 +231,34 @@
 
 <body class="min-h-screen">
     <script>
-            // Language Detection and Redirection Logic (EN)
-            (function () {
-                // Check if the user has manually selected a language preference
-                const manualLang = sessionStorage.getItem('manualLang');
+        // IP-Based Geolocation and Redirection Logic (EN -> ES)
+        async function detectLanguageAndRedirect() {
+            const manualLang = sessionStorage.getItem('manualLang');
+            if (manualLang) return;
 
-                // Get browser language
-                const browserLang = navigator.language || navigator.userLanguage;
-                const isSpanish = browserLang.startsWith('es');
+            try {
+                const response = await fetch('http://ip-api.com/json/');
+                const data = await response.json();
 
-                // Only redirect if no manual choice has been made
-                if (!manualLang && isSpanish) {
+                // Redirigir a español si el país es hispanohablante
+                const spanishSpeakingCountries = ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'];
+
+                if (data.status === 'success' && spanishSpeakingCountries.includes(data.countryCode)) {
                     if (window.location.pathname.endsWith('index-ingles.html')) {
                         window.location.href = 'index.html';
                     }
                 }
-            })();
+            } catch (error) {
+                // Fallback to browser language
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang.startsWith('es')) {
+                    if (window.location.pathname.endsWith('index-ingles.html')) {
+                        window.location.href = 'index.html';
+                    }
+                }
+            }
+        }
+        detectLanguageAndRedirect();
     </script>
 
     <!-- SELECTOR DE TIPOGRAFÍAS (Colapsable) -->
