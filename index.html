@@ -830,7 +830,7 @@
     <section class="relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0">
-            <!-- Cyber Puma Head: Guardian de Fondo (Sustituye a la silueta anterior) -->
+            <!-- Cyber Puma Head: Guardian de Fondo -->
             <div
                 class="absolute xl:-left-[35%] 2xl:-left-[40%] top-1/2 -translate-y-1/2 w-[900px] pointer-events-none reveal-left hidden xl:flex items-center justify-center opacity-70">
                 <div class="relative w-full">
@@ -842,8 +842,14 @@
                 </div>
             </div>
 
+            <!-- Resplandor Morado Normalizado (Copiado de la sección de abajo) -->
+            <div class="absolute inset-0 opacity-10"
+                style="background: radial-gradient(circle at center, var(--secondary) 0%, transparent 80%); filter: blur(120px);">
+            </div>
+
+            <!-- Grid Sutil Normalizado -->
             <div
-                class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(139,92,246,0.15),transparent_70%)] opacity-40">
+                class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px]">
             </div>
 
             <div
@@ -866,8 +872,8 @@
                 </p>
             </div>
 
-            <div class="reveal-scale overflow-x-auto rounded-3xl border bg-white/[0.03] backdrop-blur-xl"
-                style="border-color: rgba(255,255,255,0.15);">
+            <div class="reveal-scale overflow-x-auto rounded-3xl border bg-white/[0.02] backdrop-blur-md"
+                style="border-color: rgba(255,255,255,0.1);">
                 <table class="w-full min-w-[700px] text-left border-collapse border-hidden">
                     <thead>
                         <tr class="bg-white/[0.08]">
@@ -963,10 +969,10 @@
 
         <div class="relative z-10 max-w-6xl mx-auto w-full">
             <div class="reveal-up text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-6 leading-tight">
+                <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-6 leading-tight text-white">
                     El nivel de protección que tu <span class="text-scheme-secondary font-bold">empresa requiere</span>
                 </h2>
-                <p class="text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
                     Desde protección endpoint esencial hasta visibilidad forense completa y caza de amenazas activa.
                 </p>
             </div>
@@ -1168,11 +1174,11 @@
         </div>
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <!-- New Full Section Background -->
-            <div class="absolute inset-0 w-full h-full bg-cover bg-center brightness-[0.4] contrast-[1.1]"
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center brightness-[0.8] contrast-[1.05]"
                 style="background-image: url('./public/images/universal_upscale_0_9e00dc8e-af3c-45f5-a531-c4826933abfb_0.jpg');">
             </div>
             <!-- Vignette for depth and contrast -->
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)] opacity-60">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)] opacity-30">
             </div>
             <!-- Top/Bottom feathered edges for smooth transition -->
             <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent"></div>
