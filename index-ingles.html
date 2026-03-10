@@ -376,7 +376,7 @@
                 </div>
 
                 <div class="reveal-up delay-500 w-full max-w-4xl" style="perspective: 1000px;">
-                    <div class="relative p-6 rounded-2xl border backdrop-blur-md overflow-hidden"
+                    <div class="relative p-8 rounded-[2.5rem] border backdrop-blur-md overflow-hidden"
                         style="border-color: rgba(0,217,255,0.3); box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
                         <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-screen"
                             style="background-image: url('./public/images/A futuristic cyber network bathed in a soft dreamy atmosphere with bright vibrant colors, where a glowing artificial intelligence wave neutralizes incoming red threat signals across a digital infrastructure, .jpg'); filter: blur(3px);">
@@ -386,51 +386,57 @@
                             <!-- KPI 1 -->
                             <div class="p-4 rounded-xl border flex flex-col items-center justify-center bg-black/40"
                                 style="border-color: rgba(0,217,255,0.5); box-shadow: 0 0 20px rgba(0,217,255,0.2);">
-                                Containment</div>
-                        </div>
-                        <!-- KPI 2 -->
-                        <div
-                            class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
-                            <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Impact</div>
-                            <div class="flex items-end gap-1 h-10 mb-2">
-                                <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 40%;"></div>
-                                <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 80%;"></div>
-                                <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 60%;"></div>
-                                <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 100%;"></div>
-                                <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 30%;"></div>
-                            </div>
-                            <div
-                                class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
-                                ↓ Incidents</div>
-                        </div>
-                        <!-- KPI 3 -->
-                        <div
-                            class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
-                            <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Resilience</div>
-                            <div class="flex items-center gap-3 mb-2">
-                                <i data-lucide="file-text" class="w-8 h-8 text-white/80"></i>
-                                <i data-lucide="refresh-cw" class="w-8 h-8 animate-spin-slow text-scheme-primary"></i>
-                            </div>
-                            <div
-                                class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
-                                Rollback OK</div>
-                        </div>
-                        <!-- KPI 4 -->
-                        <div
-                            class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
-                            <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Coverage</div>
-                            <div class="relative w-full h-10 mb-2">
+                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Threats</div>
+                                <i data-lucide="shield-check" class="w-10 h-10 mb-2 text-scheme-primary"></i>
                                 <div
-                                    class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[10%] left-[10%] animate-pulse bg-scheme-secondary text-scheme-secondary">
-                                </div>
-                                <div class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[60%] left-[80%] animate-pulse bg-scheme-secondary text-scheme-secondary"
-                                    style="animation-delay: 0.5s;"></div>
-                                <div class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[80%] left-[20%] animate-pulse bg-scheme-secondary text-scheme-secondary"
-                                    style="animation-delay: 1s;"></div>
+                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                    Containment</div>
                             </div>
+                            <!-- KPI 2 -->
                             <div
-                                class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
-                                Visibility</div>
+                                class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
+                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Impact</div>
+                                <div class="flex items-end gap-1 h-10 mb-2">
+                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 40%;"></div>
+                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 80%;"></div>
+                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 60%;"></div>
+                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 100%;"></div>
+                                    <div class="w-1.5 rounded-full bg-scheme-secondary" style="height: 30%;"></div>
+                                </div>
+                                <div
+                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                    ↓ Incidents</div>
+                            </div>
+                            <!-- KPI 3 -->
+                            <div
+                                class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
+                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Resilience</div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <i data-lucide="file-text" class="w-8 h-8 text-white/80"></i>
+                                    <i data-lucide="refresh-cw"
+                                        class="w-8 h-8 animate-spin-slow text-scheme-primary"></i>
+                                </div>
+                                <div
+                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                    Rollback OK</div>
+                            </div>
+                            <!-- KPI 4 -->
+                            <div
+                                class="p-4 rounded-xl border border-white/10 flex flex-col items-center justify-center bg-black/40">
+                                <div class="text-xs uppercase tracking-wider text-white/60 mb-2">Coverage</div>
+                                <div class="relative w-full h-10 mb-2">
+                                    <div
+                                        class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[10%] left-[10%] animate-pulse bg-scheme-secondary text-scheme-secondary">
+                                    </div>
+                                    <div class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[60%] left-[80%] animate-pulse bg-scheme-secondary text-scheme-secondary"
+                                        style="animation-delay: 0.5s;"></div>
+                                    <div class="absolute w-2 h-2 rounded-full shadow-[0_0_8px] top-[80%] left-[20%] animate-pulse bg-scheme-secondary text-scheme-secondary"
+                                        style="animation-delay: 1s;"></div>
+                                </div>
+                                <div
+                                    class="text-2xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
+                                    Visibility</div>
+                            </div>
                         </div>
                     </div>
                     <div class="mt-4 text-[11px] text-white/40 text-center">
@@ -478,7 +484,7 @@
                     <div
                         class="relative w-full h-48 mb-8 rounded-xl overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
                         <div class="absolute inset-0 z-10" style="box-shadow: inset 0 0 40px black;"></div>
-                        <img src="./public/images/threat.png" alt="Empresa vulnerada"
+                        <img src="./public/images/threat.png" alt="Compromised company"
                             class="w-full h-full object-cover filter grayscale contrast-125"
                             style="mask-image: radial-gradient(circle, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(circle, black 30%, transparent 80%);"
                             onerror="this.src='https://images.unsplash.com/photo-1614064641936-38998970c926?auto=format&fit=crop&q=80'" />
@@ -510,26 +516,26 @@
                     <div
                         class="relative w-full h-48 mb-8 rounded-xl overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
                         <div class="absolute inset-0 z-10" style="box-shadow: inset 0 0 40px black;"></div>
-                        <img src="./public/images/safe.png" alt="Empresa protegida"
+                        <img src="./public/images/safe.png" alt="Protected company"
                             class="w-full h-full object-cover filter contrast-125"
                             style="mask-image: radial-gradient(circle, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(circle, black 30%, transparent 80%);"
                             onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80'" />
                     </div>
 
-                    <h3 class="text-2xl font-semibold mb-6">El blindaje definitivo</h3>
+                    <h3 class="text-2xl font-semibold mb-6">The Ultimate Shield</h3>
                     <ul class="space-y-4 text-lg text-white/80">
                         <li class="flex items-start gap-4"><i data-lucide="zap"
-                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Contención en
-                                milisegundos</span></li>
+                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Milliseconds
+                                Containment</span></li>
                         <li class="flex items-start gap-4"><i data-lucide="shield"
-                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Cero superficie de
-                                ataque</span></li>
+                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Zero Attack
+                                Surface</span></li>
                         <li class="flex items-start gap-4"><i data-lucide="eye"
-                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Control y visibilidad
-                                total</span></li>
+                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Total Control &
+                                Visibility</span></li>
                         <li class="flex items-start gap-4"><i data-lucide="history"
-                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Rollback: Regreso
-                                seguro</span></li>
+                                class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Rollback: Secure
+                                Recovery</span></li>
                     </ul>
                 </div>
             </div>
@@ -564,15 +570,15 @@
                         alt="SentinelOne" class="h-10 filter brightness-0 invert" />
                 </div>
                 <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-8 leading-tight">
-                    ¿Qué es <span class="font-bold text-scheme-primary">SentinelOne</span>?
+                    What is <span class="font-bold text-scheme-primary">SentinelOne</span>?
                 </h2>
                 <div
                     class="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold mb-6 tracking-wider">
-                    VELOCIDAD DE RESPUESTA AUTÓNOMA
+                    AUTONOMOUS RESPONSE SPEED
                 </div>
                 <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
-                    El depredador definitivo que no solo detecta, <span class="text-purple-400">caza</span> las
-                    amenazas. Dando protección a tus endpoints.
+                    The ultimate predator that doesn't just detect, it <span class="text-purple-400">hunts</span>
+                    threats, providing protection to your endpoints.
                 </p>
             </div>
 
@@ -588,10 +594,10 @@
                             class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
                             <i data-lucide="brain" class="w-7 h-7 text-scheme-primary"></i>
                         </div>
-                        <h3 class="text-xl mb-3 font-medium">IA y comportamiento</h3>
+                        <h3 class="text-xl mb-3 font-medium">AI & Behavior</h3>
                         <p
                             class="text-white/80 leading-relaxed text-base md:text-lg transition-colors group-hover:text-white">
-                            Detecta amenazas conocidas y desconocidas con análisis de comportamiento.
+                            Detects known and unknown threats with real-time behavioral analysis.
                         </p>
                     </div>
                 </div>
@@ -606,10 +612,10 @@
                             class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
                             <i data-lucide="zap" class="w-7 h-7 text-scheme-primary"></i>
                         </div>
-                        <h3 class="text-xl mb-3 font-medium">Respuesta autónoma</h3>
+                        <h3 class="text-xl mb-3 font-medium">Autonomous Response</h3>
                         <p
                             class="text-white/80 leading-relaxed text-base md:text-lg transition-colors group-hover:text-white">
-                            Contiene el ataque sin depender de acciones manuales en el momento crítico.
+                            Contains the attack without relying on manual actions at the critical moment.
                         </p>
                     </div>
                 </div>
@@ -624,10 +630,10 @@
                             class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10">
                             <i data-lucide="cpu" class="w-7 h-7 text-scheme-primary"></i>
                         </div>
-                        <h3 class="text-xl mb-3 font-medium">Agente super ligero</h3>
+                        <h3 class="text-xl mb-3 font-medium">Ultra-light Agent</h3>
                         <p class="text-white/80 leading-relaxed text-base">
-                            Singularity Agent corre de forma fluida y silenciosa en Windows, Linux y macOS sin impactar
-                            el rendimiento.
+                            Singularity Agent runs smoothly and silently on Windows, Linux, and macOS without impacting
+                            performance.
                         </p>
                     </div>
                 </div>
@@ -642,10 +648,10 @@
                             class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
                             <i data-lucide="search" class="w-7 h-7 text-scheme-primary"></i>
                         </div>
-                        <h3 class="text-xl mb-3 font-medium">Visibilidad centralizada</h3>
+                        <h3 class="text-xl mb-3 font-medium">Centralized Visibility</h3>
                         <p
                             class="text-white/80 leading-relaxed text-base md:text-lg transition-colors group-hover:text-white">
-                            Inventario, actividad y trazabilidad en endpoints, servidores y cloud.
+                            Inventory, activity, and traceability across endpoints, servers, and cloud.
                         </p>
                     </div>
                 </div>
@@ -690,7 +696,7 @@
                 </div>
 
                 <h2 class="text-3xl md:text-4xl font-light tracking-tight max-w-3xl mx-auto mb-6 leading-tight">
-                    ¿Por qué conformarte con alertas, si puedes tener resiliencia absoluta?
+                    Why settle for alerts, when you can have absolute resilience?
                 </h2>
             </div>
 
@@ -699,25 +705,25 @@
                 <div class="reveal-left flex flex-col items-start md:items-center text-left md:text-left">
                     <div class="w-full">
                         <h3 class="text-2xl font-medium mb-8 flex items-center gap-3">
-                            <i data-lucide="layers" class="w-8 h-8 text-scheme-secondary"></i> Entrega técnica
+                            <i data-lucide="layers" class="w-8 h-8 text-scheme-secondary"></i> Technical Delivery
                         </h3>
                         <ul class="space-y-6 text-lg text-white/80">
                             <li class="flex items-start gap-4"><i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Despliegue ágil en
-                                    cada
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Agile deployment on
+                                    every
                                     endpoint</span></li>
                             <li class="flex items-start gap-4"><i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Políticas
-                                    optimizadas
-                                    desde el día 1</span></li>
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Optimized
+                                    policies
+                                    from day 1</span></li>
                             <li class="flex items-start gap-4"><i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Integración total
-                                    con
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Full integration
+                                    with
                                     SIEM/SOC</span></li>
                             <li class="flex items-start gap-4"><i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Playbooks de
-                                    respuesta
-                                    a medida</span></li>
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Tailored
+                                    response
+                                    playbooks</span></li>
                         </ul>
                     </div>
                 </div>
@@ -725,33 +731,31 @@
                 <div class="reveal-right flex flex-col items-start md:items-center text-left md:text-left">
                     <div class="w-full">
                         <h3 class="text-2xl font-medium mb-8 flex items-center gap-3">
-                            <i data-lucide="shield" class="w-8 h-8 text-scheme-primary"></i> Resiliencia Operativa
+                            <i data-lucide="shield" class="w-8 h-8 text-scheme-primary"></i> Operational Resilience
                         </h3>
                         <ul class="space-y-6 text-lg text-white/80">
                             <li class="flex items-start gap-4"><i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Recuperación
-                                    automática
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Automatic
+                                    recovery
                                     (Rollback)</span></li>
                             <li class="flex items-start gap-4"><i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>RTO/RPO medido en
-                                    minutos</span></li>
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>RTO/RPO measured in
+                                    minutes</span></li>
                             <li class="flex items-start gap-4"><i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Simulacros de ataque
-                                    de
-                                    alto impacto</span></li>
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>High-impact attack
+                                    simulations</span></li>
                             <li class="flex items-start gap-4"><i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Capacitación experta
-                                    para
-                                    tu equipo TI</span></li>
+                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Expert training for
+                                    your TI team</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="reveal-up mt-8 p-6 text-center text-lg">
-                <b class="font-semibold text-white">Tu tranquilidad no es opcional: </b>
-                <span class="text-white/70">Pasamos de la detección a la respuesta automática. <b
-                        class="text-[#00D9FF]">Tu operación no se detendrá.</b></span>
+                <b class="font-semibold text-white">Your peace of mind is not optional: </b>
+                <span class="text-white/70">We move from detection to automatic response. <b class="text-[#00D9FF]">Your
+                        operation will not stop.</b></span>
             </div>
         </div>
     </section>
@@ -768,11 +772,12 @@
 
         <div class="relative z-10 max-w-7xl mx-auto">
             <div class="reveal-up mb-16">
-                <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 leading-tight">Blindaje diseñado para tu
-                    industria</h2>
+                <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 leading-tight">Shielding designed for
+                    your
+                    industry</h2>
                 <p class="text-xl md:text-2xl text-white/90 max-w-4xl leading-relaxed">
-                    No creemos en soluciones genéricas. Cada sector tiene vulnerabilidades únicas que nosotros
-                    interceptamos.
+                    We don't believe in generic solutions. Each sector has unique vulnerabilities that we
+                    intercept.
                 </p>
             </div>
 
@@ -791,20 +796,19 @@
 
                     <div class="relative z-20 flex flex-col h-full">
                         <i data-lucide="factory" class="w-12 h-12 mb-6 text-scheme-secondary"></i>
-                        <h3 class="text-2xl font-medium mb-4">Industria y Manufactura</h3>
+                        <h3 class="text-2xl font-medium mb-4">Industry & Manufacturing</h3>
                         <p class="text-lg text-white/90 flex-grow mb-8 font-medium">
-                            <!-- Texto un poco más grueso para leerse mejor sobre imagen -->
-                            Aseguramos continuidad en plantas de producción y servidores críticos contra paros
-                            operativos letales.
+                            We ensure continuity in production plants and critical servers against lethal operational
+                            shutdowns.
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span
                                 class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">OT/IT</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Cero
-                                Paros</span>
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Zero
+                                Downtime</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Segmentación</span>
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Segmentation</span>
                         </div>
                     </div>
                 </div>
@@ -823,18 +827,17 @@
 
                     <div class="relative z-20 flex flex-col h-full">
                         <i data-lucide="landmark" class="w-12 h-12 mb-6 text-scheme-primary"></i>
-                        <h3 class="text-2xl font-medium mb-4">Servicios Financieros</h3>
+                        <h3 class="text-2xl font-medium mb-4">Financial Services</h3>
                         <p class="text-lg text-white/90 flex-grow mb-8 font-medium">
-                            <!-- Texto un poco más grueso para leerse mejor sobre imagen -->
-                            Máxima trazabilidad, cumplimiento regulatorio y políticas estrictas para la banca moderna.
+                            Maximum traceability, regulatory compliance, and strict policies for modern banking.
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span
-                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Cumplimiento</span>
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Compliance</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Auditoría</span>
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Auditing</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Visibilidad</span>
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Visibility</span>
                         </div>
                     </div>
                 </div>
@@ -853,19 +856,17 @@
 
                     <div class="relative z-20 flex flex-col h-full">
                         <i data-lucide="building-2" class="w-12 h-12 mb-6 text-white"></i>
-                        <h3 class="text-2xl font-medium mb-4">Corporativos Locales</h3>
+                        <h3 class="text-2xl font-medium mb-4">Local Corporates</h3>
                         <p class="text-lg text-white/90 flex-grow mb-8 font-medium">
-                            <!-- Texto un poco más grueso para leerse mejor sobre imagen -->
-                            Plataforma unificada que reduce drásticamente la carga operativa sin requerir un SOC
-                            gigante.
+                            Unified platform that drastically reduces operational burden without requiring a giant SOC.
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span
-                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Automatizado</span>
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Automated</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Ligero</span>
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Lightweight</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Rápido</span>
+                                class="px-3 py-1.5 rounded-full text-xs font-medium border border-white/30 bg-black/20 text-white">Fast</span>
                         </div>
                     </div>
                 </div>
@@ -911,11 +912,11 @@
                 <img src="https://www.sentinelone.com/wp-content/themes/sentinelone/assets/svg/header-logo-dark.svg"
                     alt="SentinelOne" class="h-6 mx-auto mb-6 filter brightness-0 invert opacity-60" />
                 <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-6 leading-tight text-white">
-                    ¿Aún usas tecnología del pasado?
+                    Still using technology from the past?
                 </h2>
                 <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                    Compara el antivirus tradicional que ya ha fallado, contra la plataforma que detiene ataques en
-                    milisegundos.
+                    Compare traditional antivirus that has already failed, against the platform that stops attacks in
+                    milliseconds.
                 </p>
             </div>
 
@@ -925,10 +926,10 @@
                     <thead>
                         <tr class="bg-white/[0.08]">
                             <th class="px-8 py-6 text-xl font-bold text-white border-b border-white/20 w-1/3">
-                                Capacidad</th>
+                                Capability</th>
                             <th
                                 class="px-8 py-6 text-xl font-bold text-white border-b border-white/20 w-1/3 text-center">
-                                Antivirus tradicional</th>
+                                Traditional Antivirus</th>
                             <th class="px-8 py-6 text-xl font-black border-b w-1/3 text-center"
                                 style="background-color: rgba(0,217,255,0.15); border-color: rgba(0,217,255,0.4); color: white; border-left: 1px solid rgba(0,217,255,0.4);">
                                 SentinelOne
@@ -952,46 +953,46 @@
                             </td>
                         </tr>
                         <tr class="border-b border-white/5 hover:bg-white/[0.04] transition-colors">
-                            <td class="px-8 py-6 text-white font-medium">Respuesta Autónoma sin Humanos</td>
+                            <td class="px-8 py-6 text-white font-medium">Autonomous Response without Humans</td>
                             <td class="px-8 py-6 text-center text-white/90">
                                 <span class="flex items-center justify-center gap-2">
-                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Requiere intervención
+                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Requires intervention
                                 </span>
                             </td>
                             <td class="px-8 py-6 text-center font-black"
                                 style="background-color: rgba(0,217,255,0.08); border-left: 1px solid rgba(0,217,255,0.4);">
                                 <span class="flex items-center justify-center gap-2">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> En
-                                    Milisegundos
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> In
+                                    Milliseconds
                                 </span>
                             </td>
                         </tr>
                         <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                            <td class="px-8 py-6 text-white/80">Rollback: Restauración post-ataque</td>
+                            <td class="px-8 py-6 text-white/80">Rollback: Post-attack restoration</td>
                             <td class="px-8 py-6 text-center text-white/60">
                                 <span class="flex items-center justify-center gap-2">
-                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Inexistente
+                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Non-existent
                                 </span>
                             </td>
                             <td class="px-8 py-6 text-center font-bold"
                                 style="background-color: rgba(0,217,255,0.05); border-left: 1px solid rgba(0,217,255,0.3);">
                                 <span class="flex items-center justify-center gap-2">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> One-Click
-                                    Integrado
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> Integrated
+                                    One-Click
                                 </span>
                             </td>
                         </tr>
                         <tr class="hover:bg-white/[0.02] transition-colors">
-                            <td class="px-8 py-6 text-white/80">Visibilidad Forense Centralizada</td>
+                            <td class="px-8 py-6 text-white/80">Centralized Forensic Visibility</td>
                             <td class="px-8 py-6 text-center text-white/60">
                                 <span class="flex items-center justify-center gap-2">
-                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Fragmentada
+                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Fragmented
                                 </span>
                             </td>
                             <td class="px-8 py-6 text-center font-bold rounded-br-3xl"
                                 style="background-color: rgba(0,217,255,0.05); border-left: 1px solid rgba(0,217,255,0.3);">
                                 <span class="flex items-center justify-center gap-2">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> Absoluta
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary"></i> Absolute
                                     (Storyline)
                                 </span>
                             </td>
@@ -1017,10 +1018,10 @@
         <div class="relative z-10 max-w-6xl mx-auto w-full">
             <div class="reveal-up text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-6 leading-tight text-white">
-                    El nivel de protección que tu <span class="text-scheme-secondary font-bold">empresa requiere</span>
+                    The level of protection your <span class="text-scheme-secondary font-bold">company requires</span>
                 </h2>
                 <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                    Desde protección endpoint esencial hasta visibilidad forense completa y caza de amenazas activa.
+                    From essential endpoint protection to complete forensic visibility and active threat hunting.
                 </p>
             </div>
 
@@ -1030,7 +1031,7 @@
                     <thead>
                         <tr class="bg-white/[0.05]">
                             <th class="px-6 py-6 text-lg font-medium text-white/90 border-b border-white/10 w-1/4">
-                                Funcionalidad</th>
+                                Functionality</th>
                             <th
                                 class="px-6 py-6 text-lg font-medium text-white/90 border-b border-white/10 w-1/4 text-center">
                                 Singularity <br /> <span class="text-white font-bold">Core</span></th>
@@ -1053,8 +1054,8 @@
                                     data-lucide="check" class="w-6 h-6 text-scheme-secondary mx-auto"></i></td>
                         </tr>
                         <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                            <td class="px-6 py-8 text-white/80 font-medium">Controles EPP Avanzados (Control de
-                                Dispositivos y Firewall, Remote Shell)</td>
+                            <td class="px-6 py-8 text-white/80 font-medium">Advanced EPP Controls (Device and Firewall
+                                Control, Remote Shell)</td>
                             <td class="px-6 py-8 text-center text-white/20">—</td>
                             <td class="px-6 py-8 text-center"><i data-lucide="check"
                                     class="w-6 h-6 text-scheme-primary mx-auto"></i></td>
@@ -1091,12 +1092,12 @@
         <div class="relative z-20 max-w-7xl mx-auto">
             <div class="reveal-up text-center mb-24">
                 <h2 class="text-3xl md:text-4xl font-light tracking-tight max-w-3xl mx-auto mb-6 leading-tight">
-                    Singularity Platform: <span class="text-scheme-primary font-bold">Ciberseguridad
-                        Inteligente</span>
+                    Singularity Platform: <span class="text-scheme-primary font-bold">Intelligent
+                        Cybersecurity</span>
                 </h2>
                 <p class="text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed font-light">
-                    SentinelOne Singularity unifica protección y respuesta mediante inteligencia artificial
-                    multinivel nítida y precisa.
+                    SentinelOne Singularity unifies protection and response through clear and precise multi-layer
+                    artificial intelligence.
                 </p>
             </div>
 
@@ -1123,8 +1124,8 @@
                                     <div
                                         class="w-3 h-3 rounded-full bg-scheme-primary animate-pulse shadow-[0_0_10px_rgba(0,217,255,0.8)]">
                                     </div>
-                                    <span class="text-xs uppercase tracking-[0.25em] font-bold text-white">Arquitectura
-                                        Multinivel Activa de SentinelOne</span>
+                                    <span class="text-xs uppercase tracking-[0.25em] font-bold text-white">SentinelOne
+                                        Active Multi-layer Architecture</span>
                                 </div>
                             </div>
                         </div>
@@ -1143,10 +1144,10 @@
                                         class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
                                         <i data-lucide="shield-check" class="w-5 h-5 text-scheme-primary"></i>
                                     </div>
-                                    <h3 class="text-lg font-semibold">IA Estática</h3>
+                                    <h3 class="text-lg font-semibold">Static AI</h3>
                                 </div>
-                                <p class="text-white/40 text-sm leading-relaxed">Protección de pre-ejecución
-                                    inmediata ante malware conocido y desconocido.</p>
+                                <p class="text-white/40 text-sm leading-relaxed">Immediate pre-execution protection
+                                    against known and unknown malware.</p>
                             </div>
 
                             <div
@@ -1156,10 +1157,10 @@
                                         class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
                                         <i data-lucide="brain-circuit" class="w-5 h-5 text-scheme-primary"></i>
                                     </div>
-                                    <h3 class="text-lg font-semibold">IA Comportamental</h3>
+                                    <h3 class="text-lg font-semibold">Behavioral AI</h3>
                                 </div>
-                                <p class="text-white/40 text-sm leading-relaxed">Monitoreo de procesos vivos
-                                    para detener ransomware en plena acción.</p>
+                                <p class="text-white/40 text-sm leading-relaxed">Live process monitoring to stop
+                                    ransomware in action.</p>
                             </div>
 
                             <div
@@ -1169,10 +1170,10 @@
                                         class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
                                         <i data-lucide="rotate-ccw" class="w-5 h-5 text-scheme-primary"></i>
                                     </div>
-                                    <h3 class="text-lg font-semibold">Rollback Activo</h3>
+                                    <h3 class="text-lg font-semibold">Active Rollback</h3>
                                 </div>
-                                <p class="text-white/40 text-sm leading-relaxed">Reversión automática con un
-                                    solo clic de cualquier daño causado al endpoint.</p>
+                                <p class="text-white/40 text-sm leading-relaxed">Automated one-click restoration of any
+                                    damage caused to the endpoint.</p>
                             </div>
 
                             <div class="grid grid-cols-2 gap-4">
@@ -1180,19 +1181,19 @@
                                     class="p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-scheme-primary/30 transition-all duration-500">
                                     <div class="flex items-center gap-3 mb-2">
                                         <i data-lucide="network" class="w-4 h-4 text-scheme-primary"></i>
-                                        <h4 class="text-sm font-semibold">Control de Dispositivos</h4>
+                                        <h4 class="text-sm font-semibold">Device Control</h4>
                                     </div>
-                                    <p class="text-[11px] text-white/30 leading-tight">Gestiona políticas de red y
-                                        periféricos autorizados.</p>
+                                    <p class="text-[11px] text-white/30 leading-tight">Manage network policies and
+                                        authorized peripherals.</p>
                                 </div>
                                 <div
                                     class="p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-scheme-primary/30 transition-all duration-500">
                                     <div class="flex items-center gap-3 mb-2">
                                         <i data-lucide="scan" class="w-4 h-4 text-scheme-primary"></i>
-                                        <h4 class="text-sm font-semibold">Ranger (Visibilidad)</h4>
+                                        <h4 class="text-sm font-semibold">Ranger (Visibility)</h4>
                                     </div>
-                                    <p class="text-[11px] text-white/30 leading-tight">Identifica dispositivos no
-                                        gestionados en la red.</p>
+                                    <p class="text-[11px] text-white/30 leading-tight">Identifies unmanaged devices on
+                                        the network.</p>
                                 </div>
                             </div>
                         </div>
@@ -1203,9 +1204,9 @@
                                 <i data-lucide="zap" class="w-20 h-20 text-scheme-primary"></i>
                             </div>
                             <p class="text-white/80 text-lg leading-relaxed relative z-10">
-                                <b class="text-white font-bold italic block mb-2">Visibilidad Storyline™</b>
-                                Contexto absoluto que conecta cada punto de la red automáticamente para una
-                                respuesta sin humanos.
+                                <b class="text-white font-bold italic block mb-2">Storyline™ Visibility</b>
+                                Absolute context that automatically connects every point of the network for autonomous
+                                response.
                             </p>
                         </div>
                     </div>
@@ -1235,12 +1236,12 @@
         <div class="relative z-10 max-w-7xl mx-auto w-full">
 
             <h2 class="text-4xl md:text-6xl font-light tracking-tight mb-8 leading-tight">
-                Ventajas de <br />
+                Advantages of <br />
                 <span class="font-bold text-scheme-primary">Faroprotec</span> +
                 <span class="text-scheme-secondary font-bold">SentinelOne</span>
             </h2>
             <p class="text-2xl text-white/90 leading-relaxed border-l-2 border-scheme-primary/30 pl-6 py-2">
-                Acompañamiento experto y soporte humano en cada fase de tu ciber-resiliencia.
+                Expert guidance and human support in every phase of your cyber-resilience.
             </p>
 
             <!-- Dashboard Interactivo (Split Layout) -->
@@ -1258,27 +1259,26 @@
                                 <i data-lucide="headphones" class="w-7 h-7 text-scheme-primary"></i>
                             </div>
                             <div class="flex-grow">
-                                <h3 class="text-3xl font-medium text-white">Servicio Post-Adquisición</h3>
-                                <p class="text-white/60 text-base">Soporte humano 24/7</p>
+                                <h3 class="text-3xl font-medium text-white">Post-Acquisition Service</h3>
+                                <p class="text-white/60 text-base">24/7 Human Support</p>
                             </div>
                             <i data-lucide="chevron-down" class="w-8 h-8 text-white/20"></i>
                         </div>
                         <div class="advantage-content pt-4 border-t border-white/5 pb-2">
                             <p class="text-white/70 leading-relaxed mb-6">
-                                Nuestro compromiso no termina con la licencia. Faroprotec se integra con tu equipo de TI
-                                para la gestión diaria y respuesta ante incidentes, asegurando que nunca enfrentes una
-                                amenaza solo.
+                                Our commitment does not end with the license. Faroprotec integrates with your IT team
+                                for daily management and incident response, ensuring you never face a threat alone.
                             </p>
                             <!-- Mini Metrics integrated -->
                             <div class="flex gap-8">
                                 <div>
                                     <div class="text-2xl font-bold text-scheme-primary">&lt;15 min</div>
-                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Respuesta Crítica
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Critical Response
                                     </div>
                                 </div>
                                 <div>
                                     <div class="text-2xl font-bold text-white">98%</div>
-                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Retención Anual
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Annual Retention
                                     </div>
                                 </div>
                             </div>
@@ -1294,26 +1294,26 @@
                                 <i data-lucide="shield-check" class="w-7 h-7 text-scheme-secondary"></i>
                             </div>
                             <div class="flex-grow">
-                                <h3 class="text-2xl font-medium text-white">Consultoría Experta</h3>
-                                <p class="text-white/40 text-sm">Ingeniería Certificada</p>
+                                <h3 class="text-2xl font-medium text-white">Expert Consulting</h3>
+                                <p class="text-white/40 text-sm">Certified Engineering</p>
                             </div>
                             <i data-lucide="chevron-down" class="w-6 h-6 text-white/20"></i>
                         </div>
                         <div class="advantage-content pt-4 border-t border-white/5 pb-2">
                             <p class="text-white/70 leading-relaxed mb-6">
-                                Obtén acceso directo a ingenieros certificados por SentinelOne que
-                                entienden tu infraestructura y optimizan tu defensa.
+                                Get direct access to SentinelOne certified engineers who
+                                understand your infrastructure and optimize your defense.
                             </p>
                             <div class="flex gap-8">
                                 <div>
                                     <div class="text-2xl font-bold text-white">+500</div>
-                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Casos de Éxito
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Success Cases
                                     </div>
                                 </div>
                                 <div>
                                     <div class="text-2xl font-bold text-scheme-secondary">100%</div>
-                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Continuidad
-                                        Operativa</div>
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Operational
+                                        Continuity</div>
                                 </div>
                             </div>
                         </div>
@@ -1328,15 +1328,15 @@
                                 <i data-lucide="zap" class="w-7 h-7 text-white"></i>
                             </div>
                             <div class="flex-grow">
-                                <h3 class="text-2xl font-medium text-white">Despliegue Garantizado</h3>
-                                <p class="text-white/40 text-sm">Acompañamiento en el Rollout</p>
+                                <h3 class="text-2xl font-medium text-white">Guaranteed Deployment</h3>
+                                <p class="text-white/40 text-sm">Rollout Support</p>
                             </div>
                             <i data-lucide="chevron-down" class="w-6 h-6 text-white/20"></i>
                         </div>
                         <div class="advantage-content pt-4 border-t border-white/5 pb-2">
                             <p class="text-white/70 leading-relaxed mb-6">
-                                Aseguramos que el agente Singularity esté desplegado al 100% en tu infraestructura desde
-                                la primera semana. Todo bajo control empresarial.
+                                We ensure that the Singularity agent is 100% deployed in your infrastructure from
+                                the first week. Everything under business control.
                             </p>
                         </div>
                     </div>
@@ -1347,7 +1347,7 @@
                     class="lg:col-span-5 h-full flex flex-col justify-center items-center lg:items-end pointer-events-none p-12">
                     <div
                         class="reveal-scale opacity-10 transform lg:-rotate-90 text-[10px] uppercase tracking-[1.5rem] whitespace-nowrap text-white hidden md:block">
-                        Blindaje + Soporte Humano
+                        Shielding + Human Support
                     </div>
                 </div>
             </div>
@@ -1388,9 +1388,9 @@
                         </div>
 
                         <div class="relative z-10">
-                            <h3 class="text-white/60 text-sm font-medium mb-2 uppercase tracking-widest">Ve SentinelOne
-                                en acción</h3>
-                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Agenda una Demo
+                            <h3 class="text-white/60 text-sm font-medium mb-2 uppercase tracking-widest">See SentinelOne
+                                in action</h3>
+                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Schedule a Demo
                             </h2>
 
                             <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4"
@@ -1398,40 +1398,42 @@
                                 <!-- First Name | Last Name -->
                                 <div class="space-y-2">
                                     <label
-                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Nombre*</label>
-                                    <input type="text" placeholder="Ingresa tu nombre"
+                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">First
+                                        Name*</label>
+                                    <input type="text" placeholder="Enter your first name"
                                         class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-sm" />
                                 </div>
                                 <div class="space-y-2">
                                     <label
-                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Apellidos*</label>
-                                    <input type="text" placeholder="Ingresa tus apellidos"
+                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Last
+                                        Name*</label>
+                                    <input type="text" placeholder="Enter your last name"
                                         class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-sm" />
                                 </div>
 
                                 <!-- Business Email (Full Width) -->
                                 <div class="md:col-span-2 space-y-2">
                                     <label
-                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Email
-                                        Corporativo*</label>
-                                    <input type="email" placeholder="email@tuempresa.com"
+                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Business
+                                        Email*</label>
+                                    <input type="email" placeholder="email@yourcompany.com"
                                         class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-sm" />
                                 </div>
 
                                 <!-- Company | Employees -->
                                 <div class="space-y-2">
                                     <label
-                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Empresa*</label>
-                                    <input type="text" placeholder="¿Dónde trabajas?"
+                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Company*</label>
+                                    <input type="text" placeholder="Where do you work?"
                                         class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-sm" />
                                 </div>
                                 <div class="space-y-2">
                                     <label
-                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Empleados*</label>
+                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Employees*</label>
                                     <div class="relative">
                                         <select
                                             class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white/70 focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-sm appearance-none cursor-pointer">
-                                            <option value="" class="bg-slate-900">Selecciona...</option>
+                                            <option value="" class="bg-slate-900">Select...</option>
                                             <option value="1-50" class="bg-slate-900">1 - 50</option>
                                             <option value="51-200" class="bg-slate-900">51 - 200</option>
                                             <option value="201-500" class="bg-slate-900">201 - 500</option>
@@ -1446,20 +1448,20 @@
                                 <!-- Phone | Country -->
                                 <div class="space-y-2">
                                     <label
-                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Teléfono*</label>
-                                    <input type="tel" placeholder="Número de teléfono"
+                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Phone*</label>
+                                    <input type="tel" placeholder="Phone number"
                                         class="w-full bg-white/[0.07] border border-white/10 px-5 py-3 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-sm" />
                                 </div>
                                 <div class="space-y-2">
                                     <label
-                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">País*</label>
+                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">Country*</label>
                                     <div class="relative">
                                         <select
                                             class="w-full bg-white/[0.07] border border-white/10 px-5 py-3 rounded-xl outline-none text-white/70 focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-sm appearance-none cursor-pointer">
-                                            <option value="" class="bg-slate-900">Selecciona...</option>
-                                            <option value="México" class="bg-slate-900" selected>México</option>
+                                            <option value="" class="bg-slate-900">Select...</option>
+                                            <option value="México" class="bg-slate-900" selected>Mexico</option>
                                             <option value="USA" class="bg-slate-900">USA</option>
-                                            <option value="Otros" class="bg-slate-900">Otros...</option>
+                                            <option value="Otros" class="bg-slate-900">Others...</option>
                                         </select>
                                         <i data-lucide="chevron-down"
                                             class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 pointer-events-none"></i>
@@ -1469,18 +1471,19 @@
                                 <!-- Interest (Full Width) -->
                                 <div class="md:col-span-2 space-y-2">
                                     <label
-                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">¿Qué
-                                        te interesa aprender?*</label>
+                                        class="text-xs text-white/70 font-semibold ml-1 uppercase tracking-wider">What
+                                        are
+                                        you interested in learning?*</label>
                                     <div class="relative">
                                         <select
                                             class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white/70 focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-sm appearance-none cursor-pointer">
-                                            <option value="" class="bg-slate-900 text-white/50 italic">Selecciona...
+                                            <option value="" class="bg-slate-900 text-white/50 italic">Select...
                                             </option>
-                                            <option value="endpoint" class="bg-slate-900">Protección de Endpoints
+                                            <option value="endpoint" class="bg-slate-900">Endpoint Protection
                                             </option>
-                                            <option value="cloud" class="bg-slate-900">Seguridad en la Nube</option>
-                                            <option value="xdr" class="bg-slate-900">Visibilidad XDR / SIEM</option>
-                                            <option value="ransomware" class="bg-slate-900">Prevención de Ransomware
+                                            <option value="cloud" class="bg-slate-900">Cloud Security</option>
+                                            <option value="xdr" class="bg-slate-900">XDR / SIEM Visibility</option>
+                                            <option value="ransomware" class="bg-slate-900">Ransomware Prevention
                                             </option>
                                         </select>
                                         <i data-lucide="chevron-down"
@@ -1527,10 +1530,10 @@
                                 <i data-lucide="check" class="w-3 h-3 text-scheme-secondary"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-lg mb-1">Unifica tu Defensa</h4>
-                                <p class="text-white/50 text-base leading-relaxed">La única plataforma de seguridad
-                                    abierta y unificada con IA que integra endpoint, nube, SIEM e IA para una protección
-                                    absoluta.</p>
+                                <h4 class="text-white font-bold text-lg mb-1">Unify your Defense</h4>
+                                <p class="text-white/50 text-base leading-relaxed">The only open and unified
+                                    AI security platform that integrates endpoint, cloud, SIEM, and AI for absolute
+                                    protection.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4 group">
@@ -1539,10 +1542,11 @@
                                 <i data-lucide="check" class="w-3 h-3 text-scheme-secondary"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-lg mb-1">Supera a las Amenazas</h4>
-                                <p class="text-white/50 text-base leading-relaxed">Convierte los datos en información
-                                    accionable en tiempo real, con seguridad autónoma que te mantiene siempre un paso
-                                    adelante.</p>
+                                <h4 class="text-white font-bold text-lg mb-1">Outpace Threats</h4>
+                                <p class="text-white/50 text-base leading-relaxed">Turn data into
+                                    actionable insights in real time, with autonomous security that keeps you always one
+                                    step
+                                    ahead.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4 group">
@@ -1551,10 +1555,9 @@
                                 <i data-lucide="check" class="w-3 h-3 text-scheme-secondary"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-lg mb-1">Potencia a tus Analistas</h4>
-                                <p class="text-white/50 text-base leading-relaxed">Deja que la IA Generativa y Agéntica
-                                    se encargue del trabajo pesado, amplificando la velocidad e impacto de cada
-                                    analista.</p>
+                                <h4 class="text-white font-bold text-lg mb-1">Empower your Analysts</h4>
+                                <p class="text-white/50 text-base leading-relaxed">Let Generative and Agentic AI
+                                    handle the heavy lifting, amplifying the speed and impact of every analyst.</p>
                             </div>
                         </li>
                     </ul>
