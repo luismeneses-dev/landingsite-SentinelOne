@@ -157,6 +157,32 @@
             transition-delay: 500ms;
         }
 
+        /* Difuminado para fusión elegante entre secciones */
+        .elegant-fusion {
+            position: relative;
+        }
+
+        .elegant-fusion::before,
+        .elegant-fusion::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 120px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .elegant-fusion::before {
+            top: 0;
+            background: linear-gradient(to bottom, #000 0%, transparent 100%);
+        }
+
+        .elegant-fusion::after {
+            bottom: 0;
+            background: linear-gradient(to top, #000 0%, transparent 100%);
+        }
+
         /* Animación Desplegable para Ventajas */
         .advantage-item {
             cursor: pointer;
@@ -307,7 +333,7 @@
     </div>
 
     <!-- HERO SECTION -->
-    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+    <section class="elegant-fusion relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <!-- Imagen panorámica Hero con presencia intensa -->
             <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 select-none"
@@ -447,7 +473,7 @@
     </section>
 
     <!-- THREAT PROTECTION (Problema) -->
-    <section class="relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
+    <section class="elegant-fusion relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0">
             <!-- Background image with feathered edges (vignette/blur effect) -->
@@ -541,7 +567,7 @@
     </section>
 
     <!-- FEATURES (Solución) - SENTINELONE MAJESTIC PUMA -->
-    <section class="py-20 border-y border-white/5 text-white relative overflow-hidden min-h-[85vh] flex items-center">
+    <section class="elegant-fusion py-20 text-white relative overflow-hidden min-h-[85vh] flex items-center">
         <div class="divider-cyan"></div>
         <!-- Partículas de Carrera (Moradas/Cian) Canvas -->
         <canvas id="pumaParticles" class="absolute inset-0 z-0 pointer-events-none"></canvas>
@@ -658,7 +684,7 @@
     </section>
 
     <!-- SECURITY LAYERS (Diferenciador) -->
-    <section class="relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
+    <section class="elegant-fusion relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0">
             <!-- Imagen elegante fondo (Sin Blur) -->
@@ -761,7 +787,7 @@
     </section>
 
     <!-- SERVICES (Industrias) -->
-    <section class="relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
+    <section id="industrias" class="elegant-fusion relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 opacity-40 mix-blend-screen"
@@ -878,7 +904,7 @@
     </section>
 
     <!-- STATS (Comparativa) -->
-    <section class="relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
+    <section class="elegant-fusion relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0">
             <!-- Cyber Puma Head: Guardian de Fondo -->
@@ -1007,7 +1033,7 @@
     </section>
 
     <!-- LICENSING COMPARISON (Core, Control, Complete) -->
-    <section class="relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
+    <section class="elegant-fusion relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 opacity-10"
@@ -1079,7 +1105,7 @@
     </section>
 
     <!-- SINGULARITY PLATFORM (Detalle Avanzado) -->
-    <section class="relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden border-y border-white/5">
+    <section class="elegant-fusion relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent z-10"></div>
         <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-10">
@@ -1219,7 +1245,7 @@
     </section>
 
     <!-- VENTAJAS FAROPROTEC + SENTINELONE (Alianza y Soporte) -->
-    <section class="relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
+    <section class="elegant-fusion relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
         </div>
@@ -1359,8 +1385,7 @@
     </section>
 
     <!-- CONTACTO (Toma el Control - Estilo SentinelOne) -->
-    <section class="relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden border-t border-white/5"
-        id="contacto">
+    <section class="elegant-fusion relative min-h-[85vh] flex items-center py-20 px-6 overflow-hidden" id="contacto">
         <div class="divider-cyan"></div>
         <!-- Fondo con Patrón Hexagonal y Resplandores -->
         <div class="absolute inset-0 z-0">
