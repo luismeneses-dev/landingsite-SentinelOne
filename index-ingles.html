@@ -233,25 +233,35 @@
     <script>
         // IP-Based Geolocation and Redirection Logic (EN -> ES)
         async function detectLanguageAndRedirect() {
+            console.log("English version: Starting IP language detection...");
             const manualLang = sessionStorage.getItem('manualLang');
-            if (manualLang) return;
+            if (manualLang) {
+                console.log("Manual preference found:", manualLang, "- Skipping auto-redirect.");
+                return;
+            }
 
             try {
                 const response = await fetch('http://ip-api.com/json/');
                 const data = await response.json();
+                console.log("Location detected:", data.country, `(${data.countryCode})`);
 
                 // Redirigir a español si el país es hispanohablante
                 const spanishSpeakingCountries = ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'];
 
                 if (data.status === 'success' && spanishSpeakingCountries.includes(data.countryCode)) {
+                    console.log("Spanish-speaking country detected. Redirecting back to Spanish version...");
                     if (window.location.pathname.endsWith('index-ingles.html')) {
                         window.location.href = 'index.html';
                     }
+                } else {
+                    console.log("International country detected or status not success. Staying on English version.");
                 }
             } catch (error) {
-                // Fallback to browser language
+                console.error("Error detecting IP, using browser fallback:", error);
                 const browserLang = navigator.language || navigator.userLanguage;
+                console.log("Browser language detected:", browserLang);
                 if (browserLang.startsWith('es')) {
+                    console.log("Browser is in Spanish. Redirecting to Spanish version...");
                     if (window.location.pathname.endsWith('index-ingles.html')) {
                         window.location.href = 'index.html';
                     }
