@@ -233,39 +233,44 @@
     <script>
         // IP-Based Geolocation and Redirection Logic (EN -> ES)
         async function detectLanguageAndRedirect() {
-            console.log("English version: Starting IP language detection...");
+            console.log("English version: Starting language detection...");
             const manualLang = sessionStorage.getItem('manualLang');
             if (manualLang) {
                 console.log("Manual preference found:", manualLang, "- Skipping auto-redirect.");
                 return;
             }
 
+            // PRIORIDAD 1: Idioma del Navegador
+            const browserLang = navigator.language || navigator.userLanguage;
+            console.log("Priority 1 (Browser):", browserLang);
+
+            if (browserLang.startsWith('es')) {
+                console.log("Spanish browser detected. Redirecting back to Spanish version immediately...");
+                if (window.location.pathname.endsWith('index-ingles.html')) {
+                    window.location.href = 'index.html';
+                    return; // Detener aquí
+                }
+            }
+
+            // PRIORIDAD 2: Geolocalización por IP (Fallback)
+            console.log("Browser is not Spanish. Starting IP Fallback...");
             try {
                 const response = await fetch('http://ip-api.com/json/');
                 const data = await response.json();
-                console.log("Location detected:", data.country, `(${data.countryCode})`);
+                console.log("IP Result:", data.country, `(${data.countryCode})`);
 
-                // Redirigir a español si el país es hispanohablante
                 const spanishSpeakingCountries = ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'];
 
                 if (data.status === 'success' && spanishSpeakingCountries.includes(data.countryCode)) {
-                    console.log("Spanish-speaking country detected. Redirecting back to Spanish version...");
+                    console.log("Spanish-speaking country detected. Redirecting to Spanish version...");
                     if (window.location.pathname.endsWith('index-ingles.html')) {
                         window.location.href = 'index.html';
                     }
                 } else {
-                    console.log("International country detected or status not success. Staying on English version.");
+                    console.log("International country or API error. Staying on English version.");
                 }
             } catch (error) {
-                console.error("Error detecting IP, using browser fallback:", error);
-                const browserLang = navigator.language || navigator.userLanguage;
-                console.log("Browser language detected:", browserLang);
-                if (browserLang.startsWith('es')) {
-                    console.log("Browser is in Spanish. Redirecting to Spanish version...");
-                    if (window.location.pathname.endsWith('index-ingles.html')) {
-                        window.location.href = 'index.html';
-                    }
-                }
+                console.error("IP Fallback error:", error);
             }
         }
         detectLanguageAndRedirect();
