@@ -233,27 +233,44 @@
     <script>
         // IP-Based Geolocation and Redirection Logic (EN -> ES)
         async function detectLanguageAndRedirect() {
+            console.log("English version: Starting language detection...");
             const manualLang = sessionStorage.getItem('manualLang');
             const langChecked = sessionStorage.getItem('langChecked');
 
-            if (manualLang === 'en' || langChecked === 'true') return;
+            console.log("Status - Manual Preference:", manualLang, "| Already Checked:", langChecked);
+
+            if (manualLang === 'en' || langChecked === 'true') {
+                console.log("Check skipped: Manual preference or already verified in this session.");
+                return;
+            }
+
             sessionStorage.setItem('langChecked', 'true');
 
             const browserLang = navigator.language || navigator.userLanguage;
+            console.log("Browser Detected:", browserLang);
+
             if (browserLang.startsWith('es')) {
+                console.log("Spanish browser detected. Redirecting to Spanish version...");
                 window.location.href = 'index.html';
                 return;
             }
 
             try {
+                console.log("Browser is not Spanish. Checking IP Geolocation Fallback...");
                 const response = await fetch('http://ip-api.com/json/');
                 const data = await response.json();
-                const spanishSpeakingCountries = ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'];
+                console.log("IP Detected country:", data.country, `(${data.countryCode})`);
 
+                const spanishSpeakingCountries = ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'];
                 if (data.status === 'success' && spanishSpeakingCountries.includes(data.countryCode)) {
+                    console.log("Spanish-speaking country detected. Redirecting to Spanish version...");
                     window.location.href = 'index.html';
+                } else {
+                    console.log("International country detected. Staying on English version.");
                 }
-            } catch (error) { }
+            } catch (error) {
+                console.error("IP checking error:", error);
+            }
         }
         detectLanguageAndRedirect();
     </script>

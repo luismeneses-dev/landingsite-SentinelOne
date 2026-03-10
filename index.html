@@ -233,26 +233,44 @@
     <script>
         // IP-Based Geolocation and Redirection Logic (IP-API.com)
         async function detectLanguageAndRedirect() {
+            console.log("Iniciando detección de idioma...");
             const manualLang = sessionStorage.getItem('manualLang');
             const langChecked = sessionStorage.getItem('langChecked');
 
-            if (manualLang === 'es' || langChecked === 'true') return;
+            console.log("Estado actual - Manual:", manualLang, "| Verificado:", langChecked);
+
+            if (manualLang === 'es' || langChecked === 'true') {
+                console.log("Check omitido: Preferencia manual o ya verificado en esta sesión.");
+                return;
+            }
+
             sessionStorage.setItem('langChecked', 'true');
 
             const browserLang = navigator.language || navigator.userLanguage;
+            console.log("Detección Navegador:", browserLang);
+
             if (browserLang.startsWith('en')) {
+                console.log("Navegador en Inglés detectado. Redirigiendo...");
                 window.location.href = 'index-ingles.html';
                 return;
             }
 
             try {
+                console.log("Navegador no es Inglés. Consultando ubicación por IP...");
                 const response = await fetch('http://ip-api.com/json/');
                 const data = await response.json();
+                console.log("Ubicación detectada:", data.country, `(${data.countryCode})`);
+
                 const spanishSpeakingCountries = ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'];
                 if (data.status === 'success' && !spanishSpeakingCountries.includes(data.countryCode)) {
+                    console.log("País no hispanohablante. Redirigiendo a versión en inglés...");
                     window.location.href = 'index-ingles.html';
+                } else {
+                    console.log("País hispanohablante. Permaneciendo en Español.");
                 }
-            } catch (error) { }
+            } catch (error) {
+                console.error("Error en detección por IP:", error);
+            }
         }
         detectLanguageAndRedirect();
     </script>
