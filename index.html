@@ -252,6 +252,71 @@
         .animate-puma-head {
             animation: puma-float 10s ease-in-out infinite;
         }
+
+        /* POINT 1: Security Layers Accordion */
+        .security-accordion-item {
+            max-height: 80px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+        .security-accordion-item.active {
+            max-height: 250px;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+        }
+        .security-accordion-item .accordion-detail {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease 0.1s;
+        }
+        .security-accordion-item.active .accordion-detail {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* POINT 2: Flip Cards 3D */
+        .flip-card-container {
+            perspective: 1200px;
+            height: 380px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flip-card-container:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(0, 217, 255, 0.1));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* POINT 3: Tilt Effect Glow */
+        .tilt-card {
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            transform-style: preserve-3d;
+        }
+        .tilt-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 217, 255, 0.1);
+        }
     </style>
 </head>
 
@@ -499,7 +564,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-64 relative z-10 px-6">
                 <!-- Threat Box -->
-                <div class="reveal-left p-8 rounded-2xl border backdrop-blur-sm relative overflow-hidden group"
+                <div class="reveal-up delay-100 p-8 rounded-3xl border bg-white/[0.03] backdrop-blur-md relative overflow-hidden group tilt-card"
                     style="border-color: rgba(239, 68, 68, 0.2); background: linear-gradient(135deg, rgba(239,68,68,0.05), rgba(255,255,255,0.02));">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, rgb(239,68,68) 0%, transparent 70%); filter: blur(60px);">
@@ -531,8 +596,8 @@
                 </div>
 
                 <!-- Safe Box -->
-                <div class="reveal-right p-8 rounded-2xl border backdrop-blur-sm relative overflow-hidden group"
-                    style="border-color: rgba(0, 217, 255, 0.4); background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(255,255,255,0.02));">
+                <div class="reveal-up delay-200 p-8 rounded-3xl border relative overflow-hidden group tilt-card"
+                    style="border-color: rgba(0, 217, 255, 0.4); background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, var(--primary) 0%, transparent 70%); filter: blur(60px);">
                     </div>
@@ -807,7 +872,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Industria -->
-                <div class="reveal-up delay-100 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
+                <div class="reveal-up delay-100 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
                     style="border-color: rgba(255,255,255,0.1);">
                     <!-- Fondo de imagen claro y enfocado -->
                     <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -839,7 +904,7 @@
                 </div>
 
                 <!-- Financiero -->
-                <div class="reveal-up delay-200 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
+                <div class="reveal-up delay-200 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
                     style="border-color: rgba(255,255,255,0.1);">
                     <!-- Fondo de imagen claro y enfocado -->
                     <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -869,7 +934,7 @@
                 </div>
 
                 <!-- Corporativos -->
-                <div class="reveal-up delay-300 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
+                <div class="reveal-up delay-300 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
                     style="border-color: rgba(255,255,255,0.1);">
                     <!-- Fondo de imagen claro y enfocado -->
                     <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -1178,90 +1243,102 @@
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Contenido Refinado -->
+                <!-- Columna Derecha: Contenido Refinado -->                            <!-- Items de características con Acordeón (Point 1) y Tilt (Point 3) -->
                 <div class="reveal-right w-full lg:w-[40%]">
                     <div class="space-y-6">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-                            <!-- Items de características con diseño más premium -->
-                            <div
-                                class="p-6 rounded-2xl border border-white/5 bg-white/[0.03] hover:border-scheme-primary/30 transition-all duration-500">
-                                <div class="flex items-center gap-4 mb-3">
-                                    <div
-                                        class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
-                                        <i data-lucide="shield-check" class="w-5 h-5 text-scheme-primary"></i>
-                                    </div>
-                                    <h3 class="text-lg font-semibold">IA Estática</h3>
+                        <div
+                            class="security-accordion-item active tilt-card p-6 rounded-2xl border border-white/10 bg-white/[0.03] cursor-pointer"
+                            onclick="toggleSecurity(this)">
+                            <div class="flex items-center gap-4 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-scheme-primary"></i>
                                 </div>
-                                <p class="text-white/80 text-sm leading-relaxed">Protección de pre-ejecución
+                                <h3 class="text-xl font-semibold">IA Estática</h3>
+                            </div>
+                            <div class="accordion-detail">
+                                <p class="text-white/80 text-base leading-relaxed mb-4">Protección de pre-ejecución
                                     inmediata ante malware conocido y desconocido.</p>
-                            </div>
-
-                            <div
-                                class="p-6 rounded-2xl border border-white/5 bg-white/[0.03] hover:border-scheme-primary/30 transition-all duration-500">
-                                <div class="flex items-center gap-4 mb-3">
-                                    <div
-                                        class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
-                                        <i data-lucide="brain-circuit" class="w-5 h-5 text-scheme-primary"></i>
-                                    </div>
-                                    <h3 class="text-lg font-semibold">IA Comportamental</h3>
-                                </div>
-                                <p class="text-white/80 text-sm leading-relaxed">Monitoreo de procesos vivos
-                                    para detener ransomware en plena acción.</p>
-                            </div>
-
-                            <div
-                                class="p-6 rounded-2xl border border-white/5 bg-white/[0.03] hover:border-scheme-primary/30 transition-all duration-500">
-                                <div class="flex items-center gap-4 mb-3">
-                                    <div
-                                        class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
-                                        <i data-lucide="rotate-ccw" class="w-5 h-5 text-scheme-primary"></i>
-                                    </div>
-                                    <h3 class="text-lg font-semibold">Rollback Activo</h3>
-                                </div>
-                                <p class="text-white/80 text-sm leading-relaxed">Reversión automática con un
-                                    solo clic de cualquier daño causado al endpoint.</p>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-4">
-                                <div
-                                    class="p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-scheme-primary/30 transition-all duration-500">
-                                    <div class="flex items-center gap-3 mb-2">
-                                        <i data-lucide="network" class="w-4 h-4 text-scheme-primary"></i>
-                                        <h4 class="text-base font-semibold text-white">Control de Dispositivos</h4>
-                                    </div>
-                                    <p class="text-sm text-white/80 leading-tight">Gestiona políticas de red y
-                                        periféricos autorizados.</p>
-                                </div>
-                                <div
-                                    class="p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-scheme-primary/30 transition-all duration-500">
-                                    <div class="flex items-center gap-3 mb-2">
-                                        <i data-lucide="scan" class="w-4 h-4 text-scheme-primary"></i>
-                                        <h4 class="text-base font-semibold text-white">Ranger (Visibilidad)</h4>
-                                    </div>
-                                    <p class="text-sm text-white/80 leading-tight">Identifica dispositivos no
-                                        gestionados en la red.</p>
+                                <div class="h-1 w-full bg-scheme-primary/20 rounded-full overflow-hidden">
+                                    <div class="h-full bg-scheme-primary w-[90%] animate-pulse"></div>
                                 </div>
                             </div>
                         </div>
 
                         <div
-                            class="p-6 rounded-2xl border border-white/5 bg-white/[0.03] hover:border-scheme-primary/30 transition-all duration-500 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 p-2 opacity-10">
-                                <i data-lucide="zap" class="w-16 h-16 text-scheme-primary"></i>
-                            </div>
-                            <div class="relative z-10">
-                                <div class="flex items-center gap-4 mb-3">
-                                    <div
-                                        class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
-                                        <i data-lucide="eye" class="w-5 h-5 text-scheme-primary"></i>
-                                    </div>
-                                    <h3 class="text-lg font-semibold text-white">Visibilidad Storyline™</h3>
+                            class="security-accordion-item tilt-card p-6 rounded-2xl border border-white/5 bg-white/[0.03] cursor-pointer"
+                            onclick="toggleSecurity(this)">
+                            <div class="flex items-center gap-4 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
+                                    <i data-lucide="brain-circuit" class="w-5 h-5 text-scheme-primary"></i>
                                 </div>
-                                <p class="text-white/80 text-lg leading-relaxed">
-                                    Contexto absoluto que conecta cada punto de la red automáticamente para una
-                                    respuesta sin humanos.
-                                </p>
+                                <h3 class="text-xl font-semibold">IA Comportamental</h3>
                             </div>
+                            <div class="accordion-detail">
+                                <p class="text-white/80 text-base leading-relaxed mb-4">Monitoreo de procesos vivos
+                                    para detener ransomware en plena acción.</p>
+                                <div class="flex gap-2">
+                                    <span class="text-[10px] px-2 py-0.5 rounded bg-scheme-primary/20 text-scheme-primary">VIVO</span>
+                                    <span class="text-[10px] px-2 py-0.5 rounded bg-white/10 text-white/50">PROTECCIÓN</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="security-accordion-item tilt-card p-6 rounded-2xl border border-white/5 bg-white/[0.03] cursor-pointer"
+                            onclick="toggleSecurity(this)">
+                            <div class="flex items-center gap-4 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
+                                    <i data-lucide="rotate-ccw" class="w-5 h-5 text-scheme-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">Rollback Activo</h3>
+                            </div>
+                            <div class="accordion-detail">
+                                <p class="text-white/80 text-base leading-relaxed">Reversión automática con un
+                                    solo clic de cualquier daño causado al endpoint.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div
+                                class="tilt-card p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-scheme-primary/30 transition-all duration-500">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <i data-lucide="network" class="w-4 h-4 text-scheme-primary"></i>
+                                    <h4 class="text-base font-semibold text-white">Control de Dispositivos</h4>
+                                </div>
+                                <p class="text-xs text-white/60 leading-tight">Gestiona políticas de red y
+                                    periféricos.</p>
+                            </div>
+                            <div
+                                class="tilt-card p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-scheme-primary/30 transition-all duration-500">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <i data-lucide="scan" class="w-4 h-4 text-scheme-primary"></i>
+                                    <h4 class="text-base font-semibold text-white">Ranger Scan</h4>
+                                </div>
+                                <p class="text-xs text-white/60 leading-tight">Identifica equipos no
+                                    gestionados.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="tilt-card p-6 rounded-2xl border border-white/5 bg-white/[0.03] hover:border-scheme-primary/30 transition-all duration-500 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-2 opacity-10">
+                            <i data-lucide="zap" class="w-16 h-16 text-scheme-primary"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
+                                    <i data-lucide="eye" class="w-5 h-5 text-scheme-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">Visibilidad Storyline™</h3>
+                            </div>
+                            <p class="text-white/80 text-lg leading-relaxed">
+                                Contexto absoluto que conecta cada punto de la red automáticamente.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1301,98 +1378,95 @@
             <!-- Dashboard Interactivo (Split Layout) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-                <!-- Columna Izquierda: Menú Desplegable (7 Cols) -->
-                <div class="lg:col-span-7 space-y-4 relative">
+                <!-- Columna Izquierda: Flip Cards (Point 2) -->
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
 
-                    <!-- Soporte Humano -->
-                    <div class="advantage-item active p-6 rounded-2xl border backdrop-blur-md bg-white/[0.02]"
-                        onclick="toggleAdvantage(this)">
-                        <div class="flex items-center gap-6 mb-4">
-                            <div
-                                class="icon-wrapper w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
-                                <i data-lucide="headphones" class="w-7 h-7 text-scheme-primary"></i>
-                            </div>
-                            <div class="flex-grow">
-                                <h3 class="text-3xl font-medium text-white">Servicio Post-Adquisición</h3>
-                                <p class="text-white/60 text-base">Soporte humano 24/7</p>
-                            </div>
-                            <i data-lucide="chevron-down" class="w-8 h-8 text-white/20"></i>
-                        </div>
-                        <div class="advantage-content pt-4 border-t border-white/5 pb-2">
-                            <p class="text-white/70 leading-relaxed mb-6">
-                                Nuestro compromiso no termina con la licencia. Faroprotec se integra con tu equipo de TI
-                                para la gestión diaria y respuesta ante incidentes, asegurando que nunca enfrentes una
-                                amenaza solo.
-                            </p>
-                            <!-- Mini Metrics integrated -->
-                            <div class="flex gap-8">
-                                <div>
-                                    <div class="text-2xl font-bold text-scheme-primary">&lt;15 min</div>
-                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Respuesta Crítica
+                    <!-- Flip Card: Soporte Humano -->
+                    <div class="flip-card-container tilt-card">
+                        <div class="flip-card-inner">
+                            <!-- FRONT -->
+                            <div class="flip-card-front bg-white/[0.02] backdrop-blur-md p-8 flex flex-col justify-center">
+                                <div class="flex items-center gap-6 mb-6">
+                                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center bg-scheme-primary/10 border border-scheme-primary/20">
+                                        <i data-lucide="headphones" class="w-8 h-8 text-scheme-primary"></i>
                                     </div>
+                                    <h3 class="text-2xl font-bold text-white">Servicio Post-Adquisición</h3>
                                 </div>
-                                <div>
-                                    <div class="text-2xl font-bold text-white">98%</div>
-                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Retención Anual
+                                <p class="text-white/60 mb-8">Soporte humano 24/7 disponible para tu equipo de TI.</p>
+                                <div class="mt-auto flex items-center gap-2 text-scheme-primary font-bold">
+                                    <span>Girar para ver métricas</span>
+                                    <i data-lucide="repeat" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                            <!-- BACK -->
+                            <div class="flip-card-back">
+                                <h4 class="text-xl font-bold text-white mb-6">Métricas de Soporte</h4>
+                                <div class="space-y-6">
+                                    <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+                                        <div class="text-3xl font-bold text-scheme-primary">&lt;15 min</div>
+                                        <div class="text-xs uppercase tracking-widest text-white/40">Respuesta Crítica</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+                                        <div class="text-3xl font-bold text-white">98%</div>
+                                        <div class="text-xs uppercase tracking-widest text-white/40">Retención Anual</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Consultoría -->
-                    <div class="advantage-item p-6 rounded-2xl border backdrop-blur-md bg-white/[0.02]"
-                        onclick="toggleAdvantage(this)">
-                        <div class="flex items-center gap-6 mb-4">
-                            <div
-                                class="icon-wrapper w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
-                                <i data-lucide="shield-check" class="w-7 h-7 text-scheme-secondary"></i>
-                            </div>
-                            <div class="flex-grow">
-                                <h3 class="text-3xl font-medium text-white">Consultoría Experta</h3>
-                                <p class="text-white/60 text-base">Ingeniería Certificada</p>
-                            </div>
-                            <i data-lucide="chevron-down" class="w-8 h-8 text-white/20"></i>
-                        </div>
-                        <div class="advantage-content pt-4 border-t border-white/5 pb-2">
-                            <p class="text-white/70 leading-relaxed mb-6">
-                                Obtén acceso directo a ingenieros certificados por SentinelOne que
-                                entienden tu infraestructura y optimizan tu defensa.
-                            </p>
-                            <div class="flex gap-8">
-                                <div>
-                                    <div class="text-2xl font-bold text-white">+500</div>
-                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Casos de Éxito
+                    <!-- Flip Card: Consultoría -->
+                    <div class="flip-card-container tilt-card">
+                        <div class="flip-card-inner">
+                            <!-- FRONT -->
+                            <div class="flip-card-front bg-white/[0.02] backdrop-blur-md p-8 flex flex-col justify-center">
+                                <div class="flex items-center gap-6 mb-6">
+                                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center bg-scheme-secondary/10 border border-scheme-secondary/20">
+                                        <i data-lucide="shield-check" class="w-8 h-8 text-scheme-secondary"></i>
                                     </div>
+                                    <h3 class="text-2xl font-bold text-white">Consultoría Experta</h3>
                                 </div>
-                                <div>
-                                    <div class="text-2xl font-bold text-scheme-secondary">100%</div>
-                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Continuidad
-                                        Operativa</div>
+                                <p class="text-white/60 mb-8">Ingeniería Certificada para optimizar tu defensa.</p>
+                                <div class="mt-auto flex items-center gap-2 text-scheme-secondary font-bold">
+                                    <span>Girar para ver impacto</span>
+                                    <i data-lucide="repeat" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                            <!-- BACK -->
+                            <div class="flip-card-back">
+                                <h4 class="text-xl font-bold text-white mb-6">Impacto Real</h4>
+                                <div class="space-y-6">
+                                    <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+                                        <div class="text-3xl font-bold text-white">+500</div>
+                                        <div class="text-xs uppercase tracking-widest text-white/40">Casos de Éxito</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-black/40 border border-white/5 text-scheme-secondary">
+                                        <div class="text-3xl font-bold">100%</div>
+                                        <div class="text-xs uppercase tracking-widest text-white/40">Continuidad Operativa</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Implementación -->
-                    <div class="advantage-item p-6 rounded-2xl border backdrop-blur-md bg-white/[0.02]"
-                        onclick="toggleAdvantage(this)">
-                        <div class="flex items-center gap-6 mb-4">
-                            <div
-                                class="icon-wrapper w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
-                                <i data-lucide="zap" class="w-7 h-7 text-white"></i>
+                    <!-- Flip Card: Despliegue -->
+                    <div class="flip-card-container tilt-card md:col-span-2 !h-[250px]">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-white/[0.02] backdrop-blur-md p-8 flex items-center justify-between">
+                                <div class="flex items-center gap-6">
+                                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center bg-white/10 border border-white/20">
+                                        <i data-lucide="zap" class="w-8 h-8 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white">Despliegue Garantizado</h3>
+                                        <p class="text-white/60">Acompañamiento en el Rollout desde la semana 1.</p>
+                                    </div>
+                                </div>
+                                <div class="text-scheme-primary font-bold hidden sm:block">Total Control</div>
                             </div>
-                            <div class="flex-grow">
-                                <h3 class="text-3xl font-medium text-white">Despliegue Garantizado</h3>
-                                <p class="text-white/60 text-base">Acompañamiento en el Rollout</p>
+                            <div class="flip-card-back !h-[250px]">
+                                <p class="text-center text-white/80">Aseguramos que el agente Singularity esté desplegado al 100% en tu infraestructura bajo control empresarial.</p>
                             </div>
-                            <i data-lucide="chevron-down" class="w-8 h-8 text-white/20"></i>
-                        </div>
-                        <div class="advantage-content pt-4 border-t border-white/5 pb-2">
-                            <p class="text-white/70 leading-relaxed mb-6">
-                                Aseguramos que el agente Singularity esté desplegado al 100% en tu infraestructura desde
-                                la primera semana. Todo bajo control empresarial.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -1853,6 +1927,37 @@
                 element.classList.add('active');
             }
         }
+    </script>
+    <script>
+        // POINT 1: Security Accordion
+        function toggleSecurity(element) {
+            const items = document.querySelectorAll('.security-accordion-item');
+            const isActive = element.classList.contains('active');
+            items.forEach(item => item.classList.remove('active'));
+            if (!isActive) element.classList.add('active');
+        }
+
+        // POINT 3: Tilt Effect JavaScript
+        const handleTilt = (e) => {
+            const tiltCards = document.querySelectorAll('.tilt-card');
+            tiltCards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                if (x > 0 && x < rect.width && y > 0 && y < rect.height) {
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (centerY - y) / 10;
+                    const rotateY = (x - centerX) / 10;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                } else {
+                    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                }
+            });
+        };
+
+        document.addEventListener('mousemove', handleTilt);
     </script>
 </body>
 
