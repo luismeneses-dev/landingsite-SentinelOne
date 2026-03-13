@@ -1490,13 +1490,45 @@
 
                         <div
                             class="relative flex-grow bg-black rounded-3xl border border-white/10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-                            <video id="architectureVideo" autoplay muted loop playsinline
-                                class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000">
-                                <source
-                                    src="./public/videos/hailuo-2_3_Glowing_digital_particles_moving_between_stacked_transparent_cyber_layers_repres-0.mp4"
-                                    type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <!-- Video Stack for Seamless Switching -->
+                            <div class="video-stack absolute inset-0 w-full h-full">
+                                <video data-video="default" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100">
+                                    <source src="./public/videos/hailuo-2_3_Glowing_digital_particles_moving_between_stacked_transparent_cyber_layers_repres-0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="IA Estática" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/motion2Fast_Motion_Tip_Strength_5_Describe_Red_sparks_hitting__0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="Static AI" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/motion2Fast_Motion_Tip_Strength_5_Describe_Red_sparks_hitting__0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="IA Comportamental" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/hailuo-2_3_Slow_mechanical_rotation_of_the_geometric_structure._Gentle_pulses_of_magenta_li-0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="Behavioral AI" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/hailuo-2_3_Slow_mechanical_rotation_of_the_geometric_structure._Gentle_pulses_of_magenta_li-0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="Rollback Activo" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/hailuo-2_3_Cinematic_time-reversal_effect._The_glass_shards_on_the_floor_magnetically_lift_-0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="Active Rollback" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/hailuo-2_3_Cinematic_time-reversal_effect._The_glass_shards_on_the_floor_magnetically_lift_-0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="Control de Dispositivos" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/motion2Fast_Cyan_light_pulses_radiating_outwards_from_the_cent_0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="Device Control" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/motion2Fast_Cyan_light_pulses_radiating_outwards_from_the_cent_0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="Ranger Scan" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/hailuo-2_3_Motion_Tip_Strength_5._Describe_A_circular_light_beam_sweeping_the_floor_and_rev-0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="Visibilidad Storyline™" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/hailuo-2_3_Motion_Tip_Strength_4._Describe_Glowing_lines_being_drawn_across_the_screen_conn-0.mp4" type="video/mp4">
+                                </video>
+                                <video data-video="Storyline™ Visibility" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0">
+                                    <source src="./public/videos/hailuo-2_3_Motion_Tip_Strength_4._Describe_Glowing_lines_being_drawn_across_the_screen_conn-0.mp4" type="video/mp4">
+                                </video>
+                            </div>
 
                             <!-- Overlay de información técnica nítida -->
                             <div
@@ -2287,39 +2319,27 @@
         function toggleSecurity(element) {
             const items = document.querySelectorAll('.security-accordion-item');
             const isActive = element.classList.contains('active');
-            const videoElem = document.getElementById('architectureVideo');
-            const defaultVideo = "./public/videos/hailuo-2_3_Glowing_digital_particles_moving_between_stacked_transparent_cyber_layers_repres-0.mp4";
-            
-            const videoMap = {
-                "IA Estática": "./public/videos/motion2Fast_Motion_Tip_Strength_5_Describe_Red_sparks_hitting__0.mp4",
-                "Static AI": "./public/videos/motion2Fast_Motion_Tip_Strength_5_Describe_Red_sparks_hitting__0.mp4",
-                "IA Comportamental": "./public/videos/hailuo-2_3_Slow_mechanical_rotation_of_the_geometric_structure._Gentle_pulses_of_magenta_li-0.mp4",
-                "Behavioral AI": "./public/videos/hailuo-2_3_Slow_mechanical_rotation_of_the_geometric_structure._Gentle_pulses_of_magenta_li-0.mp4",
-                "Rollback Activo": "./public/videos/hailuo-2_3_Cinematic_time-reversal_effect._The_glass_shards_on_the_floor_magnetically_lift_-0.mp4",
-                "Active Rollback": "./public/videos/hailuo-2_3_Cinematic_time-reversal_effect._The_glass_shards_on_the_floor_magnetically_lift_-0.mp4",
-                "Control de Dispositivos": "./public/videos/motion2Fast_Cyan_light_pulses_radiating_outwards_from_the_cent_0.mp4",
-                "Device Control": "./public/videos/motion2Fast_Cyan_light_pulses_radiating_outwards_from_the_cent_0.mp4",
-                "Ranger Scan": "./public/videos/hailuo-2_3_Motion_Tip_Strength_5._Describe_A_circular_light_beam_sweeping_the_floor_and_rev-0.mp4",
-                "Visibilidad Storyline™": "./public/videos/hailuo-2_3_Motion_Tip_Strength_4._Describe_Glowing_lines_being_drawn_across_the_screen_conn-0.mp4",
-                "Storyline™ Visibility": "./public/videos/hailuo-2_3_Motion_Tip_Strength_4._Describe_Glowing_lines_being_drawn_across_the_screen_conn-0.mp4"
-            };
+            const videos = document.querySelectorAll('.video-stack video');
+            const titleText = element.querySelector('h3').textContent.trim();
+
+            function showVideo(key) {
+                videos.forEach(v => {
+                    if (v.getAttribute('data-video') === key) {
+                        v.style.opacity = "1";
+                        v.play();
+                    } else {
+                        v.style.opacity = "0";
+                    }
+                });
+            }
 
             items.forEach(item => item.classList.remove('active'));
             
             if (!isActive) {
                 element.classList.add('active');
-                const title = element.querySelector('h3').textContent.trim();
-                if (videoElem && videoMap[title]) {
-                    videoElem.src = videoMap[title];
-                    videoElem.load(); // Asegura el cambio de fuente
-                    videoElem.play();
-                }
+                showVideo(titleText);
             } else {
-                if (videoElem) {
-                    videoElem.src = defaultVideo;
-                    videoElem.load();
-                    videoElem.play();
-                }
+                showVideo('default');
             }
         }
 
