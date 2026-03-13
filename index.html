@@ -1490,7 +1490,7 @@
 
                         <div
                             class="relative flex-grow bg-black rounded-3xl border border-white/10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-                            <video autoplay muted loop playsinline
+                            <video id="architectureVideo" autoplay muted loop playsinline
                                 class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000">
                                 <source
                                     src="./public/videos/hailuo-2_3_Glowing_digital_particles_moving_between_stacked_transparent_cyber_layers_repres-0.mp4"
@@ -2287,8 +2287,40 @@
         function toggleSecurity(element) {
             const items = document.querySelectorAll('.security-accordion-item');
             const isActive = element.classList.contains('active');
+            const videoElem = document.getElementById('architectureVideo');
+            const defaultVideo = "./public/videos/hailuo-2_3_Glowing_digital_particles_moving_between_stacked_transparent_cyber_layers_repres-0.mp4";
+            
+            const videoMap = {
+                "IA Estática": "./public/videos/motion2Fast_Motion_Tip_Strength_5_Describe_Red_sparks_hitting__0.mp4",
+                "Static AI": "./public/videos/motion2Fast_Motion_Tip_Strength_5_Describe_Red_sparks_hitting__0.mp4",
+                "IA Comportamental": "./public/videos/hailuo-2_3_Slow_mechanical_rotation_of_the_geometric_structure._Gentle_pulses_of_magenta_li-0.mp4",
+                "Behavioral AI": "./public/videos/hailuo-2_3_Slow_mechanical_rotation_of_the_geometric_structure._Gentle_pulses_of_magenta_li-0.mp4",
+                "Rollback Activo": "./public/videos/hailuo-2_3_Cinematic_time-reversal_effect._The_glass_shards_on_the_floor_magnetically_lift_-0.mp4",
+                "Active Rollback": "./public/videos/hailuo-2_3_Cinematic_time-reversal_effect._The_glass_shards_on_the_floor_magnetically_lift_-0.mp4",
+                "Control de Dispositivos": "./public/videos/motion2Fast_Cyan_light_pulses_radiating_outwards_from_the_cent_0.mp4",
+                "Device Control": "./public/videos/motion2Fast_Cyan_light_pulses_radiating_outwards_from_the_cent_0.mp4",
+                "Ranger Scan": "./public/videos/hailuo-2_3_Motion_Tip_Strength_5._Describe_A_circular_light_beam_sweeping_the_floor_and_rev-0.mp4",
+                "Visibilidad Storyline™": "./public/videos/hailuo-2_3_Motion_Tip_Strength_4._Describe_Glowing_lines_being_drawn_across_the_screen_conn-0.mp4",
+                "Storyline™ Visibility": "./public/videos/hailuo-2_3_Motion_Tip_Strength_4._Describe_Glowing_lines_being_drawn_across_the_screen_conn-0.mp4"
+            };
+
             items.forEach(item => item.classList.remove('active'));
-            if (!isActive) element.classList.add('active');
+            
+            if (!isActive) {
+                element.classList.add('active');
+                const title = element.querySelector('h3').textContent.trim();
+                if (videoElem && videoMap[title]) {
+                    videoElem.src = videoMap[title];
+                    videoElem.load(); // Asegura el cambio de fuente
+                    videoElem.play();
+                }
+            } else {
+                if (videoElem) {
+                    videoElem.src = defaultVideo;
+                    videoElem.load();
+                    videoElem.play();
+                }
+            }
         }
 
         // POINT 3: Tilt Effect JavaScript
