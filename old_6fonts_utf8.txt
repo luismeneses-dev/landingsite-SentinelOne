@@ -1,0 +1,35 @@
+﻿
+>         const fonts = {
+              pantonThin: { name: 'Panton Thin', family: 'Panton', weight: 100, italic: false },
+              pantonLight: { name: 'Panton Light', family: 'Panton', weight: 300, italic: false },
+              pantonRegular: { name: 'Panton Regular', family: 'Panton', weight: 400, italic: false },
+              pantonSemiBold: { name: 'Panton SemiBold', family: 'Panton', weight: 600, italic: false },
+              pantonBold: { name: 'Panton Bold', family: 'Panton', weight: 700, italic: false },
+              pantonExtraBold: { name: 'Panton ExtraBold', family: 'Panton', weight: 800, italic: false },
+              pantonBlack: { name: 'Panton Black', family: 'Panton', weight: 900, italic: false },
+  
+              spaceLight: { name: 'Space Grotesk Light', family: 'Space Grotesk', weight: 300, italic: false },
+              spaceRegular: { name: 'Space Grotesk Regular', family: 'Space Grotesk', weight: 400, italic: false },
+              spaceMedium: { name: 'Space Grotesk Medium', family: 'Space Grotesk', weight: 500, italic: false },
+              spaceSemiBold: { name: 'Space Grotesk SemiBold', family: 'Space Grotesk', weight: 600, italic: false },
+              spaceBold: { name: 'Space Grotesk Bold', family: 'Space Grotesk', weight: 700, italic: false },
+  
+              rajdhaniLight: { name: 'Rajdhani Light', family: 'Rajdhani', weight: 300, italic: false },
+>             const fontStyle = font.italic ? 'italic' : 'normal';
+  
+              // Actualizar el body por defecto
+              document.body.style.fontFamily = fontFamily;
+              document.body.style.fontWeight = fontWeight;
+              document.body.style.fontStyle = fontStyle;
+  
+              // Inyectar estilos globales para forzar en t├¡tulos y elementos con clases de peso
+              let dynamicStyle = document.getElementById('dynamic-font-overrides');
+              if (!dynamicStyle) {
+                  dynamicStyle = document.createElement('style');
+                  dynamicStyle.id = 'dynamic-font-overrides';
+                  document.head.appendChild(dynamicStyle);
+              }
+  
+              dynamicStyle.innerHTML = `
+
+
