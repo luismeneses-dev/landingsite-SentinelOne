@@ -101,7 +101,8 @@
         }
 
         body {
-            font-family: 'Panton', sans-serif;
+            font-family: 'Panton', sans-serif !important;
+            font-weight: 400 !important;
             background-image: url('./public/images/fondo-landing.png');
             background-size: cover;
             background-position: center;
@@ -111,6 +112,16 @@
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
+
+        /* Fuerza Panton Regular (400) en TODOS los elementos, igual que hacía el selector */
+        h1, h2, h3, h4, h5, h6, 
+        p, span, a, button, input, select, textarea,
+        .font-bold, .font-semibold, .font-medium, .font-light, .font-thin, .font-black {
+            font-family: 'Panton', sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
 
         /* Animaciones para Reveal con IntersectionObserver (remplazo de framer-motion) */
         .reveal-up {
