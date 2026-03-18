@@ -12,12 +12,7 @@
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Google Fonts para las alternativas tipográficas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,6 +43,7 @@
             src: url('./public/fonts/Panton-Thin.otf') format('opentype');
             font-weight: 100;
             font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
@@ -55,6 +51,7 @@
             src: url('./public/fonts/Panton-Light.otf') format('opentype');
             font-weight: 300;
             font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
@@ -62,6 +59,7 @@
             src: url('./public/fonts/Panton-Regular.otf') format('opentype');
             font-weight: 400;
             font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
@@ -69,6 +67,7 @@
             src: url('./public/fonts/Panton-SemiBold.otf') format('opentype');
             font-weight: 600;
             font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
@@ -76,6 +75,7 @@
             src: url('./public/fonts/Panton-Bold.otf') format('opentype');
             font-weight: 700;
             font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
@@ -83,6 +83,7 @@
             src: url('./public/fonts/Panton-ExtraBold.otf') format('opentype');
             font-weight: 800;
             font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
@@ -90,7 +91,9 @@
             src: url('./public/fonts/Panton-Black.otf') format('opentype');
             font-weight: 900;
             font-style: normal;
+            font-display: swap;
         }
+
 
         :root {
             --primary: #00D9FF;
@@ -552,36 +555,16 @@
         detectLanguageAndRedirect();
     </script>
 
-    <!-- SELECTOR DE TIPOGRAFÍAS (Colapsable) -->
+    <!-- SELECTOR DE IDIOMA (Fijo) -->
     <div class="fixed top-6 right-6 z-50 flex flex-col items-end gap-2">
-        <!-- Botón disparador -->
-        <button id="fontMenuToggle"
-            class="flex items-center gap-2 px-4 py-2 bg-black/80 backdrop-blur-md border border-scheme-primary/50 rounded-full text-scheme-primary shadow-lg hover:scale-105 transition-all">
-            <i data-lucide="type" class="w-4 h-4"></i>
-            <span class="text-base font-semibold uppercase tracking-wider">Ajustar Tipografía</span>
-            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="fontChevron"></i>
-        </button>
-
         <!-- Botón Idioma -->
         <a href="index-ingles.html" onclick="sessionStorage.setItem('manualLang', 'en')"
-            class="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/20 rounded-full text-white/70 shadow-lg hover:scale-105 transition-all hover:bg-white/10">
+            class="flex items-center gap-2 px-4 py-2 bg-black/80 backdrop-blur-md border border-scheme-primary/50 rounded-full text-scheme-primary shadow-lg hover:scale-105 transition-all">
             <i data-lucide="languages" class="w-4 h-4"></i>
             <span class="text-base font-semibold uppercase tracking-wider">English</span>
         </a>
-
-        <!-- Panel desplegable -->
-        <div id="fontMenuPanel"
-            class="hidden w-64 bg-black/90 backdrop-blur-md border-2 border-scheme-primary/30 rounded-xl p-4 shadow-2xl shadow-scheme-primary/20 animate-in fade-in slide-in-from-top-4 duration-300">
-            <h3 class="text-base mb-3 text-scheme-primary font-semibold flex items-center gap-2">
-                <i data-lucide="settings" class="w-4 h-4"></i> Selector Visual
-            </h3>
-            <p class="text-base text-white/50 mb-3 leading-tight">Alternativas similares a Panton para
-                previsualización.</p>
-            <div class="grid grid-cols-1 gap-1.5 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar" id="fontGrid">
-                <!-- Se inyectan los botones vía JS -->
-            </div>
-        </div>
     </div>
+
 
     <!-- HERO SECTION -->
     <section class="elegant-fusion relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
@@ -2113,146 +2096,6 @@
     <script>
         // 1. Iniciar Lucide Icons
         lucide.createIcons();
-
-        // 2. Animaciones de scroll (Intersection Observer)
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach((el) => {
-            observer.observe(el);
-        });
-
-        // 3. Lógica del Selector de Tipografías Dinámico
-        const fonts = {
-            pantonThin: { name: 'Panton Thin', family: 'Panton', weight: 100, italic: false },
-            pantonLight: { name: 'Panton Light', family: 'Panton', weight: 300, italic: false },
-            pantonRegular: { name: 'Panton Regular', family: 'Panton', weight: 400, italic: false },
-            pantonSemiBold: { name: 'Panton SemiBold', family: 'Panton', weight: 600, italic: false },
-            pantonBold: { name: 'Panton Bold', family: 'Panton', weight: 700, italic: false },
-            pantonExtraBold: { name: 'Panton ExtraBold', family: 'Panton', weight: 800, italic: false },
-            pantonBlack: { name: 'Panton Black', family: 'Panton', weight: 900, italic: false },
-
-            spaceLight: { name: 'Space Grotesk Light', family: 'Space Grotesk', weight: 300, italic: false },
-            spaceRegular: { name: 'Space Grotesk Regular', family: 'Space Grotesk', weight: 400, italic: false },
-            spaceMedium: { name: 'Space Grotesk Medium', family: 'Space Grotesk', weight: 500, italic: false },
-            spaceSemiBold: { name: 'Space Grotesk SemiBold', family: 'Space Grotesk', weight: 600, italic: false },
-            spaceBold: { name: 'Space Grotesk Bold', family: 'Space Grotesk', weight: 700, italic: false },
-
-            rajdhaniLight: { name: 'Rajdhani Light', family: 'Rajdhani', weight: 300, italic: false },
-            rajdhaniRegular: { name: 'Rajdhani Regular', family: 'Rajdhani', weight: 400, italic: false },
-            rajdhaniMedium: { name: 'Rajdhani Medium', family: 'Rajdhani', weight: 500, italic: false },
-            rajdhaniSemiBold: { name: 'Rajdhani SemiBold', family: 'Rajdhani', weight: 600, italic: false },
-            rajdhaniBold: { name: 'Rajdhani Bold', family: 'Rajdhani', weight: 700, italic: false },
-
-            exoExtraLight: { name: 'Exo 2 ExtraLight', family: 'Exo 2', weight: 200, italic: false },
-            exoLight: { name: 'Exo 2 Light', family: 'Exo 2', weight: 300, italic: false },
-            exoRegular: { name: 'Exo 2 Regular', family: 'Exo 2', weight: 400, italic: false },
-            exoMedium: { name: 'Exo 2 Medium', family: 'Exo 2', weight: 500, italic: false },
-            exoSemiBold: { name: 'Exo 2 SemiBold', family: 'Exo 2', weight: 600, italic: false },
-            exoBold: { name: 'Exo 2 Bold', family: 'Exo 2', weight: 700, italic: false },
-            exoExtraBold: { name: 'Exo 2 ExtraBold', family: 'Exo 2', weight: 800, italic: false },
-            exoBlack: { name: 'Exo 2 Black', family: 'Exo 2', weight: 900, italic: false },
-        };
-
-        let activeFontKey = 'pantonRegular';
-        const fontGrid = document.getElementById('fontGrid');
-
-        function renderFontButtons() {
-            fontGrid.innerHTML = '';
-            for (const [key, fontDef] of Object.entries(fonts)) {
-                const isActive = key === activeFontKey;
-
-                const btn = document.createElement('button');
-                btn.className = `px-3 py-2.5 rounded-md border transition-all text-left ${isActive ? 'border-scheme-primary bg-scheme-primary/20 text-[#00D9FF]' : 'border-white/20 hover:border-scheme-primary/50 text-white/70 hover:text-white'}`;
-                btn.style.fontFamily = `'${fontDef.family}', sans-serif`;
-                btn.style.fontWeight = fontDef.weight;
-                if (isActive) btn.style.boxShadow = '0 0 15px rgba(0, 217, 255, 0.3)';
-
-                btn.innerHTML = `<span class="text-base">${fontDef.name}</span>`;
-
-                btn.addEventListener('click', () => {
-                    activeFontKey = key;
-                    applyFont(key);
-                    renderFontButtons(); // Re-render for active state
-                });
-
-                fontGrid.appendChild(btn);
-            }
-        }
-
-        function applyFont(key) {
-            const font = fonts[key];
-            const fontFamily = `'${font.family}', sans-serif`;
-            const fontWeight = font.weight;
-            const fontStyle = font.italic ? 'italic' : 'normal';
-
-            // Actualizar el body por defecto
-            document.body.style.fontFamily = fontFamily;
-            document.body.style.fontWeight = fontWeight;
-            document.body.style.fontStyle = fontStyle;
-
-            // Inyectar estilos globales para forzar en títulos y elementos con clases de peso
-            let dynamicStyle = document.getElementById('dynamic-font-overrides');
-            if (!dynamicStyle) {
-                dynamicStyle = document.createElement('style');
-                dynamicStyle.id = 'dynamic-font-overrides';
-                document.head.appendChild(dynamicStyle);
-            }
-
-            dynamicStyle.innerHTML = `
-                h1, h2, h3, h4, h5, h6, 
-                .font-light, .font-normal, .font-medium, .font-semibold, .font-bold, .font-black,
-                button, .btn-primary { 
-                    font-family: ${fontFamily} !important;
-                    font-weight: ${fontWeight} !important;
-                    font-style: ${fontStyle} !important;
-                }
-            `;
-        }
-
-        // Initialize
-        applyFont(activeFontKey);
-        renderFontButtons();
-
-        // 4. Lógica de Colapso del Menú
-        const fontToggle = document.getElementById('fontMenuToggle');
-        const fontPanel = document.getElementById('fontMenuPanel');
-        const fontChevron = document.getElementById('fontChevron');
-
-        fontToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isHidden = fontPanel.classList.contains('hidden');
-            if (isHidden) {
-                fontPanel.classList.remove('hidden');
-                fontChevron.style.transform = 'rotate(180deg)';
-                fontToggle.style.borderColor = 'var(--primary)';
-            } else {
-                fontPanel.classList.add('hidden');
-                fontChevron.style.transform = 'rotate(0deg)';
-                fontToggle.style.borderColor = 'rgba(0,217,255,0.5)';
-            }
-        });
-
-        // Cerrar al hacer clic fuera
-        document.addEventListener('click', (e) => {
-            if (!fontPanel.contains(e.target) && !fontToggle.contains(e.target)) {
-                fontPanel.classList.add('hidden');
-                fontChevron.style.transform = 'rotate(0deg)';
-                fontToggle.style.borderColor = 'rgba(0,217,255,0.5)';
-            }
-        });
 
         // 5. Partículas del Puma (Running Effect)
         function initPumaParticles() {
