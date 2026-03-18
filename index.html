@@ -2097,6 +2097,26 @@
         // 1. Iniciar Lucide Icons
         lucide.createIcons();
 
+        // 2. Animaciones de scroll (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach((el) => {
+            observer.observe(el);
+        });
+
         // 5. Partículas del Puma (Running Effect)
         function initPumaParticles() {
             const canvas = document.getElementById('pumaParticles');
