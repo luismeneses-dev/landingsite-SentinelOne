@@ -118,29 +118,26 @@
             overflow-x: hidden;
         }
 
-        /* Títulos y Elementos Bold: Permitir peso 700 */
+        /* Fuerza Panton Regular (400) en TODOS los elementos, igual que hacía el selector */
         h1,
         h2,
         h3,
         h4,
         h5,
         h6,
-        .font-bold,
-        .font-extrabold,
-        .font-black {
-            font-family: 'Panton', sans-serif !important;
-            font-weight: 700 !important;
-            font-style: normal !important;
-        }
-
-        /* Párrafos y elementos comunes: Peso 400 */
         p,
         span,
         a,
         button,
         input,
         select,
-        textarea {
+        textarea,
+        .font-bold,
+        .font-semibold,
+        .font-medium,
+        .font-light,
+        .font-thin,
+        .font-black {
             font-family: 'Panton', sans-serif !important;
             font-weight: 400 !important;
             font-style: normal !important;
@@ -866,10 +863,6 @@
 
         <div class="max-w-7xl mx-auto px-6 relative z-20 w-full">
             <div class="reveal-up text-left mb-16 max-w-2xl">
-                <div class="flex items-center gap-4 mb-8">
-                    <img src="https://www.sentinelone.com/wp-content/themes/sentinelone/assets/svg/header-logo-dark.svg"
-                        alt="SentinelOne" class="h-10 filter brightness-0 invert" />
-                </div>
                 <h2 class="text-2xl md:text-5xl font-light tracking-tight mb-8 leading-tight">
                     ¿Qué es <span class="font-bold text-scheme-primary">SentinelOne</span>?
                 </h2>
