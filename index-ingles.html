@@ -970,11 +970,10 @@
     <!-- SECURITY LAYERS (Diferenciador) -->
     <section class="elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
-        <div class="absolute inset-0 z-0">
-            <!-- Imagen elegante fondo (Sin Blur) -->
-            <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-40 mix-blend-lighten"
-                style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_3D_render_of_a_lu-0.jpg');">
-            </div>
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="dna-section-container">
+            <!-- Canvas DNA Animation -->
+            <canvas id="dna-canvas" class="absolute inset-0 w-full h-full opacity-90 mix-blend-screen"></canvas>
+
             <!-- Degradado en las esquinas para evitar saturación (Vignette) -->
             <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)] opacity-80">
             </div>
@@ -982,11 +981,8 @@
             <div class="absolute inset-x-0 h-px top-0"
                 style="background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.4), transparent);"></div>
 
-            <!-- Resplandor morado central que deja ver el fondo -->
-            <div class="absolute inset-0 opacity-30"
-                style="background: radial-gradient(circle at center, #8B5CF6 0%, transparent 70%); filter: blur(80px);">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/60"></div>
+            <!-- Resplandor oscuro central suave -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/80"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto">
@@ -2337,6 +2333,139 @@
                 element.classList.add('active');
             }
         }
+    </script>
+    <script>
+        // DNA Infinity Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('dna-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height;
+
+            function resize() {
+                const container = document.getElementById('dna-section-container');
+                width = container.clientWidth;
+                height = container.clientHeight;
+                canvas.width = width;
+                canvas.height = height;
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            let time = 0;
+            const particles = [];
+            const numParticles = 400; // Total particles in the DNA strands
+            const strandOffset = Math.PI; // Offset between the two strands
+
+            for (let i = 0; i < numParticles; i++) {
+                particles.push({
+                    tOffset: (i / (numParticles / 2)) * Math.PI * 2, // Distribute along the curve
+                    strand: i % 2 // 0 or 1 for the two strands
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
+                time += 0.003; // Global rotation/evolution speed
+
+                const scaleX = width * 0.35; // Spread of the infinity loop horizontally
+                const scaleY = height * 0.25; // Vertical spread
+                const scaleZ = 100; // Depth for 3D rotation effect
+
+                // Perspective projection variables
+                const focalLength = 400;
+
+                // Sort particles by Z index for basic depth sorting
+                const projectedParticles = [];
+
+                particles.forEach(p => {
+                    // Lissajous curve parameters for infinity: x = sin(t), y = sin(2t)
+                    const t = p.tOffset + (time * 2); // Movement along the curve
+                    
+                    // The base figure-8 curve
+                    let x3d = Math.sin(t) * scaleX;
+                    let y3d = Math.sin(2 * t) * scaleY * 0.8;
+                    let z3d = Math.cos(t) * scaleZ;
+
+                    // Add the DNA twisting effect around the curve path
+                    const twistPhase = (time * 5) + (t * 8); // Twist frequency
+                    const twistRadius = 30; // Thickness of the helix
+                    const strandPhaseOffset = p.strand * strandOffset;
+
+                    // Compute a local tangent (roughly) to orient the twist
+                    const dx = Math.cos(t) * scaleX;
+                    const dy = 2 * Math.cos(2 * t) * scaleY * 0.8;
+                    const angle = Math.atan2(dy, dx);
+
+                    // Add the twist perpendicular to the path
+                    const perpX = -Math.sin(angle);
+                    const perpY = Math.cos(angle);
+                    
+                    x3d += perpX * Math.cos(twistPhase + strandPhaseOffset) * twistRadius;
+                    y3d += perpY * Math.cos(twistPhase + strandPhaseOffset) * twistRadius;
+                    z3d += Math.sin(twistPhase + strandPhaseOffset) * twistRadius;
+
+                    // Global gentle Y-rotation to view it from different angles over time
+                    const rotationSpeed = time * 0.5;
+                    const rx = x3d * Math.cos(rotationSpeed) - z3d * Math.sin(rotationSpeed);
+                    const rz = x3d * Math.sin(rotationSpeed) + z3d * Math.cos(rotationSpeed);
+                    x3d = rx;
+                    z3d = rz;
+
+                    // Perspective projection
+                    const zScale = focalLength / (focalLength + z3d + 100);
+                    const px = width / 2 + x3d * zScale;
+                    const py = height / 2 + y3d * zScale;
+                    
+                    // Particle size driven by depth
+                    const radius = Math.max(0.5, 3 * zScale);
+
+                    projectedParticles.push({
+                        x: px,
+                        y: py,
+                        z: z3d,
+                        r: radius,
+                        alpha: Math.min(1, Math.max(0.1, zScale * 0.7)),
+                        tOffset: p.tOffset,
+                        strand: p.strand
+                    });
+                });
+
+                // Sort by Z for proper overlapping
+                projectedParticles.sort((a, b) => b.z - a.z);
+
+                // Draw connecting rungs (bonds) occasionally between the closest points of the two strands
+                ctx.lineWidth = 1;
+                for (let i = 0; i < projectedParticles.length; i += 8) {
+                    const p1 = projectedParticles[i];
+                    if (p1.strand === 0) {
+                        // Find a corresponding particle on the other strand with similar tOffset
+                        const p2 = projectedParticles.find(p => p.strand === 1 && Math.abs(p.tOffset - p1.tOffset) < 0.1);
+                        if (p2) {
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = `rgba(168, 85, 247, ${Math.min(p1.alpha, p2.alpha) * 0.3})`; // Purple connections
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Draw particles
+                projectedParticles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    // Crisp solid purple: #A855F7 is hex for bg-purple-500 equivalent, keeping it sharp
+                    ctx.fillStyle = `rgba(168, 85, 247, ${p.alpha})`;
+                    ctx.fill();
+                });
+
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+        });
     </script>
 </body>
 
