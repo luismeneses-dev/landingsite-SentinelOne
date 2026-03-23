@@ -773,8 +773,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-64 relative z-10 px-6">
                 <!-- Threat Box -->
-                <div class="reveal-up delay-100 p-8 rounded-3xl border bg-white/[0.03] backdrop-blur-md relative overflow-hidden group tilt-card"
-                    style="border-color: rgba(239, 68, 68, 0.2); background: linear-gradient(135deg, rgba(239,68,68,0.05), rgba(255,255,255,0.02));">
+                <div class="reveal-up delay-100 p-8 rounded-3xl border bg-[#0f0505] relative overflow-hidden group tilt-card"
+                    style="border-color: rgba(239, 68, 68, 0.3); background: #0f0505;">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, rgb(239,68,68) 0%, transparent 70%); filter: blur(60px);">
                     </div>
@@ -805,8 +805,8 @@
                 </div>
 
                 <!-- Safe Box -->
-                <div class="reveal-up delay-200 p-8 rounded-3xl border relative overflow-hidden group tilt-card"
-                    style="border-color: rgba(0, 217, 255, 0.4); background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);">
+                <div class="reveal-up delay-200 p-8 rounded-3xl border bg-[#0f0505] relative overflow-hidden group tilt-card"
+                    style="border-color: rgba(0, 217, 255, 0.3); background: #0f0505;">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, var(--primary) 0%, transparent 70%); filter: blur(60px);">
                     </div>
@@ -1333,13 +1333,13 @@
                 <div
                     class="absolute top-[16.5%] left-[50%] w-[150vw] h-[150vw] -translate-x-1/2 -translate-y-1/2 flex justify-center items-center pointer-events-none z-1">
                     <div class="w-full h-full animate-sweep"
-                        style="background: conic-gradient(from 180deg at 50% 50%, transparent 0deg, transparent 120deg, rgba(0, 217, 255, 0.4) 160deg, rgba(139, 92, 246, 0.6) 175deg, rgba(0, 217, 255, 1) 180deg, rgba(139, 92, 246, 0.6) 185deg, rgba(0, 217, 255, 0.4) 200deg, transparent 240deg, transparent 360deg); transform-origin: center center; filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.5)) blur(40px);">
+                        style="background: conic-gradient(from 180deg at 50% 50%, transparent 0deg, transparent 120deg, rgba(0, 217, 255, 0.4) 160deg, rgba(139, 92, 246, 0.6) 175deg, rgba(0, 217, 255, 1) 180deg, rgba(139, 92, 246, 0.6) 185deg, rgba(0, 217, 255, 0.4) 200deg, transparent 240deg, transparent 360deg); transform-origin: center center; filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5)) blur(15px);">
                     </div>
                 </div>
 
                 <!-- Light source core (the "foco") -->
                 <div class="absolute top-[16.5%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full bg-cyan-300 opacity-100 z-10 glow-core animate-pulse"
-                    style="filter: blur(10px);"></div>
+                    style="filter: blur(5px);"></div>
 
                 <!-- Intense center spark -->
                 <div class="absolute top-[16.5%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-3 h-3 md:w-4 md:h-4 rounded-full bg-white z-20"
@@ -1347,7 +1347,7 @@
 
                 <!-- Lighthouse SVG -->
                 <svg viewBox="0 0 60 80"
-                    class="absolute inset-0 w-full h-full z-20 opacity-100 drop-shadow-[0_0_20px_rgba(0,217,255,0.8)]">
+                    class="absolute inset-0 w-full h-full z-20 opacity-100 drop-shadow-[0_0_12px_rgba(0,217,255,0.7)]">
                     <defs>
                         <linearGradient id="faroGradient" x1="0%" y1="100%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#FF3EFF" />
@@ -1365,8 +1365,8 @@
             </div>
 
             <!-- Gentle overall ambient glow -->
-            <div class="absolute inset-0 opacity-30 pointer-events-none"
-                style="background: radial-gradient(circle at 80% 80%, var(--primary) 0%, transparent 60%); filter: blur(100px); z-index: 2;">
+            <div class="absolute inset-0 opacity-20 pointer-events-none"
+                style="background: radial-gradient(circle at 80% 80%, var(--primary) 0%, transparent 60%); filter: blur(50px); z-index: 2;">
             </div>
             <div
                 class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none z-[2]">
@@ -1379,74 +1379,99 @@
         <div class="relative z-10 max-w-6xl mx-auto w-full">
             <div class="reveal-up text-center mb-16 relative z-30">
                 <h2 class="text-4xl md:text-6xl font-light tracking-tight mb-6 leading-tight text-white">
-                    <span class="text-scheme-primary font-bold">Faroprotec</span> guides you to the protection <span
-                        class="text-scheme-secondary font-bold">your company requires</span>
+                    Our <span class="text-scheme-primary font-bold">Values</span> and
+                    <span class="text-scheme-secondary font-bold">Principles</span>
                 </h2>
-                <p class="text-lg md:text-4xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                    We evaluate your infrastructure and orient you towards the ideal SentinelOne solution for your
-                    endpoints: from essential protection to complete forensic visibility.
+                <p class="text-lg md:text-3xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                    At Faroprotec, every action is guided by an unwavering commitment to excellence and integrity.
                 </p>
             </div>
 
-            <div class="reveal-scale overflow-x-auto rounded-3xl border bg-white/[0.02] backdrop-blur-md"
+            <div class="reveal-scale rounded-3xl border bg-white/[0.02] backdrop-blur-md p-6 md:p-10"
                 style="border-color: rgba(255,255,255,0.1);">
-                <table class="w-full min-w-[500px] md:min-w-[800px] text-left border-collapse">
-                    <thead>
-                        <tr class="bg-white/[0.05]">
-                            <th
-                                class="px-2 py-4 md:px-6 md:py-6 text-lg md:text-lg font-medium text-white/90 border-b border-white/10 w-1/4">
-                                Functionality</th>
-                            <th
-                                class="px-2 py-4 md:px-6 md:py-6 text-lg md:text-lg font-medium text-white/90 border-b border-white/10 w-1/4 text-center">
-                                <span class="text-lg md:text-lg">Singularity</span> <br /> <span
-                                    class="text-white font-bold">Core</span>
-                            </th>
-                            <th
-                                class="px-2 py-4 md:px-6 md:py-6 text-lg md:text-lg font-medium text-white/90 border-b border-white/10 w-1/4 text-center">
-                                <span class="text-lg md:text-lg">Singularity</span> <br /> <span
-                                    class="text-scheme-primary font-bold">Control</span>
-                            </th>
-                            <th class="px-2 py-4 md:px-6 md:py-6 text-lg md:text-lg font-medium text-white/90 border-b border-white/10 w-1/4 text-center"
-                                style="background-color: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
-                                <span class="text-lg md:text-lg text-white/90">Singularity</span> <br />
-                                <span class="text-scheme-secondary font-bold"
-                                    style="text-shadow: 0 0 15px rgba(139, 92, 246, 0.6), 0 0 2px rgba(0,0,0,0.8);">Complete</span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-lg md:text-lg">
-                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                            <td class="px-3 py-6 md:px-6 md:py-8 text-white/80 font-medium leading-tight">Endpoint
-                                Protection (EPP)</td>
-                            <td class="px-2 py-6 md:px-6 md:py-8 text-center"><i data-lucide="check"
-                                    class="w-4 h-4 md:w-6 md:h-6 text-scheme-primary mx-auto"></i></td>
-                            <td class="px-2 py-6 md:px-6 md:py-8 text-center"><i data-lucide="check"
-                                    class="w-4 h-4 md:w-6 md:h-6 text-scheme-primary mx-auto"></i></td>
-                            <td class="px-3 py-6 md:px-6 md:py-8 text-center"
-                                style="background-color: rgba(139, 92, 246, 0.05);"><i data-lucide="check"
-                                    class="w-4 h-4 md:w-6 md:h-6 text-scheme-secondary mx-auto"></i></td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                            <td class="px-2 py-6 md:px-6 md:py-8 text-white/80 font-medium leading-tight">Advanced
-                                Controls (Firewall, Shell)</td>
-                            <td class="px-3 py-6 md:px-6 md:py-8 text-center text-white/20">—</td>
-                            <td class="px-2 py-6 md:px-6 md:py-8 text-center"><i data-lucide="check"
-                                    class="w-4 h-4 md:w-6 md:h-6 text-scheme-primary mx-auto"></i></td>
-                            <td class="px-3 py-6 md:px-6 md:py-8 text-center"
-                                style="background-color: rgba(139, 92, 246, 0.05);"><i data-lucide="check"
-                                    class="w-4 h-4 md:w-6 md:h-6 text-scheme-secondary mx-auto"></i></td>
-                        </tr>
-                        <tr class="hover:bg-white/[0.02] transition-colors">
-                            <td class="px-2 py-6 md:px-6 md:py-8 text-white/80 font-medium leading-tight">Extended
-                                Detection (XDR)</td>
-                            <td class="px-3 py-6 md:px-6 md:py-8 text-center text-white/20">—</td>
-                            <td class="px-3 py-6 md:px-6 md:py-8 text-center text-white/20">—</td>
-                            <td class="px-3 py-6 md:px-6 md:py-8 text-center"
-                                style="background-color: rgba(139, 92, 246, 0.05);"><i data-lucide="check"
-                                    class="w-4 h-4 md:w-6 md:h-6 text-scheme-secondary mx-auto"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Value 1 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-all group">
+                        <div class="p-3 rounded-xl bg-scheme-primary/10 text-scheme-primary group-hover:scale-110 transition-transform">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white">360º Integrity</h3>
+                        </div>
+                    </div>
+                    <!-- Value 2 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-all group">
+                        <div class="p-3 rounded-xl bg-scheme-secondary/10 text-scheme-secondary group-hover:scale-110 transition-transform">
+                            <i data-lucide="briefcase" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white">Work Ethic</h3>
+                        </div>
+                    </div>
+                    <!-- Value 3 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-all group">
+                        <div class="p-3 rounded-xl bg-scheme-primary/10 text-scheme-primary group-hover:scale-110 transition-transform">
+                            <i data-lucide="star" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white">Outstanding Service</h3>
+                        </div>
+                    </div>
+                    <!-- Value 4 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-all group">
+                        <div class="p-3 rounded-xl bg-scheme-secondary/10 text-scheme-secondary group-hover:scale-110 transition-transform">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">People as the Engine of Success</h3>
+                        </div>
+                    </div>
+                    <!-- Value 5 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-all group">
+                        <div class="p-3 rounded-xl bg-scheme-primary/10 text-scheme-primary group-hover:scale-110 transition-transform">
+                            <i data-lucide="target" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Owners of Results</h3>
+                        </div>
+                    </div>
+                    <!-- Value 6 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-all group">
+                        <div class="p-3 rounded-xl bg-scheme-secondary/10 text-scheme-secondary group-hover:scale-110 transition-transform">
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white">Speak Your Mind</h3>
+                        </div>
+                    </div>
+                    <!-- Value 7 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-all group">
+                        <div class="p-3 rounded-xl bg-scheme-primary/10 text-scheme-primary group-hover:scale-110 transition-transform">
+                            <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Kaizen: Continuous Improvement</h3>
+                        </div>
+                    </div>
+                    <!-- Value 8 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-all group">
+                        <div class="p-3 rounded-xl bg-scheme-secondary/10 text-scheme-secondary group-hover:scale-110 transition-transform">
+                            <i data-lucide="brain" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Mindfulness</h3>
+                        </div>
+                    </div>
+                    <!-- Value 9 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-all group">
+                        <div class="p-3 rounded-xl bg-scheme-primary/10 text-scheme-primary group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Technology as Competitive Advantage</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1744,9 +1769,9 @@
         <div class="relative z-10 max-w-7xl mx-auto w-full">
 
             <h2 class="text-6xl md:text-6xl font-light tracking-tight mb-8 leading-tight">
-                Advantages of <br />
-                <span class="font-bold text-scheme-primary">Faroprotec</span> +
-                <span class="text-scheme-secondary font-bold">SentinelOne</span>
+                Artificial intelligence with <br />
+                <span class="font-bold text-scheme-primary">human-quality</span>
+                <span class="text-scheme-secondary font-bold">support</span>
             </h2>
             <p class="text-4xl text-white/90 leading-relaxed boundary-l-2 border-scheme-primary/30 pl-6 py-2">
                 Expert guidance and human support in every phase of your cyber-resilience.
