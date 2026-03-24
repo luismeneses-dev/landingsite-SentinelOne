@@ -738,13 +738,7 @@
     <!-- THREAT PROTECTION (Problema) -->
     <section class="elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
-        <div class="absolute inset-0">
-            <!-- Background image with feathered edges (vignette/blur effect) -->
-            <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-50"
-                style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_low-angle_shot_of_a_high-0.jpg'); mask-image: radial-gradient(circle at center, black 70%, transparent 98%); -webkit-mask-image: radial-gradient(circle at center, black 70%, transparent 98%);">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-b from-black via-black/20 to-black"></div>
-        </div>
+
         <div class="relative max-w-7xl mx-auto">
             <div class="reveal-up text-center mb-16">
                 <h2 class="text-3xl md:text-5xl mb-6 tracking-tight font-light leading-tight">
@@ -1306,18 +1300,9 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-scheme-primary/10 to-transparent"></div>
             </div>
 
-            <!-- Lighthouse Container -->
+            <!-- Lighthouse Container (Right Side, Positioned at 30%, and Animated) -->
             <div
-                class="absolute right-[-5%] lg:right-[2%] bottom-[-5%] w-[250px] md:w-[350px] aspect-[3/4] z-0 flex flex-col items-center pointer-events-none mix-blend-screen">
-
-                <!-- Lighthouse Sweep Beam -->
-                <!-- Origin matches the light source core exactly -->
-                <div
-                    class="absolute top-[16.5%] left-[50%] w-[150vw] h-[150vw] -translate-x-1/2 -translate-y-1/2 flex justify-center items-center pointer-events-none z-1">
-                    <div class="w-full h-full animate-sweep"
-                        style="background: conic-gradient(from 180deg at 50% 50%, transparent 0deg, transparent 120deg, rgba(0, 217, 255, 0.4) 160deg, rgba(139, 92, 246, 0.6) 175deg, rgba(0, 217, 255, 1) 180deg, rgba(139, 92, 246, 0.6) 185deg, rgba(0, 217, 255, 0.4) 200deg, transparent 240deg, transparent 360deg); transform-origin: center center; filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5)) blur(15px);">
-                    </div>
-                </div>
+                class="absolute right-[2%] top-[30%] -translate-y-1/2 w-[250px] md:w-[350px] aspect-[3/4] z-0 flex flex-col items-center pointer-events-none mix-blend-screen animate-puma-head">
 
                 <!-- Light source core (the "foco") -->
                 <div class="absolute top-[16.5%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full bg-cyan-300 opacity-100 z-10 glow-core animate-pulse"
@@ -1327,9 +1312,9 @@
                 <div class="absolute top-[16.5%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-3 h-3 md:w-4 md:h-4 rounded-full bg-white z-20"
                     style="filter: blur(1px); box-shadow: 0 0 10px 5px white;"></div>
 
-                <!-- Lighthouse SVG -->
+                <!-- Lighthouse SVG (No blur) -->
                 <svg viewBox="0 0 60 80"
-                    class="absolute inset-0 w-full h-full z-20 opacity-100 drop-shadow-[0_0_12px_rgba(0,217,255,0.7)]">
+                    class="absolute inset-0 w-full h-full z-20 opacity-100">
                     <defs>
                         <linearGradient id="faroGradient" x1="0%" y1="100%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#FF3EFF" />
@@ -1346,10 +1331,6 @@
                 </svg>
             </div>
 
-            <!-- Gentle overall ambient glow -->
-            <div class="absolute inset-0 opacity-20 pointer-events-none"
-                style="background: radial-gradient(circle at 80% 80%, var(--primary) 0%, transparent 60%); filter: blur(50px); z-index: 2;">
-            </div>
             <div
                 class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none z-[2]">
             </div>
