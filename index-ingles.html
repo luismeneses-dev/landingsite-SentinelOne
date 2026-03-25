@@ -858,10 +858,24 @@
 
         <!-- THE PUMA (JAGUAR) - IMMERSIVE FULL BACKGROUND -->
         <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-            <img loading="lazy"
-                src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.jpg"
-                alt="SentinelOne Predator" class="w-full h-full object-cover object-right opacity-100 scale-110" style="filter: contrast(1.4) brightness(1.1); 
-                        mix-blend-mode: screen;" />
+            <div class="relative w-full h-full translate-x-[15%]"
+                 style="mask-image: radial-gradient(circle at 60% 50%, black 50%, transparent 100%);
+                        -webkit-mask-image: radial-gradient(circle at 60% 50%, black 50%, transparent 100%);">
+                <!-- Back Layer: More opaque and darker (Depth) -->
+                <img loading="lazy"
+                    src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.png"
+                    alt="SentinelOne Predator Back"
+                    class="absolute inset-0 w-full h-full object-cover object-right opacity-40 scale-110" style="filter: contrast(1.2) brightness(0.6);" />
+
+                <!-- Front Layer: Brighter with fade-in (Impact) -->
+                <img loading="lazy"
+                    src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.png"
+                    alt="SentinelOne Predator Front"
+                    class="absolute inset-0 w-full h-full object-cover object-right opacity-100 scale-110"
+                    style="filter: contrast(1.4) brightness(1.3) drop-shadow(0 0 15px rgba(0,217,255,0.4)); 
+                        -webkit-mask-image: linear-gradient(to right, transparent 30%, black 70%);
+                        mask-image: linear-gradient(to right, transparent 30%, black 70%);" />
+            </div>
         </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-20 w-full">
