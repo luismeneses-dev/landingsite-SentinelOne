@@ -293,10 +293,19 @@
 
         /* Oil Flow Animated Gradient */
         @keyframes oil-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
+
         .animate-oil {
             background: linear-gradient(-45deg, #000, #8B5CF6, #000, #00D9FF, #000);
             background-size: 400% 400%;
@@ -997,7 +1006,8 @@
                 <!-- Logo con resplandor morado -->
 
 
-                <h2 class="text-3xl md:text-5xl font-light tracking-tight max-w-3xl mx-auto mb-6 leading-tight drop-shadow-lg drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">
+                <h2
+                    class="text-3xl md:text-5xl font-light tracking-tight max-w-3xl mx-auto mb-6 leading-tight drop-shadow-lg drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">
                     Why settle for alerts, when you can have absolute resilience?
                 </h2>
             </div>
@@ -1006,46 +1016,68 @@
             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                 <!-- Tarjeta 1 -->
                 <div class="reveal-left w-full h-full">
-                    <div class="h-full bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,217,255,0.05)] hover:bg-white/[0.06] transition-colors duration-500">
+                    <div
+                        class="h-full bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(0,217,255,0.05)] hover:bg-white/[0.06] transition-colors duration-500">
                         <h3 class="text-xl md:text-2xl font-medium mb-8 flex items-center gap-3">
-                            <i data-lucide="layers" class="w-8 h-8 text-scheme-secondary drop-shadow-[0_0_8px_rgba(0,217,255,0.6)]"></i> Technical Delivery
+                            <i data-lucide="layers"
+                                class="w-8 h-8 text-scheme-secondary drop-shadow-[0_0_8px_rgba(0,217,255,0.6)]"></i>
+                            Technical Delivery
                         </h3>
                         <ul class="space-y-4 text-lg text-white/90">
-                            <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
-                                <i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Agile deployment on every endpoint</span></li>
-                            <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
-                                <i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Optimized policies from day 1</span></li>
-                            <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
-                                <i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Full integration with SIEM/SOC</span></li>
-                            <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
-                                <i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i> <span>Tailored response playbooks</span></li>
+                            <li
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
+                                <i data-lucide="check-circle" class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i>
+                                <span>Agile deployment on every endpoint</span>
+                            </li>
+                            <li
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
+                                <i data-lucide="check-circle" class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i>
+                                <span>Optimized policies from day 1</span>
+                            </li>
+                            <li
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
+                                <i data-lucide="check-circle" class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i>
+                                <span>Full integration with SIEM/SOC</span>
+                            </li>
+                            <li
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
+                                <i data-lucide="check-circle" class="w-6 h-6 shrink-0 mt-0.5 text-scheme-secondary"></i>
+                                <span>Tailored response playbooks</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Tarjeta 2 -->
                 <div class="reveal-right w-full h-full">
-                    <div class="h-full bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(139,92,246,0.1)] hover:bg-white/[0.06] transition-colors duration-500">
+                    <div
+                        class="h-full bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-[0_0_30px_rgba(139,92,246,0.1)] hover:bg-white/[0.06] transition-colors duration-500">
                         <h3 class="text-xl md:text-2xl font-medium mb-8 flex items-center gap-3">
-                            <i data-lucide="shield" class="w-8 h-8 text-scheme-primary drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]"></i> Operational Resilience
+                            <i data-lucide="shield"
+                                class="w-8 h-8 text-scheme-primary drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]"></i>
+                            Operational Resilience
                         </h3>
                         <ul class="space-y-4 text-lg text-white/90">
-                            <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
-                                <i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Automatic recovery (Rollback)</span></li>
-                            <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
-                                <i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>RTO/RPO measured in minutes</span></li>
-                            <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
-                                <i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>High-impact attack simulations</span></li>
-                            <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
-                                <i data-lucide="check-circle"
-                                    class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Expert training for your TI team</span></li>
+                            <li
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
+                                <i data-lucide="check-circle" class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i>
+                                <span>Automatic recovery (Rollback)</span>
+                            </li>
+                            <li
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
+                                <i data-lucide="check-circle" class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i>
+                                <span>RTO/RPO measured in minutes</span>
+                            </li>
+                            <li
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
+                                <i data-lucide="check-circle" class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i>
+                                <span>High-impact attack simulations</span>
+                            </li>
+                            <li
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-default">
+                                <i data-lucide="check-circle" class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i>
+                                <span>Expert training for your TI team</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1083,7 +1115,9 @@
                 <div class="reveal-up delay-100 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
                     style="border-color: rgba(255,255,255,0.1);">
                     <!-- Background placeholder/overlay -->
-                    <div class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]"></div>
+                    <div
+                        class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]">
+                    </div>
                     <!-- Overlay para legibilidad -->
                     <div
                         class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
@@ -1112,7 +1146,9 @@
                 <div class="reveal-up delay-200 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
                     style="border-color: rgba(255,255,255,0.1);">
                     <!-- Background placeholder/overlay -->
-                    <div class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]"></div>
+                    <div
+                        class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]">
+                    </div>
                     <!-- Overlay para legibilidad -->
                     <div
                         class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
@@ -1139,7 +1175,9 @@
                 <div class="reveal-up delay-300 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
                     style="border-color: rgba(255,255,255,0.1);">
                     <!-- Background placeholder/overlay -->
-                    <div class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]"></div>
+                    <div
+                        class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]">
+                    </div>
                     <!-- Overlay para legibilidad -->
                     <div
                         class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
@@ -1319,8 +1357,7 @@
                     style="filter: blur(1px); box-shadow: 0 0 10px 5px white;"></div>
 
                 <!-- Lighthouse SVG (No blur) -->
-                <svg viewBox="0 0 60 80"
-                    class="absolute inset-0 w-full h-full z-20 opacity-100">
+                <svg viewBox="0 0 60 80" class="absolute inset-0 w-full h-full z-20 opacity-100">
                     <defs>
                         <linearGradient id="faroGradient" x1="0%" y1="100%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#FF3EFF" />
@@ -1711,7 +1748,7 @@
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <!-- New Full Section Background -->
             <div class="absolute inset-0 w-full h-full bg-cover bg-right md:bg-center opacity-40 md:opacity-100"
-                style="background-image: url('./public/images/universal_upscale_0_794ac51f-de2b-45dd-bc8b-ac9be682ab81_0.jpg'); filter: brightness(1.1) contrast(1.1) saturate(1.1) ;">
+                style="background-image: url('./public/images/universal_upscale_0_a14c28ca-1bf0-48b1-8918-d8fee49a87dc_0.jpg'); filter: brightness(1.1) contrast(1.1) saturate(1.1) ;">
             </div>
             <!-- Vignette for depth and contrast -->
             <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)] opacity-30">
@@ -1777,7 +1814,8 @@
                                 <h4 class="text-xl md:text-2xl font-bold text-white mb-6">Support Metrics</h4>
                                 <div class="space-y-6">
                                     <div class="p-4 rounded-xl bg-black/40 border border-white/5">
-                                        <div class="text-xl md:text-xl md:text-2xl font-bold text-scheme-secondary">&lt;15 min</div>
+                                        <div class="text-xl md:text-xl md:text-2xl font-bold text-scheme-secondary">
+                                            &lt;15 min</div>
                                         <div class="text-lg uppercase tracking-widest text-white/40">Critical Response
                                         </div>
                                     </div>
@@ -2331,7 +2369,7 @@
                 particles.forEach(p => {
                     // Lissajous curve parameters for infinity: x = sin(t), y = sin(2t)
                     const t = p.tOffset + (time * 2); // Movement along the curve
-                    
+
                     // The base figure-8 curve
                     let x3d = Math.sin(t) * scaleX;
                     let y3d = Math.sin(2 * t) * scaleY * 0.8;
@@ -2350,7 +2388,7 @@
                     // Add the twist perpendicular to the path
                     const perpX = -Math.sin(angle);
                     const perpY = Math.cos(angle);
-                    
+
                     x3d += perpX * Math.cos(twistPhase + strandPhaseOffset) * twistRadius;
                     y3d += perpY * Math.cos(twistPhase + strandPhaseOffset) * twistRadius;
                     z3d += Math.sin(twistPhase + strandPhaseOffset) * twistRadius;
@@ -2366,7 +2404,7 @@
                     const zScale = focalLength / (focalLength + z3d + 100);
                     const px = width / 2 + x3d * zScale;
                     const py = height / 2 + y3d * zScale;
-                    
+
                     // Particle size driven by depth
                     const radius = Math.max(0.5, 3 * zScale);
 
