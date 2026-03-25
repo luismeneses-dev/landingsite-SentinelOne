@@ -307,17 +307,43 @@
         }
 
         @keyframes oil-wave-forward {
-            0% { transform: translateX(-120%) skewX(-20deg); opacity: 0; }
-            30% { opacity: 0.85; }
-            70% { opacity: 0.85; }
-            100% { transform: translateX(280%) skewX(-20deg); opacity: 0; }
+            0% {
+                transform: translateX(-120%) skewX(-20deg);
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 0.85;
+            }
+
+            70% {
+                opacity: 0.85;
+            }
+
+            100% {
+                transform: translateX(280%) skewX(-20deg);
+                opacity: 0;
+            }
         }
 
         @keyframes oil-wave-backward {
-            0% { transform: translateX(150%) skewX(20deg); opacity: 0; }
-            30% { opacity: 0.85; }
-            70% { opacity: 0.85; }
-            100% { transform: translateX(-180%) skewX(20deg); opacity: 0; }
+            0% {
+                transform: translateX(150%) skewX(20deg);
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 0.85;
+            }
+
+            70% {
+                opacity: 0.85;
+            }
+
+            100% {
+                transform: translateX(-180%) skewX(20deg);
+                opacity: 0;
+            }
         }
 
         .animate-oil {
@@ -778,16 +804,32 @@
         <!-- Oil Flow Waves Background (Intenso Collision - Final Fix) -->
         <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden mix-blend-screen opacity-70">
             <!-- Forward Waves (L -> R) staggered ~1.25s -->
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 0s;"></div>
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(244, 114, 182, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 2.5s;"></div>
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(96, 165, 250, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 5s;"></div>
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 7.5s;"></div>
-            
+            <div class="absolute top-0 bottom-0 w-1/2"
+                style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 0s;">
+            </div>
+            <div class="absolute top-0 bottom-0 w-1/2"
+                style="background: radial-gradient(circle at center, rgba(244, 114, 182, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 2.5s;">
+            </div>
+            <div class="absolute top-0 bottom-0 w-1/2"
+                style="background: radial-gradient(circle at center, rgba(96, 165, 250, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 5s;">
+            </div>
+            <div class="absolute top-0 bottom-0 w-1/2"
+                style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 7.5s;">
+            </div>
+
             <!-- Backward Waves (R -> L) staggered ~1.25s intervals -->
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 1.25s;"></div>
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(244, 114, 182, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 3.75s;"></div>
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(96, 165, 250, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 6.25s;"></div>
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 8.75s;"></div>
+            <div class="absolute top-0 bottom-0 w-1/2"
+                style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 1.25s;">
+            </div>
+            <div class="absolute top-0 bottom-0 w-1/2"
+                style="background: radial-gradient(circle at center, rgba(244, 114, 182, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 3.75s;">
+            </div>
+            <div class="absolute top-0 bottom-0 w-1/2"
+                style="background: radial-gradient(circle at center, rgba(96, 165, 250, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 6.25s;">
+            </div>
+            <div class="absolute top-0 bottom-0 w-1/2"
+                style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 8.75s;">
+            </div>
         </div>
 
         <div class="relative max-w-7xl mx-auto">
@@ -880,120 +922,125 @@
         <!-- Partículas de Carrera (Moradas/Cian) Canvas -->
         <canvas id="pumaParticles" class="absolute inset-0 z-10 pointer-events-none"></canvas>
 
-        <div class="absolute inset-0 z-0 w-full h-full opacity-10 select-none bg-cover bg-center transition-all duration-1000"
-            style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_futuristic_architectural-0.jpg'); mix-blend-mode: overlay;">
-        </div>
 
-        <!-- EL PUMA (JAGUAR) - FONDO COMPLETO INMERSIVO -->
-        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-            <div class="relative w-full h-full translate-x-[15%]" 
-                 style="mask-image: radial-gradient(circle at 60% 50%, black 50%, transparent 100%);
-                        -webkit-mask-image: radial-gradient(circle at 60% 50%, black 50%, transparent 100%);">
-                <!-- Capa Trasera: Más opaca y oscura (Profundidad) -->
+
+        <div class="max-w-7xl mx-auto px-6 relative z-20 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <!-- Columna Izquierda: Contenido y Cards -->
+            <div class="w-full lg:w-[55%]">
+                <div class="reveal-up text-left mb-12 max-w-2xl">
+                    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-8 leading-tight">
+                        ¿Qué es <span class="font-bold text-scheme-primary">SentinelOne</span>?
+                    </h2>
+                    <div
+                        class="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-lg font-semibold mb-6 tracking-wider">
+                        VELOCIDAD DE RESPUESTA AUTÓNOMA
+                    </div>
+                    <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
+                        El depredador definitivo que no solo detecta, <span class="text-purple-400">caza</span> las
+                        amenazas. Dando protección a tus endpoints.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+                    <!-- F1 -->
+                    <div class="reveal-up delay-100 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
+                        style="border-color: rgba(255,255,255,0.1);">
+                        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
+                            style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_flawless_glowing_archite-0.jpg'); mix-blend-mode: color-dodge;">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
+                                <i data-lucide="brain" class="w-7 h-7 text-scheme-primary"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl mb-3 font-medium">IA y comportamiento</h3>
+                            <p
+                                class="text-white/80 leading-relaxed text-lg transition-colors group-hover:text-white">
+                                Detecta amenazas conocidas y desconocidas con análisis de comportamiento.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- F2 -->
+                    <div class="reveal-up delay-200 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
+                        style="border-color: rgba(255,255,255,0.1);">
+                        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
+                            style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_sleek_professional_cyber-0.jpg'); mix-blend-mode: color-dodge;">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
+                                <i data-lucide="zap" class="w-7 h-7 text-scheme-primary"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl mb-3 font-medium">Respuesta autónoma</h3>
+                            <p
+                                class="text-white/80 leading-relaxed text-lg transition-colors group-hover:text-white">
+                                Contiene el ataque sin depender de acciones manuales en el momento crítico.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- F3 -->
+                    <div class="reveal-up delay-300 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
+                        style="border-color: rgba(255,255,255,0.1);">
+                        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
+                            style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_art_representing_-0.jpg'); mix-blend-mode: color-dodge;">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
+                                <i data-lucide="cpu" class="w-7 h-7 text-scheme-primary"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl mb-3 font-medium">Agente super ligero</h3>
+                            <p class="text-white/80 leading-relaxed text-lg transition-colors group-hover:text-white">
+                                Singularity Agent corre de forma fluida y silenciosa en Windows, Linux y macOS sin impactar
+                                el rendimiento.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- F4 -->
+                    <div class="reveal-up delay-400 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
+                        style="border-color: rgba(255,255,255,0.1);">
+                        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
+                            style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_panoramic_horizon_line_m-0.jpg'); mix-blend-mode: color-dodge;">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
+                                <i data-lucide="search" class="w-7 h-7 text-scheme-primary"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl mb-3 font-medium">Visibilidad centralizada</h3>
+                            <p
+                                class="text-white/80 leading-relaxed text-lg transition-colors group-hover:text-white">
+                                Inventario, actividad y trazabilidad en endpoints, servidores y cloud.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: El Puma (Jaguar) en Contenedor Dedicado -->
+            <div class="w-full lg:w-[90%] h-[450px] lg:h-[850px] relative pointer-events-none lg:-mr-48">
+                <!-- Brillo de fondo místico -->
+                <div class="absolute inset-0 bg-gradient-radial from-purple-500/20 via-transparent to-transparent opacity-70"></div>
+
+                <!-- Capa Fantasma: Cola difuminada que "materializa" elegantemente -->
                 <img loading="lazy"
                     src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.png"
-                    alt="SentinelOne Predator Back"
-                    class="absolute inset-0 w-full h-full object-cover object-right opacity-40 scale-110" style="filter: contrast(1.2) brightness(0.6);" />
+                    alt="SentinelOne Predator Ghost"
+                    class="absolute inset-0 w-full h-full object-contain"
+                    style="object-position: center center;
+                           filter: contrast(1.4) brightness(1.0) drop-shadow(0 0 25px rgba(139,92,246,0.5));
+                           -webkit-mask-image: linear-gradient(to right, transparent 5%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 48%, black 62%);
+                           mask-image: linear-gradient(to right, transparent 5%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 48%, black 62%);" />
 
-                <!-- Capa Frontal: Más brillante con desvanecimiento (Impacto) -->
+                <!-- Capa Sólida: Cabeza y cuerpo delantero con todo el brillo -->
                 <img loading="lazy"
                     src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.png"
-                    alt="SentinelOne Predator Front"
-                    class="absolute inset-0 w-full h-full object-cover object-right opacity-100 scale-110"
-                    style="filter: contrast(1.4) brightness(1.3) drop-shadow(0 0 15px rgba(0,217,255,0.4)); 
-                        -webkit-mask-image: linear-gradient(to right, transparent 30%, black 70%);
-                        mask-image: linear-gradient(to right, transparent 30%, black 70%);" />
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-20 w-full">
-            <div class="reveal-up text-left mb-16 max-w-2xl">
-                <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-8 leading-tight">
-                    ¿Qué es <span class="font-bold text-scheme-primary">SentinelOne</span>?
-                </h2>
-                <div
-                    class="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-lg font-semibold mb-6 tracking-wider">
-                    VELOCIDAD DE RESPUESTA AUTÓNOMA
-                </div>
-                <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
-                    El depredador definitivo que no solo detecta, <span class="text-purple-400">caza</span> las
-                    amenazas. Dando protección a tus endpoints.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 max-w-3xl">
-                <!-- F1 -->
-                <div class="reveal-up delay-100 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
-                    style="border-color: rgba(255,255,255,0.1);">
-                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
-                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_flawless_glowing_archite-0.jpg'); mix-blend-mode: color-dodge;">
-                    </div>
-                    <div class="relative z-10">
-                        <div
-                            class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
-                            <i data-lucide="brain" class="w-7 h-7 text-scheme-primary"></i>
-                        </div>
-                        <h3 class="text-xl md:text-2xl mb-3 font-medium">IA y comportamiento</h3>
-                        <p
-                            class="text-white/80 leading-relaxed text-lg md:text-lg transition-colors group-hover:text-white">
-                            Detecta amenazas conocidas y desconocidas con análisis de comportamiento.
-                        </p>
-                    </div>
-                </div>
-                <!-- F2 -->
-                <div class="reveal-up delay-200 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
-                    style="border-color: rgba(255,255,255,0.1);">
-                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
-                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_sleek_professional_cyber-0.jpg'); mix-blend-mode: color-dodge;">
-                    </div>
-                    <div class="relative z-10">
-                        <div
-                            class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
-                            <i data-lucide="zap" class="w-7 h-7 text-scheme-primary"></i>
-                        </div>
-                        <h3 class="text-xl md:text-2xl mb-3 font-medium">Respuesta autónoma</h3>
-                        <p
-                            class="text-white/80 leading-relaxed text-lg md:text-lg transition-colors group-hover:text-white">
-                            Contiene el ataque sin depender de acciones manuales en el momento crítico.
-                        </p>
-                    </div>
-                </div>
-                <!-- F3 -->
-                <div class="reveal-up delay-300 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
-                    style="border-color: rgba(255,255,255,0.1);">
-                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
-                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_art_representing_-0.jpg'); mix-blend-mode: color-dodge;">
-                    </div>
-                    <div class="relative z-10">
-                        <div
-                            class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10">
-                            <i data-lucide="cpu" class="w-7 h-7 text-scheme-primary"></i>
-                        </div>
-                        <h3 class="text-xl md:text-2xl mb-3 font-medium">Agente super ligero</h3>
-                        <p class="text-white/80 leading-relaxed text-lg">
-                            Singularity Agent corre de forma fluida y silenciosa en Windows, Linux y macOS sin impactar
-                            el rendimiento.
-                        </p>
-                    </div>
-                </div>
-                <!-- F4 -->
-                <div class="reveal-up delay-400 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
-                    style="border-color: rgba(255,255,255,0.1);">
-                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
-                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_panoramic_horizon_line_m-0.jpg'); mix-blend-mode: color-dodge;">
-                    </div>
-                    <div class="relative z-10">
-                        <div
-                            class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
-                            <i data-lucide="search" class="w-7 h-7 text-scheme-primary"></i>
-                        </div>
-                        <h3 class="text-xl md:text-2xl mb-3 font-medium">Visibilidad centralizada</h3>
-                        <p
-                            class="text-white/80 leading-relaxed text-lg md:text-lg transition-colors group-hover:text-white">
-                            Inventario, actividad y trazabilidad en endpoints, servidores y cloud.
-                        </p>
-                    </div>
-                </div>
+                    alt="SentinelOne Predator"
+                    class="absolute inset-0 w-full h-full object-contain"
+                    style="object-position: center center;
+                           filter: contrast(1.6) brightness(1.15) drop-shadow(0 0 40px rgba(139,92,246,0.7)) drop-shadow(0 0 70px rgba(0,217,255,0.35));
+                           -webkit-mask-image: linear-gradient(to right, transparent 30%, rgba(0,0,0,0.6) 50%, black 65%);
+                           mask-image: linear-gradient(to right, transparent 30%, rgba(0,0,0,0.6) 50%, black 65%);" />
             </div>
         </div>
     </section>
@@ -2494,7 +2541,7 @@
                     // Restored offset (100) for original size, but added proximity safety
                     const dist = focalLength + z3d + 100;
                     if (dist < 20) return; // Prevention of mathematical singularity (The "Flash")
-                    
+
                     const zScale = focalLength / dist;
                     const px = width / 2 + x3d * zScale;
                     const py = height / 2 + y3d * zScale;
