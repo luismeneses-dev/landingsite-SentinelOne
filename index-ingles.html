@@ -307,17 +307,17 @@
         }
 
         @keyframes oil-wave-forward {
-            0% { transform: translateX(-100%) skewX(-15deg); opacity: 0; }
-            30% { opacity: 0.6; }
-            70% { opacity: 0.6; }
-            100% { transform: translateX(250%) skewX(-15deg); opacity: 0; }
+            0% { transform: translateX(-120%) skewX(-20deg); opacity: 0; }
+            30% { opacity: 0.85; }
+            70% { opacity: 0.85; }
+            100% { transform: translateX(280%) skewX(-20deg); opacity: 0; }
         }
 
         @keyframes oil-wave-backward {
-            0% { transform: translateX(150%) skewX(15deg); opacity: 0; }
-            30% { opacity: 0.6; }
-            70% { opacity: 0.6; }
-            100% { transform: translateX(-150%) skewX(15deg); opacity: 0; }
+            0% { transform: translateX(150%) skewX(20deg); opacity: 0; }
+            30% { opacity: 0.85; }
+            70% { opacity: 0.85; }
+            100% { transform: translateX(-180%) skewX(20deg); opacity: 0; }
         }
 
         .animate-oil {
@@ -776,17 +776,19 @@
     <section class="elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
 
-        <!-- Oil Flow Waves Background (Intenso Collision) -->
-        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden mix-blend-screen opacity-50">
-            <!-- Forward Waves (L -> R) -->
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(139, 92, 246, 0.5), transparent 75%); filter: blur(100px); animation: oil-wave-forward 12s linear infinite; animation-delay: 0s;"></div>
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(236, 72, 153, 0.5), transparent 75%); filter: blur(100px); animation: oil-wave-forward 12s linear infinite; animation-delay: 4s;"></div>
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(59, 130, 246, 0.5), transparent 75%); filter: blur(100px); animation: oil-wave-forward 12s linear infinite; animation-delay: 8s;"></div>
+        <!-- Oil Flow Waves Background (Intenso Collision - Final Fix) -->
+        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden mix-blend-screen opacity-70">
+            <!-- Forward Waves (L -> R) staggered ~1.25s -->
+            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 0s;"></div>
+            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(244, 114, 182, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 2.5s;"></div>
+            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(96, 165, 250, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 5s;"></div>
+            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 7.5s;"></div>
             
-            <!-- Backward Waves (R -> L) -->
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(139, 92, 246, 0.5), transparent 75%); filter: blur(100px); animation: oil-wave-backward 12s linear infinite; animation-delay: 2s;"></div>
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(236, 72, 153, 0.5), transparent 75%); filter: blur(100px); animation: oil-wave-backward 12s linear infinite; animation-delay: 6s;"></div>
-            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(59, 130, 246, 0.5), transparent 75%); filter: blur(100px); animation: oil-wave-backward 12s linear infinite; animation-delay: 10s;"></div>
+            <!-- Backward Waves (R -> L) staggered ~1.25s intervals -->
+            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 1.25s;"></div>
+            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(244, 114, 182, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 3.75s;"></div>
+            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(96, 165, 250, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 6.25s;"></div>
+            <div class="absolute top-0 bottom-0 w-1/2" style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 8.75s;"></div>
         </div>
 
         <div class="relative max-w-7xl mx-auto">
