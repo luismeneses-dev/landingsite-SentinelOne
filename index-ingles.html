@@ -291,6 +291,19 @@
             animation: puma-float 10s ease-in-out infinite;
         }
 
+        /* Oil Flow Animated Gradient */
+        @keyframes oil-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-oil {
+            background: linear-gradient(-45deg, #000, #8B5CF6, #000, #00D9FF, #000);
+            background-size: 400% 400%;
+            animation: oil-flow 15s ease infinite;
+            opacity: 0.4;
+        }
+
         /* POINT 1: Security Layers Accordion */
         .security-accordion-item {
             max-height: 140px;
@@ -1049,10 +1062,8 @@
     <!-- SERVICES (Industrias) -->
     <section id="industrias" class="elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 opacity-40 mix-blend-screen"
-                style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_3D_composition_of-0.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-            </div>
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <div class="absolute inset-0 animate-oil"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
         </div>
 
@@ -1071,10 +1082,8 @@
                 <!-- Healthcare -->
                 <div class="reveal-up delay-100 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
                     style="border-color: rgba(255,255,255,0.1);">
-                    <!-- Fondo de imagen claro y enfocado -->
-                    <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_3D_composition_of-0.jpg');">
-                    </div>
+                    <!-- Background placeholder/overlay -->
+                    <div class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]"></div>
                     <!-- Overlay para legibilidad -->
                     <div
                         class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
@@ -1102,10 +1111,8 @@
                 <!-- Fintech / Retail -->
                 <div class="reveal-up delay-200 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
                     style="border-color: rgba(255,255,255,0.1);">
-                    <!-- Fondo de imagen claro y enfocado -->
-                    <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_3D_render_of_a_floating_-0.jpg');">
-                    </div>
+                    <!-- Background placeholder/overlay -->
+                    <div class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]"></div>
                     <!-- Overlay para legibilidad -->
                     <div
                         class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
@@ -1131,10 +1138,8 @@
                 <!-- Corporate -->
                 <div class="reveal-up delay-300 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
                     style="border-color: rgba(255,255,255,0.1);">
-                    <!-- Fondo de imagen claro y enfocado -->
-                    <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                        style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_minimalist_visual-0.jpg');">
-                    </div>
+                    <!-- Background placeholder/overlay -->
+                    <div class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]"></div>
                     <!-- Overlay para legibilidad -->
                     <div
                         class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
@@ -1583,7 +1588,7 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow drop-shadow-[0_0_8px_rgba(0,217,255,0.8)] animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-base leading-relaxed mb-3 mt-2">Immediate pre-execution
+                                <p class="text-white/80 text-lg leading-relaxed mb-3 mt-2">Immediate pre-execution
                                     protection against known and unknown malware.</p>
                                 <div class="h-1 w-full bg-scheme-primary/20 rounded-full overflow-hidden">
                                     <div class="h-full bg-scheme-primary w-[90%] animate-pulse"></div>
@@ -1602,13 +1607,13 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow drop-shadow-[0_0_8px_rgba(0,217,255,0.8)] animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-base leading-relaxed mb-3 mt-2">Monitoring live processes
+                                <p class="text-white/80 text-lg leading-relaxed mb-3 mt-2">Monitoring live processes
                                     to stop ransomware in mid-action.</p>
                                 <div class="flex gap-2">
                                     <span
-                                        class="text-sm px-2 py-0.5 rounded bg-scheme-primary/20 text-scheme-primary">LIVE</span>
+                                        class="text-lg px-2 py-0.5 rounded bg-scheme-primary/20 text-scheme-primary">LIVE</span>
                                     <span
-                                        class="text-sm px-2 py-0.5 rounded bg-white/10 text-white/50">PROTECTION</span>
+                                        class="text-lg px-2 py-0.5 rounded bg-white/10 text-white/50">PROTECTION</span>
                                 </div>
                             </div>
                         </div>
@@ -1624,7 +1629,7 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow drop-shadow-[0_0_8px_rgba(0,217,255,0.8)] animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-base leading-relaxed mt-2">One-click automated reversion of
+                                <p class="text-white/80 text-lg leading-relaxed mt-2">One-click automated reversion of
                                     any damage caused to the endpoint.</p>
                             </div>
                         </div>
@@ -1640,13 +1645,13 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow drop-shadow-[0_0_8px_rgba(0,217,255,0.8)] animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-base leading-relaxed mb-3 mt-2">Manage network policies and
+                                <p class="text-white/80 text-lg leading-relaxed mb-3 mt-2">Manage network policies and
                                     peripherals to prevent data leaks.</p>
                                 <div class="flex gap-2">
                                     <span
-                                        class="text-sm px-2 py-0.5 rounded bg-scheme-primary/20 text-scheme-primary">USB</span>
-                                    <span class="text-sm px-2 py-0.5 rounded bg-white/10 text-white/50">NET</span>
-                                    <span class="text-sm px-2 py-0.5 rounded bg-white/10 text-white/50">BT</span>
+                                        class="text-lg px-2 py-0.5 rounded bg-scheme-primary/20 text-scheme-primary">USB</span>
+                                    <span class="text-lg px-2 py-0.5 rounded bg-white/10 text-white/50">NET</span>
+                                    <span class="text-lg px-2 py-0.5 rounded bg-white/10 text-white/50">BT</span>
                                 </div>
                             </div>
                         </div>
@@ -1662,12 +1667,12 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow drop-shadow-[0_0_8px_rgba(0,217,255,0.8)] animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-base leading-relaxed mb-3 mt-2">Identify unmanaged assets and
+                                <p class="text-white/80 text-lg leading-relaxed mb-3 mt-2">Identify unmanaged assets and
                                     IoT devices across your environment.</p>
                                 <div class="flex gap-2">
                                     <span
-                                        class="text-sm px-2 py-0.5 rounded bg-scheme-primary/20 text-scheme-primary">VISIBILITY</span>
-                                    <span class="text-sm px-2 py-0.5 rounded bg-white/10 text-white/50">IOT</span>
+                                        class="text-lg px-2 py-0.5 rounded bg-scheme-primary/20 text-scheme-primary">VISIBILITY</span>
+                                    <span class="text-lg px-2 py-0.5 rounded bg-white/10 text-white/50">IOT</span>
                                 </div>
                             </div>
                         </div>
@@ -1683,12 +1688,12 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow drop-shadow-[0_0_8px_rgba(0,217,255,0.8)] animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-base leading-relaxed mb-3 mt-2">Absolute context that
+                                <p class="text-white/80 text-lg leading-relaxed mb-3 mt-2">Absolute context that
                                     automatically connects every point of the network.</p>
                                 <div class="flex gap-2">
                                     <span
-                                        class="text-sm px-2 py-0.5 rounded bg-scheme-primary/20 text-scheme-primary">CONTEXT</span>
-                                    <span class="text-sm px-2 py-0.5 rounded bg-white/10 text-white/50">AI</span>
+                                        class="text-lg px-2 py-0.5 rounded bg-scheme-primary/20 text-scheme-primary">CONTEXT</span>
+                                    <span class="text-lg px-2 py-0.5 rounded bg-white/10 text-white/50">AI</span>
                                 </div>
                             </div>
                         </div>
@@ -1723,8 +1728,8 @@
                 <span class="font-bold text-scheme-secondary">human-quality</span>
                 <span class="text-scheme-primary font-bold">support</span>
             </h2>
-            <p class="text-4xl text-white/90 leading-relaxed boundary-l-2 border-scheme-primary/30 pl-6 py-2">
-                Expert guidance and human support in every phase of your cyber-resilience.
+            <p class="text-xl md:text-2xl text-white/90 leading-relaxed border-l-2 border-scheme-primary/30 pl-6 py-2">
+                Expert guidance and human support at every stage of your cyber-resilience.
             </p>
 
             <!-- Dashboard Interactivo (Split Layout) -->
@@ -1744,7 +1749,7 @@
                                         class="w-16 h-16 rounded-2xl flex items-center justify-center bg-scheme-primary/10 border border-scheme-primary/20">
                                         <i data-lucide="headphones" class="w-8 h-8 text-scheme-primary"></i>
                                     </div>
-                                    <h3 class="text-4xl font-bold text-white">Post-Purchase Service</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold text-white">Post-Acquisition Service</h3>
                                 </div>
                                 <p class="text-white/60 text-lg mb-8">Human 24/7 support available for your IT team.</p>
                                 <div class="mt-auto flex items-center gap-2 text-scheme-primary font-bold z-10">
@@ -1769,15 +1774,15 @@
                             </div>
                             <!-- BACK -->
                             <div class="flip-card-back">
-                                <h4 class="text-4xl font-bold text-white mb-6">Support Metrics</h4>
+                                <h4 class="text-xl md:text-2xl font-bold text-white mb-6">Support Metrics</h4>
                                 <div class="space-y-6">
                                     <div class="p-4 rounded-xl bg-black/40 border border-white/5">
-                                        <div class="text-4xl font-bold text-scheme-primary">&lt;15 min</div>
+                                        <div class="text-xl md:text-xl md:text-2xl font-bold text-scheme-secondary">&lt;15 min</div>
                                         <div class="text-lg uppercase tracking-widest text-white/40">Critical Response
                                         </div>
                                     </div>
                                     <div class="p-4 rounded-xl bg-black/40 border border-white/5">
-                                        <div class="text-4xl font-bold text-white">98%</div>
+                                        <div class="text-xl md:text-2xl font-bold text-white">98%</div>
                                         <div class="text-lg uppercase tracking-widest text-white/40">Annual Retention
                                         </div>
                                     </div>
@@ -1797,7 +1802,7 @@
                                         class="w-16 h-16 rounded-2xl flex items-center justify-center bg-scheme-secondary/10 border border-scheme-secondary/20">
                                         <i data-lucide="shield-check" class="w-8 h-8 text-scheme-secondary"></i>
                                     </div>
-                                    <h3 class="text-4xl font-bold text-white">Expert Consultancy</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold text-white">Expert Consultancy</h3>
                                 </div>
                                 <p class="text-white/60 text-lg mb-8">Certified Engineering to optimize your defense.
                                 </p>
@@ -1823,10 +1828,10 @@
                             </div>
                             <!-- BACK -->
                             <div class="flip-card-back">
-                                <h4 class="text-4xl font-bold text-white mb-6">Real Impact</h4>
+                                <h4 class="text-xl md:text-2xl font-bold text-white mb-6">Real Impact</h4>
                                 <div class="space-y-6">
                                     <div class="p-4 rounded-xl bg-black/40 border border-white/5">
-                                        <div class="text-4xl font-bold text-white">+500</div>
+                                        <div class="text-xl md:text-2xl font-bold text-white">+500</div>
                                         <div class="text-lg uppercase tracking-widest text-white/40">Success Cases
                                         </div>
                                     </div>
@@ -1851,7 +1856,7 @@
                                         <i data-lucide="zap" class="w-8 h-8 text-white"></i>
                                     </div>
                                     <div>
-                                        <h3 class="text-4xl font-bold text-white">Guaranteed Deployment</h3>
+                                        <h3 class="text-xl md:text-2xl font-bold text-white">Guaranteed Deployment</h3>
                                         <p class="text-white/60 text-lg">Rollout support from week 1.</p>
                                     </div>
                                 </div>
@@ -1884,7 +1889,7 @@
                 <div
                     class="lg:col-span-5 h-full flex flex-col justify-center items-center lg:items-end pointer-events-none p-12">
                     <div
-                        class="reveal-scale opacity-10 transform lg:-rotate-90 text-lg uppercase tracking-[1.5rem] whitespace-nowrap text-white hidden md:block">
+                        class="reveal-scale opacity-10 transform lg:-rotate-90 text-lg uppercase tracking-[1.5rtext-lg whitespace-nowrap text-white hidden md:block">
                         Shielding + Human Support
                     </div>
                 </div>
@@ -2102,7 +2107,7 @@
     <footer class="relative bg-black border-t border-white/10 py-8 text-center z-10 w-full mt-auto">
         <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
             <p
-                class="text-white text-lg md:text-lg tracking-wide flex flex-col md:flex-row items-center gap-2 font-medium">
+                class="text-white text-lg md:text-lg tracking-widest flex flex-col md:flex-row items-center gap-2 font-medium">
                 <span>Copyright &copy; 2026 Faro Soluciones</span>
                 <span class="hidden md:inline text-white/50">|</span>
                 <a href="https://www.faroprotec.com/aviso-de-privacidad" target="_blank"
