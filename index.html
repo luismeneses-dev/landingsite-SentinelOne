@@ -2491,18 +2491,22 @@
                     z3d = rz;
 
                     // Perspective projection
-                    // Safe offset (1000) prevents denominator from hitting 0
-                    const zScale = focalLength / (focalLength + z3d + 1000);
+                    // Restored offset (100) for original size, but added proximity safety
+                    const dist = focalLength + z3d + 100;
+                    if (dist < 20) return; // Prevention of mathematical singularity (The "Flash")
+                    
+                    const zScale = focalLength / dist;
                     const px = width / 2 + x3d * zScale;
                     const py = height / 2 + y3d * zScale;
 
                     // Particle size driven by depth
-                    const radius = Math.max(0.1, Math.min(6, 3 * zScale));
+                    const radius = Math.max(0.1, Math.min(10, 3 * zScale));
 
-                    // Clamp alpha to ensure it stays valid
-                    const alpha = Math.min(0.9, Math.max(0.1, zScale * 0.8));
+                    // Clamp alpha and add proximity fade
+                    let alpha = Math.min(0.9, Math.max(0.1, zScale * 0.8));
+                    if (dist < 100) alpha *= (dist - 20) / 80; // Smooth fade-out as it hits the "lens"
 
-                    // Skip drawing if the coordinates are ridiculously outside (singularity sanity check)
+                    // Skip drawing if the coordinates are ridiculously outside
                     if (px < -width || px > width * 2 || py < -height || py > height * 2) return;
 
                     projectedParticles.push({
@@ -2510,7 +2514,7 @@
                         y: py,
                         z: z3d,
                         r: radius,
-                        alpha: alpha,
+                        alpha: Math.max(0, alpha),
                         tOffset: p.tOffset,
                         strand: p.strand
                     });
