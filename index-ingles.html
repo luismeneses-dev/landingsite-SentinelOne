@@ -41,6 +41,47 @@
     </script>
 
     <style>
+        /* Modal Comparison Styles */
+        #comparison-modal {
+            transition: all 0.3s ease;
+            opacity: 0;
+            backdrop-filter: blur(0px);
+            pointer-events: none;
+        }
+
+        #comparison-modal.active {
+            opacity: 1;
+            backdrop-filter: blur(12px);
+            pointer-events: auto;
+        }
+
+        #comparison-modal .modal-content {
+            transform: scale(0.9) translateY(20px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #comparison-modal.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .animate-reveal-item {
+            animation: revealItem 0.5s ease forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        @keyframes revealItem {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-reveal-item:nth-child(1) { animation-delay: 0.1s; }
+        .animate-reveal-item:nth-child(2) { animation-delay: 0.2s; }
+        .animate-reveal-item:nth-child(3) { animation-delay: 0.3s; }
+        .animate-reveal-item:nth-child(4) { animation-delay: 0.4s; }
+
         /* Tipografías Locales */
         @font-face {
             font-family: 'Panton';
@@ -1457,49 +1498,49 @@
 
             <div class="reveal-up mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full px-4">
                 <!-- CrowdStrike -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/vs/crowdstrike/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonModal('crowdstrike')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
                         <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">CrowdStrike</span>
                         <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Palo Alto -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/vs/palo-alto-networks/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonModal('palo-alto')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
                         <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Palo Alto</span>
                         <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Sophos -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/vs/sophos/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonModal('sophos')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
                         <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Sophos</span>
                         <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Trend Micro -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/vs/trend-micro/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonModal('trend-micro')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
                         <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Trend Micro</span>
                         <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Broadcom -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/vs/broadcom/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonModal('broadcom')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
                         <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Broadcom</span>
                         <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Kaspersky -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/vs/Kaspersky/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonModal('kaspersky')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
                         <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Kaspersky</span>
                         <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Trellix (Centered in last row using full space or auto col) -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/vs/trellix/')" class="neon-compare-btn w-full text-left group md:col-span-2 lg:col-span-1 lg:col-start-2">
+                <button onclick="openComparisonModal('trellix')" class="neon-compare-btn w-full text-left group md:col-span-2 lg:col-span-1 lg:col-start-2">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
                         <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Trellix</span>
                         <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
@@ -2815,11 +2856,230 @@
             draw();
         });
     </script>
+
+    <!-- Comparison Modal -->
+    <div id="comparison-modal"
+        class="fixed inset-0 z-[9999] hidden items-center justify-center p-4 md:p-6 bg-black/80">
+        <div class="modal-content relative w-full max-w-4xl bg-gradient-to-br from-slate-900 to-black rounded-3xl border border-white/10 shadow-[0_0_100px_rgba(0,217,255,0.15)] overflow-hidden flex flex-col max-h-[90vh]">
+            
+            <!-- Modal Header -->
+            <div class="p-8 border-b border-white/10 flex justify-between items-start bg-white/[0.02]">
+                <div>
+                    <h2 id="modal-title" class="text-5xl font-bold text-white mb-2 tracking-tight"></h2>
+                    <p id="modal-desc" class="text-2xl text-white/50 leading-relaxed"></p>
+                </div>
+                <button onclick="closeComparisonModal()" class="p-2 rounded-full hover:bg-white/10 transition-colors group">
+                    <i data-lucide="x" class="w-8 h-8 text-white/50 group-hover:text-white"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-8 overflow-y-auto custom-scrollbar">
+                <!-- Comparison Table -->
+                <div class="mb-10">
+                    <div class="grid grid-cols-3 gap-4 pb-4 border-b-2 border-white/20 text-lg uppercase tracking-widest font-bold">
+                        <div class="text-white/30">Feature</div>
+                        <div class="text-scheme-primary">SentinelOne</div>
+                        <div class="text-white/30">Competitor</div>
+                    </div>
+                    <div id="modal-table-body">
+                        <!-- Content injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Key Advantages -->
+                <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/5">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="zap" class="w-6 h-6 text-scheme-secondary"></i>
+                        Comparison Key Points
+                    </h3>
+                    <ul id="modal-bullets" class="space-y-4">
+                        <!-- Content injected by JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-8 border-t border-white/10 bg-white/[0.02] flex flex-col md:flex-row gap-6 items-center justify-between">
+                <div class="text-lg text-white/60">Need a detailed technical report of this comparison?</div>
+                <a href="#contacto" onclick="closeComparisonModal()" class="px-8 py-3 rounded-full bg-scheme-primary text-white font-bold hover:shadow-[0_0_30_rgba(0,217,255,0.4)] transition-all">
+                    Request TDR Consultancy
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
-        function openComparisonPopup(url) {
-            // Open a pop-up window (adjust width and height as preferred)
-            window.open(url, 'CompareSentinelOne', 'width=1200,height=800,scrollbars=yes,resizable=yes');
+        const comparisonData = {
+            'crowdstrike': {
+                title: 'SentinelOne vs CrowdStrike',
+                description: 'Autonomous detection vs. Human dependency (1-10-60).',
+                metrics: [
+                    { label: 'Detection Speed', s1: 'Milliseconds (AI)', comp: '60 Minutes (Avg)' },
+                    { label: 'Data Retention', s1: 'Up to 3+ Years', comp: 'Limited / Extra Cost' },
+                    { label: 'MITRE Visibility', s1: '100% (Zero Delays)', comp: 'Incomplete / Delayed' },
+                    { label: 'Architecture', s1: 'Single Light Agent', comp: 'Cloud Dependent' }
+                ],
+                bullets: [
+                    'S1 provides detection at machine speed without external analyst dependency.',
+                    'Automatic Storyline™ correlation vs. manual thread processing.',
+                    'No hidden costs for massive data ingestion.'
+                ]
+            },
+            'palo-alto': {
+                title: 'SentinelOne vs Palo Alto Networks',
+                description: 'Native precision vs. complex signature-driven suite.',
+                metrics: [
+                    { label: 'Configuration', s1: 'Automatic (Out-of-the-box)', comp: 'Complex / Tuning Required' },
+                    { label: 'Local AI', s1: 'Static & Behavioral Engines', comp: 'High Signature Dependency' },
+                    { label: 'Endpoint Impact', s1: 'Minimal (<5% CPU)', comp: 'Moderate to High' },
+                    { label: 'Response', s1: 'Auto-Rollback', comp: 'Manual / External Orchestration' }
+                ],
+                bullets: [
+                    'S1 protects even without cloud connectivity thanks to its local AI.',
+                    '99% visibility in MITRE tests without excessive false positives.',
+                    'Real consolidation in a single agent vs. multiple scattered modules.'
+                ]
+            },
+            'sophos': {
+                title: 'SentinelOne vs Sophos',
+                description: 'Operational efficiency vs. Alert fatigue and heavy agents.',
+                metrics: [
+                    { label: 'Alerts', s1: '71 Alerts (MITRE)', comp: '15,000+ Alerts (Noise)' },
+                    { label: 'EDR Retention', s1: 'Flexible (Years)', comp: 'Limited (90 days)' },
+                    { label: 'Generative AI', s1: 'Purple AI (Integrated)', comp: 'Nascent Assistant (Beta)' },
+                    { label: 'Remediation', s1: '1-Click Rollback', comp: 'Manual / MDR Dependent' }
+                ],
+                bullets: [
+                    'Eliminate the administrative burden of managing complex consoles.',
+                    'Optimized agent that avoids freezing and reboots common in Sophos.',
+                    'Native and cohesive MDR services without depending on third parties.'
+                ]
+            },
+            'trend-micro': {
+                title: 'SentinelOne vs Trend Micro',
+                description: 'Modern unified platform vs. legacy modular ecosystem.',
+                metrics: [
+                    { label: 'Simplicity', s1: 'Single Native Cloud Console', comp: 'Multiple scattered modules' },
+                    { label: 'Visibility', s1: 'Automatic Storyline™', comp: 'Manual search between silos' },
+                    { label: 'Detection', s1: 'Behavioral AI Pioneer', comp: 'Mostly Signature-based' },
+                    { label: 'Efficiency', s1: '71 Alerts (MITRE)', comp: '64,000+ Alerts (Fatigue)' }
+                ],
+                bullets: [
+                    'Reduce operational costs by eliminating the need for multiple tools.',
+                    'Ultra-fast investigations with automatic context vs. manual steps.',
+                    'Real system rollback vs. simple graduation actions.'
+                ]
+            },
+            'broadcom': {
+                title: 'SentinelOne vs Broadcom (Symantec)',
+                description: 'Continuous innovation vs. uncertainty and lack of support.',
+                metrics: [
+                    { label: 'Support', s1: 'Local & Specialized 24/7', comp: 'Complex post-acquisition' },
+                    { label: 'Innovation', s1: 'Security AI Leader', comp: 'Maintenance of legacy tech' },
+                    { label: 'Easy Deployment', s1: 'Hours', comp: 'Weeks (Heavy infrastructure)' },
+                    { label: 'Visibility', s1: 'Endpoint + Cloud + Identity', comp: 'Fragmented' }
+                ],
+                bullets: [
+                    'Migrate from a technology falling behind to the market leading platform.',
+                    'Security designed for the modern cloud, not adapted from old architectures.',
+                    'Total Cost of Ownership (TCO) drastically reduced.'
+                ]
+            },
+            'kaspersky': {
+                title: 'SentinelOne vs Kaspersky',
+                description: 'Sovereign and modern security vs. geopolitical risks and signatures.',
+                metrics: [
+                    { label: 'Trust', s1: 'Global Certs / USA based', comp: 'Governmental Restrictions' },
+                    { label: 'Technology', s1: 'Autonomous Non-Signature AI', comp: 'Signature Base Dependency' },
+                    { label: 'Response', s1: 'Local Resilience (Rollback)', comp: 'Basic Cleanup' },
+                    { label: 'Retention', s1: 'Native Data Lake', comp: 'Limited to console' }
+                ],
+                bullets: [
+                    'Ensure compliance with international security regulations.',
+                    'Proactive protection against state-nation threats and modern ransomware.',
+                    'Eliminate the risk of espionage or disruption by international sanctions.'
+                ]
+            },
+            'trellix': {
+                title: 'SentinelOne vs Trellix (McAfee/FireEye)',
+                description: 'Native XDR platform vs. fusion of legacy architectures.',
+                metrics: [
+                    { label: 'Architecture', s1: 'Native from code', comp: 'Mix of multiple acquisitions' },
+                    { label: 'Agility', s1: 'Transparent updates', comp: 'Complex patching cycles' },
+                    { label: 'Context', s1: '100% Correlation Grade', comp: 'Data silos between McAfee/FireEye' },
+                    { label: 'Performance', s1: 'Low Resource Consumption', comp: 'Historical Station Impact' }
+                ],
+                bullets: [
+                    'Unify your defense into a single coherent workflow.',
+                    'Full visibility of the attack chain without jumping between consoles.',
+                    'Self-learning AI that does not require constant rule tuning.'
+                ]
+            }
+        };
+
+        function openComparisonModal(brandKey) {
+            const data = comparisonData[brandKey];
+            if (!data) return;
+
+            // Fill modal content
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-desc').textContent = data.description;
+
+            // Build metrics table
+            const tableBody = document.getElementById('modal-table-body');
+            tableBody.innerHTML = '';
+            data.metrics.forEach(m => {
+                const row = document.createElement('div');
+                row.className = 'grid grid-cols-3 gap-4 py-4 border-b border-white/10 items-center animate-reveal-item';
+                row.innerHTML = `
+                    <div class="text-white/60 font-medium text-lg">${m.label}</div>
+                    <div class="text-scheme-primary font-bold text-lg">${m.s1}</div>
+                    <div class="text-white/40 text-lg">${m.comp}</div>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            // Build bullets
+            const bulletList = document.getElementById('modal-bullets');
+            bulletList.innerHTML = '';
+            data.bullets.forEach(b => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start gap-3 text-white/80 text-lg leading-relaxed';
+                li.innerHTML = `<i data-lucide="check-circle" class="w-6 h-6 text-scheme-primary shrink-0 mt-1"></i> <span>${b}</span>`;
+                bulletList.appendChild(li);
+            });
+
+            // Re-initialize icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Show modal
+            const modal = document.getElementById('comparison-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('flex');
+                modal.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Prevent scroll
         }
+
+        function closeComparisonModal() {
+            const modal = document.getElementById('comparison-modal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+            document.body.style.overflow = ''; // Restore scroll
+        }
+
+        // Close on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeComparisonModal();
+        });
+
     </script>
 </body>
 
