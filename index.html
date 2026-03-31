@@ -2972,107 +2972,107 @@
         const comparisonData = {
             'crowdstrike': {
                 title: 'SentinelOne vs CrowdStrike',
-                description: 'Detección autónoma vs. Dependencia humana (1-10-60).',
+                description: 'Detección a velocidad de máquina vs. Modelo humano 1-10-60.',
                 metrics: [
-                    { label: 'Velocidad de Detección', s1: 'Milisegundos (IA)', comp: '60 Minutos (Promedio)' },
-                    { label: 'Retención de Datos', s1: 'Hasta 3+ Años', comp: 'Limitada / Costo Extra' },
-                    { label: 'Visibilidad MITRE', s1: '100% (Sin Retrasos)', comp: 'Incompleta / Con Retrasos' },
+                    { label: 'Modelo Operativo', s1: 'IA Autónoma (Velocidad de máquina)', comp: '1-10-60 (Intervención Humana)' },
+                    { label: 'Visibilidad MITRE', s1: '100% Visibilidad (Cero Retrasos)', comp: 'Incompleta / Con Retrasos' },
+                    { label: 'Retención EDR', s1: 'Mayor periodo predeterminado', comp: 'Costos suplementarios' },
                     { label: 'Arquitectura', s1: 'Agente Único Ligero', comp: 'Dependiente de la Nube' }
                 ],
                 bullets: [
-                    'S1 ofrece detección a velocidad de máquina sin depender de analistas externos.',
-                    'Correlación automática Storyline™ vs. Procesamiento manual de hilos.',
-                    'Sin costos ocultos por ingesta de datos masiva.'
+                    'SentinelOne ofrece respuesta y recuperación más rápidas que el anticuado modo 1-10-60 de CrowdStrike.',
+                    'Correlación y contextualización autónoma vs. Procesamiento manual dependiente de analistas.',
+                    'Sin costes suplementarios para los datos que su empresa necesita para investigar.'
                 ]
             },
             'palo-alto': {
                 title: 'SentinelOne vs Palo Alto Networks',
-                description: 'Precisión nativa vs. Suite compleja impulsada por firmas.',
+                description: 'Máxima visibilidad y contexto vs. Detecciones omitidas en ataques dirigidos.',
                 metrics: [
-                    { label: 'Configuración', s1: 'Automática (Out-of-the-box)', comp: 'Compleja / Requiere Ajustes' },
-                    { label: 'IA Local', s1: 'Motores Estáticos y Conductuales', comp: 'Dependencia Alta de Firmas' },
-                    { label: 'Impacto en Endpoint', s1: 'Mínimo (<5% CPU)', comp: 'Moderado a Alto' },
-                    { label: 'Respuesta', s1: 'Rollback Automático', comp: 'Manual / Orquestación Externa' }
+                    { label: 'Visibilidad MITRE', s1: '99% Visibilidad y Cobertura Analítica', comp: 'Fallas en ataques dirigidos' },
+                    { label: 'Conectividad', s1: 'IA Local (Estática y Conductual)', comp: 'Dependencia de Nube y Firmas' },
+                    { label: 'Optimización', s1: 'Automatización de principio a fin', comp: 'Requiere multitud de ajustes' },
+                    { label: 'Eficacia EDR', s1: 'Rendimiento y valor demostrados', comp: 'Capacidad de respuesta retrasada' }
                 ],
                 bullets: [
-                    'S1 protege incluso sin conectividad a la nube gracias a su IA local.',
-                    '99% de visibilidad en pruebas MITRE sin falsos positivos excesivos.',
-                    'Consolidación real en un solo agente vs. múltiples módulos dispersos.'
+                    'SentinelOne protege incluso sin conectividad a la nube mediante sus motores de IA locales.',
+                    'Identifique ataques modernos conocidos y desconocidos sin las demoras de las firmas de terceros.',
+                    'Optimice el tiempo de su equipo eliminando los ajustes constantes que exige Palo Alto.'
                 ]
             },
             'sophos': {
                 title: 'SentinelOne vs Sophos',
-                description: 'Eficiencia operativa vs. Fatiga de alertas y agentes pesados.',
+                description: 'Líder en excelencia vs. Alertas excesivas y telemetría limitada.',
                 metrics: [
-                    { label: 'Alertas', s1: '71 Alertas (MITRE)', comp: '15,000+ Alertas (Ruido)' },
-                    { label: 'Retención EDR', s1: 'Flexible (Años)', comp: 'Limitada (90 días)' },
-                    { label: 'IA Generativa', s1: 'Purple AI (Integrada)', comp: 'Asistente Incipiente (Beta)' },
-                    { label: 'Remediación', s1: 'Rollback 1-Click', comp: 'Manual / Dependiente de MDR' }
+                    { label: 'Volumen de Alertas', s1: '71 Alertas (MITRE 2024)', comp: '15,000+ Alertas (Ruido)' },
+                    { label: 'Eficacia MITRE', s1: '100% de Detección', comp: 'No alcanzó el 100%' },
+                    { label: 'Agente / Impacto', s1: 'Ligero y optimizado (Mínimo)', comp: 'Agente pesado (Congelamientos)' },
+                    { label: 'Retención de Datos', s1: 'Hasta 3+ años flexibles', comp: 'Limitada a 90 días' }
                 ],
                 bullets: [
-                    'Elimine la carga administrativa de gestionar consolas complejas.',
-                    'Agente optimizado que evita congelamientos y reinicios comunes en Sophos.',
-                    'Servicios MDR nativos y cohesivos sin depender de terceros.'
+                    'S1 elimina los gastos generales de gestionar consolas complejas y pesadas.',
+                    'Purple AI permite investigaciones rápidas con lenguaje natural frente a procesos manuales.',
+                    'Evite el agotamiento de recursos y reinicios forzados por el agente intrusivo de Sophos.'
                 ]
             },
             'trend-micro': {
                 title: 'SentinelOne vs Trend Micro',
-                description: 'Plataforma moderna unificada vs. Ecosistema modular legado.',
+                description: 'Plataforma intuitiva vs. Complejidad operativa y fatiga de alertas.',
                 metrics: [
-                    { label: 'Simplicidad', s1: 'Consola única nativa Cloud', comp: 'Múltiples módulos dispersos' },
-                    { label: 'Visibilidad', s1: 'Storyline™ Automático', comp: 'Búsqueda manual entre silos' },
-                    { label: 'Detección', s1: 'Pionero en IA Conductual', comp: 'Basado mayormente en Firmas' },
-                    { label: 'Eficacia', s1: '71 Alertas (MITRE)', comp: '64,000+ Alertas (Fatiga)' }
+                    { label: 'Fatiga de Alertas', s1: '71 Alertas (MITRE)', comp: '64,000+ Alertas' },
+                    { label: 'Mantenimiento', s1: 'Bajo (Consola única nativa)', comp: 'Alto (Varios módulos / Silos)' },
+                    { label: 'IA Integrada', s1: 'Purple AI (Integración Total)', comp: 'IA Limitada e independiente' },
+                    { label: 'Remediación', s1: 'Rollback con 1 clic', comp: 'Restablecimiento manual completo' }
                 ],
                 bullets: [
-                    'Reduzca costos operativos eliminando la necesidad de múltiples herramientas.',
-                    'Investigaciones ultrarrápidas con contexto automático vs. pasos manuales.',
-                    'Rollback real de sistema vs. simples acciones de cuarentena.'
+                    'Storyline™ vincula eventos automáticamente vs. búsquedas manuales tediosas entre interfaces.',
+                    'Reduzca costos eliminando módulos adicionales necesarios para detecciones eficaces en TM.',
+                    'Gestión unificada de endpoints, nube e identidad desde un solo agente ligero.'
                 ]
             },
             'broadcom': {
                 title: 'SentinelOne vs Broadcom (Symantec)',
-                description: 'Innovación continua vs. Incertidumbre y falta de soporte.',
+                description: 'IA de vanguardia vs. Consolas desarticuladas e ineficaces.',
                 metrics: [
-                    { label: 'Soporte', s1: 'Local y Especializado 24/7', comp: 'Complejo tras adquisición' },
-                    { label: 'Innovación', s1: 'Líder en IA de Seguridad', comp: 'Mantenimiento de tecnologías legadas' },
-                    { label: 'Fácil Despliegue', s1: 'Horas', comp: 'Semanas (Infraestructura pesada)' },
-                    { label: 'Visibilidad', s1: 'Endpoint + Cloud + Identity', comp: 'Fragmentada' }
+                    { label: 'Actualidad MITRE', s1: '100% de Detección (Reciente)', comp: 'Sin participación desde 2023' },
+                    { label: 'Ruido / Alertas', s1: '88% menos alertas que la media', comp: 'Detecciones fallidas heredadas' },
+                    { label: 'Agente', s1: 'Único y flexible (Cloud/On-prem)', comp: 'Pesado (Carbon Black / Symantec)' },
+                    { label: 'Resolución', s1: 'Reversión y corrección automática', comp: 'Contención o scripts manuales' }
                 ],
                 bullets: [
-                    'Migre de una tecnología que se está quedando atrás a la plataforma líder del mercado.',
-                    'Seguridad diseñada para la nube moderna, no adaptada de arquitecturas antiguas.',
-                    'Costo Total de Propiedad (TCO) reducido drásticamente.'
+                    'Elimine la incertidumbre de soporte y despliegue tras las adquisiciones de Broadcom.',
+                    'Purple AI ofrece consultas en lenguaje natural ilimitadas e incluidas.',
+                    'Migre de arquitecturas compartimentadas a una visibilidad unificada de toda su infraestructura.'
                 ]
             },
             'kaspersky': {
                 title: 'SentinelOne vs Kaspersky',
-                description: 'Seguridad soberana y moderna vs. Riesgos geopolíticos y firmas.',
+                description: 'Plataforma moderna líder vs. Antivirus legado propenso a retrasos.',
                 metrics: [
-                    { label: 'Confianza', s1: 'Certificaciones Globales / USA', comp: 'Restricciones Gubernamentales' },
-                    { label: 'Tecnología', s1: 'IA Autónoma No Basada en Firmas', comp: 'Dependencia de Base de Firmas' },
-                    { label: 'Respuesta', s1: 'Resiliencia Local (Rollback)', comp: 'Limpieza Básica' },
-                    { label: 'Retención', s1: 'Data Lake Nativo', comp: 'Limitada a la Consola' }
+                    { label: 'Evaluación MITRE', s1: '100% Visibilidad en 174 pasos', comp: 'Sin participación reciente' },
+                    { label: 'Impacto Económico', s1: '353% de ROI (Forrester)', comp: 'Metodologías arcaicas y lentas' },
+                    { label: 'Detección', s1: 'IA Autónoma (24/7)', comp: 'Reactiva / Retrasos en OS' },
+                    { label: 'Remediación', s1: '1-Click Rollback / Storyline™', comp: 'Tediosa escritura de scripts' }
                 ],
                 bullets: [
-                    'Garantice el cumplimiento de normativas internacionales de seguridad.',
-                    'Protección proactiva contra amenazas de estado-nación y ransomware moderno.',
-                    'Elimine el riesgo de espionaje o interrupción por sanciones internacionales.'
+                    'SentinelOne desplaza a los vendors legados con una arquitectura diseñada para hoy.',
+                    'Actualizaciones de agentes fácilmente programables sin cambios de infraestructura.',
+                    'Obtenga el contexto más rico de la industria con detecciones analíticas profundas.'
                 ]
             },
             'trellix': {
                 title: 'SentinelOne vs Trellix (McAfee/FireEye)',
-                description: 'Plataforma nativa XDR vs. Fusión de arquitecturas legadas.',
+                description: 'XDR autónomo vs. Arquitectura cosida e incompleta.',
                 metrics: [
-                    { label: 'Arquitectura', s1: 'Nativa desde el código', comp: 'Mezcla de múltiples adquisiciones' },
-                    { label: 'Agilidad', s1: 'Actualizaciones transparentes', comp: 'Ciclos de parcheo complejos' },
-                    { label: 'Contexto', s1: 'Grado de correlación 100%', comp: 'Silos de datos entre McAfee/FireEye' },
-                    { label: 'Rendimiento', s1: 'Bajo consumo de recursos', comp: 'Impacto histórico en estaciones' }
+                    { label: 'Correlación', s1: '100% Nativa (Sin silos)', comp: 'Escasa facilidad de uso / Lenta' },
+                    { label: 'Modelo de IA', s1: 'Consultas Ilimitadas (Purple AI)', comp: 'Modelo basado en consumo' },
+                    { label: 'Cobertura', s1: 'Endpoints, Nube e Identidad', comp: 'Lagunas en SIEM y CSPM' },
+                    { label: 'Remediación', s1: 'Reversión automática en agente', comp: 'Sin reversión automatizada' }
                 ],
                 bullets: [
-                    'Unifique su defensa en un solo flujo de trabajo coherente.',
-                    'Visibilidad completa de la cadena de ataque sin saltar entre consolas.',
-                    'IA de auto-aprendizaje que no requiere ajustes constantes de reglas.'
+                    'Vincule eventos relacionados automáticamente con Storyline® para respuestas inmediatas.',
+                    'Evite las lagunas de seguridad de una plataforma incompleta y cosida con parches.',
+                    'Elimine la sobrecarga administrativa de gestionar múltiples agentes y productos fragmentados.'
                 ]
             }
         };
