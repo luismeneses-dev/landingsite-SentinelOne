@@ -605,10 +605,6 @@
             width: 100%;
             margin-top: 3rem;
             position: relative;
-            overflow: hidden;
-            border-radius: 2rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: #000;
         }
 
         .feature-carousel {
@@ -678,16 +674,19 @@
 
         .carousel-nav {
             position: absolute;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 10;
+            top: 50%;
+            left: -3rem;
+            right: -3rem;
+            transform: translateY(-50%);
+            z-index: 20;
             display: flex;
-            gap: 1rem;
+            justify-content: space-between;
+            pointer-events: none;
         }
 
         .nav-btn {
-            width: 48px;
-            height: 48px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
@@ -697,19 +696,29 @@
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             color: white;
+            pointer-events: auto;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 1280px) {
+            .carousel-nav {
+                left: 1rem;
+                right: 1rem;
+            }
         }
 
         .nav-btn:hover {
             background: rgba(255,255,255,0.15);
             border-color: var(--primary);
-            transform: scale(1.1);
+            transform: scale(1.15);
             color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
         }
 
         .carousel-indicators {
             position: absolute;
-            bottom: 2rem;
-            left: 2rem;
+            bottom: 0;
+            left: 0;
             width: 100%;
             height: 4px;
             display: flex;
@@ -1146,8 +1155,8 @@
         <canvas id="pumaParticles" class="absolute inset-0 z-10 pointer-events-none"></canvas>
 
         <div
-            class="max-w-7xl mx-auto px-6 relative z-20 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <!-- Left Column: Content / Header -->
+            class="max-w-7xl mx-auto px-6 relative z-20 w-full flex flex-col items-center">
+            <!-- Columna Izquierda: Contenido / Header -->
             <div class="w-full">
                 <div class="reveal-up text-left mb-8">
                     <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6 leading-tight">
@@ -1165,20 +1174,20 @@
 
                 <!-- CAROUSEL COMPONENT -->
                 <div class="feature-carousel-container reveal-up delay-100">
-                    <div class="feature-carousel">
-                        <!-- Navigation Arrows -->
-                        <div class="carousel-nav">
-                            <button class="nav-btn prev-slide" aria-label="Previous">
-                                <i data-lucide="chevron-left"></i>
-                            </button>
-                            <button class="nav-btn next-slide" aria-label="Next">
-                                <i data-lucide="chevron-right"></i>
-                            </button>
-                        </div>
+                    <!-- Navigation Arrows -->
+                    <div class="carousel-nav">
+                        <button class="nav-btn prev-slide" aria-label="Previous">
+                            <i data-lucide="chevron-left" class="w-8 h-8"></i>
+                        </button>
+                        <button class="nav-btn next-slide" aria-label="Next">
+                            <i data-lucide="chevron-right" class="w-8 h-8"></i>
+                        </button>
+                    </div>
 
+                    <div class="feature-carousel">
                         <!-- Slides -->
                         <div class="carousel-slides">
-                            <!-- Slide 1: AI -->
+                            <!-- Slide 1: IA -->
                             <div class="carousel-slide active">
                                 <div class="carousel-bg" style="background-image: url('file:///C:/Users/LuisMeneses/.gemini/antigravity/brain/3003e791-dbbe-4248-b05f-4a88d29a6305/carousel_bg_ai_behavioral_1774915627125.png');"></div>
                                 <div class="carousel-overlay"></div>
@@ -1220,7 +1229,12 @@
 
                             <!-- Slide 3: Agent -->
                             <div class="carousel-slide">
-                                <div class="carousel-bg" style="background-image: url('file:///C:/Users/LuisMeneses/.gemini/antigravity/brain/3003e791-dbbe-4248-b05f-4a88d29a6305/carousel_bg_light_agent_1774915650308.png');"></div>
+                                <!-- Jaguar highlight overlay -->
+                                <div class="absolute inset-0 z-0 opacity-80">
+                                    <img src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.png" 
+                                         class="w-full h-full object-contain filter brightness-150 animate-puma-head" 
+                                         style="object-position: 85% center;" />
+                                </div>
                                 <div class="carousel-overlay"></div>
                                 <div class="carousel-content">
                                     <div class="flex items-center gap-4 mb-6">
@@ -2785,13 +2799,16 @@
     <script>
         // Feature Carousel Logic
         document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.querySelector('.feature-carousel');
+            const container = document.querySelector('.feature-carousel-container');
+            if (!container) return;
+
+            const carousel = container.querySelector('.feature-carousel');
             if (!carousel) return;
 
             const slides = carousel.querySelectorAll('.carousel-slide');
             const fills = carousel.querySelectorAll('.indicator-fill');
-            const prevBtn = carousel.querySelector('.prev-slide');
-            const nextBtn = carousel.querySelector('.next-slide');
+            const prevBtn = container.querySelector('.prev-slide');
+            const nextBtn = container.querySelector('.next-slide');
             const segments = carousel.querySelectorAll('.indicator-segment');
 
             if (!slides.length) return;
@@ -2847,6 +2864,11 @@
 
             // Start first slide
             showSlide(0);
+
+            // Ensure icons are created
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
         });
     </script>
     <script>
