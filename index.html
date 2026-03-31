@@ -221,6 +221,59 @@
             background: linear-gradient(to top, #000 0%, transparent 100%);
         }
 
+        /* Neon Compare Marquee Button */
+        .neon-compare-btn {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            padding: 2px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background-color: transparent;
+        }
+
+        .neon-compare-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 40px -10px rgba(0, 217, 255, 0.4);
+        }
+
+        .neon-compare-btn::before {
+            content: '';
+            position: absolute;
+            width: 250%;
+            height: 250%;
+            background: conic-gradient(
+                from 0deg,
+                transparent 0%,
+                transparent 70%,
+                var(--primary) 90%,
+                var(--secondary) 100%
+            );
+            animation: rotate-marquee 3s linear infinite;
+        }
+
+        @keyframes rotate-marquee {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .neon-compare-btn-inner {
+            background: #020617; /* solid dark slate to mask gradient center */
+            border-radius: calc(1rem - 2px);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
         /* Animación Desplegable para Ventajas */
         .advantage-item {
             cursor: pointer;
@@ -1575,88 +1628,56 @@
                 </p>
             </div>
 
-            <div class="reveal-scale overflow-x-auto rounded-3xl border bg-white/[0.02] backdrop-blur-md mx-auto w-full"
-                style="border-color: rgba(255,255,255,0.1);">
-                <table class="w-full min-w-[420px] md:min-w-[700px] text-left border-collapse border-hidden">
-                    <thead>
-                        <tr class="bg-white/[0.08]">
-                            <th
-                                class="px-2 py-4 md:px-8 md:py-6 text-xl md:text-2xl font-bold text-white border-b border-white/20 w-[30%]">
-                                Capacidad</th>
-                            <th
-                                class="px-2 py-4 md:px-8 md:py-6 text-xl md:text-2xl font-bold text-white border-b border-white/20 w-[35%] text-center">
-                                Antivirus tradicional</th>
-                            <th class="px-2 py-4 md:px-8 md:py-6 text-xl md:text-2xl font-black border-b w-[35%] text-center"
-                                style="background-color: rgba(0,217,255,0.15); border-color: rgba(0,217,255,0.4); color: white; border-left: 1px solid rgba(0,217,255,0.4);">
-                                SentinelOne
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-lg md:text-lg">
-                        <tr class="border-b border-white/5 hover:bg-white/[0.04] transition-colors">
-                            <td class="px-2 py-4 md:px-8 md:py-6 text-white font-medium">Detección por IA Conductual
-                            </td>
-                            <td class="px-2 py-4 md:px-8 md:py-6 text-center text-white/90">
-                                <span class="flex items-center justify-center gap-1.5 md:gap-2">
-                                    <i data-lucide="x-circle" class="w-3.5 h-3.5 md:w-5 md:h-5 text-red-500"></i>
-                                    Deficiente
-                                </span>
-                            </td>
-                            <td class="px-2 py-4 md:px-8 md:py-6 text-center font-black"
-                                style="background-color: rgba(0,217,255,0.08); border-left: 1px solid rgba(0,217,255,0.4);">
-                                <span class="flex items-center justify-center gap-1.5 md:gap-2">
-                                    <i data-lucide="check-circle"
-                                        class="w-3.5 h-3.5 md:w-5 md:h-5 text-scheme-primary"></i> Máxima
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/[0.04] transition-colors">
-                            <td class="px-2 py-4 md:px-8 md:py-6 text-white font-medium">Respuesta Autónoma</td>
-                            <td class="px-2 py-4 md:px-8 md:py-6 text-center text-white/90">
-                                <span class="flex items-center justify-center gap-1.5 md:gap-2">
-                                    <i data-lucide="x-circle" class="w-3.5 h-3.5 md:w-5 md:h-5 text-red-500"></i> Manual
-                                </span>
-                            </td>
-                            <td class="px-2 py-4 md:px-8 md:py-6 text-center font-black"
-                                style="background-color: rgba(0,217,255,0.08); border-left: 1px solid rgba(0,217,255,0.4);">
-                                <span class="flex items-center justify-center gap-1.5 md:gap-2">
-                                    <i data-lucide="check-circle"
-                                        class="w-3.5 h-3.5 md:w-5 md:h-5 text-scheme-primary"></i> Automática
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                            <td class="px-3 py-4 md:px-8 md:py-6 text-white/80">Rollback: Restauración</td>
-                            <td class="px-3 py-4 md:px-8 md:py-6 text-center text-white/60">
-                                <span class="flex items-center justify-center gap-1.5 md:gap-2">
-                                    <i data-lucide="x-circle" class="w-3.5 h-3.5 md:w-5 md:h-5 text-red-500"></i> No
-                                </span>
-                            </td>
-                            <td class="px-2 py-4 md:px-8 md:py-6 text-center font-bold"
-                                style="background-color: rgba(0,217,255,0.05); border-left: 1px solid rgba(0,217,255,0.3);">
-                                <span class="flex items-center justify-center gap-1.5 md:gap-2">
-                                    <i data-lucide="check-circle"
-                                        class="w-3.5 h-3.5 md:w-5 md:h-5 text-scheme-primary"></i> One-Click
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-white/[0.02] transition-colors">
-                            <td class="px-3 py-4 md:px-8 md:py-6 text-white/80">Visibilidad Forense</td>
-                            <td class="px-3 py-4 md:px-8 md:py-6 text-center text-white/60">
-                                <span class="flex items-center justify-center gap-1.5 md:gap-2">
-                                    <i data-lucide="x-circle" class="w-3.5 h-3.5 md:w-5 md:h-5 text-red-500"></i> Baja
-                                </span>
-                            </td>
-                            <td class="px-3 py-4 md:px-8 md:py-6 text-center font-bold rounded-br-3xl"
-                                style="background-color: rgba(0,217,255,0.05); border-left: 1px solid rgba(0,217,255,0.3);">
-                                <span class="flex items-center justify-center gap-1.5 md:gap-2">
-                                    <i data-lucide="check-circle"
-                                        class="w-3.5 h-3.5 md:w-5 md:h-5 text-scheme-primary"></i> Total
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="reveal-up mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full px-4">
+                <!-- CrowdStrike -->
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/crowdstrike/')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
+                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">CrowdStrike</span>
+                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                    </div>
+                </button>
+                <!-- Palo Alto -->
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/palo-alto-networks/')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
+                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Palo Alto</span>
+                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                    </div>
+                </button>
+                <!-- Sophos -->
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/sophos/')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
+                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Sophos</span>
+                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                    </div>
+                </button>
+                <!-- Trend Micro -->
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/Trend-micro/')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
+                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Trend Micro</span>
+                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                    </div>
+                </button>
+                <!-- Broadcom -->
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/broadcom/')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
+                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Broadcom</span>
+                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                    </div>
+                </button>
+                <!-- Kaspersky -->
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/vs/Kaspersky/')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
+                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Kaspersky</span>
+                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                    </div>
+                </button>
+                <!-- Trellix (Centered in last row using full space or auto col) -->
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/trellix/')" class="neon-compare-btn w-full text-left group md:col-span-2 lg:col-span-1 lg:col-start-2">
+                    <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
+                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Trellix</span>
+                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                    </div>
+                </button>
             </div>
     </section>
 
@@ -3069,6 +3090,12 @@
 
             draw();
         });
+    </script>
+    <script>
+        function openComparisonPopup(url) {
+            // Open a pop-up window (adjust width and height as preferred)
+            window.open(url, 'CompareSentinelOne', 'width=1200,height=800,scrollbars=yes,resizable=yes');
+        }
     </script>
 </body>
 
