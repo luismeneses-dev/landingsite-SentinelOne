@@ -245,13 +245,11 @@
             position: absolute;
             width: 250%;
             height: 250%;
-            background: conic-gradient(
-                from 0deg,
-                transparent 0%,
-                transparent 70%,
-                var(--primary) 90%,
-                var(--secondary) 100%
-            );
+            background: conic-gradient(from 0deg,
+                    transparent 0%,
+                    transparent 70%,
+                    var(--primary) 90%,
+                    var(--secondary) 100%);
             animation: rotate-marquee 3s linear infinite;
         }
 
@@ -262,7 +260,8 @@
         }
 
         .neon-compare-btn-inner {
-            background: #020617; /* solid dark slate to mask gradient center */
+            background: #020617;
+            /* solid dark slate to mask gradient center */
             border-radius: calc(1rem - 2px);
             width: 100%;
             height: 100%;
@@ -346,15 +345,31 @@
 
         /* Oil Flow Animated Gradient */
         @keyframes metal-shine {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         @keyframes iridescent-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .metallic-neon-card {
@@ -364,7 +379,7 @@
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 
+            box-shadow:
                 0 15px 35px -5px rgba(0, 0, 0, 0.3),
                 inset 0 0 15px rgba(255, 255, 255, 0.5);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -374,14 +389,12 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                60deg,
-                rgba(0, 217, 255, 0.25),
-                rgba(139, 92, 246, 0.25),
-                rgba(236, 72, 153, 0.25),
-                rgba(234, 179, 8, 0.25),
-                rgba(0, 217, 255, 0.25)
-            );
+            background: linear-gradient(60deg,
+                    rgba(0, 217, 255, 0.25),
+                    rgba(139, 92, 246, 0.25),
+                    rgba(236, 72, 153, 0.25),
+                    rgba(234, 179, 8, 0.25),
+                    rgba(0, 217, 255, 0.25));
             background-size: 300% 300%;
             animation: iridescent-flow 12s ease infinite;
             pointer-events: none;
@@ -391,7 +404,7 @@
 
         .metallic-neon-card:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 
+            box-shadow:
                 0 25px 50px -12px rgba(0, 0, 0, 0.5),
                 0 0 20px rgba(0, 217, 255, 0.3);
         }
@@ -649,8 +662,13 @@
         }
 
         @keyframes sweep {
-            from { transform: rotate(-5deg) translateX(-5%); }
-            to { transform: rotate(5deg) translateX(5%); }
+            from {
+                transform: rotate(-5deg) translateX(-5%);
+            }
+
+            to {
+                transform: rotate(5deg) translateX(5%);
+            }
         }
 
         /* Feature Carousel Styles */
@@ -683,7 +701,9 @@
         }
 
         @media (min-width: 768px) {
-            .carousel-slide { padding: 5rem; }
+            .carousel-slide {
+                padding: 5rem;
+            }
         }
 
         .carousel-slide.active {
@@ -708,7 +728,7 @@
         .carousel-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to right, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 65%, transparent 100%);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 35%, rgba(0, 0, 0, 0.4) 65%, transparent 100%);
             z-index: 1;
         }
 
@@ -734,8 +754,8 @@
             width: 64px;
             height: 64px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -754,7 +774,7 @@
         }
 
         .nav-btn:hover {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
             border-color: var(--primary);
             transform: scale(1.15);
             color: var(--primary);
@@ -777,7 +797,7 @@
         .indicator-segment {
             flex: 1;
             height: 3px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             position: relative;
             cursor: pointer;
             border-radius: 2px;
@@ -1202,8 +1222,7 @@
 
 
 
-        <div
-            class="max-w-7xl mx-auto px-6 relative z-20 w-full flex flex-col items-center">
+        <div class="max-w-7xl mx-auto px-6 relative z-20 w-full flex flex-col items-center">
             <!-- Columna Izquierda: Contenido / Header -->
             <div class="w-full">
                 <div class="reveal-up text-left mb-8">
@@ -1237,40 +1256,50 @@
                         <div class="carousel-slides">
                             <!-- Slide 1: IA -->
                             <div class="carousel-slide active">
-                                <div class="carousel-bg" style="background-image: url('./public/images/carousel-ai.png');"></div>
+                                <div class="carousel-bg"
+                                    style="background-image: url('./public/images/carousel-ai.png');"></div>
                                 <div class="carousel-overlay"></div>
                                 <div class="carousel-content">
                                     <div class="flex items-center gap-4 mb-6">
-                                        <div class="w-16 h-16 rounded-2xl bg-scheme-primary/20 backdrop-blur-md border border-scheme-primary/30 flex items-center justify-center">
+                                        <div
+                                            class="w-16 h-16 rounded-2xl bg-scheme-primary/20 backdrop-blur-md border border-scheme-primary/30 flex items-center justify-center">
                                             <i data-lucide="brain" class="w-8 h-8 text-scheme-primary"></i>
                                         </div>
-                                        <span class="text-xl font-medium tracking-widest text-scheme-primary uppercase">Tecnología Core</span>
+                                        <span
+                                            class="text-xl font-medium tracking-widest text-scheme-primary uppercase">Tecnología
+                                            Core</span>
                                     </div>
                                     <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                                         IA y comportamiento <br>estático y dinámico
                                     </h3>
                                     <p class="text-xl md:text-2xl text-white/80 leading-relaxed mb-8">
-                                        "Detectamos amenazas conocidas y desconocidas en milisegundos a través de análisis de comportamiento avanzado sin necesidad de firmas."
+                                        "Detectamos amenazas conocidas y desconocidas en milisegundos a través de
+                                        análisis de comportamiento avanzado sin necesidad de firmas."
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Slide 2: Respuesta -->
                             <div class="carousel-slide">
-                                <div class="carousel-bg" style="background-image: url('./public/images/carousel-response.png');"></div>
+                                <div class="carousel-bg"
+                                    style="background-image: url('./public/images/carousel-response.png');"></div>
                                 <div class="carousel-overlay"></div>
                                 <div class="carousel-content">
                                     <div class="flex items-center gap-4 mb-6">
-                                        <div class="w-16 h-16 rounded-2xl bg-scheme-secondary/20 backdrop-blur-md border border-scheme-secondary/30 flex items-center justify-center">
+                                        <div
+                                            class="w-16 h-16 rounded-2xl bg-scheme-secondary/20 backdrop-blur-md border border-scheme-secondary/30 flex items-center justify-center">
                                             <i data-lucide="zap" class="w-8 h-8 text-scheme-secondary"></i>
                                         </div>
-                                        <span class="text-xl font-medium tracking-widest text-scheme-secondary uppercase">Acción Inmediata</span>
+                                        <span
+                                            class="text-xl font-medium tracking-widest text-scheme-secondary uppercase">Acción
+                                            Inmediata</span>
                                     </div>
                                     <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                                         Respuesta Autónoma <br>sin intervención humana
                                     </h3>
                                     <p class="text-xl md:text-2xl text-white/80 leading-relaxed mb-8">
-                                        "Contenemos el ataque de forma automática en el endpoint, aislando la amenaza y protegiendo el resto de la red al instante."
+                                        "Contenemos el ataque de forma automática en el endpoint, aislando la amenaza y
+                                        protegiendo el resto de la red al instante."
                                     </p>
                                 </div>
                             </div>
@@ -1279,43 +1308,52 @@
                             <div class="carousel-slide">
                                 <!-- Jaguar highlight overlay -->
                                 <div class="absolute inset-0 z-0 opacity-80">
-                                    <img src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.png" 
-                                         class="w-full h-full object-contain filter brightness-150 animate-puma-head" 
-                                         style="object-position: 85% center;" />
+                                    <img src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.png"
+                                        class="w-full h-full object-contain filter brightness-150 animate-puma-head"
+                                        style="object-position: 85% center;" />
                                 </div>
                                 <div class="carousel-overlay"></div>
                                 <div class="carousel-content">
                                     <div class="flex items-center gap-4 mb-6">
-                                        <div class="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                                        <div
+                                            class="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
                                             <i data-lucide="cpu" class="w-8 h-8 text-white"></i>
                                         </div>
-                                        <span class="text-xl font-medium tracking-widest text-white/60 uppercase">Eficiencia Total</span>
+                                        <span
+                                            class="text-xl font-medium tracking-widest text-white/60 uppercase">Eficiencia
+                                            Total</span>
                                     </div>
                                     <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                                         Agente súper ligero <br>de alto rendimiento
                                     </h3>
                                     <p class="text-xl md:text-2xl text-white/80 leading-relaxed mb-8">
-                                        "Singularity Agent corre de forma fluida y silenciosa en todos tus sistemas operativos sin impactar la productividad de tus usuarios."
+                                        "Singularity Agent corre de forma fluida y silenciosa en todos tus sistemas
+                                        operativos sin impactar la productividad de tus usuarios."
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Slide 4: Visibilidad -->
                             <div class="carousel-slide">
-                                <div class="carousel-bg" style="background-image: url('./public/images/carousel-visibility.png');"></div>
+                                <div class="carousel-bg"
+                                    style="background-image: url('./public/images/carousel-visibility.png');"></div>
                                 <div class="carousel-overlay"></div>
                                 <div class="carousel-content">
                                     <div class="flex items-center gap-4 mb-6">
-                                        <div class="w-16 h-16 rounded-2xl bg-scheme-primary/20 backdrop-blur-md border border-scheme-primary/30 flex items-center justify-center">
+                                        <div
+                                            class="w-16 h-16 rounded-2xl bg-scheme-primary/20 backdrop-blur-md border border-scheme-primary/30 flex items-center justify-center">
                                             <i data-lucide="search" class="w-8 h-8 text-scheme-primary"></i>
                                         </div>
-                                        <span class="text-xl font-medium tracking-widest text-scheme-primary uppercase">Control Total</span>
+                                        <span
+                                            class="text-xl font-medium tracking-widest text-scheme-primary uppercase">Control
+                                            Total</span>
                                     </div>
                                     <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                                         Visibilidad Centralizada <br>y Trazabilidad Total
                                     </h3>
                                     <p class="text-xl md:text-2xl text-white/80 leading-relaxed mb-8">
-                                        "Obtén un inventario en tiempo real y trazabilidad absoluta de cada evento en tus endpoints, servidores y cargas de trabajo en la nube."
+                                        "Obtén un inventario en tiempo real y trazabilidad absoluta de cada evento en
+                                        tus endpoints, servidores y cargas de trabajo en la nube."
                                     </p>
                                 </div>
                             </div>
@@ -1323,16 +1361,24 @@
 
                         <!-- Progress Indicators -->
                         <div class="carousel-indicators">
-                            <div class="indicator-segment" data-index="0"><div class="indicator-fill"></div></div>
-                            <div class="indicator-segment" data-index="1"><div class="indicator-fill"></div></div>
-                            <div class="indicator-segment" data-index="2"><div class="indicator-fill"></div></div>
-                            <div class="indicator-segment" data-index="3"><div class="indicator-fill"></div></div>
+                            <div class="indicator-segment" data-index="0">
+                                <div class="indicator-fill"></div>
+                            </div>
+                            <div class="indicator-segment" data-index="1">
+                                <div class="indicator-fill"></div>
+                            </div>
+                            <div class="indicator-segment" data-index="2">
+                                <div class="indicator-fill"></div>
+                            </div>
+                            <div class="indicator-segment" data-index="3">
+                                <div class="indicator-fill"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-                </div>
-            </div>
+        </div>
+        </div>
         </div>
     </section>
 
@@ -1628,54 +1674,78 @@
                 </p>
             </div>
 
-            <div class="reveal-up mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full px-4">
+            <div
+                class="reveal-up mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full px-4">
                 <!-- CrowdStrike -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/crowdstrike/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/crowdstrike/')"
+                    class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">CrowdStrike</span>
-                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                        <span
+                            class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">CrowdStrike</span>
+                        <i data-lucide="external-link"
+                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Palo Alto -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/palo-alto-networks/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/palo-alto-networks/')"
+                    class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Palo Alto</span>
-                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                        <span
+                            class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Palo
+                            Alto</span>
+                        <i data-lucide="external-link"
+                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Sophos -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/sophos/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/sophos/')"
+                    class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Sophos</span>
-                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                        <span
+                            class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Sophos</span>
+                        <i data-lucide="external-link"
+                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Trend Micro -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/Trend-micro/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/Trend-micro/')"
+                    class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Trend Micro</span>
-                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                        <span
+                            class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Trend
+                            Micro</span>
+                        <i data-lucide="external-link"
+                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Broadcom -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/broadcom/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/broadcom/')"
+                    class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Broadcom</span>
-                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                        <span
+                            class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Broadcom</span>
+                        <i data-lucide="external-link"
+                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Kaspersky -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/vs/Kaspersky/')" class="neon-compare-btn w-full text-left group">
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/vs/Kaspersky/')"
+                    class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Kaspersky</span>
-                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                        <span
+                            class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Kaspersky</span>
+                        <i data-lucide="external-link"
+                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Trellix (Centered in last row using full space or auto col) -->
-                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/trellix/')" class="neon-compare-btn w-full text-left group md:col-span-2 lg:col-span-1 lg:col-start-2">
+                <button onclick="openComparisonPopup('https://www.sentinelone.com/es/vs/trellix/')"
+                    class="neon-compare-btn w-full text-left group md:col-span-2 lg:col-span-1 lg:col-start-2">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Trellix</span>
-                        <i data-lucide="external-link" class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                        <span
+                            class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">Trellix</span>
+                        <i data-lucide="external-link"
+                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
             </div>
@@ -1707,16 +1777,18 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1: Complete -->
-                <div class="reveal-up delay-100 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full tilt-card group transition-all">
+                <div
+                    class="reveal-up delay-100 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full tilt-card group transition-all">
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
                         <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Completo</div>
-                        <div class="flex items-baseline gap-1">
+                        <div class="flex items-baseline gap-2">
                             <span class="text-5xl text-slate-950 font-bold">$179.99</span>
-                            <span class="text-lg text-slate-900/40">/dispositivo</span>
+                            <span class="text-xl text-slate-950 font-bold opacity-60">USD</span>
+                            <span class="text-lg text-slate-900/40 ml-1">/dispositivo</span>
                         </div>
                     </div>
-                    
+
                     <div class="space-y-6 flex-grow border-t border-slate-950/10 pt-8 mb-10">
                         <div class="flex items-start gap-3">
                             <i data-lucide="check" class="w-5 h-5 text-scheme-primary mt-1"></i>
@@ -1736,23 +1808,28 @@
                         </div>
                     </div>
 
-                    <button class="w-full py-4 rounded-full bg-slate-950 text-white text-xl hover:bg-slate-800 transition-all shadow-lg">
+                    <button
+                        class="w-full py-4 rounded-full bg-slate-950 text-white text-xl hover:bg-slate-800 transition-all shadow-lg">
                         Solicitar Demo
                     </button>
                 </div>
 
                 <!-- Card 2: Commercial -->
-                <div class="reveal-up delay-200 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full tilt-card group relative overflow-hidden border-2 border-scheme-secondary/30">
-                    <div class="absolute top-0 right-0 p-4 bg-scheme-secondary text-white text-sm tracking-widest uppercase shadow-md">Más Popular</div>
+                <div
+                    class="reveal-up delay-200 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full tilt-card group relative overflow-hidden border-2 border-scheme-secondary/30">
+                    <div
+                        class="absolute top-0 right-0 p-4 bg-scheme-secondary text-white text-sm tracking-widest uppercase shadow-md">
+                        Más Popular</div>
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
                         <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Comercial</div>
-                        <div class="flex items-baseline gap-1">
+                        <div class="flex items-baseline gap-2">
                             <span class="text-5xl text-slate-950 font-bold">$229.99</span>
-                            <span class="text-lg text-slate-900/40">/dispositivo</span>
+                            <span class="text-xl text-slate-950 font-bold opacity-60">USD</span>
+                            <span class="text-lg text-slate-900/40 ml-1">/dispositivo</span>
                         </div>
                     </div>
-                    
+
                     <div class="space-y-6 flex-grow border-t border-slate-950/10 pt-8 mb-10">
                         <p class="text-lg text-slate-900/70 mb-4">Todo lo incluido en Completo, más:</p>
                         <div class="flex items-start gap-3">
@@ -1769,13 +1846,15 @@
                         </div>
                     </div>
 
-                    <button class="w-full py-4 rounded-full bg-scheme-secondary text-white text-xl hover:opacity-90 transition-all shadow-[0_10px_30px_rgba(139,92,246,0.4)]">
+                    <button
+                        class="w-full py-4 rounded-full bg-scheme-secondary text-white text-xl hover:opacity-90 transition-all shadow-[0_10px_30px_rgba(139,92,246,0.4)]">
                         Ver Detalles
                     </button>
                 </div>
 
                 <!-- Card 3: Enterprise -->
-                <div class="reveal-up delay-300 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full tilt-card group transition-all border border-slate-400/50">
+                <div
+                    class="reveal-up delay-300 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full tilt-card group transition-all border border-slate-400/50">
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
                         <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Enterprise</div>
@@ -1783,7 +1862,7 @@
                             <span class="text-5xl text-slate-950 font-bold">Contactar Ventas</span>
                         </div>
                     </div>
-                    
+
                     <div class="space-y-6 flex-grow border-t border-slate-950/10 pt-8 mb-10">
                         <p class="text-lg text-slate-900/70 mb-4">Todo lo incluido en Comercial, más:</p>
                         <div class="flex items-start gap-3">
@@ -1800,7 +1879,8 @@
                         </div>
                     </div>
 
-                    <button class="w-full py-4 rounded-full border-2 border-slate-950 text-slate-950 text-xl hover:bg-slate-950 hover:text-white transition-all">
+                    <button
+                        class="w-full py-4 rounded-full border-2 border-slate-950 text-slate-950 text-xl hover:bg-slate-950 hover:text-white transition-all">
                         Hablar con Experto
                     </button>
                 </div>
@@ -2416,15 +2496,16 @@
                                 <h4 class="text-xl md:text-2xl font-bold text-white mb-6">Impacto Estratégico</h4>
                                 <div class="space-y-6">
                                     <div class="p-4 rounded-xl bg-black/40 border border-white/5">
-                                        <div class="text-xl md:text-2xl font-bold text-scheme-primary">RED GLOBAL</div>
-                                        <div class="text-lg uppercase tracking-widest text-white/40">Más de 500 expertos
-                                            certificados a tu servicio.
+                                        <div class="text-xl md:text-2xl font-bold text-scheme-primary">EXPERIENCIA
+                                        </div>
+                                        <div class="text-lg uppercase tracking-widest text-white/40">Ingenieros
+                                            certificados
                                         </div>
                                     </div>
                                     <div class="p-4 rounded-xl bg-black/40 border border-white/5 text-scheme-secondary">
-                                        <div class="text-xl md:text-2xl font-bold">DOMINIO TOTAL</div>
+                                        <div class="text-xl md:text-2xl font-bold">ASESORIAS</div>
                                         <div class="text-lg uppercase tracking-widest text-white/40">Transferencia de
-                                            conocimientos experta para tu equipo técnico.
+                                            conocimientos para tu equipo
                                         </div>
                                     </div>
                                 </div>
@@ -2444,7 +2525,7 @@
                                     </div>
                                     <div>
                                         <h3 class="text-lg font-medium text-white">Ejecutivo de cuenta asignado,</h3>
-                                        <p class="text-white/60 text-lg">Acompañamiento desde la semana 1.
+                                        <p class="text-white/60 text-lg">Acompañamiento desde el primer día
                                         </p>
                                     </div>
                                 </div>
