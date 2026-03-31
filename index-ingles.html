@@ -595,9 +595,148 @@
             }
         }
 
-        /* Lighthouse Light Sweep Animation */
-        .animate-sweep {
-            animation: sweep 10s ease-in-out infinite alternate;
+        @keyframes sweep {
+            from { transform: rotate(-5deg) translateX(-5%); }
+            to { transform: rotate(5deg) translateX(5%); }
+        }
+
+        /* Feature Carousel Styles */
+        .feature-carousel-container {
+            width: 100%;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: #000;
+        }
+
+        .feature-carousel {
+            position: relative;
+            width: 100%;
+            height: 550px;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #060606;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-slides {
+            position: relative;
+            height: 500px;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            padding: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .carousel-slide { padding: 5rem; }
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+        }
+
+        .carousel-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            transform: scale(1.1);
+            transition: transform 10s linear;
+            filter: brightness(0.4);
+        }
+
+        .carousel-slide.active .carousel-bg {
+            transform: scale(1);
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 65%, transparent 100%);
+            z-index: 1;
+        }
+
+        .carousel-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 10;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: white;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--primary);
+            transform: scale(1.1);
+            color: var(--primary);
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            width: 100%;
+            height: 4px;
+            display: flex;
+            z-index: 10;
+            gap: 4px;
+            padding: 0 2rem 2rem 2rem;
+            box-sizing: border-box;
+        }
+
+        .indicator-segment {
+            flex: 1;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            position: relative;
+            cursor: pointer;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .indicator-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background: white;
+            transition: width 0.3s;
         }
 
         .glow-core {
@@ -1006,134 +1145,129 @@
         <!-- Racing Particles (Purple/Cyan) Canvas -->
         <canvas id="pumaParticles" class="absolute inset-0 z-10 pointer-events-none"></canvas>
 
-
-
         <div
             class="max-w-7xl mx-auto px-6 relative z-20 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <!-- Left Column: Content and Cards -->
-            <div class="w-full lg:w-[55%] xl:w-[65%]">
-                <div class="reveal-up text-left mb-12">
-                    <div class="flex items-center gap-4 mb-8">
-                        <img src="https://www.sentinelone.com/wp-content/themes/sentinelone/assets/svg/header-logo-dark.svg"
-                            alt="SentinelOne" class="h-10 filter brightness-0 invert" />
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-8 leading-tight">
+            <!-- Left Column: Content / Header -->
+            <div class="w-full">
+                <div class="reveal-up text-left mb-8">
+                    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6 leading-tight">
                         What is <span class="font-bold text-scheme-primary">SentinelOne</span>?
                     </h2>
                     <div
                         class="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-lg font-semibold mb-6 tracking-wider">
                         AUTONOMOUS RESPONSE SPEED
                     </div>
-                    <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
+                    <p class="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
                         The ultimate predator that doesn't just detect, it <span class="text-purple-400">hunts</span>
-                        threats, providing protection to your endpoints.
+                        threats. Providing protection to your endpoints.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
-                    <!-- F1 -->
-                    <div class="reveal-up delay-100 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
-                        style="border-color: rgba(255,255,255,0.1);">
-                        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
-                            style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_flawless_glowing_archite-0.jpg'); mix-blend-mode: color-dodge;">
+                <!-- CAROUSEL COMPONENT -->
+                <div class="feature-carousel-container reveal-up delay-100">
+                    <div class="feature-carousel">
+                        <!-- Navigation Arrows -->
+                        <div class="carousel-nav">
+                            <button class="nav-btn prev-slide" aria-label="Previous">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <button class="nav-btn next-slide" aria-label="Next">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
                         </div>
-                        <div class="relative z-10">
-                            <div
-                                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
-                                <i data-lucide="brain" class="w-7 h-7 text-scheme-primary"></i>
+
+                        <!-- Slides -->
+                        <div class="carousel-slides">
+                            <!-- Slide 1: AI -->
+                            <div class="carousel-slide active">
+                                <div class="carousel-bg" style="background-image: url('file:///C:/Users/LuisMeneses/.gemini/antigravity/brain/3003e791-dbbe-4248-b05f-4a88d29a6305/carousel_bg_ai_behavioral_1774915627125.png');"></div>
+                                <div class="carousel-overlay"></div>
+                                <div class="carousel-content">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-16 h-16 rounded-2xl bg-scheme-primary/20 backdrop-blur-md border border-scheme-primary/30 flex items-center justify-center">
+                                            <i data-lucide="brain" class="w-8 h-8 text-scheme-primary"></i>
+                                        </div>
+                                        <span class="text-xl font-medium tracking-widest text-scheme-primary uppercase">Core Technology</span>
+                                    </div>
+                                    <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                                        Static & Behavioral AI <br>and Dynamic Analysis
+                                    </h3>
+                                    <p class="text-xl md:text-2xl text-white/80 leading-relaxed mb-8">
+                                        "We detect known and unknown threats in milliseconds through advanced behavioral analysis without the need for signatures."
+                                    </p>
+                                </div>
                             </div>
-                            <h3 class="text-xl md:text-2xl mb-3 font-medium">AI & Behavior</h3>
-                            <p class="text-white/80 leading-relaxed text-lg transition-colors group-hover:text-white">
-                                Detects known and unknown threats with real-time behavioral analysis.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- F2 -->
-                    <div class="reveal-up delay-200 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
-                        style="border-color: rgba(255,255,255,0.1);">
-                        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
-                            style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_sleek_professional_cyber-0.jpg'); mix-blend-mode: color-dodge;">
-                        </div>
-                        <div class="relative z-10">
-                            <div
-                                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
-                                <i data-lucide="zap" class="w-7 h-7 text-scheme-primary"></i>
+
+                            <!-- Slide 2: Response -->
+                            <div class="carousel-slide">
+                                <div class="carousel-bg" style="background-image: url('file:///C:/Users/LuisMeneses/.gemini/antigravity/brain/3003e791-dbbe-4248-b05f-4a88d29a6305/carousel_bg_autonomous_response_1774915637527.png');"></div>
+                                <div class="carousel-overlay"></div>
+                                <div class="carousel-content">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-16 h-16 rounded-2xl bg-scheme-secondary/20 backdrop-blur-md border border-scheme-secondary/30 flex items-center justify-center">
+                                            <i data-lucide="zap" class="w-8 h-8 text-scheme-secondary"></i>
+                                        </div>
+                                        <span class="text-xl font-medium tracking-widest text-scheme-secondary uppercase">Immediate Action</span>
+                                    </div>
+                                    <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                                        Autonomous Response <br>without human intervention
+                                    </h3>
+                                    <p class="text-xl md:text-2xl text-white/80 leading-relaxed mb-8">
+                                        "We contain the attack automatically on the endpoint, isolating the threat and protecting the rest of the network instantly."
+                                    </p>
+                                </div>
                             </div>
-                            <h3 class="text-xl md:text-2xl mb-3 font-medium">Autonomous Response</h3>
-                            <p class="text-white/80 leading-relaxed text-lg transition-colors group-hover:text-white">
-                                Contains the attack without relying on manual actions at the critical moment.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- F3 -->
-                    <div class="reveal-up delay-300 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
-                        style="border-color: rgba(255,255,255,0.1);">
-                        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
-                            style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Abstract_art_representing_-0.jpg'); mix-blend-mode: color-dodge;">
-                        </div>
-                        <div class="relative z-10">
-                            <div
-                                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
-                                <i data-lucide="cpu" class="w-7 h-7 text-scheme-primary"></i>
+
+                            <!-- Slide 3: Agent -->
+                            <div class="carousel-slide">
+                                <div class="carousel-bg" style="background-image: url('file:///C:/Users/LuisMeneses/.gemini/antigravity/brain/3003e791-dbbe-4248-b05f-4a88d29a6305/carousel_bg_light_agent_1774915650308.png');"></div>
+                                <div class="carousel-overlay"></div>
+                                <div class="carousel-content">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                                            <i data-lucide="cpu" class="w-8 h-8 text-white"></i>
+                                        </div>
+                                        <span class="text-xl font-medium tracking-widest text-white/60 uppercase">Total Efficiency</span>
+                                    </div>
+                                    <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                                        Super-light agent <br>high performance
+                                    </h3>
+                                    <p class="text-xl md:text-2xl text-white/80 leading-relaxed mb-8">
+                                        "Singularity Agent runs smoothly and silently across all your operating systems without impacting your users' productivity."
+                                    </p>
+                                </div>
                             </div>
-                            <h3 class="text-xl md:text-2xl mb-3 font-medium">Ultra-light Agent</h3>
-                            <p class="text-white/80 leading-relaxed text-lg transition-colors group-hover:text-white">
-                                Singularity Agent runs smoothly and silently on Windows, Linux, and macOS without
-                                impacting
-                                performance.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- F4 -->
-                    <div class="reveal-up delay-400 p-6 rounded-2xl border relative overflow-hidden group bg-black/40 backdrop-blur-sm transition-all duration-300"
-                        style="border-color: rgba(255,255,255,0.1);">
-                        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-cover bg-center"
-                            style="background-image: url('./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._A_panoramic_horizon_line_m-0.jpg'); mix-blend-mode: color-dodge;">
-                        </div>
-                        <div class="relative z-10">
-                            <div
-                                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] border border-white/10 group-hover:border-scheme-primary/50 transition-colors">
-                                <i data-lucide="search" class="w-7 h-7 text-scheme-primary"></i>
+
+                            <!-- Slide 4: Visibility -->
+                            <div class="carousel-slide">
+                                <div class="carousel-bg" style="background-image: url('file:///C:/Users/LuisMeneses/.gemini/antigravity/brain/3003e791-dbbe-4248-b05f-4a88d29a6305/carousel_bg_centralized_visibility_1774915664305.png');"></div>
+                                <div class="carousel-overlay"></div>
+                                <div class="carousel-content">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-16 h-16 rounded-2xl bg-scheme-primary/20 backdrop-blur-md border border-scheme-primary/30 flex items-center justify-center">
+                                            <i data-lucide="search" class="w-8 h-8 text-scheme-primary"></i>
+                                        </div>
+                                        <span class="text-xl font-medium tracking-widest text-scheme-primary uppercase">Total Control</span>
+                                    </div>
+                                    <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                                        Centralized Visibility <br>and Total Traceability
+                                    </h3>
+                                    <p class="text-xl md:text-2xl text-white/80 leading-relaxed mb-8">
+                                        "Get real-time inventory and absolute traceability of every event across your endpoints, servers, and cloud workloads."
+                                    </p>
+                                </div>
                             </div>
-                            <h3 class="text-xl md:text-2xl mb-3 font-medium">Centralized Visibility</h3>
-                            <p class="text-white/80 leading-relaxed text-lg transition-colors group-hover:text-white">
-                                Inventory, activity, and traceability across endpoints, servers, and cloud.
-                            </p>
+                        </div>
+
+                        <!-- Progress Indicators -->
+                        <div class="carousel-indicators">
+                            <div class="indicator-segment" data-index="0"><div class="indicator-fill"></div></div>
+                            <div class="indicator-segment" data-index="1"><div class="indicator-fill"></div></div>
+                            <div class="indicator-segment" data-index="2"><div class="indicator-fill"></div></div>
+                            <div class="indicator-segment" data-index="3"><div class="indicator-fill"></div></div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Right Column: The Puma (Jaguar) in Dedicated Container -->
-            <div class="w-full lg:w-[80%] xl:w-[90%] h-[450px] lg:h-[750px] xl:h-[850px] relative pointer-events-none lg:-mr-24 xl:-mr-48"
-                style="transform: scale(1.05); transform-origin: right center;">
-                <!-- Mystic background glow -->
-                <div
-                    class="absolute inset-0 bg-gradient-radial from-purple-500/20 via-transparent to-transparent opacity-70">
-                </div>
-
-                <!-- Wrapper with elliptical mask to soften rectangular PNG edges -->
-                <div class="absolute inset-0"
-                    style="-webkit-mask-image: radial-gradient(ellipse 95% 78% at 58% 50%, black 30%, rgba(0,0,0,0.85) 52%, rgba(0,0,0,0.3) 72%, transparent 88%);
-                           mask-image: radial-gradient(ellipse 95% 78% at 58% 50%, black 30%, rgba(0,0,0,0.85) 52%, rgba(0,0,0,0.3) 72%, transparent 88%);">
-
-                    <!-- Ghost Layer: Tail fades in elegantly, materializing up to the waist -->
-                    <img loading="lazy"
-                        src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.png"
-                        alt="SentinelOne Predator Ghost" class="absolute inset-0 w-full h-full object-contain"
-                        style="object-position: center center;
-                               filter: contrast(1.2) brightness(0.9) drop-shadow(0 0 12px rgba(139,92,246,0.4));
-                               -webkit-mask-image: linear-gradient(to right, transparent 5%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 48%, black 62%, black 90%, transparent 100%);
-                               mask-image: linear-gradient(to right, transparent 5%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 48%, black 62%, black 90%, transparent 100%);" />
-
-                    <!-- Solid Layer: Head and front body with full glow -->
-                    <img loading="lazy"
-                        src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.png"
-                        alt="SentinelOne Predator" class="absolute inset-0 w-full h-full object-contain"
-                        style="object-position: center center;
-                               filter: contrast(1.25) brightness(1.0) drop-shadow(0 0 18px rgba(139,92,246,0.5)) drop-shadow(0 0 35px rgba(0,217,255,0.2));
-                               -webkit-mask-image: linear-gradient(to right, transparent 30%, rgba(0,0,0,0.6) 50%, black 65%, black 90%, transparent 100%);
-                               mask-image: linear-gradient(to right, transparent 30%, rgba(0,0,0,0.6) 50%, black 65%, black 90%, transparent 100%);" />
                 </div>
             </div>
     </section>
@@ -2647,6 +2781,73 @@
                 element.classList.add('active');
             }
         }
+    </script>
+    <script>
+        // Feature Carousel Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.querySelector('.feature-carousel');
+            if (!carousel) return;
+
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const fills = carousel.querySelectorAll('.indicator-fill');
+            const prevBtn = carousel.querySelector('.prev-slide');
+            const nextBtn = carousel.querySelector('.next-slide');
+            const segments = carousel.querySelectorAll('.indicator-segment');
+
+            if (!slides.length) return;
+
+            let currentSlide = 0;
+            let timer = null;
+            const stepTime = 10000; // 10 seconds
+
+            function showSlide(index) {
+                // Reset all states
+                slides.forEach((s, i) => {
+                    s.classList.remove('active');
+                    fills[i].style.transition = 'none';
+                    fills[i].style.width = '0%';
+                });
+
+                // Update current index
+                currentSlide = index;
+                if (currentSlide < 0) currentSlide = slides.length - 1;
+                if (currentSlide >= slides.length) currentSlide = 0;
+
+                // Set active slide
+                slides[currentSlide].classList.add('active');
+
+                // Animate progress bar
+                setTimeout(() => {
+                    if (fills[currentSlide]) {
+                        fills[currentSlide].style.transition = `width ${stepTime}ms linear`;
+                        fills[currentSlide].style.width = '100%';
+                    }
+                }, 50);
+
+                // Auto-advance
+                clearTimeout(timer);
+                timer = setTimeout(nextSlide, stepTime);
+            }
+
+            function nextSlide() {
+                showSlide((currentSlide + 1) % slides.length);
+            }
+
+            function prevSlide() {
+                showSlide((currentSlide - 1 + slides.length) % slides.length);
+            }
+
+            // Click interactions
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+            segments.forEach((seg, i) => {
+                seg.addEventListener('click', () => showSlide(i));
+            });
+
+            // Start first slide
+            showSlide(0);
+        });
     </script>
     <script>
         // DNA Infinity Animation
