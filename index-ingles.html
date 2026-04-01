@@ -711,15 +711,18 @@
         .stacked-card {
             grid-area: stack;
             width: 100%;
-            max-width: 500px;
-            padding: 2.5rem;
+            max-width: 470px;
+            /* Reduced from 500px to be 5% smaller */
+            padding: 2rem;
+            /* Reduced padding */
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 2.5rem;
+            border-radius: 2rem;
             transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-            transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotation)) scale(0.9);
+            transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotation)) scale(0.85);
+            /* Reduced base scale from 0.9 */
             cursor: pointer;
             box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
             opacity: 0.4;
@@ -727,16 +730,17 @@
         }
 
         /* Spaced Horizontal Offsets */
-        .layer-4 { --offset-x: -320px; --offset-y: 20px; --rotation: -12deg; z-index: 10; }
-        .layer-3 { --offset-x: -160px; --offset-y: -10px; --rotation: -4deg; z-index: 20; }
-        .layer-2 { --offset-x: 160px; --offset-y: 15px; --rotation: 6deg; z-index: 30; }
-        .layer-1 { --offset-x: 320px; --offset-y: -15px; --rotation: 12deg; z-index: 40; }
+        .layer-4 { --offset-x: -300px; --offset-y: 20px; --rotation: -12deg; z-index: 10; }
+        .layer-3 { --offset-x: -150px; --offset-y: -10px; --rotation: -4deg; z-index: 20; }
+        .layer-2 { --offset-x: 150px; --offset-y: 15px; --rotation: 6deg; z-index: 30; }
+        .layer-1 { --offset-x: 300px; --offset-y: -15px; --rotation: 12deg; z-index: 40; }
 
         /* Active State (Shuffle Highlight) */
         .stacked-card.active {
             opacity: 1;
             filter: blur(0);
-            transform: translate(0, -40px) rotate(0deg) scale(1.1) translateZ(100px) !important;
+            transform: translate(0, -40px) rotate(0deg) scale(1.05) translateZ(100px) !important;
+            /* Reduced from 1.1 */
             z-index: 100 !important;
             background: rgba(255, 255, 255, 0.1);
             border-color: var(--primary);
@@ -1208,54 +1212,54 @@
                 </div>
 
                 <!-- LAYERED DEPTH STACK (English) - Full Auto -->
-                <div class="relative w-full h-[700px] mt-16 flex items-center justify-center overflow-visible" id="stacked-features-container">
-                    <div class="relative w-full max-w-4xl h-[500px] stack-grid">
+                <div class="relative w-full h-[650px] mt-12 flex items-center justify-center overflow-visible" id="stacked-features-container">
+                    <div class="relative w-full max-w-4xl h-[450px] stack-grid">
                         <!-- Card 4: Visibility (Base) -->
                         <div class="stacked-card layer-4">
                             <div class="flex items-center gap-3 mb-6">
-                                <div class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-xl border border-scheme-primary/30 flex items-center justify-center">
-                                    <i data-lucide="search" class="w-7 h-7 text-scheme-primary"></i>
+                                <div class="w-12 h-12 rounded-2xl bg-scheme-primary/20 backdrop-blur-xl border border-scheme-primary/30 flex items-center justify-center">
+                                    <i data-lucide="search" class="w-6 h-6 text-scheme-primary"></i>
                                 </div>
-                                <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Total Control</span>
+                                <span class="text-base font-medium tracking-widest text-scheme-primary uppercase">Total Control</span>
                             </div>
-                            <h3 class="text-5xl font-bold text-white mb-6 leading-tight">Centralized Visibility <br>& Total Traceability</h3>
-                            <p class="text-2xl text-white/60 leading-relaxed">Real-time inventory and absolute traceability of every event across your endpoints and cloud.</p>
+                            <h3 class="text-4xl font-bold text-white mb-6 leading-tight">Centralized Visibility <br>& Total Traceability</h3>
+                            <p class="text-xl text-white/60 leading-relaxed">Real-time inventory and absolute traceability of every event across your endpoints and cloud.</p>
                         </div>
 
                         <!-- Card 3: Agent -->
                         <div class="stacked-card layer-3">
                             <div class="flex items-center gap-3 mb-6">
-                                <div class="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
-                                    <i data-lucide="cpu" class="w-7 h-7 text-white"></i>
+                                <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
+                                    <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
                                 </div>
-                                <span class="text-lg font-medium tracking-widest text-white/60 uppercase">Total Efficiency</span>
+                                <span class="text-base font-medium tracking-widest text-white/60 uppercase">Total Efficiency</span>
                             </div>
-                            <h3 class="text-5xl font-bold text-white mb-6 leading-tight">Super-light agent <br>high performance</h3>
-                            <p class="text-2xl text-white/60 leading-relaxed">Singularity Agent runs smoothly and silently without impacting user productivity.</p>
+                            <h3 class="text-4xl font-bold text-white mb-6 leading-tight">Super-light agent <br>high performance</h3>
+                            <p class="text-xl text-white/60 leading-relaxed">Singularity Agent runs smoothly and silently without impacting user productivity.</p>
                         </div>
 
                         <!-- Card 2: Response -->
                         <div class="stacked-card layer-2">
                             <div class="flex items-center gap-3 mb-4 text-scheme-secondary">
-                                <div class="w-14 h-14 rounded-2xl bg-scheme-secondary/20 backdrop-blur-xl border border-scheme-secondary/30 flex items-center justify-center">
-                                    <i data-lucide="zap" class="w-7 h-7 text-scheme-secondary"></i>
+                                <div class="w-12 h-12 rounded-2xl bg-scheme-secondary/20 backdrop-blur-xl border border-scheme-secondary/30 flex items-center justify-center">
+                                    <i data-lucide="zap" class="w-6 h-6 text-scheme-secondary"></i>
                                 </div>
-                                <span class="text-lg font-medium tracking-widest uppercase">Immediate Action</span>
+                                <span class="text-base font-medium tracking-widest uppercase">Immediate Action</span>
                             </div>
-                            <h3 class="text-5xl font-bold text-white mb-6 leading-tight">Autonomous Response <br>without intervention</h3>
-                            <p class="text-2xl text-white/60 leading-relaxed">We contain the attack automatically on the endpoint, isolating the threat instantly.</p>
+                            <h3 class="text-4xl font-bold text-white mb-6 leading-tight">Autonomous Response <br>without intervention</h3>
+                            <p class="text-xl text-white/60 leading-relaxed">We contain the attack automatically on the endpoint, isolating the threat instantly.</p>
                         </div>
 
                         <!-- Card 1: AI (Top) -->
                         <div class="stacked-card layer-1 active">
                             <div class="flex items-center gap-3 mb-6">
-                                <div class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-xl border border-scheme-primary/30 flex items-center justify-center">
-                                    <i data-lucide="brain" class="w-7 h-7 text-scheme-primary"></i>
+                                <div class="w-12 h-12 rounded-2xl bg-scheme-primary/20 backdrop-blur-xl border border-scheme-primary/30 flex items-center justify-center">
+                                    <i data-lucide="brain" class="w-6 h-6 text-scheme-primary"></i>
                                 </div>
-                                <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Core Technology</span>
+                                <span class="text-base font-medium tracking-widest text-scheme-primary uppercase">Core Technology</span>
                             </div>
-                            <h3 class="text-5xl font-bold text-white mb-6 leading-tight">Static & Behavioral AI <br>and Dynamic Analysis</h3>
-                            <p class="text-2xl text-white/60 leading-relaxed">Detect known and unknown threats in milliseconds using advanced behavioral analysis.</p>
+                            <h3 class="text-4xl font-bold text-white mb-6 leading-tight">Static & Behavioral AI <br>and Dynamic Analysis</h3>
+                            <p class="text-xl text-white/60 leading-relaxed">Detect known and unknown threats in milliseconds using advanced behavioral analysis.</p>
                         </div>
                     </div>
                 </div>
