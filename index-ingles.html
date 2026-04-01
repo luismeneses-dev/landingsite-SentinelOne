@@ -585,15 +585,7 @@
             -webkit-backdrop-filter: blur(20px);
         }
 
-        /* POINT 3: Tilt Effect Glow */
-        .tilt-card {
-            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-            transform-style: preserve-3d;
-        }
 
-        .tilt-card:hover {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 217, 255, 0.1);
-        }
 
         /* Logo Marquee (Confianza) */
         .logo-marquee-container {
@@ -1120,7 +1112,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-64 relative z-10 px-6">
                 <!-- Threat Box -->
-                <div class="reveal-up delay-100 p-8 rounded-3xl border bg-[#0f0505] relative overflow-hidden group tilt-card"
+                <div class="reveal-up delay-100 p-8 rounded-3xl border bg-[#0f0505] relative overflow-hidden group"
                     style="border-color: rgba(239, 68, 68, 0.3); background: #0f0505;">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, rgb(239,68,68) 0%, transparent 70%); filter: blur(60px);">
@@ -1152,7 +1144,7 @@
                 </div>
 
                 <!-- Safe Box -->
-                <div class="reveal-up delay-200 p-8 rounded-3xl border bg-[#0f0505] relative overflow-hidden group tilt-card"
+                <div class="reveal-up delay-200 p-8 rounded-3xl border bg-[#0f0505] relative overflow-hidden group"
                     style="border-color: rgba(0, 217, 255, 0.3); background: #0f0505;">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, var(--primary) 0%, transparent 70%); filter: blur(60px);">
@@ -1363,7 +1355,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Healthcare -->
-                <div class="reveal-up delay-100 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
+                <div class="reveal-up delay-100 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
                     style="border-color: rgba(255,255,255,0.1);">
                     <!-- Background placeholder/overlay -->
                     <div
@@ -1394,7 +1386,7 @@
                 </div>
 
                 <!-- Fintech / Retail -->
-                <div class="reveal-up delay-200 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
+                <div class="reveal-up delay-200 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
                     style="border-color: rgba(255,255,255,0.1);">
                     <!-- Background placeholder/overlay -->
                     <div
@@ -1423,7 +1415,7 @@
                 </div>
 
                 <!-- Corporate -->
-                <div class="reveal-up delay-300 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group tilt-card"
+                <div class="reveal-up delay-300 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
                     style="border-color: rgba(255,255,255,0.1);">
                     <!-- Background placeholder/overlay -->
                     <div
@@ -1580,7 +1572,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1: Complete -->
-                <div class="reveal-up delay-100 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full tilt-card group transition-all">
+                <div class="reveal-up delay-100 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all">
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
                         <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Complete</div>
@@ -1617,7 +1609,7 @@
                 </div>
 
                 <!-- Card 2: Commercial -->
-                <div class="reveal-up delay-200 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full tilt-card group relative overflow-hidden border-2 border-scheme-secondary/30">
+                <div class="reveal-up delay-200 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group relative overflow-hidden border-2 border-scheme-secondary/30">
                     <div class="absolute top-0 right-0 p-4 bg-scheme-secondary text-white text-lg tracking-widest uppercase shadow-md">Most Popular</div>
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
@@ -1652,7 +1644,7 @@
                 </div>
 
                 <!-- Card 3: Enterprise -->
-                <div class="reveal-up delay-300 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full tilt-card group transition-all border border-slate-400/50">
+                <div class="reveal-up delay-300 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all border border-slate-400/50">
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
                         <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Enterprise</div>
@@ -1977,7 +1969,7 @@
                 <!-- Columna Derecha: Contenido Refinado -->
                 <div class="reveal-right w-full lg:w-[40%]">
                     <div class="space-y-2">
-                        <div class="security-accordion-item tilt-card py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
+                        <div class="security-accordion-item py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
                             onclick="toggleSecurity(this)">
                             <div class="flex items-center gap-2 mb-0">
                                 <div class="w-7 h-7 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
@@ -1996,7 +1988,7 @@
                             </div>
                         </div>
 
-                        <div class="security-accordion-item tilt-card py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
+                        <div class="security-accordion-item py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
                             onclick="toggleSecurity(this)">
                             <div class="flex items-center gap-2 mb-0">
                                 <div class="w-7 h-7 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
@@ -2018,7 +2010,7 @@
                             </div>
                         </div>
 
-                        <div class="security-accordion-item tilt-card py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
+                        <div class="security-accordion-item py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
                             onclick="toggleSecurity(this)">
                             <div class="flex items-center gap-2 mb-0">
                                 <div class="w-7 h-7 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
@@ -2034,7 +2026,7 @@
                             </div>
                         </div>
 
-                        <div class="security-accordion-item tilt-card py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
+                        <div class="security-accordion-item py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
                             onclick="toggleSecurity(this)">
                             <div class="flex items-center gap-2 mb-0">
                                 <div class="w-7 h-7 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
@@ -2056,7 +2048,7 @@
                             </div>
                         </div>
 
-                        <div class="security-accordion-item tilt-card py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
+                        <div class="security-accordion-item py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
                             onclick="toggleSecurity(this)">
                             <div class="flex items-center gap-2 mb-0">
                                 <div class="w-7 h-7 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
@@ -2077,7 +2069,7 @@
                             </div>
                         </div>
 
-                        <div class="security-accordion-item tilt-card py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
+                        <div class="security-accordion-item py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
                             onclick="toggleSecurity(this)">
                             <div class="flex items-center gap-2 mb-0">
                                 <div class="w-7 h-7 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
@@ -2158,7 +2150,7 @@
                 <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
 
                     <!-- Flip Card: Human Support -->
-                    <div class="flip-card-container tilt-card group cursor-pointer">
+                    <div class="flip-card-container group cursor-pointer">
                         <div class="flip-card-inner">
                             <!-- FRONT -->
                             <div
@@ -2210,7 +2202,7 @@
                     </div>
 
                     <!-- Flip Card: Consultancy -->
-                    <div class="flip-card-container tilt-card group cursor-pointer">
+                    <div class="flip-card-container group cursor-pointer">
                         <div class="flip-card-inner">
                             <!-- FRONT -->
                             <div
@@ -2261,7 +2253,7 @@
                     </div>
 
                     <!-- Flip Card: Deployment -->
-                    <div class="flip-card-container tilt-card md:col-span-2 !h-[250px] group cursor-pointer">
+                    <div class="flip-card-container md:col-span-2 !h-[250px] group cursor-pointer">
                         <div class="flip-card-inner">
                             <div
                                 class="flip-card-front bg-white/[0.02] backdrop-blur-md p-8 flex items-center justify-between relative">
@@ -2656,27 +2648,7 @@
             }
         }
 
-        // POINT 3: Tilt Effect JavaScript
-        const handleTilt = (e) => {
-            const tiltCards = document.querySelectorAll('.tilt-card');
-            tiltCards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
 
-                if (x > 0 && x < rect.width && y > 0 && y < rect.height) {
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const rotateX = (centerY - y) / 25; // Reduced from 10 to 25
-                    const rotateY = (x - centerX) / 25; // Reduced from 10 to 25
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`; // Scale reduced from 1.05 to 1.02
-                } else {
-                    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-                }
-            });
-        };
-
-        document.addEventListener('mousemove', handleTilt);
 
         initPumaParticles();
     </script>
