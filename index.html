@@ -3027,6 +3027,7 @@
     <script>
         const comparisonData = {
             'crowdstrike': {
+                brand: 'CrowdStrike',
                 title: 'SentinelOne vs CrowdStrike',
                 description: 'Detección a velocidad de máquina vs. Modelo humano 1-10-60.',
                 metrics: [
@@ -3042,6 +3043,7 @@
                 ]
             },
             'palo-alto': {
+                brand: 'Palo Alto',
                 title: 'SentinelOne vs Palo Alto Networks',
                 description: 'Máxima visibilidad y contexto vs. Detecciones omitidas en ataques dirigidos.',
                 metrics: [
@@ -3057,6 +3059,7 @@
                 ]
             },
             'sophos': {
+                brand: 'Sophos',
                 title: 'SentinelOne vs Sophos',
                 description: 'Líder en excelencia vs. Alertas excesivas y telemetría limitada.',
                 metrics: [
@@ -3072,6 +3075,7 @@
                 ]
             },
             'trend-micro': {
+                brand: 'Trend Micro',
                 title: 'SentinelOne vs Trend Micro',
                 description: 'Plataforma intuitiva vs. Complejidad operativa y fatiga de alertas.',
                 metrics: [
@@ -3087,6 +3091,7 @@
                 ]
             },
             'broadcom': {
+                brand: 'Broadcom',
                 title: 'SentinelOne vs Broadcom (Symantec)',
                 description: 'IA de vanguardia vs. Consolas desarticuladas e ineficaces.',
                 metrics: [
@@ -3102,6 +3107,7 @@
                 ]
             },
             'kaspersky': {
+                brand: 'Kaspersky',
                 title: 'SentinelOne vs Kaspersky',
                 description: 'Plataforma moderna líder vs. Antivirus legado propenso a retrasos.',
                 metrics: [
@@ -3117,6 +3123,7 @@
                 ]
             },
             'trellix': {
+                brand: 'Trellix',
                 title: 'SentinelOne vs Trellix (McAfee/FireEye)',
                 description: 'XDR autónomo vs. Arquitectura cosida e incompleta.',
                 metrics: [
@@ -3140,6 +3147,7 @@
             // Fill modal content
             document.getElementById('modal-title').textContent = data.title;
             document.getElementById('modal-desc').textContent = data.description;
+            document.getElementById('modal-brand-header').textContent = data.brand;
 
             // Build metrics table
             const tableBody = document.getElementById('modal-table-body');
@@ -3221,7 +3229,7 @@
                         class="grid grid-cols-3 gap-4 pb-4 border-b-2 border-white/20 text-lg uppercase tracking-widest font-bold">
                         <div class="text-white/30">Característica</div>
                         <div class="text-scheme-primary">SentinelOne</div>
-                        <div class="text-white/30">Competencia</div>
+                        <div id="modal-brand-header" class="text-white/30">Competencia</div>
                     </div>
                     <div id="modal-table-body">
                         <!-- Content injected by JS -->

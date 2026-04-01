@@ -2884,7 +2884,7 @@
                     <div class="grid grid-cols-3 gap-4 pb-4 border-b-2 border-white/20 text-lg uppercase tracking-widest font-bold">
                         <div class="text-white/30">Feature</div>
                         <div class="text-scheme-primary">SentinelOne</div>
-                        <div class="text-white/30">Competitor</div>
+                        <div id="modal-brand-header" class="text-white/30">Competitor</div>
                     </div>
                     <div id="modal-table-body">
                         <!-- Content injected by JS -->
@@ -2916,6 +2916,7 @@
     <script>
         const comparisonData = {
             'crowdstrike': {
+                brand: 'CrowdStrike',
                 title: 'SentinelOne vs CrowdStrike',
                 description: 'Machine speed detection vs. 1-10-60 Human dependency model.',
                 metrics: [
@@ -2931,6 +2932,7 @@
                 ]
             },
             'palo-alto': {
+                brand: 'Palo Alto',
                 title: 'SentinelOne vs Palo Alto Networks',
                 description: 'Maximum visibility and context vs. Missed detections in targeted attacks.',
                 metrics: [
@@ -2946,6 +2948,7 @@
                 ]
             },
             'sophos': {
+                brand: 'Sophos',
                 title: 'SentinelOne vs Sophos',
                 description: 'Leader in excellence vs. Alert fatigue and limited telemetry.',
                 metrics: [
@@ -2961,6 +2964,7 @@
                 ]
             },
             'trend-micro': {
+                brand: 'Trend Micro',
                 title: 'SentinelOne vs Trend Micro',
                 description: 'Intuitive platform vs. Operational complexity and alert fatigue.',
                 metrics: [
@@ -2976,6 +2980,7 @@
                 ]
             },
             'broadcom': {
+                brand: 'Broadcom',
                 title: 'SentinelOne vs Broadcom (Symantec)',
                 description: 'Cutting-edge AI vs. Disjointed and ineffective consoles.',
                 metrics: [
@@ -2991,6 +2996,7 @@
                 ]
             },
             'kaspersky': {
+                brand: 'Kaspersky',
                 title: 'SentinelOne vs Kaspersky',
                 description: 'Leading modern platform vs. Legacy AV prone to delays.',
                 metrics: [
@@ -3006,6 +3012,7 @@
                 ]
             },
             'trellix': {
+                brand: 'Trellix',
                 title: 'SentinelOne vs Trellix (McAfee/FireEye)',
                 description: 'Autonomous XDR vs. Stitched and incomplete architecture.',
                 metrics: [
@@ -3029,6 +3036,7 @@
             // Fill modal content
             document.getElementById('modal-title').textContent = data.title;
             document.getElementById('modal-desc').textContent = data.description;
+            document.getElementById('modal-brand-header').textContent = data.brand;
 
             // Build metrics table
             const tableBody = document.getElementById('modal-table-body');
