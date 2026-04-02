@@ -226,6 +226,18 @@
             transform: translate(0) scale(1);
         }
 
+        /* Reveal Elegante (Lujo y Proporción) */
+        .reveal-elegant {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal-elegant.reveal-active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
         /* Custom delays utility classes */
         .delay-100 {
             transition-delay: 100ms;
@@ -1007,12 +1019,12 @@
 
                     <div class="reveal-up delay-300 flex flex-wrap gap-6 justify-center mb-12">
                         <button
-                            class="px-10 py-5 rounded-full text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,217,255,0.4)] hover:shadow-[0_25px_60px_rgba(0,217,255,0.6)]"
+                            class="px-12 py-6 rounded-full text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,217,255,0.4)] hover:shadow-[0_25px_60px_rgba(0,217,255,0.6)]"
                             style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
                             Solicitar diagnóstico gratuito
                         </button>
                         <button
-                            class="px-10 py-5 rounded-full border-2 border-white/20 hover:border-white/50 bg-white/5 backdrop-blur-md font-bold text-lg transition-all hover:bg-white/10 active:scale-95">
+                            class="px-12 py-6 rounded-full border-2 border-white/20 hover:border-white/50 bg-white/5 backdrop-blur-md font-bold text-lg transition-all hover:bg-white/10 active:scale-95">
                             Hablar con un especialista
                         </button>
                     </div>
@@ -1034,7 +1046,6 @@
                             <!-- KPI 1 -->
                             <div class="p-4 rounded-xl border flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm"
                                 style="border-color: rgba(0,217,255,0.2); box-shadow: 0 0 15px rgba(0,217,255,0.05);">
-                                <div class="text-lg uppercase tracking-[0.2em] text-white/40 mb-2">Amenazas</div>
                                 <i data-lucide="shield-check" class="w-6 h-6 mb-2 text-scheme-primary opacity-70"></i>
                                 <div class="text-lg font-bold text-white">
                                     Contención</div>
@@ -1042,7 +1053,6 @@
                             <!-- KPI 2 -->
                             <div
                                 class="p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm">
-                                <div class="text-lg uppercase tracking-[0.2em] text-white/40 mb-2">Impacto</div>
                                 <div class="flex items-end gap-1 h-6 mb-2">
                                     <div class="w-1 rounded-full bg-scheme-secondary/60" style="height: 40%;"></div>
                                     <div class="w-1 rounded-full bg-scheme-secondary" style="height: 80%;"></div>
@@ -1056,7 +1066,6 @@
                             <!-- KPI 3 -->
                             <div
                                 class="p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm">
-                                <div class="text-lg uppercase tracking-[0.2em] text-white/40 mb-2">Resiliencia</div>
                                 <div class="flex items-center gap-2 mb-2">
                                     <i data-lucide="file-text" class="w-5 h-5 text-white/30"></i>
                                     <i data-lucide="refresh-cw"
@@ -1068,7 +1077,6 @@
                             <!-- KPI 4 -->
                             <div
                                 class="p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm">
-                                <div class="text-lg uppercase tracking-[0.2em] text-white/40 mb-2">Cobertura</div>
                                 <div class="relative w-full h-6 mb-2">
                                     <div
                                         class="absolute w-1 h-1 rounded-full top-[10%] left-[20%] animate-pulse bg-scheme-secondary">
@@ -1147,11 +1155,9 @@
         <div class="relative max-w-7xl mx-auto">
             <div class="reveal-up text-center mb-16">
                 <h2 class="text-5xl mb-6 tracking-tight font-light leading-tight">
-                    Ransomware: El final de tu
-                    <span
-                        class="bg-gradient-to-r from-scheme-primary to-scheme-secondary bg-clip-text text-transparent font-bold">
-                        continuidad operativa
-                    </span>
+                    Continuidad operativa <span
+                        class="bg-gradient-to-r from-scheme-primary to-scheme-secondary bg-clip-text text-transparent font-bold">en
+                        riesgo.</span>
                 </h2>
                 <p class="text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
                     El 70% de las empresas atacadas quedan paralizadas por días. Sin respuesta autónoma, tu empresa no
@@ -1161,8 +1167,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-64 relative z-10 px-6">
                 <!-- Threat Box -->
-                <div class="reveal-up delay-100 p-8 rounded-3xl border bg-[#0f0505] relative overflow-hidden group"
-                    style="border-color: rgba(239, 68, 68, 0.3); background: #0f0505;">
+                <div class="reveal-up delay-100 p-8 rounded-3xl border bg-white/[0.02] backdrop-blur-xl border-white/10 relative overflow-hidden group">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, rgb(239,68,68) 0%, transparent 70%); filter: blur(60px);">
                     </div>
@@ -1176,7 +1181,7 @@
                             onerror="this.src='https://images.unsplash.com/photo-1614064641936-38998970c926?auto=format&fit=crop&q=80'" />
                     </div>
 
-                    <h3 class="text-2xl font-semibold mb-6">La realidad del ataque</h3>
+                    <h3 class="text-2xl mb-6">La realidad del ataque</h3>
                     <ul class="space-y-4 text-lg text-white/80">
                         <li class="flex items-start gap-4"><i data-lucide="alert-triangle"
                                 class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Crisis operativa
@@ -1193,8 +1198,7 @@
                 </div>
 
                 <!-- Safe Box -->
-                <div class="reveal-up delay-200 p-8 rounded-3xl border bg-[#0f0505] relative overflow-hidden group"
-                    style="border-color: rgba(0, 217, 255, 0.3); background: #0f0505;">
+                <div class="reveal-up delay-200 p-8 rounded-3xl border bg-white/[0.02] backdrop-blur-xl border-white/10 relative overflow-hidden group">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, var(--primary) 0%, transparent 70%); filter: blur(60px);">
                     </div>
@@ -1208,7 +1212,7 @@
                             onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80'" />
                     </div>
 
-                    <h3 class="text-2xl font-semibold mb-6">El blindaje definitivo</h3>
+                    <h3 class="text-2xl mb-6">El blindaje definitivo</h3>
                     <ul class="space-y-4 text-lg text-white/80">
                         <li class="flex items-start gap-4"><i data-lucide="zap"
                                 class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Contención en
@@ -1428,94 +1432,60 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Industria -->
-                <div class="reveal-up delay-100 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
-                    style="border-color: rgba(255,255,255,0.1);">
-                    <!-- Background placeholder/overlay -->
-                    <div
-                        class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]">
-                    </div>
-                    <!-- Overlay para legibilidad -->
-                    <div
-                        class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
-                    </div>
-
+                <div class="reveal-elegant delay-100 p-10 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-xl relative overflow-hidden flex flex-col h-full group">
                     <div class="relative z-20 flex flex-col h-full">
-                        <i data-lucide="factory" class="w-12 h-12 mb-6 text-scheme-secondary"></i>
-                        <h3 class="text-2xl font-medium mb-4">Manufactura</h3>
-                        <p class="text-lg text-white/90 flex-grow mb-8 font-medium">
-                            <!-- Texto un poco más grueso para leerse mejor sobre imagen -->
+                        <i data-lucide="factory" class="w-16 h-16 mb-8 text-scheme-secondary transition-transform duration-700"></i>
+                        <h3 class="text-2xl mb-4">Manufactura</h3>
+                        <p class="text-lg text-white/90 flex-grow mb-8">
                             Aseguramos continuidad en plantas de producción y servidores críticos contra paros
                             operativos letales.
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span
-                                class="px-3 py-1.5 rounded-full text-lg font-medium border border-white/30 bg-black/20 text-white">OT/IT</span>
+                                class="px-3 py-1.5 rounded-full text-lg border border-white/30 bg-black/20 text-white">OT/IT</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-lg font-medium border border-white/30 bg-black/20 text-white">Cero
-                                Paros</span>
+                                class="px-3 py-1.5 rounded-full text-lg border border-white/30 bg-black/20 text-white">Cero Paros</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-lg font-medium border border-white/30 bg-black/20 text-white">Segmentación</span>
+                                class="px-3 py-1.5 rounded-full text-lg border border-white/30 bg-black/20 text-white">Segmentación</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Financiero -->
-                <div class="reveal-up delay-200 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
-                    style="border-color: rgba(255,255,255,0.1);">
-                    <!-- Background placeholder/overlay -->
-                    <div
-                        class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]">
-                    </div>
-                    <!-- Overlay para legibilidad -->
-                    <div
-                        class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
-                    </div>
-
+                <!-- Retail -->
+                <div class="reveal-elegant delay-200 p-10 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-xl relative overflow-hidden flex flex-col h-full group">
                     <div class="relative z-20 flex flex-col h-full">
-                        <i data-lucide="landmark" class="w-12 h-12 mb-6 text-scheme-primary"></i>
-                        <h3 class="text-2xl font-medium mb-4">Retail</h3>
-                        <p class="text-lg text-white/90 flex-grow mb-8 font-medium">
-                            <!-- Texto un poco más grueso para leerse mejor sobre imagen -->
+                        <i data-lucide="landmark" class="w-16 h-16 mb-8 text-scheme-primary transition-transform duration-700"></i>
+                        <h3 class="text-2xl mb-4">Retail</h3>
+                        <p class="text-lg text-white/90 flex-grow mb-8">
                             Máxima trazabilidad, cumplimiento regulatorio y políticas estrictas para la banca moderna.
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span
-                                class="px-3 py-1.5 rounded-full text-lg font-medium border border-white/30 bg-black/20 text-white">Cumplimiento</span>
+                                class="px-3 py-1.5 rounded-full text-lg border border-white/30 bg-black/20 text-white">Cumplimiento</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-lg font-medium border border-white/30 bg-black/20 text-white">Auditoría</span>
+                                class="px-3 py-1.5 rounded-full text-lg border border-white/30 bg-black/20 text-white">Auditoría</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-lg font-medium border border-white/30 bg-black/20 text-white">Visibilidad</span>
+                                class="px-3 py-1.5 rounded-full text-lg border border-white/30 bg-black/20 text-white">Visibilidad</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Corporativos -->
-                <div class="reveal-up delay-300 p-8 rounded-2xl border relative overflow-hidden flex flex-col h-full group"
-                    style="border-color: rgba(255,255,255,0.1);">
-                    <!-- Background placeholder/overlay -->
-                    <div
-                        class="absolute inset-0 z-0 bg-white/[0.02] backdrop-blur-sm transition-colors duration-500 group-hover:bg-white/[0.05]">
-                    </div>
-                    <!-- Overlay para legibilidad -->
-                    <div
-                        class="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/40 transition-colors duration-500">
-                    </div>
-
+                <div class="reveal-elegant delay-300 p-10 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-xl relative overflow-hidden flex flex-col h-full group">
                     <div class="relative z-20 flex flex-col h-full">
-                        <i data-lucide="building-2" class="w-12 h-12 mb-6 text-white"></i>
-                        <h3 class="text-2xl font-medium mb-4">Corporativos</h3>
-                        <p class="text-lg text-white/90 flex-grow mb-8 font-medium">
-                            <!-- Texto un poco más grueso para leerse mejor sobre imagen -->
+                        <i data-lucide="building-2" class="w-16 h-16 mb-8 text-white transition-transform duration-700"></i>
+                        <h3 class="text-2xl mb-4">Corporativos</h3>
+                        <p class="text-lg text-white/90 flex-grow mb-8">
                             Plataforma unificada que reduce drásticamente la carga operativa sin requerir un SOC
                             gigante.
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span
-                                class="px-3 py-1.5 rounded-full text-lg font-medium border border-white/30 bg-black/20 text-white">Automatizado</span>
+                                class="px-3 py-1.5 rounded-full text-lg border border-white/30 bg-black/20 text-white">Automatizado</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-lg font-medium border border-white/30 bg-black/20 text-white">Ligero</span>
+                                class="px-3 py-1.5 rounded-full text-lg border border-white/30 bg-black/20 text-white">Ligero</span>
                             <span
-                                class="px-3 py-1.5 rounded-full text-lg font-medium border border-white/30 bg-black/20 text-white">Rápido</span>
+                                class="px-3 py-1.5 rounded-full text-lg border border-white/30 bg-black/20 text-white">Rápido</span>
                         </div>
                     </div>
                 </div>
@@ -2237,8 +2207,7 @@
         <div class="relative z-10 max-w-7xl mx-auto w-full">
 
             <h2 class="text-5xl font-light tracking-tight mb-8 leading-tight">
-                Inteligencia artificial con calidad
-                <span class="text-scheme-secondary font-bold">humana</span>
+                IA con calidad <span class="text-scheme-secondary font-bold">humana.</span>
             </h2>
             <p class="text-2xl text-white/90 leading-relaxed border-l-2 border-scheme-primary/30 pl-6 py-2">
                 Implementación por especialistas certificados de Faro Protec.
@@ -2252,13 +2221,13 @@
 
                     <!-- Card: Soporte Humano -->
                     <div
-                        class="bg-white/[0.02] backdrop-blur-md p-8 rounded-3xl border border-white/10 flex flex-col justify-center relative min-h-[300px]">
+                        class="bg-white/[0.02] backdrop-blur-xl p-8 rounded-3xl border border-white/10 flex flex-col justify-center relative min-h-[300px]">
                         <div class="flex items-center gap-6 mb-6">
                             <div
                                 class="w-16 h-16 rounded-2xl flex items-center justify-center bg-scheme-primary/10 border border-scheme-primary/20">
                                 <i data-lucide="headphones" class="w-8 h-8 text-scheme-primary"></i>
                             </div>
-                            <h3 class="text-lg font-medium text-white">Servicio Post-Adquisición</h3>
+                            <h3 class="text-lg text-white">Servicio Post-Adquisición</h3>
                         </div>
                         <p class="text-white/60 text-lg">
                             Asistencia en todo el proceso de planeación e implementación</p>
@@ -2266,13 +2235,13 @@
 
                     <!-- Card: Consultoría -->
                     <div
-                        class="bg-white/[0.02] backdrop-blur-md p-8 rounded-3xl border border-white/10 flex flex-col justify-center relative min-h-[300px]">
+                        class="bg-white/[0.02] backdrop-blur-xl p-8 rounded-3xl border border-white/10 flex flex-col justify-center relative min-h-[300px]">
                         <div class="flex items-center gap-6 mb-6">
                             <div
                                 class="w-16 h-16 rounded-2xl flex items-center justify-center bg-scheme-secondary/10 border border-scheme-secondary/20">
                                 <i data-lucide="shield-check" class="w-8 h-8 text-scheme-secondary"></i>
                             </div>
-                            <h3 class="text-lg font-medium text-white">Consultoría Experta</h3>
+                            <h3 class="text-lg text-white">Consultoría Experta</h3>
                         </div>
                         <p class="text-white/60 text-lg">Ingeniería Certificada para optimizar tu
                             defensa.
@@ -2281,20 +2250,20 @@
 
                     <!-- Card: Despliegue -->
                     <div
-                        class="md:col-span-2 bg-white/[0.02] backdrop-blur-md p-8 rounded-3xl border border-white/10 flex items-center justify-between min-h-[150px]">
+                        class="md:col-span-2 bg-white/[0.02] backdrop-blur-xl p-8 rounded-3xl border border-white/10 flex items-center justify-between min-h-[150px]">
                         <div class="flex items-center gap-6">
                             <div
                                 class="w-16 h-16 rounded-2xl flex items-center justify-center bg-white/10 border border-white/20">
                                 <i data-lucide="zap" class="w-8 h-8 text-white"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-medium text-white">Ejecutivo de cuenta asignado,</h3>
+                                <h3 class="text-lg text-white">Ejecutivo de cuenta asignado,</h3>
                                 <p class="text-white/60 text-lg">Acompañamiento desde el primer día
                                 </p>
                             </div>
                         </div>
                         <a href="https://www.faroprotec.com/soporte/poliza" target="_blank"
-                            class="text-scheme-primary font-bold hidden sm:block z-20 px-5 py-2 border border-scheme-primary/40 rounded-full hover:bg-scheme-primary/10 transition-all pointer-events-auto">
+                            class="text-scheme-primary z-20 px-5 py-2 border border-scheme-primary/40 rounded-full hover:bg-scheme-primary/10 transition-all pointer-events-auto">
                             Ver Póliza
                         </a>
                     </div>
@@ -2546,7 +2515,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach((el) => {
+        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-elegant').forEach((el) => {
             observer.observe(el);
         });
 
