@@ -840,20 +840,32 @@
         @media (max-width: 1024px) {
             #stacked-features-container {
                 height: auto !important;
-                padding: 4rem 0;
+                padding: 2rem 0;
             }
 
             .stack-grid {
                 display: flex;
                 flex-direction: column;
-                gap: 2rem;
+                gap: 1.5rem;
+                height: auto !important;
+                max-width: 100%;
             }
 
             .stacked-card {
                 position: relative !important;
                 transform: none !important;
                 max-width: 100%;
-                padding: 2rem;
+                padding: 1.5rem;
+                opacity: 1 !important;
+                filter: blur(0) !important;
+                margin-bottom: 0;
+            }
+
+            /* Disable the shuffle jump on mobile to keep layout stable */
+            .stacked-card.active {
+                transform: none !important;
+                border-color: var(--primary);
+                box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
             }
         }
 
