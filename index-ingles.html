@@ -93,6 +93,15 @@
             animation-delay: 0.4s;
         }
 
+        @keyframes background-pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.05); opacity: 0.6; }
+        }
+
+        .animate-bg-pulse {
+            animation: background-pulse-slow 20s ease-in-out infinite;
+        }
+
         /* Rendering Optimization Utility */
         .cv-auto {
             content-visibility: auto;
@@ -1746,7 +1755,7 @@
                     </div>
 
                     <a href="#contacto"
-                        class="w-full py-4 rounded-full bg-slate-950 text-white text-2xl hover:bg-slate-800 transition-all shadow-lg text-center">
+                            class="w-full py-4 rounded-full bg-slate-950 text-white text-2xl hover:bg-slate-800 transition-all shadow-lg text-center">
                         Request Demo
                     </a>
                 </div>
@@ -1758,14 +1767,14 @@
     <section id="support" class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0 overflow-hidden">
-            <!-- Digital Ocean background -->
-            <div class="digital-ocean">
-                <div class="digital-ocean-grid"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-scheme-primary/10 to-transparent"></div>
+            <!-- New Geometric Elite Background (Breathing Animation) -->
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center animate-bg-pulse pointer-events-none opacity-50"
+                style="background-image: url('./public/images/universal_upscale_bg.jpg');" loading="lazy">
             </div>
 
+            <!-- Grids & Gradients for Depth -->
             <div
-                class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none z-[2]">
+                class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none z-[1] opacity-30">
             </div>
             <div
                 class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none opacity-80 z-[2]">
