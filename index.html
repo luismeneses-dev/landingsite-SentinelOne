@@ -93,6 +93,12 @@
             animation-delay: 0.4s;
         }
 
+        /* Rendering Optimization Utility */
+        .cv-auto {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 1000px; /* Previene saltos bruscos de scroll */
+        }
+
         /* Tipografías Locales */
         @font-face {
             font-family: 'Panton';
@@ -1118,7 +1124,7 @@
     </div>
 
     <!-- THREAT PROTECTION (Problema) -->
-    <section class="elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
+    <section class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
 
         <!-- Oil Flow Waves Background (Intenso Collision - Final Fix) -->
@@ -1235,7 +1241,7 @@
     </section>
 
     <!-- FEATURES (Solución) - SENTINELONE MAJESTIC PUMA -->
-    <section class="elegant-fusion py-20 text-white relative overflow-hidden min-h-screen flex items-center">
+    <section class="cv-auto elegant-fusion py-20 text-white relative overflow-hidden min-h-screen flex items-center">
         <div class="divider-cyan"></div>
         <!-- Partículas de Carrera (Moradas/Cian) Canvas -->
         <canvas id="pumaParticles" class="absolute inset-0 z-10 pointer-events-none"></canvas>
@@ -1341,7 +1347,7 @@
     </section>
 
     <!-- INTERACTIVE DEMO (Storylane) -->
-    <section class="elegant-fusion relative py-20 px-6 overflow-hidden">
+    <section class="cv-auto elegant-fusion relative py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="reveal-up text-center mb-12">
@@ -1360,7 +1366,7 @@
     </section>
 
     <!-- SECURITY LAYERS (Diferenciador) -->
-    <section class="elegant-fusion relative min-h-screen flex items-center py-4 px-6 overflow-hidden">
+    <section class="cv-auto elegant-fusion relative min-h-screen flex items-center py-4 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="dna-section-container">
             <!-- Canvas DNA Animation -->
@@ -1401,7 +1407,7 @@
 
                     <div
                         class="relative overflow-hidden rounded-[2.5rem] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.6)]">
-                        <img src="./public/images/arquitectura-resiliencia2.png" alt="Arquitectura de Resiliencia"
+                        <img loading="lazy" src="./public/images/arquitectura-resiliencia2.png" alt="Arquitectura de Resiliencia"
                             class="w-full max-h-[55vh] object-contain transform transition-all duration-1000 group-hover:scale-[1.015]">
                     </div>
                 </div>
@@ -1414,7 +1420,7 @@
     </section>
 
     <!-- SERVICES (Industrias) -->
-    <section id="industrias" class="elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
+    <section id="industrias" class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0 overflow-hidden">
             <div class="absolute inset-0 animate-oil"></div>
@@ -1501,7 +1507,7 @@
     </section>
 
     <!-- STATS (Comparativa) -->
-    <section class="elegant-fusion relative min-h-screen flex items-center py-20 px-4 md:px-6 overflow-hidden">
+    <section class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-4 md:px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0">
             <!-- Cyber Puma Head: Guardian de Fondo -->
@@ -1617,7 +1623,7 @@
     </section>
 
     <!-- PRICING & PACKAGES (3-CARD PREMIUM LAYOUT) -->
-    <section class="elegant-fusion relative min-h-screen flex items-center py-24 px-4 md:px-6 overflow-hidden">
+    <section class="cv-auto elegant-fusion relative min-h-screen flex items-center py-24 px-4 md:px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0">
             <!-- Resplandor Sutil -->
@@ -1779,90 +1785,92 @@
                 </h2>
             </div>
 
-            <!-- Layout simple de columnas -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-
-                <!-- Columna 1: Gestión & Canales -->
-                <div class="reveal-up flex flex-col h-full group">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="p-3 rounded-xl bg-scheme-primary/10 text-scheme-primary">
+            <!-- Layout Refinado de Columnas (Distribución & Reglas de Diseño) -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 items-start relative">
+                
+                <!-- Columna 1: Gestión & Canales (Balance & Harmonía) -->
+                <div class="reveal-elegant flex flex-col h-full group px-8 lg:px-12 py-10 border-b lg:border-b-0 lg:border-r border-white/5 relative">
+                    <div class="flex items-center gap-4 mb-10 transition-transform duration-500 group-hover:translate-x-2">
+                        <div class="p-4 rounded-2xl bg-scheme-primary/10 text-scheme-primary shadow-[0_0_15px_rgba(0,217,255,0.1)]">
                             <i data-lucide="headphones" class="w-8 h-8"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-white uppercase tracking-wider">Gestión & Canales</h3>
+                        <h3 class="text-2xl font-bold text-white uppercase tracking-[0.2em]">Gestión & Canales</h3>
                     </div>
-                    <ul class="space-y-6 flex-grow">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Ejecutivo de cuenta asignado</span>
+                    <ul class="space-y-8 flex-grow">
+                        <li class="reveal-up delay-100 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Ejecutivo de cuenta asignado</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Número 800 y Whatsapp dedicado</span>
+                        <li class="reveal-up delay-200 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Número 800 y Whatsapp dedicado</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Portal web para gestión de casos</span>
+                        <li class="reveal-up delay-300 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Portal web para gestión de casos</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Horario de soporte Faro: 9:00 a 18:00 (5x8)</span>
+                        <li class="reveal-up delay-400 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Horario de soporte Faro: 9:00 a 18:00 (5x8)</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Columna 2: Respuesta & Ejecución -->
-                <div class="reveal-up delay-100 flex flex-col h-full group">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="p-3 rounded-xl bg-scheme-primary/10 text-scheme-primary">
+                <!-- Columna 2: Respuesta & Ejecución (Énfasis & Ritmo) -->
+                <div class="reveal-elegant delay-200 flex flex-col h-full group px-8 lg:px-12 py-10 border-b lg:border-b-0 lg:border-r border-white/5">
+                    <div class="flex items-center gap-4 mb-10 transition-transform duration-500 group-hover:translate-x-2">
+                        <div class="p-4 rounded-2xl bg-scheme-primary/10 text-scheme-primary shadow-[0_0_15px_rgba(0,217,255,0.1)]">
                             <i data-lucide="zap" class="w-8 h-8"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-white uppercase tracking-wider">Respuesta & Ejecución</h3>
+                        <h3 class="text-2xl font-bold text-white uppercase tracking-[0.2em]">Respuesta & Ejecución</h3>
                     </div>
-                    <ul class="space-y-6 flex-grow">
-                        <li class="flex items-start gap-4">
-                            <i data-lucide="clock" class="w-6 h-6 text-scheme-primary mt-0.5 shrink-0"></i>
-                            <span class="text-2xl font-bold text-white leading-tight">Tiempo de respuesta: 3
-                                horas</span>
+                    <ul class="space-y-8 flex-grow">
+                        <li class="reveal-up delay-200 flex items-start gap-5 group/item">
+                            <i data-lucide="clock" class="w-7 h-7 text-scheme-primary mt-0.5 shrink-0 group-hover/item:rotate-12 transition-transform"></i>
+                            <div>
+                                <span class="text-2xl font-bold text-white leading-tight block mb-1">Tiempo de respuesta: 3 horas</span>
+                                <span class="text-sm uppercase tracking-widest text-scheme-primary/60 font-bold">Prioridad Crítica</span>
+                            </div>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Sin límite de eventos de soporte</span>
+                        <li class="reveal-up delay-300 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Sin límite de eventos de soporte</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Sesiones remotas ilimitadas</span>
+                        <li class="reveal-up delay-400 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Sesiones remotas ilimitadas</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Escalación inmediata de casos prioritarios</span>
+                        <li class="reveal-up delay-500 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-primary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Escalación inmediata de casos prioritarios</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Columna 3: Valor & Expertiz -->
-                <div class="reveal-up delay-200 flex flex-col h-full group">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="p-3 rounded-xl bg-scheme-secondary/10 text-scheme-secondary">
+                <!-- Columna 3: Valor & Expertiz (Simplicidad & Proporción) -->
+                <div class="reveal-elegant delay-400 flex flex-col h-full group px-8 lg:px-12 py-10">
+                    <div class="flex items-center gap-4 mb-10 transition-transform duration-500 group-hover:translate-x-2">
+                        <div class="p-4 rounded-2xl bg-scheme-secondary/10 text-scheme-secondary shadow-[0_0_15px_rgba(139,92,246,0.1)]">
                             <i data-lucide="shield-check" class="w-8 h-8"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-white uppercase tracking-wider">Valor & Expertiz</h3>
+                        <h3 class="text-2xl font-bold text-white uppercase tracking-[0.2em]">Valor & Expertiz</h3>
                     </div>
-                    <ul class="space-y-6 flex-grow">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-secondary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Ingenieros certificados por SentinelOne</span>
+                    <ul class="space-y-8 flex-grow">
+                        <li class="reveal-up delay-300 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-secondary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Ingenieros certificados por SentinelOne</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-secondary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Asistencia en planeación e implementación</span>
+                        <li class="reveal-up delay-400 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-secondary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Asistencia en planeación e implementación</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-secondary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Depuración proactiva de alertas</span>
+                        <li class="reveal-up delay-500 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-secondary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Depuración proactiva de alertas</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-secondary mt-1 shrink-0"></i>
-                            <span class="text-lg text-white/80">Transferencia de conocimientos (3 Ing.)</span>
+                        <li class="reveal-up delay-600 flex items-start gap-4 group/item">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-scheme-secondary mt-1.5 shrink-0 transition-transform group-hover/item:scale-110"></i>
+                            <span class="text-xl text-white/70 leading-relaxed group-hover/item:text-white transition-colors">Transferencia de conocimientos (3 Ing.)</span>
                         </li>
                     </ul>
                 </div>
@@ -1872,7 +1880,7 @@
 
 
     <!-- SINGULARITY PLATFORM (Detalle Avanzado) -->
-    <section class="elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
+    <section class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent z-10"></div>
         <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-10">
@@ -2118,14 +2126,14 @@
     </section>
 
     <!-- VENTAJAS FAROPROTEC + SENTINELONE (Alianza y Soporte) -->
-    <section class="elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
+    <section class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
         </div>
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <!-- New Full Section Background -->
             <div class="absolute inset-0 w-full h-full bg-cover bg-right md:bg-center opacity-40 md:opacity-100"
-                style="background-image: url('./public/images/universal_upscale_0_5999234b-abec-437d-811b-d6b9d0bdb8da_0.jpg'); filter: brightness(1.1) contrast(1.1) saturate(1.1) ;">
+                style="background-image: url('./public/images/universal_upscale_0_5999234b-abec-437d-811b-d6b9d0bdb8da_0.jpg'); filter: brightness(1.1) contrast(1.1) saturate(1.1) ;" loading="lazy">
             </div>
             <!-- Vignette for depth and contrast -->
             <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)] opacity-30">
@@ -2228,7 +2236,7 @@
         <!-- Fondo con Patrón Hexagonal y Resplandores -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-30 select-none pointer-events-none"
-                style="background-image: url('./public/images/A_sleek_professional_cyberV2.jpg');">
+                style="background-image: url('./public/images/A_sleek_professional_cyberV2.jpg');" loading="lazy">
             </div>
             <!-- Hex Pattern Overlay -->
             <div class="absolute inset-0 opacity-10"
