@@ -2655,7 +2655,7 @@
 
             function draw() {
                 ctx.clearRect(0, 0, width, height);
-                time += 0.003; // Global rotation/evolution speed
+                time += 0.0015; // Global rotation/evolution speed (Slower for elegance)
 
                 const scaleX = width * 0.35; // Spread of the infinity loop horizontally
                 const scaleY = height * 0.25; // Vertical spread
@@ -2669,7 +2669,7 @@
 
                 particles.forEach(p => {
                     // Lissajous curve parameters for infinity: x = sin(t), y = sin(2t)
-                    const t = p.tOffset + (time * 2); // Movement along the curve
+                    const t = p.tOffset + (time * 1.5); // Movement along the curve (Slightly slower)
 
                     // The base figure-8 curve
                     let x3d = Math.sin(t) * scaleX;
@@ -2677,7 +2677,7 @@
                     let z3d = Math.cos(t) * scaleZ;
 
                     // Add the DNA twisting effect around the curve path
-                    const twistPhase = (time * 5) + (t * 8); // Twist frequency
+                    const twistPhase = (time * 4) + (t * 8); // Twist frequency (Slowed down from 5)
                     const twistRadius = 30; // Thickness of the helix
                     const strandPhaseOffset = p.strand * strandOffset;
 
@@ -2695,7 +2695,7 @@
                     z3d += Math.sin(twistPhase + strandPhaseOffset) * twistRadius;
 
                     // Global gentle Y-rotation to view it from different angles over time
-                    const rotationSpeed = time * 0.5;
+                    const rotationSpeed = time * 0.35; // Slower Y-rotation
                     const rx = x3d * Math.cos(rotationSpeed) - z3d * Math.sin(rotationSpeed);
                     const rz = x3d * Math.sin(rotationSpeed) + z3d * Math.cos(rotationSpeed);
                     x3d = rx;
