@@ -1281,17 +1281,23 @@
             <!-- Columna Izquierda: Contenido / Header -->
             <div class="w-full">
                 <div class="reveal-up text-left mb-8">
-                    <h2 class="text-5xl font-light tracking-tight mb-6 leading-tight">
-                        ¿Qué es <span class="font-bold text-scheme-primary">SentinelOne</span>?
+                    <h2 class="text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+                        ¿Qué es <span class="bg-gradient-to-r from-scheme-primary to-scheme-secondary bg-clip-text text-transparent">SentinelOne</span>?
                     </h2>
                     <div class="flex flex-wrap gap-4 mb-8">
-                        <div
-                            class="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-lg font-semibold tracking-wider">
-                            VELOCIDAD DE RESPUESTA AUTÓNOMA
+                        <!-- Badge 1: Velocidad -->
+                        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full"
+                            style="background-color: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.4); color: rgb(192, 132, 252);">
+                            <div class="w-2 h-2 rounded-full bg-purple-500"
+                                style="box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.2);"></div>
+                            <span class="text-lg font-medium tracking-wide">Velocidad de respuesta autónoma</span>
                         </div>
-                        <div
-                            class="inline-block px-4 py-1.5 rounded-full bg-scheme-primary/10 border border-scheme-primary/20 text-scheme-primary text-lg font-semibold tracking-wider">
-                            SEGURIDAD MEJORADA CON IA
+                        <!-- Badge 2: Seguridad -->
+                        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full"
+                            style="background-color: rgba(0, 217, 255, 0.15); border: 1px solid rgba(0, 217, 255, 0.4); color: var(--primary);">
+                            <div class="w-2 h-2 rounded-full bg-scheme-primary"
+                                style="box-shadow: 0 0 0 4px rgba(0, 217, 255, 0.2);"></div>
+                            <span class="text-lg font-medium tracking-wide">Seguridad mejorada con IA</span>
                         </div>
                     </div>
                     <p class="text-2xl text-white/90 leading-relaxed max-w-3xl">
