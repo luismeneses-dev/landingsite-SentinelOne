@@ -41,11 +41,58 @@
       --secondary-soft: rgba(139, 92, 246, 0.1);
       --danger: #e11d48;
       --shadow: 0 10px 30px rgba(0, 217, 255, 0.08);
-      --radius: 24px;
-      --radius-sm: 16px;
+      --radius: 28px;
+      --radius-sm: 18px;
       --max: 1200px;
       --focus: 0 0 0 3px rgba(0, 217, 255, 0.3);
     }
+
+    .glass-premium {
+      background: rgba(255, 255, 255, 0.03) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .card-glow {
+      position: relative;
+    }
+    .card-glow::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 60px; height: 60px;
+      background: radial-gradient(circle at top right, var(--primary-soft), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .card-glow:hover::before { opacity: 1; }
+
+    .shimmer-line {
+      position: relative;
+      overflow: hidden;
+    }
+    .shimmer-line::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      animation: shimmer-top 8s infinite;
+    }
+    @keyframes shimmer-top {
+      0% { left: -100%; }
+      20% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    .bg-pattern-cyber {
+      background-image: radial-gradient(var(--line) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -169,8 +216,8 @@
     .btn-primary:hover { background: var(--primary-2); }
     .btn-dark { background: var(--dark); color: #fff; }
     .btn-dark:hover { background: #1e293b; }
-    .btn-outline { background: #fff; color: var(--text); border: 1px solid #cbd5e1; }
-    .btn-outline:hover { background: #f8fafc; }
+    .btn-outline { background: #fff; color: #0f172a; border: 1px solid #cbd5e1; }
+    .btn-outline:hover { background: #f1f5f9; color: #000; }
 
     .hero {
       background: transparent;
@@ -228,9 +275,11 @@
     .card,
     .trust-card {
       background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
     .mini-card {
       border-radius: 20px;
@@ -243,12 +292,31 @@
     }
     .mini-card span { color: var(--muted); font-size: 14px; }
 
-    .risk-card { border-radius: 28px; padding: 24px; }
+    .risk-card { 
+      border-radius: 28px; 
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .risk-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('file:///C:/Users/LuisMeneses/.gemini/antigravity/brain/aba6c854-dd47-4a13-acec-19d3ebca55de/threat_intelligence_nodes_3d_png_1775682218011.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 0;
+      pointer-events: none;
+    }
     .risk-top {
-      background: linear-gradient(135deg, #020617, #1f2937);
+      position: relative;
+      z-index: 10;
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(31, 41, 55, 0.95));
       color: #fff;
       border-radius: 22px;
       padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .risk-top small { color: #86efac; font-size: 14px; font-weight: 700; }
     .risk-top .big {
@@ -266,7 +334,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      color: #334155;
+      color: #cbd5e1;
       font-size: 14px;
     }
     .dot-danger,
@@ -332,11 +400,24 @@
     }
     .card-visual {
       aspect-ratio: 16 / 10;
-      background: linear-gradient(135deg, #0f172a, #1f2937 58%, #047857);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(31, 41, 55, 0.9) 58%, rgba(4, 120, 87, 0.4));
       color: #fff;
       padding: 20px;
       display: flex;
       align-items: end;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('file:///C:/Users/LuisMeneses/.gemini/antigravity/brain/aba6c854-dd47-4a13-acec-19d3ebca55de/hero_dashboard_sentinelone_ui_png_1775682199548.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+      z-index: -1;
+      filter: grayscale(1) contrast(1.2);
     }
     .card-visual small {
       display: block;
@@ -400,7 +481,7 @@
       display: flex;
       gap: 10px;
       font-size: 14px;
-      color: #334155;
+      color: #cbd5e1;
     }
 
     .sectors-grid,
@@ -450,14 +531,14 @@
     }
     .plan-card.popular .price { color: var(--primary-2); }
     .section-dark .plan-feature { color: #e2e8f0; }
-    .plan-card.popular .plan-feature { color: #334155; }
+    .plan-card.popular .plan-feature { color: #ffffff; }
 
     .support-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
-    .support-item { font-size: 14px; color: #334155; }
+    .support-item { font-size: 14px; color: #cbd5e1; }
 
     .form-note ul {
       margin: 14px 0 0;
@@ -474,7 +555,7 @@
       display: block;
       font-size: 14px;
       font-weight: 700;
-      color: #334155;
+      color: #cbd5e1;
       margin-bottom: 14px;
     }
     input, select, textarea {
@@ -509,14 +590,26 @@
 
     .media-slot {
       margin-top: 26px;
-      border: 1px dashed #94a3b8;
+      border: none;
       border-radius: 24px;
-      background: linear-gradient(180deg, #ffffff, #f8fafc);
-      min-height: 260px;
+      background: transparent;
+      min-height: 200px;
       display: grid;
       place-items: center;
-      overflow: hidden;
       position: relative;
+    }
+    .media-slot.hero-3d {
+      margin-top: 26px;
+    }
+    .media-slot.hero-3d img {
+      transform: none;
+      box-shadow: none;
+      transition: none;
+      width: 100%;
+      max-width: 1400px;
+    }
+    .media-slot.hero-3d img:hover {
+      transform: none;
     }
     .media-slot img {
       width: 100%;
@@ -530,6 +623,54 @@
       color: #64748b;
       max-width: 520px;
     }
+
+    /* Gartner Card Styling */
+    .gartner-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-decoration: none;
+      color: #fff !important;
+      max-width: 400px;
+      margin: 10px auto;
+    }
+    .gartner-card .context { padding: 24px; }
+    .gartner-card .title { 
+      font-size: 20px; 
+      font-weight: 800; 
+      margin: 0 0 10px; 
+      line-height: 1.2;
+      color: #fff;
+    }
+    .gartner-card .blurb { 
+      color: #cbd5e1; 
+      font-size: 14px; 
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .gartner-card .media-wrapper { 
+      height: 180px; 
+      background-size: cover; 
+      background-position: center; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      position: relative;
+    }
+    .gartner-card .media { 
+      text-align: center; 
+      background: rgba(0,0,0,0.5); 
+      padding: 16px; 
+      border-radius: 16px; 
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .gartner-card img { max-width: 130px; margin-bottom: 8px; filter: brightness(1.2); }
+    .gartner-card .body-md-500 { font-weight: 700; font-size: 13px; margin: 0; color: var(--primary); }
+
     .media-slot .media-placeholder strong {
       display: block;
       color: #0f172a;
@@ -721,29 +862,24 @@
           </div>
         </div>
 
-        <aside class="risk-card" aria-labelledby="riesgo-title">
+        <aside class="risk-card glass-premium shimmer-line" aria-labelledby="riesgo-title">
           <div class="risk-top">
-            <small>Continuidad operativa en riesgo</small>
-            <div class="big">70%</div>
+            <small class="kicker" style="color: var(--primary);">Continuidad operativa en riesgo</small>
+            <div class="big" style="color: #fff;">70%</div>
             <p>de las empresas atacadas quedan paralizadas por días. Sin respuesta autónoma, tu empresa no es segura: es el próximo objetivo.</p>
           </div>
 
-          <div class="risk-list" id="riesgo-title">
-            <div class="risk-item"><span class="dot-danger" aria-hidden="true"></span> Crisis operativa inmediata</div>
-            <div class="risk-item"><span class="dot-danger" aria-hidden="true"></span> Fuga de datos y extorsión</div>
-            <div class="risk-item"><span class="dot-danger" aria-hidden="true"></span> Costos de quiebra</div>
-            <div class="risk-item"><span class="dot-danger" aria-hidden="true"></span> AV tradicional: insuficiente hoy</div>
+          <div class="risk-list" id="riesgo-title" style="position: relative; z-index: 10;">
+            <div class="risk-item glass-premium"><span class="dot-danger" aria-hidden="true"></span> Crisis operativa inmediata</div>
+            <div class="risk-item glass-premium"><span class="dot-danger" aria-hidden="true"></span> Fuga de datos y extorsión</div>
+            <div class="risk-item glass-premium"><span class="dot-danger" aria-hidden="true"></span> Costos de quiebra</div>
+            <div class="risk-item glass-premium"><span class="dot-danger" aria-hidden="true"></span> AV tradicional: insuficiente hoy</div>
           </div>
         </aside>
       </div>
-      <div class="container" style="padding-bottom:72px;">
-        <figure class="media-slot" aria-label="Espacio para imagen de consola o dashboard de SentinelOne">
-          <!-- Sustituye este bloque por tu imagen real -->
-          <!-- Ejemplo recomendado: <img src="images/consola-sentinelone.webp" alt="Consola de SentinelOne con visibilidad de amenazas y respuesta automática" loading="lazy" decoding="async" width="1600" height="900"> -->
-          <div class="media-placeholder">
-            <strong>Espacio para imagen de consola, dashboard o captura de SentinelOne</strong>
-            <span>Aquí puedes colocar una captura real de la consola, detección de amenazas, Storyline™, visibilidad XDR o respuesta automática. Usa una imagen optimizada y un texto alt descriptivo.</span>
-          </div>
+      <div class="container" style="padding-bottom:120px; display: flex; justify-content: center;">
+        <figure class="media-slot hero-3d" aria-label="Consola de gestión y dashboard de SentinelOne">
+          <img src="./public/images/hp_hero_crop.png" alt="SentinelOne Official Management Console Dashboard" loading="lazy" style="border-radius: 24px;" />
         </figure>
       </div>
     </section>
@@ -806,12 +942,8 @@
             <a class="btn btn-outline" href="#soporte">Ver soporte premium</a>
           </div>
         </aside>
-                <figure class="media-slot small" aria-label="Espacio para logos de compatibilidad o certificaciones">
-            <!-- Ejemplo recomendado: <img src="images/logos-certificaciones.webp" alt="Logos de compatibilidad, certificaciones o tecnologías relacionadas con SentinelOne" loading="lazy" decoding="async" width="1200" height="700"> -->
-            <div class="media-placeholder">
-              <strong>Espacio para logos, certificaciones o badges</strong>
-              <span>Ideal para colocar logos de sistemas compatibles, certificaciones, alianzas, integraciones o distintivos visuales que refuercen confianza.</span>
-            </div>
+          <figure class="media-slot small" aria-label="Jaguar Silhouette - SentinelOne Speed">
+            <img src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Majestic_jaguar_silhouette-0.png" alt="Majestic Jaguar Silhouette" class="w-full h-full object-contain" style="max-height: 160px; opacity: 0.9; mix-blend-mode: screen;" />
           </figure>
         </div>
     </section>
@@ -822,9 +954,9 @@
         <h2 id="sectores-title">Soluciones específicas para manufactura, retail y corporativos</h2>
 
         <div class="sectors-grid">
-          <article class="sector-card"><h3>Manufactura</h3><p>Diseñado para entornos donde la continuidad operativa es la prioridad absoluta.</p><div class="tags"><span class="tag">OT</span><span class="tag">IA</span><span class="tag">Resiliencia</span></div></article>
-          <article class="sector-card"><h3>Retail</h3><p>Blindaje para transacciones y usuarios con el menor impacto en la operación técnica.</p><div class="tags"><span class="tag">Compliance</span><span class="tag">Datos</span><span class="tag">Auditoría</span></div></article>
-          <article class="sector-card"><h3>Corporativos</h3><p>Seguridad escalable que simplifica la visibilidad sin recargar a tu equipo de TI.</p><div class="tags"><span class="tag">Autónomo</span><span class="tag">Ligero</span><span class="tag">Rápido</span></div></article>
+          <article class="sector-card glass-premium card-glow"><h3>Manufactura</h3><p>Diseñado para entornos donde la continuidad operativa es la prioridad absoluta.</p><div class="tags"><span class="tag">OT</span><span class="tag">IA</span><span class="tag">Resiliencia</span></div></article>
+          <article class="sector-card glass-premium card-glow"><h3>Retail</h3><p>Blindaje para transacciones y usuarios con el menor impacto en la operación técnica.</p><div class="tags"><span class="tag">Compliance</span><span class="tag">Datos</span><span class="tag">Auditoría</span></div></article>
+          <article class="sector-card glass-premium card-glow"><h3>Corporativos</h3><p>Seguridad escalable que simplifica la visibilidad sin recargar a tu equipo de TI.</p><div class="tags"><span class="tag">Autónomo</span><span class="tag">Ligero</span><span class="tag">Rápido</span></div></article>
         </div>
       </div>
     </section>
@@ -872,13 +1004,24 @@
             <span class="tag">México</span>
           </div>
         </aside>
-              <figure class="media-slot small" aria-label="Espacio para diagrama de protección o arquitectura SentinelOne">
-          <!-- Ejemplo recomendado: <img src="images/arquitectura-sentinelone.webp" alt="Diagrama de protección endpoint, detección y respuesta con SentinelOne" loading="lazy" decoding="async" width="1400" height="780"> -->
-          <div class="media-placeholder">
-            <strong>Espacio para diagrama o imagen explicativa</strong>
-            <span>Puedes añadir aquí un diagrama de arquitectura, protección endpoint, flujo de respuesta o visualización de Storyline™.</span>
+          <div class="gartner-card" aria-label="A Leader. Five Years Running. SentinelOne.">
+            <div class="context">
+              <p class="title">A Leader. <br>Five Years Running.</p>
+              <div class="blurb">
+                <div>For the fifth year in a row, SentinelOne has been named a Leader in the 2025 Gartner® Magic Quadrant™ for Endpoint Protection Platforms.</div>
+              </div>
+              <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 2L12 7.83333L5 13.6667" stroke="#00D9FF" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </div>
+
+            <div class="media-wrapper has-icon" style="background-image: url(https://www.sentinelone.com/wp-content/uploads/2025/02/Module6_3UpCards_01@2x.jpg);">
+              <div class="media">
+                <img src="https://www.sentinelone.com/wp-content/uploads/2025/02/Gartner.svg" alt="Gartner" width="200" height="76">
+                <p class="body-md-500">A Leader. Five Years Running.</p>
+              </div>
+            </div>
           </div>
-        </figure>
       </div>
     </section>
 
@@ -923,9 +1066,9 @@
         <h2 id="planes-title">Seguridad de nivel empresarial que escala con tu negocio</h2>
 
         <div class="plans-grid">
-          <article class="plan-card"><h3>Singularity Completo</h3><div class="price">$179.99 USD / dispositivo</div><div class="plan-features"><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Protección EPP/CWPP impulsada por IA</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Detección y respuesta en tiempo real</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> 14 días de retención de datos</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Security AI Assistant</div></div><div style="margin-top:24px;"><a class="btn btn-outline" href="#cotizar">Solicitar demo</a></div></article>
-          <article class="plan-card popular"><div class="badge">Más popular</div><h3>Singularity Comercial</h3><div class="price">$229.99 USD / dispositivo</div><div class="plan-features"><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Todo lo incluido en Completo</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Identity Detection &amp; Response (ITDR)</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> 90 días de retención de datos</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Managed Threat Hunting</div></div><div style="margin-top:24px;"><a class="btn btn-dark" href="#cotizar">Solicitar demo</a></div></article>
-          <article class="plan-card"><h3>Singularity Enterprise</h3><div class="price">Contactar ventas</div><div class="plan-features"><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Todo lo incluido en Comercial</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Agentic AI SOC Analyst</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Visibilidad forense total y profunda</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> MDR 24/7 con expertos certificados</div></div><div style="margin-top:24px;"><a class="btn btn-outline" href="#cotizar">Solicitar demo</a></div></article>
+          <article class="plan-card glass-premium"><h3>Singularity Completo</h3><div class="price">$179.99 USD / dispositivo</div><div class="plan-features"><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Protección EPP/CWPP impulsada por IA</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Detección y respuesta en tiempo real</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> 14 días de retención de datos</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Security AI Assistant</div></div><div style="margin-top:24px;"><a class="btn btn-outline" href="#cotizar">Solicitar demo</a></div></article>
+          <article class="plan-card popular glass-premium shimmer-line"> <div class="badge">Más popular</div><h3>Singularity Comercial</h3><div class="price">$229.99 USD / dispositivo</div><div class="plan-features"><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Todo lo incluido en Completo</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Identity Detection &amp; Response (ITDR)</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> 90 días de retención de datos</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Managed Threat Hunting</div></div><div style="margin-top:24px;"><a class="btn btn-dark" href="#cotizar">Solicitar demo</a></div></article>
+          <article class="plan-card glass-premium"><h3>Singularity Enterprise</h3><div class="price">Contactar ventas</div><div class="plan-features"><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Todo lo incluido en Comercial</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Agentic AI SOC Analyst</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> Visibilidad forense total y profunda</div><div class="plan-feature"><span class="dot-ok" aria-hidden="true"></span> MDR 24/7 con expertos certificados</div></div><div style="margin-top:24px;"><a class="btn btn-outline" href="#cotizar">Solicitar demo</a></div></article>
         </div>
       </div>
     </section>
@@ -949,13 +1092,32 @@
           <div class="support-item">Número 800 dedicado a soporte</div>
           <div class="support-item">Plan de revisiones periódicas</div>
           <div class="support-item">Ingenieros certificados</div>
-          <div class="support-item">Escalación de casos prioritarios</div>
+        <div class="support-item">Escalación de casos prioritarios</div>
         </div>
       </div>
     </section>
 
-    <section id="cotizar" class="section-soft" aria-labelledby="cotizar-title">
-      <div class="container form-grid">
+    <section id="cotizar" class="section-soft relative overflow-hidden" aria-labelledby="cotizar-title">
+      <!-- Background Layers from index.html -->
+      <div class="absolute inset-0 z-0">
+        <!-- Lighthouse Image -->
+        <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-30 select-none pointer-events-none"
+             style="background-image: url('./public/images/universal_upscale_0_5999234b-abec-437d-811b-d6b9d0bdb8da_0.jpg');" loading="lazy">
+        </div>
+        <!-- Hex Pattern Overlay (Malla) -->
+        <div class="absolute inset-0 opacity-10"
+             style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-rule='evenodd' stroke='%23ffffff' stroke-opacity='0.4' fill='none'/%3E%3C/svg%3E&quot;); background-size: 80px;">
+        </div>
+        <!-- Gradient Overlays for depth -->
+        <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black to-transparent opacity-60"></div>
+        <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+        <!-- Resplandores -->
+        <div class="absolute -left-1/4 top-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]"></div>
+        <div class="absolute -right-1/4 bottom-0 w-[500px] h-[500px] bg-[#00D9FF]/05 rounded-full blur-[120px]"></div>
+      </div>
+
+      <div class="container contact-grid relative z-10">
+
         <div>
           <p class="kicker">Agenda una demo</p>
           <h2 id="cotizar-title">Solicita cotización o asesoría técnica</h2>
