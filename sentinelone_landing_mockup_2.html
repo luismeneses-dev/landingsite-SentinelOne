@@ -27,19 +27,24 @@
 
   <style>
     :root {
-      --bg: #ffffff;
-      --bg-soft: #f8fafc;
-      --text: #0f172a;
-      --muted: #475569;
-      --line: #e2e8f0;
-      --dark: #020617;
-      --primary: #059669;
-      --primary-2: #047857;
-      --primary-soft: #ecfdf5;
+      --bg: #000000;
+      --bg-soft: #0a0a0a;
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.6);
+      --line: rgba(255, 255, 255, 0.1);
+      --dark: #000000;
+      --dark-2: #050505;
+      --primary: #00D9FF;
+      --primary-2: #00b8d9;
+      --primary-soft: rgba(0, 217, 255, 0.1);
+      --secondary: #8B5CF6;
+      --secondary-soft: rgba(139, 92, 246, 0.1);
       --danger: #e11d48;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --shadow: 0 10px 30px rgba(0, 217, 255, 0.08);
+      --radius: 24px;
+      --radius-sm: 16px;
       --max: 1200px;
-      --focus: 0 0 0 3px rgba(5, 150, 105, 0.25);
+      --focus: 0 0 0 3px rgba(0, 217, 255, 0.3);
     }
 
     * { box-sizing: border-box; }
@@ -48,7 +53,11 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background-image: url('./public/images/fondo-landing.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-color: #000;
       line-height: 1.6;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
@@ -109,8 +118,8 @@
       position: sticky;
       top: 0;
       z-index: 30;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
     .header-inner {
@@ -164,7 +173,7 @@
     .btn-outline:hover { background: #f8fafc; }
 
     .hero {
-      background: linear-gradient(to bottom, #f8fafc, #ffffff);
+      background: transparent;
       border-bottom: 1px solid var(--line);
     }
     .hero-grid {
@@ -218,7 +227,8 @@
     .form-card,
     .card,
     .trust-card {
-      background: #fff;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
     }
@@ -415,10 +425,10 @@
       background: rgba(255,255,255,0.04);
     }
     .plan-card.popular {
-      background: #fff;
-      color: var(--text);
-      border-color: #86efac;
-      box-shadow: 0 20px 45px rgba(5, 150, 105, 0.12);
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border-color: var(--secondary);
+      box-shadow: 0 20px 45px rgba(139, 92, 246, 0.12);
     }
     .badge {
       display: inline-flex;
@@ -470,13 +480,13 @@
     input, select, textarea {
       width: 100%;
       margin-top: 8px;
-      border: 1px solid #cbd5e1;
+      border: 1px solid var(--line);
       border-radius: 18px;
       padding: 14px 16px;
       font: inherit;
-      color: var(--text);
+      color: #fff;
       outline: none;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.05);
     }
     textarea { resize: vertical; min-height: 130px; }
     .fineprint { margin-top: 14px; color: #64748b; font-size: 12px; }
