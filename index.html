@@ -563,14 +563,13 @@
             }
         }
 
-        /* Features Grid - Clean & Minimalist */
+        /* Features Grid - Clean & Transparent */
         .feature-grid-card {
-            background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            background: transparent;
+            border: none;
             border-radius: 2rem;
-            padding: 2.5rem;
+            padding: 1.5rem;
             transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -578,9 +577,9 @@
 
         .feature-grid-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.03);
         }
+
 
 
         .glow-core {
@@ -979,41 +978,41 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 w-full">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 w-full">
                     <!-- Card 1: IA (Inteligencia Artificial) -->
                     <div class="reveal-up feature-grid-card">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-12 h-12 rounded-2xl bg-scheme-primary/10 flex items-center justify-center">
-                                <i data-lucide="brain" class="w-6 h-6 text-scheme-primary"></i>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                                <i data-lucide="brain" class="w-7 h-7 text-scheme-primary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-[#00D9FF] uppercase">Tecnología Core</span>
+                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Tecnología Core</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6 leading-tight">IA de Prevención <br>y Detección Activa</h3>
-                        <p class="text-lg text-slate-600 leading-relaxed">Detectamos amenazas conocidas y desconocidas en milisegundos con análisis avanzado.</p>
+                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">IA de Prevención <br>y Detección Activa</h3>
+                        <p class="text-lg text-white/60 leading-relaxed">Detectamos amenazas conocidas y desconocidas en milisegundos con análisis avanzado y heurística proactiva.</p>
                     </div>
 
                     <!-- Card 2: Respuesta (Acción Inmmediata) -->
                     <div class="reveal-up delay-100 feature-grid-card">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-12 h-12 rounded-2xl bg-scheme-secondary/10 flex items-center justify-center">
-                                <i data-lucide="zap" class="w-6 h-6 text-scheme-secondary"></i>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-scheme-secondary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                                <i data-lucide="zap" class="w-7 h-7 text-scheme-secondary"></i>
                             </div>
                             <span class="text-lg font-medium tracking-widest text-scheme-secondary uppercase">Acción Inmediata</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6 leading-tight">Respuesta Autónoma <br>sin intervención humana</h3>
-                        <p class="text-lg text-slate-600 leading-relaxed">Contenemos el ataque automáticamente en el endpoint, aislando la amenaza al instante.</p>
+                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Respuesta Autónoma <br>sin intervención humana</h3>
+                        <p class="text-lg text-white/60 leading-relaxed">Contenemos el ataque automáticamente en el endpoint, aislando la amenaza al instante para evitar propagación.</p>
                     </div>
 
                     <!-- Card 3: Visibilidad (Control Total) -->
                     <div class="reveal-up delay-200 feature-grid-card">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-12 h-12 rounded-2xl bg-scheme-primary/10 flex items-center justify-center">
-                                <i data-lucide="search" class="w-6 h-6 text-scheme-primary"></i>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                                <i data-lucide="search" class="w-7 h-7 text-scheme-primary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-[#00D9FF] uppercase">Control Total</span>
+                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Control Total</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6 leading-tight">Visibilidad Centralizada <br>y Trazabilidad Total</h3>
-                        <p class="text-lg text-slate-600 leading-relaxed">Inventario en tiempo real y trazabilidad absoluta de cada evento en tus endpoints y nube.</p>
+                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Visibilidad Centralizada <br>y Trazabilidad Total</h3>
+                        <p class="text-lg text-white/60 leading-relaxed">Inventario en tiempo real y trazabilidad absoluta de cada evento en tus endpoints y nube con Storyline™.</p>
                     </div>
                 </div>
             </div>
