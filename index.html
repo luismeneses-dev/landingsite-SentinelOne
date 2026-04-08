@@ -1032,56 +1032,119 @@
         </div>
     </section>
 
-    <!-- SECURITY LAYERS (Diferenciador) -->
-    <section class="cv-auto elegant-fusion relative min-h-screen flex items-center py-4 px-6 overflow-hidden">
+    <section id="soluciones" class="cv-auto elegant-fusion relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
-        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="dna-section-container">
-            <!-- Canvas DNA Animation -->
-
-
-            <!-- Degradado en las esquinas para evitar saturación (Vignette) -->
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)] opacity-80">
-            </div>
-
-            <div class="absolute inset-x-0 h-px top-0"
-                style="background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.4), transparent);"></div>
-
-            <!-- Resplandor oscuro central suave -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)] opacity-80"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/80"></div>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto">
-            <div class="reveal-up text-center mb-4">
-                <!-- Logo con resplandor morado -->
-
-
-                <h2 class="text-5xl font-extrabold tracking-tight max-w-3xl mx-auto mb-2 leading-tight">
-                    ¿Por qué conformarte con alertas, si puedes tener resiliencia absoluta?
+        <div class="relative z-10 max-w-7xl mx-auto w-full">
+            <div class="reveal-up text-center mb-16">
+                <h2 class="text-5xl font-extrabold tracking-tight max-w-4xl mx-auto mb-6 leading-tight">
+                    Soluciones SentinelOne para <span class="text-scheme-primary">Protección Total</span>
                 </h2>
+                <p class="text-lg text-white max-w-2xl mx-auto leading-relaxed">
+                    Explora nuestra plataforma unificada diseñada para detener ataques antes de que sucedan.
+                </p>
             </div>
 
-            <!-- Contenedor de Imagen de Arquitectura (Sustituyendo Grid de Cards) -->
-            <div class="max-w-6xl mx-auto reveal-up">
-                <div class="relative group">
-                    <!-- Resplandor ambiental detrás de la imagen -->
-                    <div
-                        class="absolute -inset-10 bg-scheme-primary/10 blur-[120px] opacity-20 group-hover:opacity-40 transition-opacity duration-1000">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Solución 1 -->
+                <button onclick="openProductModal('platform')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
+                        <i data-lucide="lock" class="w-8 h-8 text-scheme-primary"></i>
+                        <h3 class="text-2xl font-bold text-white leading-tight">Singularity™ Platform</h3>
+                        <div class="mt-auto flex items-center gap-2 text-scheme-primary font-bold">
+                            <span>Saber más</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
                     </div>
-                    <div
-                        class="absolute -inset-10 bg-scheme-secondary/5 blur-[120px] opacity-10 group-hover:opacity-30 transition-opacity duration-1000 delay-300">
-                    </div>
+                </button>
 
-                    <div
-                        class="relative overflow-hidden rounded-[2.5rem] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.6)]">
-                        <img loading="lazy" src="./public/images/arquitectura-resiliencia2.png"
-                            alt="Arquitectura de Resiliencia"
-                            class="w-full max-h-[55vh] object-contain transform transition-all duration-1000 group-hover:scale-[1.015]">
+                <!-- Solución 2 -->
+                <button onclick="openProductModal('endpoint')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
+                        <i data-lucide="shield" class="w-8 h-8 text-scheme-primary"></i>
+                        <h3 class="text-2xl font-bold text-white leading-tight">Singularity™ Endpoint (EDR)</h3>
+                        <div class="mt-auto flex items-center gap-2 text-scheme-primary font-bold">
+                            <span>Saber más</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </button>
 
-            <div class="reveal-up mt-2 p-4 text-center text-lg"><b class="text-[#00D9FF]">Tu operación no se
-                    detendrá.</b>
+                <!-- Solución 3 -->
+                <button onclick="openProductModal('xdr')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
+                        <i data-lucide="globe" class="w-8 h-8 text-scheme-primary"></i>
+                        <h3 class="text-2xl font-bold text-white leading-tight">Singularity™ XDR</h3>
+                        <div class="mt-auto flex items-center gap-2 text-scheme-primary font-bold">
+                            <span>Saber más</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Solución 4 -->
+                <button onclick="openProductModal('cloud')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
+                        <i data-lucide="cloud" class="w-8 h-8 text-scheme-primary"></i>
+                        <h3 class="text-2xl font-bold text-white leading-tight">Singularity™ Cloud Security</h3>
+                        <div class="mt-auto flex items-center gap-2 text-scheme-primary font-bold">
+                            <span>Saber más</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Solución 5 -->
+                <button onclick="openProductModal('identity')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
+                        <i data-lucide="user-check" class="w-8 h-8 text-scheme-primary"></i>
+                        <h3 class="text-2xl font-bold text-white leading-tight">Singularity™ Identity</h3>
+                        <div class="mt-auto flex items-center gap-2 text-scheme-primary font-bold">
+                            <span>Saber más</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Solución 6 -->
+                <button onclick="openProductModal('data-lake')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
+                        <i data-lucide="database" class="w-8 h-8 text-scheme-primary"></i>
+                        <h3 class="text-2xl font-bold text-white leading-tight">Singularity™ Data Lake</h3>
+                        <div class="mt-auto flex items-center gap-2 text-scheme-primary font-bold">
+                            <span>Saber más</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Solución 7 -->
+                <button onclick="openProductModal('ranger')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
+                        <i data-lucide="zap" class="w-8 h-8 text-scheme-primary"></i>
+                        <h3 class="text-2xl font-bold text-white leading-tight">Singularity™ Ranger</h3>
+                        <div class="mt-auto flex items-center gap-2 text-scheme-primary font-bold">
+                            <span>Saber más</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Solución 8 -->
+                <button onclick="openProductModal('threat-intel')" class="neon-compare-btn w-full text-left group">
+                    <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
+                        <i data-lucide="microscope" class="w-8 h-8 text-scheme-primary"></i>
+                        <h3 class="text-2xl font-bold text-white leading-tight">Singularity™ Threat Intelligence</h3>
+                        <div class="mt-auto flex items-center gap-2 text-scheme-primary font-bold">
+                            <span>Saber más</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </button>
             </div>
         </div>
     </section>
@@ -2165,6 +2228,83 @@
 
     </script>
     <script>
+        const productData = {
+            'platform': {
+                title: 'Singularity™ Platform',
+                description: 'La plataforma unificada que integra prevención, detección y respuesta en un solo agente.',
+                keywords: 'Plataforma unificada, Prevención, Detección, Respuesta automática'
+            },
+            'endpoint': {
+                title: 'Singularity™ Endpoint (EDR)',
+                description: 'Protección avanzada de endpoints con capacidades EDR (Endpoint Detection and Response) que detecta y responde automáticamente a amenazas en computadoras, laptops y servidores.',
+                keywords: 'EDR, protección endpoint, antivirus nueva generación'
+            },
+            'xdr': {
+                title: 'Singularity™ XDR',
+                description: 'Extiende la visibilidad más allá del endpoint para correlacionar datos de múltiples fuentes y detectar ataques complejos en toda la infraestructura.',
+                keywords: 'XDR, visibilidad, correlación de eventos'
+            },
+            'cloud': {
+                title: 'Singularity™ Cloud Security',
+                description: 'Protección para cargas de trabajo en la nube, contenedores y Kubernetes, con monitoreo continuo y detección de vulnerabilidades.',
+                keywords: 'seguridad en la nube, cloud workload protection'
+            },
+            'identity': {
+                title: 'Singularity™ Identity',
+                description: 'Protección contra ataques dirigidos a credenciales e identidades, incluyendo movimientos laterales y escalamiento de privilegios.',
+                keywords: 'identity security, protección de identidades'
+            },
+            'data-lake': {
+                title: 'Singularity™ Data Lake',
+                description: 'Almacenamiento centralizado para análisis avanzado de amenazas y cumplimiento regulatorio.',
+                keywords: 'Data Lake, Almacenamiento centralizado, Cumplimiento regulatorio'
+            },
+            'ranger': {
+                title: 'Singularity™ Ranger',
+                description: 'Descubre automáticamente dispositivos conectados a la red, incluyendo equipos no gestionados e IoT.',
+                keywords: 'descubrimiento de activos, IoT security'
+            },
+            'threat-intel': {
+                title: 'Singularity™ Threat Intelligence',
+                description: 'Inteligencia de amenazas en tiempo real para anticipar ataques y mejorar la postura de seguridad.',
+                keywords: 'Threat Intelligence, IA predictiva, Postura de seguridad'
+            }
+        };
+
+        function openProductModal(productKey) {
+            const data = productData[productKey];
+            if (!data) return;
+
+            document.getElementById('product-modal-title').textContent = data.title;
+            document.getElementById('product-modal-desc').textContent = data.description;
+            
+            const kwContainer = document.getElementById('product-modal-keywords');
+            if (data.keywords) {
+                kwContainer.innerHTML = `<span class="text-scheme-primary font-bold">Keywords:</span> ${data.keywords}`;
+                kwContainer.classList.remove('hidden');
+            } else {
+                kwContainer.classList.add('hidden');
+            }
+
+            const modal = document.getElementById('product-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('flex');
+                modal.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProductModal() {
+            const modal = document.getElementById('product-modal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
         const comparisonData = {
             'crowdstrike': {
                 brand: 'CrowdStrike',
@@ -2400,6 +2540,29 @@
         </div>
     </div>
 
-</body>
+    <!-- Product Modal -->
+    <div id="product-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center p-4 md:p-6 bg-black/80">
+        <div class="modal-content relative w-full max-w-2xl bg-gradient-to-br from-slate-900 to-black rounded-3xl border border-white/10 shadow-[0_0_100px_rgba(0,217,255,0.15)] overflow-hidden flex flex-col">
+            <!-- Modal Header -->
+            <div class="p-8 border-b border-white/10 flex justify-between items-start bg-white/[0.02]">
+                <h2 id="product-modal-title" class="text-5xl font-extrabold text-white tracking-tight"></h2>
+                <button onclick="closeProductModal()" class="p-2 rounded-full hover:bg-white/10 transition-colors group">
+                    <i data-lucide="x" class="w-8 h-8 text-white group-hover:text-white"></i>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-8">
+                <p id="product-modal-desc" class="text-2xl text-white leading-relaxed mb-8"></p>
+                <div id="product-modal-keywords" class="p-4 rounded-xl bg-white/[0.03] border border-white/5 text-lg text-white/70 hidden"></div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-8 border-t border-white/10 bg-white/[0.02] flex justify-center">
+                <a href="#contacto" onclick="closeProductModal()" class="px-12 py-4 rounded-full bg-scheme-primary text-white font-bold text-lg hover:shadow-lg transition-all">
+                    Solicitar Información Técnica
+                </a>
+            </div>
+        </div>
+    </div>
 
+</body>
 </html>
