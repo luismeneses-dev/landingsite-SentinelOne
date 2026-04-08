@@ -34,6 +34,8 @@
       --primary: #00D9FF;
       --primary-2: #00b8d9;
       --primary-soft: rgba(0, 217, 255, 0.1);
+      --secondary: #8B5CF6;
+      --secondary-soft: rgba(139, 92, 246, 0.1);
       --danger: #e11d48;
       --shadow: 0 10px 30px rgba(0, 217, 255, 0.08);
       --radius: 24px;
@@ -168,8 +170,9 @@
       min-height: 44px;
     }
     .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--primary); color: #fff; }
-    .btn-primary:hover { background: var(--primary-2); }
+    /* CTA primario: gradiente cyan → violeta (igual que index.html) */
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; }
+    .btn-primary:hover { background: linear-gradient(135deg, var(--primary-2), #7c3aed); }
     .btn-dark { background: var(--dark); color: #fff; }
     .btn-dark:hover { background: #111111; }
     .btn-outline { background: rgba(255,255,255,0.05); color: #ffffff; border: 1px solid rgba(255,255,255,0.2); }
@@ -279,7 +282,9 @@
       margin-top: 0.45em;
     }
     .dot-danger { background: var(--danger); }
+    /* Alternamos cyan y violeta para dar vida a la paleta dual de index.html */
     .dot-ok { background: var(--primary); }
+    .dot-ok:nth-child(even) { background: var(--secondary); }
 
     section { padding: 72px 0; }
     .section-soft {
@@ -333,7 +338,7 @@
     }
     .card-visual {
       aspect-ratio: 16 / 10;
-      background: linear-gradient(135deg, #000000, #0a0a0a 58%, #00D9FF);
+      background: linear-gradient(135deg, #000000, #0a0a0a 58%, var(--secondary));
       color: #fff;
       padding: 20px;
       display: flex;
@@ -341,7 +346,7 @@
     }
     .card-visual small {
       display: block;
-      color: #00D9FF;
+      color: var(--primary);
       font-size: 12px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -424,13 +429,13 @@
     .plan-card.popular {
       background: #0a0a0a;
       color: var(--text);
-      border-color: #00D9FF;
-      box-shadow: 0 20px 45px rgba(0, 217, 255, 0.15);
+      border-color: var(--secondary);
+      box-shadow: 0 20px 45px rgba(139, 92, 246, 0.2);
     }
     .badge {
       display: inline-flex;
-      background: rgba(0, 217, 255, 0.15);
-      color: #00D9FF;
+      background: rgba(139, 92, 246, 0.2);
+      color: var(--secondary);
       border-radius: 999px;
       padding: 7px 12px;
       font-size: 11px;
@@ -443,7 +448,7 @@
       margin-top: 10px;
       font-size: 20px;
       font-weight: 700;
-      color: #00D9FF;
+      color: var(--primary);
     }
     .plan-card.popular .price { color: var(--primary-2); }
     .section-dark .plan-feature { color: rgba(255,255,255,0.8); }
