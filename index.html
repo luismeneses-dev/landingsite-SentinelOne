@@ -605,23 +605,6 @@
                 window.location.href = 'index-ingles.html';
                 return;
             }
-
-            try {
-                console.log("Navegador no es Inglés. Consultando ubicación por IP...");
-                const response = await fetch('http://ip-api.com/json/');
-                const data = await response.json();
-                console.log("Ubicación detectada:", data.country, `(${data.countryCode})`);
-
-                const spanishSpeakingCountries = ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'];
-                if (data.status === 'success' && !spanishSpeakingCountries.includes(data.countryCode)) {
-                    console.log("País no hispanohablante. Redirigiendo a versión en inglés...");
-                    window.location.href = 'index-ingles.html';
-                } else {
-                    console.log("País hispanohablante. Permaneciendo en Español.");
-                }
-            } catch (error) {
-                console.error("Error en detección por IP:", error);
-            }
         }
         detectLanguageAndRedirect();
     </script>
@@ -941,24 +924,7 @@
         </div>
     </section>
 
-    <!-- INTERACTIVE DEMO (Storylane) -->
-    <section class="cv-auto elegant-fusion relative py-20 px-6 overflow-hidden">
-        <div class="divider-cyan"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class=" text-center mb-12">
-                <h2 class="text-5xl font-extrabold tracking-tight mb-4">
-                    Explora la <span class="text-scheme-primary">Experiencia Interactiva</span>
-                </h2>
-            </div>
 
-            <div
-                class="  w-full max-w-6xl mx-auto rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <iframe allowfullscreen="" frameborder="0" height="600"
-                    src="https://sentinelone.storylane.io/share/cfc5ix6mjz0l"
-                    style="border: none; max-width: 100%; display: block;" width="100%"></iframe>
-            </div>
-        </div>
-    </section>
 
     <section id="soluciones"
         class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
@@ -1798,61 +1764,6 @@
             </p> <br />
 
             <!-- Dashboard Interactivo (Split Layout) -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
-                <!-- Columna Izquierda: Flip Cards (Point 2) -->
-                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
-
-                    <!-- Card: Soporte Humano -->
-                    <div
-                        class="bg-white/[0.02] backdrop-blur-xl p-8 rounded-3xl border border-white/10 flex flex-col justify-center relative min-h-[300px]">
-                        <div class="flex items-center gap-6 mb-6">
-                            <div
-                                class="w-16 h-16 rounded-2xl flex items-center justify-center bg-scheme-primary/10 border border-scheme-primary/20">
-                                <i data-lucide="headphones" class="w-8 h-8 text-scheme-primary"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white">Servicio Post-Adquisición</h3>
-                        </div>
-                        <p class="text-white text-lg">
-                            Asistencia en todo el proceso de planeación e implementación</p>
-                    </div>
-
-                    <!-- Card: Consultoría -->
-                    <div
-                        class="bg-white/[0.02] backdrop-blur-xl p-8 rounded-3xl border border-white/10 flex flex-col justify-center relative min-h-[300px]">
-                        <div class="flex items-center gap-6 mb-6">
-                            <div
-                                class="w-16 h-16 rounded-2xl flex items-center justify-center bg-scheme-secondary/10 border border-scheme-secondary/20">
-                                <i data-lucide="shield-check" class="w-8 h-8 text-scheme-secondary"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white">Consultoría Experta</h3>
-                        </div>
-                        <p class="text-white text-lg">Ingeniería Certificada para optimizar tu
-                            defensa.
-                        </p>
-                    </div>
-
-                    <!-- Card: Despliegue -->
-                    <div
-                        class="md:col-span-2 bg-white/[0.02] backdrop-blur-xl p-8 rounded-3xl border border-white/10 flex items-center justify-between min-h-[150px]">
-                        <div class="flex items-center gap-6">
-                            <div
-                                class="w-16 h-16 rounded-2xl flex items-center justify-center bg-white/10 border border-white/20">
-                                <i data-lucide="zap" class="w-8 h-8 text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-white">Ejecutivo de cuenta asignado,</h3>
-                                <p class="text-white text-lg">Acompañamiento desde el primer día
-                                </p>
-                            </div>
-                        </div>
-                        <a href="https://www.faroprotec.com/soporte/poliza" target="_blank"
-                            class="text-scheme-primary z-20 px-5 py-2 border border-scheme-primary/40 rounded-full hover:bg-scheme-primary/10 transition-all pointer-events-auto">
-                            Ver Póliza
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
