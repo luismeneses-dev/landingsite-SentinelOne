@@ -304,7 +304,7 @@
             background: linear-gradient(to top, #000 0%, transparent 100%);
         }
 
-        /* Neon Compare Marquee Button */
+        /* Elegant Comparison Row Button */
         .neon-compare-btn {
             position: relative;
             overflow: hidden;
@@ -312,34 +312,17 @@
             align-items: center;
             justify-content: center;
             border-radius: 1rem;
-            padding: 2px;
+            padding: 1px;
             cursor: pointer;
-            transition: transform 0.3s ease;
-            background-color: transparent;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .neon-compare-btn:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 40px -10px rgba(0, 217, 255, 0.4);
-        }
-
-        .neon-compare-btn::before {
-            content: '';
-            position: absolute;
-            width: 250%;
-            height: 250%;
-            background: conic-gradient(from 0deg,
-                    transparent 0%,
-                    transparent 70%,
-                    var(--primary) 90%,
-                    var(--secondary) 100%);
-            animation: rotate-marquee 3s linear infinite;
-        }
-
-        @keyframes rotate-marquee {
-            100% {
-                transform: rotate(360deg);
-            }
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
         }
 
         .neon-compare-btn-inner {
@@ -883,9 +866,9 @@
 
                     <div class="reveal-up delay-300 flex flex-wrap gap-6 justify-center mb-12">
                         <button
-                            class="px-12 py-6 rounded-full text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,217,255,0.4)] hover:shadow-[0_25px_60px_rgba(0,217,255,0.6)]"
+                            class="px-12 py-6 rounded-full text-white font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl"
                             style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
-                            Request Free Assessment
+                            Request Free Diagnostic
                         </button>
                         <button
                             class="px-12 py-6 rounded-full border-2 border-white/20 hover:border-white/50 bg-white/5 backdrop-blur-md font-bold text-lg transition-all hover:bg-white/10 active:scale-95">
@@ -2099,7 +2082,7 @@
 
                                 <div class="md:col-span-2 pt-2">
                                     <button
-                                        class="w-full py-4 rounded-full text-white font-bold text-lg shadow-[0_15px_40px_rgba(0,217,255,0.3)] hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,217,255,0.4)] transition-all duration-300 active:scale-95"
+                                        class="w-full py-4 rounded-full text-white font-bold text-lg shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all duration-300 active:scale-95"
                                         style="background: linear-gradient(135deg, var(--primary), #06B6D4);">
                                         Send Request
                                     </button>
@@ -2302,7 +2285,7 @@
                 class="p-8 border-t border-white/10 bg-white/[0.02] flex flex-col md:flex-row gap-6 items-center justify-between">
                 <div class="text-lg text-white/60">Need a detailed technical report of this comparison?</div>
                 <a href="#contacto" onclick="closeComparisonModal()"
-                    class="px-8 py-3 rounded-full bg-scheme-primary text-white font-bold hover:shadow-[0_0_30_rgba(0,217,255,0.4)] transition-all">
+                    class="px-8 py-3 rounded-full bg-scheme-primary text-white font-bold hover:shadow-lg transition-all">
                     Request TDR Consultancy
                 </a>
             </div>
