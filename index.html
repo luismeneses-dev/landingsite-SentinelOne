@@ -416,9 +416,11 @@
         .accordion-arrow {
             transition: transform 0.3s ease;
         }
+
         .logo-link i {
             transition: all 0.3s ease;
         }
+
         .security-accordion-item.active .accordion-arrow {
             transform: rotate(180deg);
             filter: none;
@@ -728,32 +730,28 @@
                         class="reveal-up delay-100 text-5xl md:text-7xl tracking-tight mb-4 font-extrabold leading-[1.1]">
                         <span class="text-scheme-primary">
                             Protege tu empresa
-                        </span> <span class="text-white/90">con</span> <br />
+                        </span> <span class="text-white">con</span> <br />
                         <img src="https://www.sentinelone.com/wp-content/themes/sentinelone/assets/svg/header-logo-dark.svg"
                             alt="SentinelOne" fetchpriority="high"
                             class="h-14 md:h-20 inline-block mt-6 filter brightness-0 invert" />
 
                     </h1>
 
-                    <p class="reveal-up delay-200 text-2xl text-white/90 max-w-2xl mx-auto mb-6 leading-relaxed">
-                        Implementación experta en México para empresas industriales, corporativas y entornos críticos.
+                    <p class="reveal-up delay-200 text-2xl text-white max-w-2xl mx-auto mb-6 leading-relaxed">
+                        Detén amenazas en tiempo real con inteligencia artificial. EDR, XDR y protección avanzada para
+                        empresas de todos los tamaños
                     </p>
 
                     <div class="reveal-up delay-300 flex flex-wrap gap-6 justify-center mb-12">
                         <button
                             class="px-12 py-6 rounded-full text-white font-bold text-lg transition-all active:scale-95 shadow-xl"
                             style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
-                            Solicitar diagnóstico gratuito
+                            Solicita una Demo
                         </button>
                         <button
                             class="px-12 py-6 rounded-full border-2 border-white/20 bg-white/5 backdrop-blur-md font-bold text-lg transition-all active:scale-95">
-                            Hablar con un especialista
+                            Habla con un especialista
                         </button>
-                    </div>
-
-                    <div class="reveal-up delay-400 flex justify-center text-lg text-white/70 mb-10">
-                        <span class="flex items-center gap-2"><i data-lucide="check-circle"
-                                class="w-4 h-4 text-scheme-primary"></i> Asesoría confidencial</span>
                     </div>
                 </div>
 
@@ -789,7 +787,7 @@
                             <div
                                 class="p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <i data-lucide="file-text" class="w-5 h-5 text-white/30"></i>
+                                    <i data-lucide="file-text" class="w-5 h-5 text-white"></i>
                                     <i data-lucide="refresh-cw"
                                         class="w-5 h-5 animate-spin-slow text-scheme-primary opacity-70"></i>
                                 </div>
@@ -812,7 +810,7 @@
                                     Visibilidad</div>
                             </div>
                         </div>
-                        <div class="mt-4 text-lg text-white/40 text-center">
+                        <div class="mt-4 text-lg text-white text-center">
 
                         </div>
                     </div>
@@ -850,7 +848,7 @@
                 <h2 class="text-5xl mb-6 tracking-tight font-extrabold leading-tight">
                     Continuidad operativa <span class="text-scheme-primary">en riesgo.</span>
                 </h2>
-                <p class="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-lg text-white max-w-3xl mx-auto leading-relaxed">
                     El 70% de las empresas atacadas quedan paralizadas por días. Sin respuesta autónoma, tu empresa no
                     es segura: es el próximo objetivo.
                 </p>
@@ -874,7 +872,7 @@
                     </div>
 
                     <h3 class="text-2xl mb-6">La realidad del ataque</h3>
-                    <ul class="space-y-4 text-lg text-white/80">
+                    <ul class="space-y-4 text-lg text-white">
                         <li class="flex items-start gap-4"><i data-lucide="alert-triangle"
                                 class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i> <span>Crisis operativa
                                 inmediata</span></li>
@@ -906,7 +904,7 @@
                     </div>
 
                     <h3 class="text-2xl mb-6">El blindaje definitivo</h3>
-                    <ul class="space-y-4 text-lg text-white/80">
+                    <ul class="space-y-4 text-lg text-white">
                         <li class="flex items-start gap-4"><i data-lucide="zap"
                                 class="w-6 h-6 shrink-0 mt-0.5 text-scheme-primary"></i> <span>Contención en
                                 milisegundos</span></li>
@@ -953,8 +951,10 @@
                             <span class="text-lg font-medium tracking-wide">Seguridad mejorada con IA</span>
                         </div>
                     </div>
-                    <p class="text-lg text-white/90 leading-relaxed max-w-3xl">
-                        Prevención, detección y respuesta automática en un solo agente ligero.
+                    <p class="text-lg text-white leading-relaxed max-w-3xl">
+                        SentinelOne es una plataforma de ciberseguridad autónoma impulsada por inteligencia artificial
+                        que protege endpoints, servidores y entornos cloud contra amenazas avanzadas como ransomware,
+                        malware, ataques sin archivo (fileless) y exploits de día cero.
                     </p>
                 </div>
 
@@ -962,37 +962,49 @@
                     <!-- Card 1: IA (Inteligencia Artificial) -->
                     <div class="reveal-up feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
                                 <i data-lucide="brain" class="w-7 h-7 text-scheme-primary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Tecnología Core</span>
+                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Tecnología
+                                Core</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">IA de Prevención <br>y Detección Activa</h3>
-                        <p class="text-lg text-white/60 leading-relaxed">Detectamos amenazas conocidas y desconocidas en milisegundos con análisis avanzado y heurística proactiva.</p>
+                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">IA de Prevención <br>y Detección
+                            Activa</h3>
+                        <p class="text-lg text-white leading-relaxed">Detectamos amenazas conocidas y desconocidas en
+                            milisegundos con análisis avanzado y heurística proactiva.</p>
                     </div>
 
                     <!-- Card 2: Respuesta (Acción Inmmediata) -->
                     <div class="reveal-up delay-100 feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-scheme-secondary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-scheme-secondary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
                                 <i data-lucide="zap" class="w-7 h-7 text-scheme-secondary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-scheme-secondary uppercase">Acción Inmediata</span>
+                            <span class="text-lg font-medium tracking-widest text-scheme-secondary uppercase">Acción
+                                Inmediata</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Respuesta Autónoma <br>sin intervención humana</h3>
-                        <p class="text-lg text-white/60 leading-relaxed">Contenemos el ataque automáticamente en el endpoint, aislando la amenaza al instante para evitar propagación.</p>
+                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Respuesta Autónoma <br>sin
+                            intervención humana</h3>
+                        <p class="text-lg text-white leading-relaxed">Contenemos el ataque automáticamente en el
+                            endpoint, aislando la amenaza al instante para evitar propagación.</p>
                     </div>
 
                     <!-- Card 3: Visibilidad (Control Total) -->
                     <div class="reveal-up delay-200 feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
                                 <i data-lucide="search" class="w-7 h-7 text-scheme-primary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Control Total</span>
+                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Control
+                                Total</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Visibilidad Centralizada <br>y Trazabilidad Total</h3>
-                        <p class="text-lg text-white/60 leading-relaxed">Inventario en tiempo real y trazabilidad absoluta de cada evento en tus endpoints y nube con Storyline™.</p>
+                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Visibilidad Centralizada <br>y
+                            Trazabilidad Total</h3>
+                        <p class="text-lg text-white leading-relaxed">Inventario en tiempo real y trazabilidad
+                            absoluta de cada evento en tus endpoints y nube con Storyline™.</p>
                     </div>
                 </div>
             </div>
@@ -1043,8 +1055,7 @@
                 <!-- Logo con resplandor morado -->
 
 
-                <h2
-                    class="text-5xl font-extrabold tracking-tight max-w-3xl mx-auto mb-2 leading-tight">
+                <h2 class="text-5xl font-extrabold tracking-tight max-w-3xl mx-auto mb-2 leading-tight">
                     ¿Por qué conformarte con alertas, si puedes tener resiliencia absoluta?
                 </h2>
             </div>
@@ -1087,7 +1098,7 @@
         <div class="relative z-10 max-w-7xl mx-auto">
             <div class="reveal-up mb-16">
                 <h2 class="text-5xl font-extrabold tracking-tight mb-4 leading-tight">Protección por Sector.</h2>
-                <p class="text-lg text-white/90 max-w-4xl leading-relaxed">
+                <p class="text-lg text-white max-w-4xl leading-relaxed">
                     Soluciones específicas para Manufactura, Retail y Corporativos.
                 </p>
             </div>
@@ -1099,17 +1110,17 @@
                         <i data-lucide="factory"
                             class="w-16 h-16 mb-8 text-scheme-secondary transition-transform duration-700"></i>
                         <h3 class="text-2xl font-light mb-4">Manufactura</h3>
-                        <p class="text-lg text-white/70 flex-grow mb-8 leading-relaxed">
+                        <p class="text-lg text-white flex-grow mb-8 leading-relaxed">
                             Diseñado para entornos donde la continuidad operativa es la prioridad absoluta.
                         </p>
                         <div class="flex flex-nowrap gap-2">
                             <span
-                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white/90 whitespace-nowrap">Sistemas
+                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white whitespace-nowrap">Sistemas
                                 OT</span>
                             <span
-                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white/90 whitespace-nowrap">IA</span>
+                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white whitespace-nowrap">IA</span>
                             <span
-                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white/90 whitespace-nowrap">Resiliencia</span>
+                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white whitespace-nowrap">Resiliencia</span>
                         </div>
                     </div>
                 </div>
@@ -1120,16 +1131,16 @@
                         <i data-lucide="landmark"
                             class="w-16 h-16 mb-8 text-scheme-primary transition-transform duration-700"></i>
                         <h3 class="text-2xl font-light mb-4">Retail</h3>
-                        <p class="text-lg text-white/70 flex-grow mb-8 leading-relaxed">
+                        <p class="text-lg text-white flex-grow mb-8 leading-relaxed">
                             Blindaje para transacciones y usuarios con el menor impacto en la operación técnica.
                         </p>
                         <div class="flex flex-nowrap gap-2">
                             <span
-                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white/90 whitespace-nowrap">Compliance</span>
+                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white whitespace-nowrap">Compliance</span>
                             <span
-                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white/90 whitespace-nowrap">Datos</span>
+                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white whitespace-nowrap">Datos</span>
                             <span
-                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white/90 whitespace-nowrap">Auditoría</span>
+                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white whitespace-nowrap">Auditoría</span>
                         </div>
                     </div>
                 </div>
@@ -1140,16 +1151,16 @@
                         <i data-lucide="building-2"
                             class="w-16 h-16 mb-8 text-white transition-transform duration-700"></i>
                         <h3 class="text-2xl font-light mb-4">Corporativos</h3>
-                        <p class="text-lg text-white/70 flex-grow mb-8 leading-relaxed">
+                        <p class="text-lg text-white flex-grow mb-8 leading-relaxed">
                             Seguridad escalable que simplifica la visibilidad sin recargar a tu equipo de TI.
                         </p>
                         <div class="flex flex-nowrap gap-2">
                             <span
-                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white/90 whitespace-nowrap">Autónomo</span>
+                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white whitespace-nowrap">Autónomo</span>
                             <span
-                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white/90 whitespace-nowrap">Ligero</span>
+                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white whitespace-nowrap">Ligero</span>
                             <span
-                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white/90 whitespace-nowrap">Rápido</span>
+                                class="px-3 py-1.5 rounded-full border border-white/20 bg-black/20 text-lg text-white whitespace-nowrap">Rápido</span>
                         </div>
                     </div>
                 </div>
@@ -1197,7 +1208,7 @@
                 <h2 class="text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white px-2">
                     Tradicional vs. SentinelOne
                 </h2>
-                <p class="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-lg text-white max-w-3xl mx-auto leading-relaxed">
                     Compara las diferencias entre las principales soluciones de seguridad.
                 </p>
             </div>
@@ -1210,64 +1221,58 @@
                         <span
                             class="text-2xl font-normal text-white group-hover:text-scheme-primary transition-colors truncate">CrowdStrike</span>
                         <i data-lucide="external-link"
-                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                            class="w-6 h-6 text-white group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Palo Alto -->
                 <button onclick="openComparisonModal('palo-alto')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span
-                            class="text-2xl font-normal text-white truncate">Palo
+                        <span class="text-2xl font-normal text-white truncate">Palo
                             Alto</span>
                         <i data-lucide="external-link"
-                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                            class="w-6 h-6 text-white group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Sophos -->
                 <button onclick="openComparisonModal('sophos')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span
-                            class="text-2xl font-normal text-white truncate">Sophos</span>
+                        <span class="text-2xl font-normal text-white truncate">Sophos</span>
                         <i data-lucide="external-link"
-                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                            class="w-6 h-6 text-white group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Trend Micro -->
                 <button onclick="openComparisonModal('trend-micro')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span
-                            class="text-2xl font-normal text-white truncate">Trend
+                        <span class="text-2xl font-normal text-white truncate">Trend
                             Micro</span>
                         <i data-lucide="external-link"
-                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                            class="w-6 h-6 text-white group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Broadcom -->
                 <button onclick="openComparisonModal('broadcom')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span
-                            class="text-2xl font-normal text-white truncate">Broadcom</span>
+                        <span class="text-2xl font-normal text-white truncate">Broadcom</span>
                         <i data-lucide="external-link"
-                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                            class="w-6 h-6 text-white group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Kaspersky -->
                 <button onclick="openComparisonModal('kaspersky')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span
-                            class="text-2xl font-normal text-white truncate">Kaspersky</span>
+                        <span class="text-2xl font-normal text-white truncate">Kaspersky</span>
                         <i data-lucide="external-link"
-                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                            class="w-6 h-6 text-white group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
                 <!-- Trellix (Centered in last row using full space or auto col) -->
                 <button onclick="openComparisonModal('trellix')"
                     class="neon-compare-btn w-full text-left group md:col-span-2 lg:col-span-1 lg:col-start-2">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
-                        <span
-                            class="text-2xl font-normal text-white truncate">Trellix</span>
+                        <span class="text-2xl font-normal text-white truncate">Trellix</span>
                         <i data-lucide="external-link"
-                            class="w-6 h-6 text-white/50 group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
+                            class="w-6 h-6 text-white group-hover:text-scheme-primary transition-colors flex-shrink-0"></i>
                     </div>
                 </button>
             </div>
@@ -1292,7 +1297,7 @@
                 <h2 class="text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white">
                     Planes Singularity™
                 </h2>
-                <p class="text-lg text-white/70 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-lg text-white max-w-3xl mx-auto leading-relaxed">
                     Seguridad de nivel empresarial que escala con tu negocio.
                 </p>
             </div>
@@ -1411,7 +1416,9 @@
     </section>
 
     <!-- PÓLIZA DE SOPORTE PREMIUM -->
-    <section class="cv-auto elegant-fusion relative min-h-screen flex flex-col justify-center py-20 px-6 overflow-hidden" id="soporte">
+    <section
+        class="cv-auto elegant-fusion relative min-h-screen flex flex-col justify-center py-20 px-6 overflow-hidden"
+        id="soporte">
         <div class="divider-cyan"></div>
         <div class="relative z-10 w-full max-w-[1440px] mx-auto">
 
@@ -1428,39 +1435,53 @@
                 <!-- Columna Izquierda: texto derecha → ícono -->
                 <div class="flex flex-col gap-9 lg:w-1/3 items-end pr-8">
                     <div class="reveal-left flex items-center gap-5 justify-end w-full group">
-                        <p class="text-2xl text-white/90 leading-snug text-right">Asistencia en todo el proceso de planeación e implementación</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 group-hover:border-scheme-primary/50 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/1.png" class="w-full h-full object-contain" alt="">
+                        <p class="text-2xl text-white leading-snug text-right">Asistencia en todo el proceso de
+                            planeación e implementación</p>
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 group-hover:border-scheme-primary/50 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/1.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                     <div class="reveal-left delay-75 flex items-center gap-5 justify-end w-full group">
-                        <p class="text-2xl text-white/90 leading-snug text-right">Ejecutivo de cuenta asignado</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 group-hover:border-scheme-primary/50 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/2.png" class="w-full h-full object-contain" alt="">
+                        <p class="text-2xl text-white leading-snug text-right">Ejecutivo de cuenta asignado</p>
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 group-hover:border-scheme-primary/50 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/2.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                     <div class="reveal-left delay-100 flex items-center gap-5 justify-end w-full group">
-                        <p class="text-2xl text-white/90 leading-snug text-right">Tiempo de respuesta de 3 horas</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/3.png" class="w-full h-full object-contain" alt="">
+                        <p class="text-2xl text-white leading-snug text-right">Tiempo de respuesta de 3 horas</p>
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/3.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                     <div class="reveal-left delay-150 flex items-center gap-5 justify-end w-full group">
-                        <p class="text-2xl text-white/90 leading-snug text-right">Portal para casos de soporte</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/4.png" class="w-full h-full object-contain" alt="">
+                        <p class="text-2xl text-white leading-snug text-right">Portal para casos de soporte</p>
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/4.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                     <div class="reveal-left delay-200 flex items-center gap-5 justify-end w-full group">
-                        <p class="text-2xl text-white/90 leading-snug text-right">Depuración de Alertas</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/5.png" class="w-full h-full object-contain" alt="">
+                        <p class="text-2xl text-white leading-snug text-right">Depuración de Alertas</p>
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/5.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                     <div class="reveal-left delay-300 flex items-center gap-5 justify-end w-full group">
-                        <p class="text-2xl text-white/90 leading-snug text-right">Aceleradores técnicos Semanales Durante el 1er mes</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/6.png" class="w-full h-full object-contain" alt="">
+                        <p class="text-2xl text-white leading-snug text-right">Aceleradores técnicos Semanales
+                            Durante el 1er mes</p>
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/6.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                 </div>
@@ -1468,50 +1489,64 @@
                 <!-- Columna Central: imagen centrada -->
                 <div class="reveal-scale lg:w-1/3 flex justify-center items-center py-12 lg:py-0">
                     <div class="relative group">
-                        <div class="absolute -inset-10 bg-scheme-primary/20 rounded-full blur-[80px] transition duration-1000"></div>
+                        <div
+                            class="absolute -inset-10 bg-scheme-primary/20 rounded-full blur-[80px] transition duration-1000">
+                        </div>
                         <img src="https://www.faroprotec.com/assets/images/polizas/demo/poliza-demo.png"
-                            class="relative w-[380px] h-auto transition duration-700"
-                            alt="Póliza de Soporte">
+                            class="relative w-[380px] h-auto transition duration-700" alt="Póliza de Soporte">
                     </div>
                 </div>
 
                 <!-- Columna Derecha: ícono → texto izquierda -->
                 <div class="flex flex-col gap-9 lg:w-1/3 items-start pl-8">
                     <div class="reveal-right flex items-center gap-5 group">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/7.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/7.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
-                        <p class="text-2xl text-white/90 leading-snug">Transferencia de conocimientos hasta para 3 ingenieros</p>
+                        <p class="text-2xl text-white leading-snug">Transferencia de conocimientos hasta para 3
+                            ingenieros</p>
                     </div>
                     <div class="reveal-right delay-75 flex items-center gap-5 group">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/8.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/8.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
-                        <p class="text-2xl text-white/90 leading-snug">Sesiones Remotas Ilimitada</p>
+                        <p class="text-2xl text-white leading-snug">Sesiones Remotas Ilimitada</p>
                     </div>
                     <div class="reveal-right delay-100 flex items-center gap-5 group">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/9.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/9.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
-                        <p class="text-2xl text-white/90 leading-snug">Número 800 dedicado a soporte</p>
+                        <p class="text-2xl text-white leading-snug">Número 800 dedicado a soporte</p>
                     </div>
                     <div class="reveal-right delay-150 flex items-center gap-5 group">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/10.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/10.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
-                        <p class="text-2xl text-white/90 leading-snug">Plan de revisiones periódicas</p>
+                        <p class="text-2xl text-white leading-snug">Plan de revisiones periódicas</p>
                     </div>
                     <div class="reveal-right delay-200 flex items-center gap-5 group">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/11.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/11.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
-                        <p class="text-2xl text-white/90 leading-snug">Ingenieros certificados</p>
+                        <p class="text-2xl text-white leading-snug">Ingenieros certificados</p>
                     </div>
                     <div class="reveal-right delay-300 flex items-center gap-5 group">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/12.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/12.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
-                        <p class="text-2xl text-white/90 leading-snug">Escalación de casos prioritarios</p>
+                        <p class="text-2xl text-white leading-snug">Escalación de casos prioritarios</p>
                     </div>
                 </div>
 
@@ -1542,10 +1577,9 @@
                 <div class="reveal-left w-full lg:w-[60%] flex flex-col items-center">
                     <!-- Title for the box -->
                     <div class="flex items-center gap-4 mb-8">
-                        <div
-                            class="w-3 h-3 rounded-full bg-scheme-primary animate-pulse">
+                        <div class="w-3 h-3 rounded-full bg-scheme-primary animate-pulse">
                         </div>
-                        <span class="text-2xl text-white/90 font-bold leading-relaxed">Arquitectura Multinivel
+                        <span class="text-2xl text-white font-bold leading-relaxed">Arquitectura Multinivel
                             Activa de SentinelOne</span>
                     </div>
                     <div class="relative group w-full h-full flex flex-col">
@@ -1633,7 +1667,7 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-lg leading-relaxed mb-3 mt-2">Protección de pre-ejecución
+                                <p class="text-white text-lg leading-relaxed mb-3 mt-2">Protección de pre-ejecución
                                     inmediata ante malware conocido y desconocido.</p>
 
                             </div>
@@ -1650,7 +1684,7 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-lg leading-relaxed mb-3 mt-2">Monitoreo de procesos vivos
+                                <p class="text-white text-lg leading-relaxed mb-3 mt-2">Monitoreo de procesos vivos
                                     para detener ransomware en plena acción.</p>
 
                             </div>
@@ -1667,7 +1701,7 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-lg leading-relaxed mt-2">Reversión automática con un
+                                <p class="text-white text-lg leading-relaxed mt-2">Reversión automática con un
                                     solo clic de cualquier daño causado al endpoint.</p>
                             </div>
                         </div>
@@ -1683,7 +1717,7 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-lg leading-relaxed mb-3 mt-2">Gestiona políticas de red y
+                                <p class="text-white text-lg leading-relaxed mb-3 mt-2">Gestiona políticas de red y
                                     periféricos para evitar fugas de datos.</p>
 
                             </div>
@@ -1700,7 +1734,7 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-lg leading-relaxed mb-3 mt-2">Identifica equipos no
+                                <p class="text-white text-lg leading-relaxed mb-3 mt-2">Identifica equipos no
                                     gestionados y dispositivos IoT en tu red.</p>
 
                             </div>
@@ -1717,7 +1751,7 @@
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow animate-pulse"></i>
                             </div>
                             <div class="accordion-detail">
-                                <p class="text-white/80 text-lg leading-relaxed mb-3 mt-2">Contexto absoluto que conecta
+                                <p class="text-white text-lg leading-relaxed mb-3 mt-2">Contexto absoluto que conecta
                                     cada punto de la red automáticamente.</p>
 
                             </div>
@@ -1773,7 +1807,7 @@
             <h2 class="text-5xl font-extrabold tracking-tight mb-8 leading-tight">
                 IA con calidad humana.
             </h2>
-            <p class="text-lg text-white/90 leading-relaxed border-l-2 border-scheme-primary/30 pl-6 py-2">
+            <p class="text-lg text-white leading-relaxed border-l-2 border-scheme-primary/30 pl-6 py-2">
                 Implementación por especialistas certificados de Faro Protec.
             </p> <br />
 
@@ -1793,7 +1827,7 @@
                             </div>
                             <h3 class="text-2xl font-bold text-white">Servicio Post-Adquisición</h3>
                         </div>
-                        <p class="text-white/60 text-lg">
+                        <p class="text-white text-lg">
                             Asistencia en todo el proceso de planeación e implementación</p>
                     </div>
 
@@ -1807,7 +1841,7 @@
                             </div>
                             <h3 class="text-2xl font-bold text-white">Consultoría Experta</h3>
                         </div>
-                        <p class="text-white/60 text-lg">Ingeniería Certificada para optimizar tu
+                        <p class="text-white text-lg">Ingeniería Certificada para optimizar tu
                             defensa.
                         </p>
                     </div>
@@ -1822,7 +1856,7 @@
                             </div>
                             <div>
                                 <h3 class="text-2xl font-bold text-white">Ejecutivo de cuenta asignado,</h3>
-                                <p class="text-white/60 text-lg">Acompañamiento desde el primer día
+                                <p class="text-white text-lg">Acompañamiento desde el primer día
                                 </p>
                             </div>
                         </div>
@@ -1869,7 +1903,7 @@
                         </div>
 
                         <div class="relative z-10">
-                            <p class="text-lg text-white/70 font-bold mb-2">
+                            <p class="text-lg text-white font-bold mb-2">
                                 Ve SentinelOne en acción
                             </p>
 
@@ -1904,7 +1938,7 @@
                                 <div class="space-y-2">
                                     <div class="relative">
                                         <select id="employees"
-                                            class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white/70 focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg appearance-none cursor-pointer">
+                                            class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg appearance-none cursor-pointer">
 
                                             <option value="" class="bg-slate-900">Número de empleados</option>
                                             <option value="1-50" class="bg-slate-900">1 - 50</option>
@@ -1914,7 +1948,7 @@
                                             <option value="1001+" class="bg-slate-900">1,001+</option>
                                         </select>
                                         <i data-lucide="chevron-down"
-                                            class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 pointer-events-none"></i>
+                                            class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white pointer-events-none"></i>
                                     </div>
                                 </div>
 
@@ -1926,7 +1960,7 @@
                                 <div class="space-y-2">
                                     <div class="relative">
                                         <select id="country"
-                                            class="w-full bg-white/[0.07] border border-white/10 px-5 py-3 rounded-xl outline-none text-white/70 focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg appearance-none cursor-pointer">
+                                            class="w-full bg-white/[0.07] border border-white/10 px-5 py-3 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg appearance-none cursor-pointer">
 
                                             <option value="" class="bg-slate-900">Pais</option>
                                             <option value="México" class="bg-slate-900" selected>México</option>
@@ -1934,7 +1968,7 @@
                                             <option value="Otros" class="bg-slate-900">Otros...</option>
                                         </select>
                                         <i data-lucide="chevron-down"
-                                            class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 pointer-events-none"></i>
+                                            class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white pointer-events-none"></i>
                                     </div>
                                 </div>
 
@@ -1942,9 +1976,9 @@
                                 <div class="md:col-span-2 space-y-2">
                                     <div class="relative">
                                         <select id="interest"
-                                            class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white/70 focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg appearance-none cursor-pointer">
+                                            class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg appearance-none cursor-pointer">
 
-                                            <option value="" class="bg-slate-900 text-white/50 italic">Estoy interesado
+                                            <option value="" class="bg-slate-900 text-white italic">Estoy interesado
                                                 en ...
                                             </option>
                                             <option value="endpoint" class="bg-slate-900">Protección de Endpoints
@@ -1955,7 +1989,7 @@
                                             </option>
                                         </select>
                                         <i data-lucide="chevron-down"
-                                            class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 pointer-events-none"></i>
+                                            class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white pointer-events-none"></i>
                                     </div>
                                 </div>
 
@@ -1966,7 +2000,7 @@
                                         Enviar Solicitud
                                     </button>
 
-                                    <p class="text-lg text-white/50 text-center mt-4 leading-relaxed px-4">
+                                    <p class="text-lg text-white text-center mt-4 leading-relaxed px-4">
                                         Al enviar este formulario, aceptas que Faro Protec trate tus datos personales de
                                         acuerdo con su Política de Privacidad. Puedes retirar tu consentimiento en
                                         cualquier momento.
@@ -1985,7 +2019,7 @@
                             Ciberseguridad con IA diseñada para Velocidad y Escala
                         </h2>
 
-                        <p class="text-lg text-white/70 leading-relaxed">
+                        <p class="text-lg text-white leading-relaxed">
                             Experimenta el futuro de la seguridad — Protección total, impulsada por IA.
                         </p>
                     </div>
@@ -1998,7 +2032,7 @@
                             </div>
                             <div>
                                 <h4 class="text-2xl font-bold text-white mb-2">Unifica tu Defensa</h4>
-                                <p class="text-white/50 text-lg leading-relaxed">La única plataforma de seguridad
+                                <p class="text-white text-lg leading-relaxed">La única plataforma de seguridad
                                     abierta y unificada con IA que integra endpoint, nube, SIEM e IA para una protección
                                     absoluta.</p>
                             </div>
@@ -2010,7 +2044,7 @@
                             </div>
                             <div>
                                 <h4 class="text-2xl font-bold text-white mb-2">Supera a las Amenazas</h4>
-                                <p class="text-white/50 text-lg leading-relaxed">Convierte los datos en información
+                                <p class="text-white text-lg leading-relaxed">Convierte los datos en información
                                     accionable en tiempo real, con seguridad autónoma que te mantiene siempre un paso
                                     adelante.</p>
                             </div>
@@ -2022,7 +2056,7 @@
                             </div>
                             <div>
                                 <h4 class="text-2xl font-bold text-white mb-2">Potencia a tus Analistas</h4>
-                                <p class="text-white/50 text-lg leading-relaxed">Deja que la IA Generativa y Agéntica
+                                <p class="text-white text-lg leading-relaxed">Deja que la IA Generativa y Agéntica
                                     se encargue del trabajo pesado, amplificando la velocidad e impacto de cada
                                     analista.</p>
                             </div>
@@ -2040,7 +2074,7 @@
             <p
                 class="text-white text-lg md:text-lg tracking-widest flex flex-col md:flex-row items-center gap-2 font-medium">
                 <span>Copyright &copy; 2026 Faro Soluciones</span>
-                <span class="hidden md:inline text-white/50">|</span>
+                <span class="hidden md:inline text-white">|</span>
                 <a href="https://www.faroprotec.com/aviso-de-privacidad" target="_blank"
                     class="hover:text-scheme-primary transition-colors duration-300">
                     Aviso de privacidad
@@ -2262,9 +2296,9 @@
                 const row = document.createElement('div');
                 row.className = 'grid grid-cols-3 gap-4 py-4 border-b border-white/10 items-center animate-reveal-item';
                 row.innerHTML = `
-                    <div class="text-white/60 font-medium text-lg">${m.label}</div>
+                    <div class="text-white font-medium text-lg">${m.label}</div>
                     <div class="text-scheme-primary font-bold text-lg">${m.s1}</div>
-                    <div class="text-white/40 text-lg">${m.comp}</div>
+                    <div class="text-white text-lg">${m.comp}</div>
                 `;
                 tableBody.appendChild(row);
             });
@@ -2274,7 +2308,7 @@
             bulletList.innerHTML = '';
             data.bullets.forEach(b => {
                 const li = document.createElement('li');
-                li.className = 'flex items-start gap-3 text-white/80 text-lg leading-relaxed';
+                li.className = 'flex items-start gap-3 text-white text-lg leading-relaxed';
                 li.innerHTML = `<i data-lucide="check-circle" class="w-6 h-6 text-scheme-primary shrink-0 mt-1"></i> <span>${b}</span>`;
                 bulletList.appendChild(li);
             });
@@ -2319,11 +2353,11 @@
             <div class="p-8 border-b border-white/10 flex justify-between items-start bg-white/[0.02]">
                 <div>
                     <h2 id="modal-title" class="text-5xl font-extrabold text-white mb-2 tracking-tight"></h2>
-                    <p id="modal-desc" class="text-lg text-white/50 leading-relaxed"></p>
+                    <p id="modal-desc" class="text-lg text-white leading-relaxed"></p>
                 </div>
                 <button onclick="closeComparisonModal()"
                     class="p-2 rounded-full hover:bg-white/10 transition-colors group">
-                    <i data-lucide="x" class="w-8 h-8 text-white/50 group-hover:text-white"></i>
+                    <i data-lucide="x" class="w-8 h-8 text-white group-hover:text-white"></i>
                 </button>
             </div>
 
@@ -2333,9 +2367,9 @@
                 <div class="mb-10">
                     <div
                         class="grid grid-cols-3 gap-4 pb-4 border-b-2 border-white/20 text-lg uppercase tracking-widest font-bold">
-                        <div class="text-white/30">Característica</div>
+                        <div class="text-white">Característica</div>
                         <div class="text-scheme-primary">SentinelOne</div>
-                        <div id="modal-brand-header" class="text-white/30">Competencia</div>
+                        <div id="modal-brand-header" class="text-white">Competencia</div>
                     </div>
                     <div id="modal-table-body">
                         <!-- Content injected by JS -->
