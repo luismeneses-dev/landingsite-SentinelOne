@@ -1598,57 +1598,131 @@
                 </p>
             </div>
 
-            <!-- Layout Editorial de 2 Columnas -->
-            <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-start border-t border-white/5 pt-16">
+            <!-- Layout Simétrico de 3 Columnas (Inspirado en Faro Protec) -->
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-16 items-center mt-12 bg-black/20 p-8 rounded-[3rem] border border-white/5 backdrop-blur-sm">
                 
-                <!-- Columna Izquierda: Concepto -->
-                <div class="reveal-left">
-                    <h3 class="text-2xl font-light text-white mb-6">Acompañamiento Estratégico</h3>
-                    <p class="text-lg text-white/50 leading-relaxed mb-8">
-                        Ingeniería especializada que acompaña tu despliegue, adopción y seguimiento operativo constante.
-                    </p>
-                    <div class="flex items-center gap-4 text-scheme-secondary">
-                        <i data-lucide="shield-check" class="w-8 h-8"></i>
-                        <span class="text-lg font-bold uppercase tracking-widest text-[#00D9FF]">Certificación Elite</span>
+                <!-- Columna Izquierda: Características (Texto a la Izquierda, Icono a la Derecha) -->
+                <div class="flex flex-col gap-8 order-2 lg:order-1">
+                    <!-- Item 1 -->
+                    <div class="reveal-left flex flex-row-reverse items-center justify-end lg:justify-start gap-6 text-right">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 group transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/1.png" class="w-full h-full object-contain" alt="Icon Planeación">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Asistencia en todo el proceso de planeación e implementación</p>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="reveal-left delay-75 flex flex-row-reverse items-center justify-end lg:justify-start gap-6 text-right">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 group transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/2.png" class="w-full h-full object-contain" alt="Icon Ejecutivo">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Ejecutivo de cuenta asignado</p>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="reveal-left delay-100 flex flex-row-reverse items-center justify-end lg:justify-start gap-6 text-right">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 group transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/3.png" class="w-full h-full object-contain" alt="Icon Tiempo Respuesta">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Tiempo de respuesta de 3 horas</p>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="reveal-left delay-150 flex flex-row-reverse items-center justify-end lg:justify-start gap-6 text-right">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 group transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/4.png" class="w-full h-full object-contain" alt="Icon Portal">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Portal para casos de soporte</p>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="reveal-left delay-200 flex flex-row-reverse items-center justify-end lg:justify-start gap-6 text-right">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 group transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/5.png" class="w-full h-full object-contain" alt="Icon Depuración">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Depuración de Alertas</p>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="reveal-left delay-300 flex flex-row-reverse items-center justify-end lg:justify-start gap-6 text-right">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 group transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/6.png" class="w-full h-full object-contain" alt="Icon Aceleradores">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Aceleradores técnicos Semanales Durante el 1er mes</p>
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Lista de Pilares -->
-                <div class="reveal-right">
-                    <ul class="space-y-0 text-white">
-                        <!-- Pilar 1 -->
-                        <li class="group py-8 border-b border-white/5 flex flex-col md:flex-row md:items-center gap-6 transition-all hover:translate-x-2">
-                            <div class="w-12 h-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center text-scheme-secondary">
-                                <i data-lucide="headphones" class="w-6 h-6"></i>
-                            </div>
-                            <div class="flex-grow">
-                                <h4 class="text-2xl font-bold mb-1">Gestión y Canales</h4>
-                                <p class="text-lg text-white/50">Ejecutivo asignado, portal web dedicado y atención 5x8 para seguimiento de casos.</p>
-                            </div>
-                        </li>
-                        <!-- Pilar 2 -->
-                        <li class="group py-8 border-b border-white/5 flex flex-col md:flex-row md:items-center gap-6 transition-all hover:translate-x-2">
-                            <div class="w-12 h-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center text-scheme-primary">
-                                <i data-lucide="zap" class="w-6 h-6"></i>
-                            </div>
-                            <div class="flex-grow">
-                                <h4 class="text-2xl font-bold mb-1 text-white">Respuesta y Ejecución</h4>
-                                <p class="text-lg text-white/50">Respuesta en 3 horas para prioridad crítica, sesiones remotas ilimitadas y escalación prioritaria.</p>
-                            </div>
-                        </li>
-                        <!-- Pilar 3 -->
-                        <li class="group py-8 border-b border-white/5 flex flex-col md:flex-row md:items-center gap-6 transition-all hover:translate-x-2">
-                            <div class="w-12 h-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center text-white">
-                                <i data-lucide="award" class="w-6 h-6"></i>
-                            </div>
-                            <div class="flex-grow">
-                                <h4 class="text-2xl font-bold mb-1">Expertiz Certificado</h4>
-                                <p class="text-lg text-white/50">Ingenieros certificados en SentinelOne para planeación, depuración proactiva y transferencia de conocimientos.</p>
-                            </div>
-                        </li>
-                    </ul>
+                <!-- Centro: Imagen Focal -->
+                <div class="flex justify-center order-1 lg:order-2 py-8 lg:py-0">
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-scheme-primary/20 rounded-full blur-2xl group-hover:bg-scheme-primary/30 transition duration-1000"></div>
+                        <img src="https://www.faroprotec.com/assets/images/polizas/demo/poliza-demo.png" class="relative w-full max-w-[400px] h-auto transform group-hover:scale-105 transition duration-700" alt="Soporte Premium Graphic">
+                    </div>
                 </div>
 
+                <!-- Columna Derecha: Características (Icono a la Izquierda, Texto a la Derecha) -->
+                <div class="flex flex-col gap-8 order-3 lg:order-3">
+                    <!-- Item 7 -->
+                    <div class="reveal-right flex items-center gap-6">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/7.png" class="w-full h-full object-contain" alt="Icon Knowledge">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Transferencia de conocimientos hasta para 3 ingenieros</p>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="reveal-right delay-75 flex items-center gap-6">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/8.png" class="w-full h-full object-contain" alt="Icon Remoto">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Sesiones Remotas Ilimitada</p>
+                    </div>
+                    <!-- Item 9 -->
+                    <div class="reveal-right delay-100 flex items-center gap-6">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/9.png" class="w-full h-full object-contain" alt="Icon 800">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Número 800 dedicado a soporte</p>
+                    </div>
+                    <!-- Item 10 -->
+                    <div class="reveal-right delay-150 flex items-center gap-6">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/10.png" class="w-full h-full object-contain" alt="Icon Review">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Plan de revisiones periódicas</p>
+                    </div>
+                    <!-- Item 11 -->
+                    <div class="reveal-right delay-200 flex items-center gap-6">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/11.png" class="w-full h-full object-contain" alt="Icon Certificados">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Ingenieros certificados en SentinelOne</p>
+                    </div>
+                    <!-- Item 12 -->
+                    <div class="reveal-right delay-300 flex items-center gap-6">
+                        <div class="w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 transition-all">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/12.png" class="w-full h-full object-contain" alt="Icon Prioridad">
+                        </div>
+                        <p class="text-lg text-white/90 leading-snug max-w-[280px]">Escalación de casos prioritarios</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Detalles Inferiores (Contacto y Horarios) -->
+            <div class="reveal-up mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 py-10 px-8 rounded-3xl border border-white/5 bg-black/40 backdrop-blur-md">
+                <!-- Whatsapp -->
+                <div class="flex flex-col items-center gap-4">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-full bg-green-500/10 shadow-[0_0_20px_rgba(34,197,94,0.2)]">
+                        <img src="https://www.faroprotec.com/assets/images/polizas/13.png" class="w-8 h-8" alt="Icon WA">
+                    </div>
+                    <p class="text-2xl font-bold text-white">Whatsapp de soporte</p>
+                </div>
+                <!-- Horario -->
+                <div class="flex flex-col items-center text-center gap-1 border-y md:border-y-0 md:border-x border-white/10 py-6 md:py-0">
+                    <p class="text-2xl font-bold text-scheme-secondary mb-2">HORARIO DE SOPORTE</p>
+                    <p class="text-lg text-white/70">✓ Faro Protec: Lunes a Viernes de 9 a 6</p>
+                    <p class="text-lg text-white/70">✓ Soporte Estándar (5 x 8)</p>
+                </div>
+                <!-- Eventos -->
+                <div class="flex flex-col items-center justify-center text-center">
+                    <p class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60 mb-1 leading-tight">Sin límite de eventos</p>
+                    <p class="text-lg text-white/40">Soporte total garantizado</p>
+                </div>
             </div>
         </div>
     </section>
