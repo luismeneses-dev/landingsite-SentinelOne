@@ -1754,6 +1754,113 @@
             </p> <br />
 
             <!-- Dashboard Interactivo (Split Layout) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-12">
+
+                <!-- Columna Izquierda: Acordeón de Ventajas (7 Cols) -->
+                <div class="lg:col-span-7 space-y-4 relative">
+
+                    <!-- Soporte Humano -->
+                    <div class="advantage-item active p-6 rounded-2xl border backdrop-blur-md bg-white/[0.02]"
+                        onclick="toggleAdvantage(this)">
+                        <div class="flex items-center gap-6 mb-4">
+                            <div
+                                class="icon-wrapper w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                                <i data-lucide="headphones" class="w-7 h-7 text-scheme-primary"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-medium text-white">Servicio Post-Adquisición</h3>
+                                <p class="text-white/40 text-sm">Soporte humano 24/7</p>
+                            </div>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-white/20"></i>
+                        </div>
+                        <div class="advantage-content pt-4 border-t border-white/5 pb-2">
+                            <p class="text-white/70 leading-relaxed mb-6">
+                                Nuestro compromiso no termina con la licencia. Faroprotec se integra con tu equipo de TI
+                                para la gestión diaria y respuesta ante incidentes, asegurando que nunca enfrentes una
+                                amenaza solo.
+                            </p>
+                            <div class="flex gap-8">
+                                <div>
+                                    <div class="text-2xl font-bold text-scheme-primary">&lt;15 min</div>
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Respuesta Crítica
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-white">98%</div>
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Retención Anual
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consultoría -->
+                    <div class="advantage-item p-6 rounded-2xl border backdrop-blur-md bg-white/[0.02]"
+                        onclick="toggleAdvantage(this)">
+                        <div class="flex items-center gap-6 mb-4">
+                            <div
+                                class="icon-wrapper w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                                <i data-lucide="shield-check" class="w-7 h-7 text-scheme-secondary"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-medium text-white">Consultoría Experta</h3>
+                                <p class="text-white/40 text-sm">Ingeniería Certificada</p>
+                            </div>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-white/20"></i>
+                        </div>
+                        <div class="advantage-content pt-4 border-t border-white/5 pb-2">
+                            <p class="text-white/70 leading-relaxed mb-6">
+                                Obtén acceso directo a ingenieros certificados por SentinelOne que
+                                entienden tu infraestructura y optimizan tu defensa.
+                            </p>
+                            <div class="flex gap-8">
+                                <div>
+                                    <div class="text-2xl font-bold text-white">+500</div>
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Casos de Éxito
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-scheme-secondary">100%</div>
+                                    <div class="text-[10px] uppercase tracking-tighter text-white/40">Continuidad
+                                        Operativa</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Implementación -->
+                    <div class="advantage-item p-6 rounded-2xl border backdrop-blur-md bg-white/[0.02]"
+                        onclick="toggleAdvantage(this)">
+                        <div class="flex items-center gap-6 mb-4">
+                            <div
+                                class="icon-wrapper w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                                <i data-lucide="zap" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-medium text-white">Despliegue Garantizado</h3>
+                                <p class="text-white/40 text-sm">Acompañamiento en el Rollout</p>
+                            </div>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-white/20"></i>
+                        </div>
+                        <div class="advantage-content pt-4 border-t border-white/5 pb-2">
+                            <p class="text-white/70 leading-relaxed mb-6">
+                                Aseguramos que el agente Singularity esté desplegado al 100% en tu infraestructura desde
+                                la primera semana. Todo bajo control empresarial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Texto decorativo (5 Cols) -->
+                <div
+                    class="lg:col-span-5 h-full flex flex-col justify-center items-center lg:items-end pointer-events-none p-12">
+                    <div
+                        class="opacity-10 transform lg:-rotate-90 text-[10px] uppercase tracking-[1.5rem] whitespace-nowrap text-white hidden md:block">
+                        Blindaje + Soporte Humano
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
