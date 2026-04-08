@@ -2319,6 +2319,11 @@
                 kwContainer.classList.add('hidden');
             }
 
+            // Re-initialize icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
             const modal = document.getElementById('product-modal');
             modal.classList.remove('hidden');
             setTimeout(() => {
@@ -2532,8 +2537,11 @@
                 <div id="product-modal-keywords" class="p-4 rounded-xl bg-white/[0.03] border border-white/5 text-lg text-white/70 hidden"></div>
             </div>
             <!-- Modal Footer -->
-            <div class="p-8 border-t border-white/10 bg-white/[0.02] flex justify-center">
-                <a href="#contacto" onclick="closeProductModal()" class="px-12 py-4 rounded-full bg-scheme-primary text-white font-bold text-lg hover:shadow-lg transition-all">
+            <div class="p-8 border-t border-white/10 bg-white/[0.02] flex flex-col md:flex-row gap-6 items-center justify-between">
+                <button onclick="closeProductModal()" class="text-white hover:text-scheme-primary transition-colors text-lg font-bold">
+                    Close
+                </button>
+                <a href="#contacto" onclick="closeProductModal()" class="px-12 py-4 rounded-full bg-scheme-primary text-white font-bold text-lg hover:shadow-lg transition-all text-center">
                     Request Technical Information
                 </a>
             </div>
