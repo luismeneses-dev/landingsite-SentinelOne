@@ -2078,43 +2078,35 @@
         const productData = {
             'platform': {
                 title: 'Singularity™ Platform',
-                description: 'La plataforma unificada que integra prevención, detección y respuesta en un solo agente.',
-                keywords: 'Plataforma unificada, Prevención, Detección, Respuesta automática'
+                description: 'La plataforma unificada que integra prevención, detección y respuesta en un solo agente.'
             },
             'endpoint': {
                 title: 'Singularity™ Endpoint (EDR)',
-                description: 'Protección avanzada de endpoints con capacidades EDR (Endpoint Detection and Response) que detecta y responde automáticamente a amenazas en computadoras, laptops y servidores.',
-                keywords: 'EDR, protección endpoint, antivirus nueva generación'
+                description: 'Protección avanzada de endpoints con capacidades EDR (Endpoint Detection and Response) que detecta y responde automáticamente a amenazas en computadoras, laptops y servidores.'
             },
             'xdr': {
                 title: 'Singularity™ XDR',
-                description: 'Extiende la visibilidad más allá del endpoint para correlacionar datos de múltiples fuentes y detectar ataques complejos en toda la infraestructura.',
-                keywords: 'XDR, visibilidad, correlación de eventos'
+                description: 'Extiende la visibilidad más allá del endpoint para correlacionar datos de múltiples fuentes y detectar ataques complejos en toda la infraestructura.'
             },
             'cloud': {
                 title: 'Singularity™ Cloud Security',
-                description: 'Protección para cargas de trabajo en la nube, contenedores y Kubernetes, con monitoreo continuo y detección de vulnerabilidades.',
-                keywords: 'seguridad en la nube, cloud workload protection'
+                description: 'Protección para cargas de trabajo en la nube, contenedores y Kubernetes, con monitoreo continuo y detección de vulnerabilidades.'
             },
             'identity': {
                 title: 'Singularity™ Identity',
-                description: 'Protección contra ataques dirigidos a credenciales e identidades, incluyendo movimientos laterales y escalamiento de privilegios.',
-                keywords: 'identity security, protección de identidades'
+                description: 'Protección contra ataques dirigidos a credenciales e identidades, incluyendo movimientos laterales y escalamiento de privilegios.'
             },
             'data-lake': {
                 title: 'Singularity™ Data Lake',
-                description: 'Almacenamiento centralizado para análisis avanzado de amenazas y cumplimiento regulatorio.',
-                keywords: 'Data Lake, Almacenamiento centralizado, Cumplimiento regulatorio'
+                description: 'Almacenamiento centralizado para análisis avanzado de amenazas y cumplimiento regulatorio.'
             },
             'ranger': {
                 title: 'Singularity™ Ranger',
-                description: 'Descubre automáticamente dispositivos conectados a la red, incluyendo equipos no gestionados e IoT.',
-                keywords: 'descubrimiento de activos, IoT security'
+                description: 'Descubre automáticamente dispositivos conectados a la red, incluyendo equipos no gestionados e IoT.'
             },
             'threat-intel': {
                 title: 'Singularity™ Threat Intelligence',
-                description: 'Inteligencia de amenazas en tiempo real para anticipar ataques y mejorar la postura de seguridad.',
-                keywords: 'Threat Intelligence, IA predictiva, Postura de seguridad'
+                description: 'Inteligencia de amenazas en tiempo real para anticipar ataques y mejorar la postura de seguridad.'
             }
         };
 
@@ -2124,14 +2116,6 @@
 
             document.getElementById('product-modal-title').textContent = data.title;
             document.getElementById('product-modal-desc').textContent = data.description;
-
-            const kwContainer = document.getElementById('product-modal-keywords');
-            if (data.keywords) {
-                kwContainer.innerHTML = `<span class="text-scheme-primary font-bold">Keywords:</span> ${data.keywords}`;
-                kwContainer.classList.remove('hidden');
-            } else {
-                kwContainer.classList.add('hidden');
-            }
 
             // Re-initialize icons
             if (typeof lucide !== 'undefined') {
@@ -2405,9 +2389,7 @@
                 </button>
             </div>
             <div class="p-8">
-                <p id="product-modal-desc" class="text-lg text-white leading-relaxed mb-8"></p>
-                <div id="product-modal-keywords"
-                    class="p-4 rounded-xl bg-white/[0.03] border border-white/5 text-lg text-white/70 hidden"></div>
+                <p id="product-modal-desc" class="text-lg text-white leading-relaxed mb-4"></p>
             </div>
             <!-- Modal Footer -->
             <div
