@@ -1576,8 +1576,7 @@
                                 <video data-video="default" autoplay muted loop playsinline
                                     class="relative w-full h-full object-cover transition-opacity duration-700 opacity-100 transform scale-105 group-hover:scale-110 transition-transform duration-1000"
                                     title="SentinelOne Singularity Platform">
-                                    <source
-                                        src="./public/videos/hailuo-2_3_Glowing_digital_particles_moving_between_stacked_transparent_cyber_layers_repres-0.mp4"
+                                    <source data-src="./public/videos/hailuo-2_3_Glowing_digital_particles_moving_between_stacked_transparent_cyber_layers_repres-0.mp4"
                                         type="video/mp4">
                                 </video>
                                 <!-- Other videos stack on top -->
@@ -2028,7 +2027,40 @@
     </script>
 
     <script>
-        // Logic removed: Carousel functionality no longer needed for static horizontal layout.
+        // POINT 1: Security Accordion
+        function toggleSecurity(element) {
+            const items = document.querySelectorAll('.security-accordion-item');
+            const isActive = element.classList.contains('active');
+            const videos = document.querySelectorAll('.video-stack video');
+            const titleText = element.querySelector('h3').textContent.trim();
+
+            function showVideo(key) {
+                videos.forEach(v => {
+                    if (v.getAttribute('data-video') === key) {
+                        const source = v.querySelector('source');
+                        if (source && source.hasAttribute('data-src')) {
+                            source.setAttribute('src', source.getAttribute('data-src'));
+                            source.removeAttribute('data-src');
+                            v.load();
+                        }
+                        v.style.opacity = "1";
+                        v.play().catch(e => console.log('Autoplay prevented:', e));
+                    } else {
+                        v.style.opacity = "0";
+                        v.pause();
+                    }
+                });
+            }
+
+            items.forEach(item => item.classList.remove('active'));
+
+            if (!isActive) {
+                element.classList.add('active');
+                showVideo(titleText);
+            } else {
+                showVideo('default');
+            }
+        }
     </script>
 
 
@@ -2377,5 +2409,30 @@
         </div>
     </div>
 
+
+    <script>
+        // Lazy load for default background video using IntersectionObserver
+        document.addEventListener("DOMContentLoaded", function() {
+            var videoStack = document.querySelector('.video-stack');
+            if (videoStack) {
+                var observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        var defaultVideo = videoStack.querySelector('video[data-video="default"]');
+                        if (defaultVideo) {
+                            var source = defaultVideo.querySelector('source');
+                            if (source && source.hasAttribute('data-src')) {
+                                source.setAttribute('src', source.getAttribute('data-src'));
+                                source.removeAttribute('data-src');
+                                defaultVideo.load();
+                                defaultVideo.play().catch(e => console.log('Autoplay prevented', e));
+                            }
+                        }
+                        observer.disconnect();
+                    }
+                }, { rootMargin: '200px' });
+                observer.observe(videoStack);
+            }
+        });
+    </script>
 </body>
 </html>
