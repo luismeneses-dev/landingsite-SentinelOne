@@ -215,68 +215,7 @@
         }
 
 
-        /* Animaciones para Reveal con IntersectionObserver (remplazo de framer-motion) */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s ease-out;
-        }
 
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.7s ease-out;
-        }
-
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: all 0.7s ease-out;
-        }
-
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.7s ease-out;
-        }
-
-        .reveal-active {
-            opacity: 1;
-            transform: translate(0) scale(1);
-        }
-
-        /* Reveal Elegante (Lujo y Proporción) */
-        .reveal-elegant {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-            transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .reveal-elegant.reveal-active {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
-        /* Custom delays utility classes */
-        .delay-100 {
-            transition-delay: 100ms;
-        }
-
-        .delay-200 {
-            transition-delay: 200ms;
-        }
-
-        .delay-300 {
-            transition-delay: 300ms;
-        }
-
-        .delay-400 {
-            transition-delay: 400ms;
-        }
-
-        .delay-500 {
-            transition-delay: 500ms;
-        }
 
         /* Difuminado para fusión elegante entre secciones */
         .elegant-fusion {
@@ -719,7 +658,7 @@
             <div class="flex flex-col items-center gap-12">
 
                 <div class="w-full">
-                    <div class="reveal-up inline-flex items-center gap-3 px-4 py-2 rounded-full mb-8"
+                    <div class=" inline-flex items-center gap-3 px-4 py-2 rounded-full mb-8"
                         style="background-color: rgba(0,217,255,0.15); border: 1px solid rgba(0,217,255,0.4); color: var(--primary);">
                         <div class="w-2 h-2 rounded-full bg-scheme-primary"
                             style="box-shadow: 0 0 0 4px rgba(0,217,255,0.3);"></div>
@@ -727,7 +666,7 @@
                     </div>
 
                     <h1
-                        class="reveal-up delay-100 text-5xl md:text-7xl tracking-tight mb-4 font-extrabold leading-[1.1]">
+                        class="  text-5xl md:text-7xl tracking-tight mb-4 font-extrabold leading-[1.1]">
                         <span class="text-scheme-primary">
                             Protege tu empresa
                         </span> <span class="text-white">con</span> <br />
@@ -737,12 +676,12 @@
 
                     </h1>
 
-                    <p class="reveal-up delay-200 text-2xl text-white max-w-2xl mx-auto mb-6 leading-relaxed">
+                    <p class="  text-2xl text-white max-w-2xl mx-auto mb-6 leading-relaxed">
                         Detén amenazas en tiempo real con inteligencia artificial. EDR, XDR y protección avanzada para
                         empresas de todos los tamaños
                     </p>
 
-                    <div class="reveal-up delay-300 flex flex-wrap gap-6 justify-center mb-12">
+                    <div class="  flex flex-wrap gap-6 justify-center mb-12">
                         <button
                             class="px-12 py-6 rounded-full text-white font-bold text-lg transition-all active:scale-95 shadow-xl"
                             style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
@@ -755,7 +694,7 @@
                     </div>
                 </div>
 
-                <div class="reveal-up delay-500 w-full max-w-3xl" style="perspective: 1000px;">
+                <div class="  w-full max-w-3xl" style="perspective: 1000px;">
                     <div class="relative p-4 rounded-2xl border backdrop-blur-md overflow-hidden"
                         style="border-color: rgba(0,217,255,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
                         <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-screen"
@@ -764,8 +703,8 @@
                         <div class="absolute inset-0 bg-black/60"></div>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
                             <!-- KPI 1 -->
-                            <div class="p-4 rounded-xl border flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm"
-                                style="border-color: rgba(0,217,255,0.2); box-shadow: 0 0 15px rgba(0,217,255,0.05);">
+                            <div
+                                class="p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm">
                                 <i data-lucide="shield-check" class="w-6 h-6 mb-2 text-scheme-primary opacity-70"></i>
                                 <div class="text-lg font-bold text-white">
                                     Contención</div>
@@ -844,20 +783,20 @@
 
 
         <div class="relative max-w-7xl mx-auto">
-            <div class="reveal-up text-center mb-16">
+            <div class=" text-center mb-16">
                 <h2 class="text-5xl mb-6 tracking-tight font-extrabold leading-tight">
                     Continuidad operativa <span class="text-scheme-primary">en riesgo.</span>
                 </h2>
                 <p class="text-lg text-white max-w-3xl mx-auto leading-relaxed">
-                    El 70% de las empresas atacadas quedan paralizadas por días. Sin respuesta autónoma, tu empresa no
-                    es segura: es el próximo objetivo.
+                    La mayoría de los ciberataques detienen operaciones críticas. Con una plataforma EDR/XDR impulsada
+                    por IA, tu empresa puede prevenir, detectar y responder en tiempo real sin afectar la productividad.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-64 relative z-10 px-6">
                 <!-- Threat Box -->
                 <div
-                    class="reveal-up delay-100 p-8 rounded-3xl border bg-white/[0.02] backdrop-blur-xl border-white/10 relative overflow-hidden group">
+                    class="  p-8 rounded-3xl border bg-white/[0.02] backdrop-blur-xl border-white/10 relative overflow-hidden group">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, rgb(239,68,68) 0%, transparent 70%); filter: blur(60px);">
                     </div>
@@ -889,7 +828,7 @@
 
                 <!-- Safe Box -->
                 <div
-                    class="reveal-up delay-200 p-8 rounded-3xl border bg-white/[0.02] backdrop-blur-xl border-white/10 relative overflow-hidden group">
+                    class="  p-8 rounded-3xl border bg-white/[0.02] backdrop-blur-xl border-white/10 relative overflow-hidden group">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, var(--primary) 0%, transparent 70%); filter: blur(60px);">
                     </div>
@@ -933,7 +872,7 @@
         <div class="max-w-7xl mx-auto px-6 relative z-20 w-full flex flex-col items-center">
             <!-- Columna Izquierda: Contenido / Header -->
             <div class="w-full">
-                <div class="reveal-up text-left mb-8">
+                <div class=" text-left mb-8">
                     <h2 class="text-5xl font-extrabold tracking-tight mb-6 leading-tight">
                         ¿Qué es <span class="text-scheme-primary">SentinelOne</span>?
                     </h2>
@@ -960,7 +899,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 w-full">
                     <!-- Card 1: IA (Inteligencia Artificial) -->
-                    <div class="reveal-up feature-grid-card">
+                    <div class=" feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
                             <div
                                 class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
@@ -976,7 +915,7 @@
                     </div>
 
                     <!-- Card 2: Respuesta (Acción Inmmediata) -->
-                    <div class="reveal-up delay-100 feature-grid-card">
+                    <div class="  feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
                             <div
                                 class="w-14 h-14 rounded-2xl bg-scheme-secondary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
@@ -992,7 +931,7 @@
                     </div>
 
                     <!-- Card 3: Visibilidad (Control Total) -->
-                    <div class="reveal-up delay-200 feature-grid-card">
+                    <div class="  feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
                             <div
                                 class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
@@ -1017,14 +956,14 @@
     <section class="cv-auto elegant-fusion relative py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="reveal-up text-center mb-12">
+            <div class=" text-center mb-12">
                 <h2 class="text-5xl font-extrabold tracking-tight mb-4">
                     Explora la <span class="text-scheme-primary">Experiencia Interactiva</span>
                 </h2>
             </div>
 
             <div
-                class="reveal-up delay-100 w-full max-w-6xl mx-auto rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                class="  w-full max-w-6xl mx-auto rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <iframe allowfullscreen="" frameborder="0" height="600"
                     src="https://sentinelone.storylane.io/share/cfc5ix6mjz0l"
                     style="border: none; max-width: 100%; display: block;" width="100%"></iframe>
@@ -1032,15 +971,17 @@
         </div>
     </section>
 
-    <section id="soluciones" class="cv-auto elegant-fusion relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
+    <section id="soluciones"
+        class="cv-auto elegant-fusion relative min-h-screen flex items-center py-24 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)] opacity-80"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)] opacity-80">
+            </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/80"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full">
-            <div class="reveal-up text-center mb-16">
+            <div class=" text-center mb-16">
                 <h2 class="text-5xl font-extrabold tracking-tight max-w-4xl mx-auto mb-6 leading-tight">
                     Soluciones SentinelOne para <span class="text-scheme-primary">Protección Total</span>
                 </h2>
@@ -1159,7 +1100,7 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto">
-            <div class="reveal-up mb-16">
+            <div class=" mb-16">
                 <h2 class="text-5xl font-extrabold tracking-tight mb-4 leading-tight">Protección por Sector.</h2>
                 <p class="text-lg text-white max-w-4xl leading-relaxed">
                     Soluciones específicas para Manufactura, Retail y Corporativos.
@@ -1168,7 +1109,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Industria -->
-                <div class="reveal-elegant delay-100 py-10 flex flex-col h-full group">
+                <div class="  py-10 flex flex-col h-full group">
                     <div class="relative z-20 flex flex-col h-full">
                         <i data-lucide="factory"
                             class="w-16 h-16 mb-8 text-scheme-secondary transition-transform duration-700"></i>
@@ -1189,7 +1130,7 @@
                 </div>
 
                 <!-- Retail -->
-                <div class="reveal-elegant delay-200 py-10 flex flex-col h-full group">
+                <div class="  py-10 flex flex-col h-full group">
                     <div class="relative z-20 flex flex-col h-full">
                         <i data-lucide="landmark"
                             class="w-16 h-16 mb-8 text-scheme-primary transition-transform duration-700"></i>
@@ -1209,7 +1150,7 @@
                 </div>
 
                 <!-- Corporativos -->
-                <div class="reveal-elegant delay-300 py-10 flex flex-col h-full group">
+                <div class="  py-10 flex flex-col h-full group">
                     <div class="relative z-20 flex flex-col h-full">
                         <i data-lucide="building-2"
                             class="w-16 h-16 mb-8 text-white transition-transform duration-700"></i>
@@ -1237,7 +1178,7 @@
         <div class="absolute inset-0 z-0">
             <!-- Cyber Puma Head: Guardian de Fondo -->
             <div
-                class="absolute -left-[5%] md:-left-[10%] 2xl:-left-[15%] top-1/2 -translate-y-1/2 w-[400px] md:w-[700px] xl:w-[900px] pointer-events-none reveal-left flex items-center justify-center opacity-80">
+                class="absolute -left-[5%] md:-left-[10%] 2xl:-left-[15%] top-1/2 -translate-y-1/2 w-[400px] md:w-[700px] xl:w-[900px] pointer-events-none  flex items-center justify-center opacity-80">
                 <div class="relative w-full">
                     <div class="absolute inset-0 bg-scheme-primary/5 blur-[120px] rounded-full opacity-30"></div>
                     <img loading="lazy"
@@ -1266,7 +1207,7 @@
         <div class="relative z-10 max-w-5xl mx-auto">
 
 
-            <div class="reveal-up text-center mb-16">
+            <div class=" text-center mb-16">
 
                 <h2 class="text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white px-2">
                     Tradicional vs. SentinelOne
@@ -1277,7 +1218,7 @@
             </div>
 
             <div
-                class="reveal-up mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full px-4">
+                class=" mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full px-4">
                 <!-- CrowdStrike -->
                 <button onclick="openComparisonModal('crowdstrike')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
@@ -1356,7 +1297,7 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full">
-            <div class="reveal-up text-center mb-20">
+            <div class=" text-center mb-20">
                 <h2 class="text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white">
                     Planes Singularity™
                 </h2>
@@ -1368,7 +1309,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1: Complete -->
                 <div
-                    class="reveal-up delay-100 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all">
+                    class="  p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all">
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
                         <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Completo</div>
@@ -1406,7 +1347,7 @@
 
                 <!-- Card 2: Commercial -->
                 <div
-                    class="reveal-up delay-200 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group relative overflow-hidden border-2 border-scheme-secondary/30">
+                    class="  p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group relative overflow-hidden border-2 border-scheme-secondary/30">
                     <div
                         class="absolute top-0 right-0 p-4 bg-scheme-secondary text-white text-lg tracking-widest uppercase shadow-md">
                         Más Popular</div>
@@ -1444,7 +1385,7 @@
 
                 <!-- Card 3: Enterprise -->
                 <div
-                    class="reveal-up delay-300 p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all border border-slate-400/50">
+                    class="  p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all border border-slate-400/50">
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
                         <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Enterprise</div>
@@ -1486,7 +1427,7 @@
         <div class="relative z-10 w-full max-w-[1440px] mx-auto">
 
             <!-- Título -->
-            <div class="reveal-up text-center mb-20">
+            <div class=" text-center mb-20">
                 <h2 class="text-5xl font-extrabold tracking-tight leading-tight">
                     Póliza de Soporte Premium
                 </h2>
@@ -1497,7 +1438,7 @@
 
                 <!-- Columna Izquierda: texto derecha → ícono -->
                 <div class="flex flex-col gap-9 lg:w-1/3 items-end pr-8">
-                    <div class="reveal-left flex items-center gap-5 justify-end w-full group">
+                    <div class=" flex items-center gap-5 justify-end w-full group">
                         <p class="text-2xl text-white leading-snug text-right">Asistencia en todo el proceso de
                             planeación e implementación</p>
                         <div
@@ -1506,7 +1447,7 @@
                                 class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
-                    <div class="reveal-left delay-75 flex items-center gap-5 justify-end w-full group">
+                    <div class="  flex items-center gap-5 justify-end w-full group">
                         <p class="text-2xl text-white leading-snug text-right">Ejecutivo de cuenta asignado</p>
                         <div
                             class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 group-hover:border-scheme-primary/50 transition-all duration-500">
@@ -1514,7 +1455,7 @@
                                 class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
-                    <div class="reveal-left delay-100 flex items-center gap-5 justify-end w-full group">
+                    <div class="  flex items-center gap-5 justify-end w-full group">
                         <p class="text-2xl text-white leading-snug text-right">Tiempo de respuesta de 3 horas</p>
                         <div
                             class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
@@ -1522,7 +1463,7 @@
                                 class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
-                    <div class="reveal-left delay-150 flex items-center gap-5 justify-end w-full group">
+                    <div class="  flex items-center gap-5 justify-end w-full group">
                         <p class="text-2xl text-white leading-snug text-right">Portal para casos de soporte</p>
                         <div
                             class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
@@ -1530,7 +1471,7 @@
                                 class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
-                    <div class="reveal-left delay-200 flex items-center gap-5 justify-end w-full group">
+                    <div class="  flex items-center gap-5 justify-end w-full group">
                         <p class="text-2xl text-white leading-snug text-right">Depuración de Alertas</p>
                         <div
                             class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
@@ -1538,7 +1479,7 @@
                                 class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
-                    <div class="reveal-left delay-300 flex items-center gap-5 justify-end w-full group">
+                    <div class="  flex items-center gap-5 justify-end w-full group">
                         <p class="text-2xl text-white leading-snug text-right">Aceleradores técnicos Semanales
                             Durante el 1er mes</p>
                         <div
@@ -1550,7 +1491,7 @@
                 </div>
 
                 <!-- Columna Central: imagen centrada -->
-                <div class="reveal-scale lg:w-1/3 flex justify-center items-center py-12 lg:py-0">
+                <div class=" lg:w-1/3 flex justify-center items-center py-12 lg:py-0">
                     <div class="relative group">
                         <div
                             class="absolute -inset-10 bg-scheme-primary/20 rounded-full blur-[80px] transition duration-1000">
@@ -1562,7 +1503,7 @@
 
                 <!-- Columna Derecha: ícono → texto izquierda -->
                 <div class="flex flex-col gap-9 lg:w-1/3 items-start pl-8">
-                    <div class="reveal-right flex items-center gap-5 group">
+                    <div class=" flex items-center gap-5 group">
                         <div
                             class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
                             <img src="https://www.faroprotec.com/assets/images/polizas/7.png"
@@ -1571,7 +1512,7 @@
                         <p class="text-2xl text-white leading-snug">Transferencia de conocimientos hasta para 3
                             ingenieros</p>
                     </div>
-                    <div class="reveal-right delay-75 flex items-center gap-5 group">
+                    <div class="  flex items-center gap-5 group">
                         <div
                             class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
                             <img src="https://www.faroprotec.com/assets/images/polizas/8.png"
@@ -1579,7 +1520,7 @@
                         </div>
                         <p class="text-2xl text-white leading-snug">Sesiones Remotas Ilimitada</p>
                     </div>
-                    <div class="reveal-right delay-100 flex items-center gap-5 group">
+                    <div class="  flex items-center gap-5 group">
                         <div
                             class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
                             <img src="https://www.faroprotec.com/assets/images/polizas/9.png"
@@ -1587,7 +1528,7 @@
                         </div>
                         <p class="text-2xl text-white leading-snug">Número 800 dedicado a soporte</p>
                     </div>
-                    <div class="reveal-right delay-150 flex items-center gap-5 group">
+                    <div class="  flex items-center gap-5 group">
                         <div
                             class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
                             <img src="https://www.faroprotec.com/assets/images/polizas/10.png"
@@ -1595,7 +1536,7 @@
                         </div>
                         <p class="text-2xl text-white leading-snug">Plan de revisiones periódicas</p>
                     </div>
-                    <div class="reveal-right delay-200 flex items-center gap-5 group">
+                    <div class="  flex items-center gap-5 group">
                         <div
                             class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
                             <img src="https://www.faroprotec.com/assets/images/polizas/11.png"
@@ -1603,7 +1544,7 @@
                         </div>
                         <p class="text-2xl text-white leading-snug">Ingenieros certificados</p>
                     </div>
-                    <div class="reveal-right delay-300 flex items-center gap-5 group">
+                    <div class="  flex items-center gap-5 group">
                         <div
                             class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500">
                             <img src="https://www.faroprotec.com/assets/images/polizas/12.png"
@@ -1637,7 +1578,7 @@
 
             <div class="flex flex-col lg:flex-row gap-16 items-stretch">
                 <!-- Columna Izquierda: Imagen Nítida y MÁS GRANDE (Matching height) -->
-                <div class="reveal-left w-full lg:w-[60%] flex flex-col items-center">
+                <div class=" w-full lg:w-[60%] flex flex-col items-center">
                     <!-- Title for the box -->
                     <div class="flex items-center gap-4 mb-8">
                         <div class="w-3 h-3 rounded-full bg-scheme-primary animate-pulse">
@@ -1717,7 +1658,7 @@
 
                 <!-- Columna Derecha: Contenido Refinado -->
                 <!-- Items de características con Acordeón (Point 1) y Tilt (Point 3) -->
-                <div class="reveal-right w-full lg:w-[40%]">
+                <div class=" w-full lg:w-[40%]">
                     <div class="space-y-2">
                         <div class="security-accordion-item py-2 px-3 rounded-xl border border-white/5 bg-white/[0.03] cursor-pointer"
                             onclick="toggleSecurity(this)">
@@ -2151,25 +2092,7 @@
         // 1. Iniciar Lucide Icons
         lucide.createIcons();
 
-        // 2. Animaciones de scroll (Intersection Observer)
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-elegant').forEach((el) => {
-            observer.observe(el);
-        });
 
 
     </script>
@@ -2277,7 +2200,7 @@
 
             document.getElementById('product-modal-title').textContent = data.title;
             document.getElementById('product-modal-desc').textContent = data.description;
-            
+
             const kwContainer = document.getElementById('product-modal-keywords');
             if (data.keywords) {
                 kwContainer.innerHTML = `<span class="text-scheme-primary font-bold">Keywords:</span> ${data.keywords}`;
@@ -2547,24 +2470,30 @@
 
     <!-- Product Modal -->
     <div id="product-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center p-4 md:p-6 bg-black/80">
-        <div class="modal-content relative w-full max-w-2xl bg-gradient-to-br from-slate-900 to-black rounded-3xl border border-white/10 shadow-[0_0_100px_rgba(0,217,255,0.15)] overflow-hidden flex flex-col">
+        <div
+            class="modal-content relative w-full max-w-2xl bg-gradient-to-br from-slate-900 to-black rounded-3xl border border-white/10 shadow-[0_0_100px_rgba(0,217,255,0.15)] overflow-hidden flex flex-col">
             <!-- Modal Header -->
             <div class="p-8 border-b border-white/10 flex justify-between items-start bg-white/[0.02]">
                 <h2 id="product-modal-title" class="text-5xl font-extrabold text-white tracking-tight"></h2>
-                <button onclick="closeProductModal()" class="p-2 rounded-full hover:bg-white/10 transition-colors group">
+                <button onclick="closeProductModal()"
+                    class="p-2 rounded-full hover:bg-white/10 transition-colors group">
                     <i data-lucide="x" class="w-8 h-8 text-white group-hover:text-white"></i>
                 </button>
             </div>
             <div class="p-8">
                 <p id="product-modal-desc" class="text-lg text-white leading-relaxed mb-8"></p>
-                <div id="product-modal-keywords" class="p-4 rounded-xl bg-white/[0.03] border border-white/5 text-lg text-white/70 hidden"></div>
+                <div id="product-modal-keywords"
+                    class="p-4 rounded-xl bg-white/[0.03] border border-white/5 text-lg text-white/70 hidden"></div>
             </div>
             <!-- Modal Footer -->
-            <div class="p-8 border-t border-white/10 bg-white/[0.02] flex flex-col md:flex-row gap-6 items-center justify-between">
-                <button onclick="closeProductModal()" class="text-white hover:text-scheme-primary transition-colors text-lg font-bold">
+            <div
+                class="p-8 border-t border-white/10 bg-white/[0.02] flex flex-col md:flex-row gap-6 items-center justify-between">
+                <button onclick="closeProductModal()"
+                    class="text-white hover:text-scheme-primary transition-colors text-lg font-bold">
                     Cerrar
                 </button>
-                <a href="#contacto" onclick="closeProductModal()" class="px-12 py-4 rounded-full bg-scheme-primary text-white font-bold text-lg hover:shadow-lg transition-all text-center">
+                <a href="#contacto" onclick="closeProductModal()"
+                    class="px-12 py-4 rounded-full bg-scheme-primary text-white font-bold text-lg hover:shadow-lg transition-all text-center">
                     Solicitar Información Técnica
                 </a>
             </div>
@@ -2572,4 +2501,5 @@
     </div>
 
 </body>
+
 </html>
