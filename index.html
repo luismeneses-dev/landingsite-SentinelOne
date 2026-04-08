@@ -563,132 +563,25 @@
             }
         }
 
-        /* Stacked Depth Feature Cards - Horizontal Spread */
-        #stacked-features-container {
-            perspective: 2000px;
-        }
-
-        .stack-grid {
-            display: grid;
-            grid-template-areas: "stack";
-            align-items: center;
-            justify-items: center;
-            width: 100%;
-        }
-
-        .stacked-card {
-            grid-area: stack;
-            width: 100%;
-            max-width: 470px;
-            /* Reduced from 500px to be 5% smaller */
-            padding: 2rem;
-            /* Reduced padding */
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Features Grid - Clean & Minimalist */
+        .feature-grid-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
             border-radius: 2rem;
-            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-            transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotation)) scale(0.85);
-            /* Reduced base scale from 0.9 */
-            cursor: pointer;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
-            opacity: 0;
-            filter: blur(0px);
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
-        /* Spaced Horizontal Offsets */
-        .layer-4 {
-            --offset-x: -300px;
-            --offset-y: 20px;
-            --rotation: -12deg;
-            z-index: 10;
-        }
-
-        .layer-3 {
-            --offset-x: -150px;
-            --offset-y: -10px;
-            --rotation: -4deg;
-            z-index: 20;
-        }
-
-        .layer-2 {
-            --offset-x: 150px;
-            --offset-y: 15px;
-            --rotation: 6deg;
-            z-index: 30;
-        }
-
-        .layer-1 {
-            --offset-x: 300px;
-            --offset-y: -15px;
-            --rotation: 12deg;
-            z-index: 40;
-        }
-
-        /* Active State (Shuffle Highlight) */
-        .stacked-card.active {
-            opacity: 1;
-            filter: blur(0);
-            transform: translate(0, -40px) rotate(0deg) scale(1.05) translateZ(100px) !important;
-            /* Reduced from 1.1 */
-            z-index: 100 !important;
-            background: rgba(255, 255, 255, 0.1);
+        .feature-grid-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
             border-color: var(--primary);
-            box-shadow: 0 0 40px rgba(0, 217, 255, 0.8), 0 0 80px rgba(0, 217, 255, 0.4), 0 60px 120px rgba(0, 0, 0, 0.6);
         }
 
-        /* Hover Interaction Disabled per user request */
-        .stack-grid .stacked-card:hover {
-            cursor: default;
-        }
-
-        /* Indicators of activity (Internal Glow) */
-        .stacked-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 3rem;
-            background: radial-gradient(circle at top left, rgba(0, 217, 255, 0.1), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .stacked-card:hover::before {
-            opacity: 1;
-        }
-
-        @media (max-width: 1024px) {
-            #stacked-features-container {
-                height: auto !important;
-                padding: 2rem 0;
-            }
-
-            .stack-grid {
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-                height: auto !important;
-                max-width: 100%;
-            }
-
-            .stacked-card {
-                position: relative !important;
-                transform: none !important;
-                max-width: 100%;
-                padding: 1.5rem;
-                opacity: 1 !important;
-                filter: blur(0) !important;
-                margin-bottom: 0;
-            }
-
-            /* Disable the shuffle jump on mobile to keep layout stable */
-            .stacked-card.active {
-                transform: none !important;
-                border-color: var(--primary);
-                box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
-            }
-        }
 
         .glow-core {
             box-shadow: 0 0 60px 20px rgba(0, 217, 255, 0.8), 0 0 100px 40px rgba(139, 92, 246, 0.6);
@@ -1086,81 +979,42 @@
                     </p>
                 </div>
 
-                <!-- CAROUSEL COMPONENT -->
-                <div class="feature-carousel-container reveal-up delay-100">
-                    <!-- STACKED DEPTH (Layered Cards) - Full Auto -->
-                    <div class="relative w-full h-[650px] mt-12 flex items-center justify-center overflow-visible"
-                        id="stacked-features-container">
-                        <div class="relative w-full max-w-4xl h-[450px] stack-grid">
-                            <!-- Card 4: Visibilidad (Base) -->
-                            <div class="stacked-card layer-4">
-                                <div class="flex items-center gap-3 mb-6">
-                                    <div
-                                        class="w-12 h-12 rounded-2xl bg-scheme-primary/20 backdrop-blur-xl border border-scheme-primary/30 flex items-center justify-center">
-                                        <i data-lucide="search" class="w-6 h-6 text-scheme-primary"></i>
-                                    </div>
-                                    <span
-                                        class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Control
-                                        Total</span>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Visibilidad Centralizada
-                                    <br>y Trazabilidad Total
-                                </h3>
-                                <p class="text-lg text-white/60 leading-relaxed">Inventario en tiempo real y
-                                    trazabilidad absoluta de cada evento en tus endpoints y nube.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 w-full">
+                    <!-- Card 1: IA (Inteligencia Artificial) -->
+                    <div class="reveal-up feature-grid-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-scheme-primary/10 flex items-center justify-center">
+                                <i data-lucide="brain" class="w-6 h-6 text-scheme-primary"></i>
                             </div>
-
-                            <!-- Card 3: Agente -->
-                            <div class="stacked-card layer-3">
-                                <div class="flex items-center gap-3 mb-6">
-                                    <div
-                                        class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
-                                        <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
-                                    </div>
-                                    <span class="text-lg font-medium tracking-widest text-white/60 uppercase">Eficiencia
-                                        Total</span>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Agente súper ligero <br>de
-                                    alto rendimiento</h3>
-                                <p class="text-lg text-white/60 leading-relaxed">Singularity Agent corre de forma
-                                    silenciosa sin impactar la productividad de tus usuarios.</p>
-                            </div>
-
-                            <!-- Card 2: Respuesta -->
-                            <div class="stacked-card layer-2">
-                                <div class="flex items-center gap-3 mb-4 text-scheme-secondary">
-                                    <div
-                                        class="w-12 h-12 rounded-2xl bg-scheme-secondary/20 backdrop-blur-xl border border-scheme-secondary/30 flex items-center justify-center">
-                                        <i data-lucide="zap" class="w-6 h-6 text-scheme-secondary"></i>
-                                    </div>
-                                    <span class="text-lg font-medium tracking-widest uppercase">Acción Inmediata</span>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Respuesta Autónoma <br>sin
-                                    intervención humana</h3>
-                                <p class="text-lg text-white/60 leading-relaxed">Contenemos el ataque automáticamente
-                                    en el endpoint, aislando la amenaza al instante.</p>
-                            </div>
-
-                            <!-- Card 1: IA (Top) -->
-                            <div class="stacked-card layer-1 active">
-                                <div class="flex items-center gap-3 mb-6">
-                                    <div
-                                        class="w-12 h-12 rounded-2xl bg-scheme-primary/20 backdrop-blur-xl border border-scheme-primary/30 flex items-center justify-center">
-                                        <i data-lucide="brain" class="w-6 h-6 text-scheme-primary"></i>
-                                    </div>
-                                    <span
-                                        class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Tecnología
-                                        Core</span>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white mb-6 leading-tight">IA de Prevención
-                                    <br>y Detección Activa
-                                </h3>
-                                <p class="text-lg text-white/60 leading-relaxed">Detectamos amenazas conocidas y
-                                    desconocidas en milisegundos con análisis avanzado.</p>
-                            </div>
+                            <span class="text-lg font-medium tracking-widest text-[#00D9FF] uppercase">Tecnología Core</span>
                         </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6 leading-tight">IA de Prevención <br>y Detección Activa</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed">Detectamos amenazas conocidas y desconocidas en milisegundos con análisis avanzado.</p>
                     </div>
 
+                    <!-- Card 2: Respuesta (Acción Inmmediata) -->
+                    <div class="reveal-up delay-100 feature-grid-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-scheme-secondary/10 flex items-center justify-center">
+                                <i data-lucide="zap" class="w-6 h-6 text-scheme-secondary"></i>
+                            </div>
+                            <span class="text-lg font-medium tracking-widest text-scheme-secondary uppercase">Acción Inmediata</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6 leading-tight">Respuesta Autónoma <br>sin intervención humana</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed">Contenemos el ataque automáticamente en el endpoint, aislando la amenaza al instante.</p>
+                    </div>
+
+                    <!-- Card 3: Visibilidad (Control Total) -->
+                    <div class="reveal-up delay-200 feature-grid-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-scheme-primary/10 flex items-center justify-center">
+                                <i data-lucide="search" class="w-6 h-6 text-scheme-primary"></i>
+                            </div>
+                            <span class="text-lg font-medium tracking-widest text-[#00D9FF] uppercase">Control Total</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6 leading-tight">Visibilidad Centralizada <br>y Trazabilidad Total</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed">Inventario en tiempo real y trazabilidad absoluta de cada evento en tus endpoints y nube.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2337,24 +2191,8 @@
     </script>
 
     <script>
-        // Automatic Card Shuffling Logic - Full Auto No Interaction
-        document.addEventListener('DOMContentLoaded', () => {
-            const container = document.getElementById('stacked-features-container');
-            if (!container) return;
+        // Logic removed: Carousel functionality no longer needed for static grid layout.
 
-            const cards = container.querySelectorAll('.stacked-card');
-            let currentIdx = 0;
-
-            function shuffle() {
-                cards.forEach(card => card.classList.remove('active'));
-                cards[currentIdx].classList.add('active');
-                currentIdx = (currentIdx + 1) % cards.length;
-            }
-
-            // Start on load with 3.5s interval
-            shuffle();
-            setInterval(shuffle, 3500);
-        });
     </script>
 
     <script>
