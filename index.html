@@ -11,15 +11,15 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https: *; connect-src 'self' http: https:; frame-src 'self' https://sentinelone.storylane.io https://*.storylane.io;">
 
+    <!-- Preload critical assets to improve LCP -->
+    <link rel="preload" href="https://unpkg.com/lucide@latest" as="script">
+    <link rel="preload" href="./assets/js/tailwindcss.js" as="script">
 
+    <!-- Lucide Icons (Deferred) -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-
-
-    <!-- Tailwind CSS (Local Asset) -->
-    <script src="./assets/js/tailwindcss.js"></script>
+    <!-- Tailwind CSS (Local Asset - Deferred) -->
+    <script src="./assets/js/tailwindcss.js" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -2004,12 +2004,12 @@
 
     <!-- SCRIPTS MÁGICOS -->
     <script>
-        // 1. Iniciar Lucide Icons
-        lucide.createIcons();
-
-
-
-
+        // 1. Iniciar Lucide Icons cuando el DOM esté listo (y el script defer haya cargado)
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
     </script>
     <script>
         // Lógica de Ventajas Desplegables
