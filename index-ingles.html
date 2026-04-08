@@ -781,8 +781,8 @@
             /* Reduced base scale from 0.9 */
             cursor: pointer;
             box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
-            opacity: 0.4;
-            filter: blur(4px);
+            opacity: 0;
+            filter: blur(0px);
         }
 
         /* Spaced Horizontal Offsets */
@@ -1275,7 +1275,7 @@
     <!-- FEATURES (Solution) - SENTINELONE MAJESTIC PUMA -->
     <section class="cv-auto elegant-fusion py-20 text-white relative overflow-hidden min-h-screen flex items-center">
         <div class="divider-cyan"></div>
-        <!-- Racing Particles (Purple/Cyan) Canvas -->
+        <!-- Subtle Racing Particles Canvas -->
         <canvas id="pumaParticles" class="absolute inset-0 z-10 pointer-events-none"></canvas>
 
         <div class="max-w-7xl mx-auto px-6 relative z-20 w-full flex flex-col items-center">
@@ -2410,12 +2410,14 @@
         });
 
         // 5. Partículas del Puma (Running Effect)
+        // 5. Puma Particles (Subtle and reduced per request)
         function initPumaParticles() {
             const canvas = document.getElementById('pumaParticles');
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
             let particles = [];
             let w, h;
+            const numParticles = 25; // Reduced from 150 to 25 for a cleaner look
 
             function resize() {
                 const parent = canvas.parentElement;
@@ -2428,17 +2430,14 @@
                     this.reset();
                 }
                 reset() {
-                    // Aparecen mayormente por la derecha para simular avance
                     this.x = Math.random() * w;
                     this.y = Math.random() * h;
-                    // Slow down velocity for elegance
                     this.vx = -(Math.random() * 1.5 + 0.5);
                     this.vy = (Math.random() - 0.5) * 0.3;
                     this.size = Math.random() * 2 + 0.5;
-                    // Colores morados y cian
                     const isPurple = Math.random() > 0.5;
                     this.color = isPurple ? '168, 85, 247' : '0, 217, 255';
-                    this.alpha = Math.random() * 0.6 + 0.2;
+                    this.alpha = Math.random() * 0.4 + 0.1; // Softer
                 }
                 update() {
                     this.x += this.vx;
@@ -2448,7 +2447,6 @@
                 }
                 draw() {
                     ctx.beginPath();
-                    // Dibujar una pequeña estela (streak) para dinamismo
                     ctx.moveTo(this.x, this.y);
                     ctx.lineTo(this.x - this.vx * 2, this.y);
                     ctx.strokeStyle = `rgba(${this.color}, ${this.alpha})`;
@@ -2465,7 +2463,7 @@
             function init() {
                 resize();
                 particles = [];
-                for (let i = 0; i < 150; i++) particles.push(new Particle());
+                for (let i = 0; i < numParticles; i++) particles.push(new Particle());
             }
 
             function animate() {
@@ -2481,6 +2479,8 @@
             init();
             animate();
         }
+
+        initPumaParticles();
 
         // POINT 1: Security Accordion
         function toggleSecurity(element) {
