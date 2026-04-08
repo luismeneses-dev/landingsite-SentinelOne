@@ -91,29 +91,25 @@
             animation-delay: 0.4s;
         }
 
-        @keyframes background-pulse-slow {
 
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.4;
-            }
-
-            50% {
-                transform: scale(1.05);
-                opacity: 0.6;
-            }
-        }
-
-        .animate-bg-pulse {
-            animation: background-pulse-slow 20s ease-in-out infinite;
-        }
 
         /* Rendering Optimization Utility */
         .cv-auto {
             content-visibility: auto;
             contain-intrinsic-size: 1px 1000px;
-            /* Previene saltos bruscos de scroll */
+        }
+
+        /* Pricing White Cards */
+        .metallic-neon-card {
+            background-color: #ffffff !important;
+            border: 1px solid rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .metallic-neon-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
 
         /* Tipografías Locales */
@@ -409,139 +405,9 @@
             transform: rotate(180deg);
         }
 
-        /* Puma Head Floating Animation */
-        @keyframes puma-float {
 
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1) rotate(0deg);
-            }
 
-            33% {
-                transform: translate(-10px, -20px) scale(1.03) rotate(1deg);
-            }
 
-            66% {
-                transform: translate(10px, -10px) scale(0.97) rotate(-1deg);
-            }
-        }
-
-        .animate-puma-head {
-            animation: puma-float 10s ease-in-out infinite;
-        }
-
-        /* Oil Flow Animated Gradient */
-        @keyframes metal-shine {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes iridescent-flow {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .metallic-neon-card {
-            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 40%, #f8fafc 60%, #94a3b8 100%);
-            background-size: 200% 200%;
-            animation: metal-shine 6s linear infinite;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow:
-                0 15px 35px -5px rgba(0, 0, 0, 0.3),
-                inset 0 0 15px rgba(255, 255, 255, 0.5);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .metallic-neon-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(60deg,
-                    rgba(0, 217, 255, 0.25),
-                    rgba(139, 92, 246, 0.25),
-                    rgba(236, 72, 153, 0.25),
-                    rgba(234, 179, 8, 0.25),
-                    rgba(0, 217, 255, 0.25));
-            background-size: 300% 300%;
-            animation: iridescent-flow 12s ease infinite;
-            pointer-events: none;
-            mix-blend-mode: overlay;
-            opacity: 0.7;
-        }
-
-        .metallic-neon-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow:
-                0 25px 50px -12px rgba(0, 0, 0, 0.5),
-                0 0 20px rgba(0, 217, 255, 0.3);
-        }
-
-        @keyframes oil-wave-forward {
-            0% {
-                transform: translateX(-120%) skewX(-20deg);
-                opacity: 0;
-            }
-
-            30% {
-                opacity: 0.85;
-            }
-
-            70% {
-                opacity: 0.85;
-            }
-
-            100% {
-                transform: translateX(280%) skewX(-20deg);
-                opacity: 0;
-            }
-        }
-
-        @keyframes oil-wave-backward {
-            0% {
-                transform: translateX(150%) skewX(20deg);
-                opacity: 0;
-            }
-
-            30% {
-                opacity: 0.85;
-            }
-
-            70% {
-                opacity: 0.85;
-            }
-
-            100% {
-                transform: translateX(-180%) skewX(20deg);
-                opacity: 0;
-            }
-        }
-
-        .animate-oil {
-            background: linear-gradient(-45deg, #000, #8B5CF6, #000, #00D9FF, #000);
-            background-size: 400% 400%;
-            animation: oil-flow 15s ease infinite;
-            opacity: 0.4;
-        }
 
         /* POINT 1: Security Layers Accordion */
         .security-accordion-item {
@@ -700,45 +566,7 @@
             transition: filter 0.4s ease;
         }
 
-        /* Digital Ocean */
-        .digital-ocean {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 35%;
-            perspective: 800px;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 0;
-            mask-image: linear-gradient(to top, black 0%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
-        }
 
-        .digital-ocean-grid {
-            position: absolute;
-            bottom: 0px;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background-image:
-                linear-gradient(to right, rgba(0, 217, 255, 0.2) 1px, transparent 1px),
-                linear-gradient(to top, rgba(0, 217, 255, 0.2) 1px, transparent 1px);
-            background-size: 40px 40px;
-            transform: rotateX(75deg);
-            transform-origin: bottom center;
-            animation: ocean-move 5s linear infinite;
-        }
-
-        @keyframes ocean-move {
-            0% {
-                transform: rotateX(75deg) translateY(0);
-            }
-
-            100% {
-                transform: rotateX(75deg) translateY(40px);
-            }
-        }
 
         @keyframes sweep {
             from {
@@ -1158,36 +986,7 @@
     <section class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
 
-        <!-- Oil Flow Waves Background (Intenso Collision - Final Fix) -->
-        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden mix-blend-screen opacity-70">
-            <!-- Forward Waves (L -> R) staggered ~1.25s -->
-            <div class="absolute top-0 bottom-0 w-1/2"
-                style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 0s;">
-            </div>
-            <div class="absolute top-0 bottom-0 w-1/2"
-                style="background: radial-gradient(circle at center, rgba(244, 114, 182, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 2.5s;">
-            </div>
-            <div class="absolute top-0 bottom-0 w-1/2"
-                style="background: radial-gradient(circle at center, rgba(96, 165, 250, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 5s;">
-            </div>
-            <div class="absolute top-0 bottom-0 w-1/2"
-                style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 80%); filter: blur(100px); animation: oil-wave-forward 10s linear infinite backwards; animation-delay: 7.5s;">
-            </div>
 
-            <!-- Backward Waves (R -> L) staggered ~1.25s intervals -->
-            <div class="absolute top-0 bottom-0 w-1/2"
-                style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 1.25s;">
-            </div>
-            <div class="absolute top-0 bottom-0 w-1/2"
-                style="background: radial-gradient(circle at center, rgba(244, 114, 182, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 3.75s;">
-            </div>
-            <div class="absolute top-0 bottom-0 w-1/2"
-                style="background: radial-gradient(circle at center, rgba(96, 165, 250, 0.6), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 6.25s;">
-            </div>
-            <div class="absolute top-0 bottom-0 w-1/2"
-                style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 80%); filter: blur(100px); animation: oil-wave-backward 10s linear infinite backwards; animation-delay: 8.75s;">
-            </div>
-        </div>
 
         <div class="relative max-w-7xl mx-auto">
             <div class="reveal-up text-center mb-16">
@@ -1275,8 +1074,7 @@
     <!-- FEATURES (Solution) - SENTINELONE MAJESTIC PUMA -->
     <section class="cv-auto elegant-fusion py-20 text-white relative overflow-hidden min-h-screen flex items-center">
         <div class="divider-cyan"></div>
-        <!-- Subtle Racing Particles Canvas -->
-        <canvas id="pumaParticles" class="absolute inset-0 z-10 pointer-events-none"></canvas>
+
 
         <div class="max-w-7xl mx-auto px-6 relative z-20 w-full flex flex-col items-center">
             <!-- Columna Izquierda: Contenido / Header -->
@@ -1404,7 +1202,7 @@
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="dna-section-container">
             <!-- Canvas DNA Animation -->
-            <canvas id="dna-canvas" class="absolute inset-0 w-full h-full opacity-90 mix-blend-screen"></canvas>
+
 
             <!-- Degradado en las esquinas para evitar saturación (Vignette) -->
             <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)] opacity-80">
@@ -1460,7 +1258,7 @@
         class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0 overflow-hidden">
-            <div class="absolute inset-0 animate-oil"></div>
+
             <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
         </div>
 
@@ -1537,7 +1335,7 @@
                     <div class="absolute inset-0 bg-scheme-primary/5 blur-[120px] rounded-full opacity-30"></div>
                     <img loading="lazy"
                         src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Close-up_of_a_cybernetic_j-0.jpg"
-                        class="w-full h-auto mix-blend-screen animate-puma-head filter brightness-105 contrast-110"
+                        class="w-full h-auto mix-blend-screen filter brightness-105 contrast-110"
                         alt="SentinelOne Cyber Puma"
                         style="mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 80%);" />
                 </div>
@@ -1786,7 +1584,7 @@
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0 overflow-hidden">
             <!-- New Geometric Elite Background (Breathing Animation) -->
-            <div class="absolute inset-0 w-full h-full bg-cover bg-center animate-bg-pulse pointer-events-none opacity-50"
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center pointer-events-none opacity-50"
                 style="background-image: url('./public/images/universal_upscale_bg.jpg');" loading="lazy">
             </div>
 
@@ -2415,110 +2213,7 @@
             observer.observe(el);
         });
 
-        // 5. Partículas del Puma (Running Effect)
-        // 5. Puma Particles (Subtle and reduced per request)
-        function initPumaParticles() {
-            const canvas = document.getElementById('pumaParticles');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-            let w, h;
-            const numParticles = 25; // Reduced from 150 to 25 for a cleaner look
 
-            function resize() {
-                const parent = canvas.parentElement;
-                w = canvas.width = parent.offsetWidth;
-                h = canvas.height = parent.offsetHeight;
-            }
-
-            class Particle {
-                constructor() {
-                    this.reset();
-                }
-                reset() {
-                    this.x = Math.random() * w;
-                    this.y = Math.random() * h;
-                    this.vx = -(Math.random() * 1.5 + 0.5);
-                    this.vy = (Math.random() - 0.5) * 0.3;
-                    this.size = Math.random() * 2 + 0.5;
-                    const isPurple = Math.random() > 0.5;
-                    this.color = isPurple ? '168, 85, 247' : '0, 217, 255';
-                    this.alpha = Math.random() * 0.4 + 0.1; // Softer
-                }
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    if (this.x < -10) this.x = w + 10;
-                    if (this.y < 0 || this.y > h) this.reset();
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.moveTo(this.x, this.y);
-                    ctx.lineTo(this.x - this.vx * 2, this.y);
-                    ctx.strokeStyle = `rgba(${this.color}, ${this.alpha})`;
-                    ctx.lineWidth = this.size;
-                    ctx.stroke();
-
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
-                    ctx.fill();
-                }
-            }
-
-            function init() {
-                resize();
-                particles = [];
-                for (let i = 0; i < numParticles; i++) particles.push(new Particle());
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, w, h);
-                particles.forEach(p => {
-                    p.update();
-                    p.draw();
-                });
-                requestAnimationFrame(animate);
-            }
-
-            window.addEventListener('resize', resize);
-            init();
-            animate();
-        }
-
-        initPumaParticles();
-
-        // POINT 1: Security Accordion
-        function toggleSecurity(element) {
-            const items = document.querySelectorAll('.security-accordion-item');
-            const isActive = element.classList.contains('active');
-            const videos = document.querySelectorAll('.video-stack video');
-            const titleText = element.querySelector('h3').textContent.trim();
-
-            function showVideo(key) {
-                videos.forEach(v => {
-                    if (v.getAttribute('data-video') === key) {
-                        v.style.opacity = "1";
-                        v.play();
-                    } else {
-                        v.style.opacity = "0";
-                    }
-                });
-            }
-
-            items.forEach(item => item.classList.remove('active'));
-
-            if (!isActive) {
-                element.classList.add('active');
-                showVideo(titleText);
-            } else {
-                showVideo('default');
-            }
-        }
-
-
-
-        initPumaParticles();
     </script>
     <script>
         // Lógica de Ventajas Desplegables
@@ -2556,150 +2251,7 @@
         });
     </script>
 
-    <script>
-        // DNA Infinity Animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const canvas = document.getElementById('dna-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let width, height;
 
-            function resize() {
-                const container = document.getElementById('dna-section-container');
-                width = container.clientWidth;
-                height = container.clientHeight;
-                canvas.width = width;
-                canvas.height = height;
-            }
-
-            window.addEventListener('resize', resize);
-            resize();
-
-            let time = 0;
-            const particles = [];
-            const numParticles = 400; // Total particles in the DNA strands
-            const strandOffset = Math.PI; // Offset between the two strands
-
-            for (let i = 0; i < numParticles; i++) {
-                particles.push({
-                    tOffset: (i / (numParticles / 2)) * Math.PI * 2, // Distribute along the curve
-                    strand: i % 2 // 0 or 1 for the two strands
-                });
-            }
-
-            function draw() {
-                ctx.clearRect(0, 0, width, height);
-                time += 0.0015; // Global rotation/evolution speed (Slower for elegance)
-
-                const scaleX = width * 0.35; // Spread of the infinity loop horizontally
-                const scaleY = height * 0.25; // Vertical spread
-                const scaleZ = 100; // Depth for 3D rotation effect
-
-                // Perspective projection variables
-                const focalLength = 400;
-
-                // Sort particles by Z index for basic depth sorting
-                const projectedParticles = [];
-
-                particles.forEach(p => {
-                    // Lissajous curve parameters for infinity: x = sin(t), y = sin(2t)
-                    const t = p.tOffset + (time * 1.5); // Movement along the curve (Slightly slower)
-
-                    // The base figure-8 curve
-                    let x3d = Math.sin(t) * scaleX;
-                    let y3d = Math.sin(2 * t) * scaleY * 0.8;
-                    let z3d = Math.cos(t) * scaleZ;
-
-                    // Add the DNA twisting effect around the curve path
-                    const twistPhase = (time * 4) + (t * 8); // Twist frequency (Slowed down from 5)
-                    const twistRadius = 30; // Thickness of the helix
-                    const strandPhaseOffset = p.strand * strandOffset;
-
-                    // Compute a local tangent (roughly) to orient the twist
-                    const dx = Math.cos(t) * scaleX;
-                    const dy = 2 * Math.cos(2 * t) * scaleY * 0.8;
-                    const angle = Math.atan2(dy, dx);
-
-                    // Add the twist perpendicular to the path
-                    const perpX = -Math.sin(angle);
-                    const perpY = Math.cos(angle);
-
-                    x3d += perpX * Math.cos(twistPhase + strandPhaseOffset) * twistRadius;
-                    y3d += perpY * Math.cos(twistPhase + strandPhaseOffset) * twistRadius;
-                    z3d += Math.sin(twistPhase + strandPhaseOffset) * twistRadius;
-
-                    // Global gentle Y-rotation to view it from different angles over time
-                    const rotationSpeed = time * 0.35; // Slower Y-rotation
-                    const rx = x3d * Math.cos(rotationSpeed) - z3d * Math.sin(rotationSpeed);
-                    const rz = x3d * Math.sin(rotationSpeed) + z3d * Math.cos(rotationSpeed);
-                    x3d = rx;
-                    z3d = rz;
-
-                    // Perspective projection
-                    // Restored offset (100) for original size, but added proximity safety
-                    const dist = focalLength + z3d + 100;
-                    if (dist < 20) return; // Prevention of mathematical singularity (The "Flash")
-
-                    const zScale = focalLength / dist;
-                    const px = width / 2 + x3d * zScale;
-                    const py = height / 2 + y3d * zScale;
-
-                    // Particle size driven by depth
-                    const radius = Math.max(0.1, Math.min(10, 3 * zScale));
-
-                    // Clamp alpha and add proximity fade
-                    let alpha = Math.min(0.9, Math.max(0.1, zScale * 0.8));
-                    if (dist < 100) alpha *= (dist - 20) / 80; // Smooth fade-out as it hits the "lens"
-
-                    // Skip drawing if the coordinates are ridiculously outside
-                    if (px < -width || px > width * 2 || py < -height || py > height * 2) return;
-
-                    projectedParticles.push({
-                        x: px,
-                        y: py,
-                        z: z3d,
-                        r: radius,
-                        alpha: Math.max(0, alpha),
-                        tOffset: p.tOffset,
-                        strand: p.strand
-                    });
-                });
-
-                // Sort by Z for proper overlapping
-                projectedParticles.sort((a, b) => b.z - a.z);
-
-                // Draw connecting rungs (bonds) occasionally between the closest points of the two strands
-                ctx.lineWidth = 1;
-                for (let i = 0; i < projectedParticles.length; i += 8) {
-                    const p1 = projectedParticles[i];
-                    if (p1.strand === 0) {
-                        // Find a corresponding particle on the other strand with similar tOffset
-                        const p2 = projectedParticles.find(p => p.strand === 1 && Math.abs(p.tOffset - p1.tOffset) < 0.1);
-                        if (p2) {
-                            ctx.beginPath();
-                            ctx.moveTo(p1.x, p1.y);
-                            ctx.lineTo(p2.x, p2.y);
-                            ctx.strokeStyle = `rgba(168, 85, 247, ${Math.min(p1.alpha, p2.alpha) * 0.3})`; // Purple connections
-                            ctx.stroke();
-                        }
-                    }
-                }
-
-                // Draw particles
-                projectedParticles.forEach(p => {
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    // Crisp solid purple: #A855F7 is hex for bg-purple-500 equivalent, keeping it sharp
-                    ctx.fillStyle = `rgba(168, 85, 247, ${p.alpha})`;
-                    ctx.fill();
-                });
-
-                requestAnimationFrame(draw);
-            }
-
-            draw();
-        });
-    </script>
 
     <!-- Comparison Modal -->
     <div id="comparison-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center p-4 md:p-6 bg-black/80">
