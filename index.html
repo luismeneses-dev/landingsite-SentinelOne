@@ -138,9 +138,25 @@
         @font-face {
             font-family: 'Panton';
             src: url('./public/fonts/Panton-Regular.otf') format('opentype');
-            font-weight: 400;
+            font-weight: normal;
             font-style: normal;
             font-display: swap;
+        }
+
+        /* Icon Colors Force */
+        #soporte [data-lucide="shield-check"],
+        #soporte [data-lucide="file-text"],
+        #soluciones [data-lucide] {
+            color: #00D9FF !important;
+        }
+
+        #soporte [data-lucide="eye"] {
+            color: #8B5CF6 !important;
+        }
+
+        /* SVG specifically */
+        svg.lucide {
+            stroke: currentColor;
         }
 
         @font-face {
@@ -193,7 +209,8 @@
             color: #fff;
             scroll-behavior: smooth;
             overflow-x: hidden;
-            letter-spacing: -0.015em; /* tracking-tight uniformity */
+            letter-spacing: -0.015em;
+            /* tracking-tight uniformity */
         }
 
         /* Fuerza Panton Regular (400) en TODOS los elementos, igual que hacía el selector */
@@ -713,7 +730,7 @@
                             <div
                                 class="p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <i data-lucide="file-text" class="w-6 h-6 text-white opacity-80"></i>
+                                    <i data-lucide="file-text" class="w-6 h-6 text-scheme-primary opacity-80"></i>
                                 </div>
                                 <div class="text-lg font-bold text-white">
                                     Rollback OK</div>
@@ -741,12 +758,12 @@
             <div class="logo-marquee">
                 <!-- Primera iteración -->
                 <div class="logo-item">
-                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.webp"
+                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.svg"
                         alt="Empresas confían en SentinelOne" class="h-8 md:h-12 w-auto max-w-none" />
                 </div>
                 <!-- Segunda iteración para loop infinito fluido -->
                 <div class="logo-item" aria-hidden="true">
-                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.webp"
+                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.svg"
                         alt="Empresas confían en SentinelOne" class="h-8 md:h-12 w-auto max-w-none" />
                 </div>
             </div>
@@ -1765,7 +1782,8 @@
                 <!-- Soporte Humano -->
                 <div class="py-10">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                        <div
+                            class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
                             <i data-lucide="headphones" class="w-7 h-7 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-medium text-white">Servicio Post-Adquisición</h3>
@@ -1775,7 +1793,8 @@
                 <!-- Consultoría -->
                 <div class="py-10">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                        <div
+                            class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
                             <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-medium text-white">Ingeniería Certificada</h3>
@@ -1785,7 +1804,8 @@
                 <!-- Implementación -->
                 <div class="py-10">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                        <div
+                            class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
                             <i data-lucide="zap" class="w-7 h-7 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-medium text-white">Despliegue Garantizado</h3>

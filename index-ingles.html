@@ -140,9 +140,25 @@
         @font-face {
             font-family: 'Panton';
             src: url('./public/fonts/Panton-Regular.otf') format('opentype');
-            font-weight: 400;
+            font-weight: normal;
             font-style: normal;
             font-display: swap;
+        }
+
+        /* Icon Colors Force */
+        #soporte [data-lucide="shield-check"],
+        #soporte [data-lucide="file-text"],
+        #solutions [data-lucide] {
+            color: #00D9FF !important;
+        }
+
+        #soporte [data-lucide="eye"] {
+            color: #8B5CF6 !important;
+        }
+
+        /* SVG specifically */
+        svg.lucide {
+            stroke: currentColor;
         }
 
         @font-face {
@@ -731,7 +747,7 @@
                             <div
                                 class="p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <i data-lucide="file-text" class="w-6 h-6 text-white opacity-80"></i>
+                                    <i data-lucide="file-text" class="w-6 h-6 text-scheme-primary opacity-80"></i>
                                 </div>
                                 <div class="text-lg font-bold text-white">
                                     Rollback OK</div>
