@@ -559,51 +559,7 @@
             }
         }
 
-        /* Subtle Particles for Support Section */
-        .support-particles {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 45%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 1;
-        }
 
-        .support-particle {
-            position: absolute;
-            width: 1.5px;
-            height: 1.5px;
-            background: white;
-            border-radius: 50%;
-            opacity: 0;
-            filter: blur(0.5px);
-            animation: support-twinkle var(--duration) ease-in-out infinite;
-            animation-delay: var(--delay);
-            left: var(--x);
-            top: var(--y);
-            box-shadow: 0 0 4px white;
-        }
-
-        @keyframes support-twinkle {
-
-            0%,
-            100% {
-                opacity: 0;
-                transform: translateY(0) scale(0.5);
-            }
-
-            30%,
-            70% {
-                opacity: 0.3;
-            }
-
-            50% {
-                opacity: 0.6;
-                transform: translateY(-30px) scale(1);
-            }
-        }
     </style>
 </head>
 
@@ -1829,24 +1785,7 @@
             <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent"></div>
             <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
 
-            <!-- Luminous Dust Particles (Spotlight Beam Sector) -->
-            <div class="support-particles">
-                <div class="support-particle" style="--x: 10%; --y: 20%; --duration: 6s; --delay: 0s;"></div>
-                <div class="support-particle" style="--x: 30%; --y: 40%; --duration: 8s; --delay: 1s;"></div>
-                <div class="support-particle" style="--x: 50%; --y: 10%; --duration: 5s; --delay: 0.5s;"></div>
-                <div class="support-particle" style="--x: 70%; --y: 60%; --duration: 9s; --delay: 2s;"></div>
-                <div class="support-particle" style="--x: 20%; --y: 80%; --duration: 7s; --delay: 1.5s;"></div>
-                <div class="support-particle" style="--x: 40%; --y: 30%; --duration: 10s; --delay: 0.2s;"></div>
-                <div class="support-particle" style="--x: 60%; --y: 50%; --duration: 12s; --delay: 3s;"></div>
-                <div class="support-particle" style="--x: 80%; --y: 20%; --duration: 8s; --delay: 0.8s;"></div>
-                <div class="support-particle" style="--x: 90%; --y: 70%; --duration: 6s; --delay: 1.2s;"></div>
-                <div class="support-particle" style="--x: 05%; --y: 50%; --duration: 11s; --delay: 2.5s;"></div>
-                <div class="support-particle" style="--x: 45%; --y: 45%; --duration: 7s; --delay: 0.4s;"></div>
-                <div class="support-particle" style="--x: 35%; --y: 85%; --duration: 13s; --delay: 1.8s;"></div>
-                <div class="support-particle" style="--x: 15%; --y: 65%; --duration: 9s; --delay: 0.7s;"></div>
-                <div class="support-particle" style="--x: 55%; --y: 25%; --duration: 10s; --delay: 2.2s;"></div>
-                <div class="support-particle" style="--x: 85%; --y: 45%; --duration: 5s; --delay: 1.1s;"></div>
-            </div>
+
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full">
