@@ -211,7 +211,7 @@
             color: #fff;
             scroll-behavior: smooth;
             overflow-x: hidden;
-            letter-spacing: -0.015em;
+            letter-spacing: -0.015em !important;
             /* tracking-tight uniformity */
         }
 
@@ -796,20 +796,20 @@
 
 
         <div class="relative max-w-7xl mx-auto">
-            <div class=" text-center mb-16">
-                <h2 class="text-5xl mb-6 tracking-tight font-extrabold leading-tight">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-extrabold leading-tight mb-6">
                     Operational continuity <span class="text-scheme-primary">at risk.</span>
                 </h2>
-                <p class="text-2xl text-white max-w-3xl mx-auto leading-relaxed">
-                    70% of attacked companies stay paralyzed for days. Without autonomous response, your company is not
-                    secure: it's the next target.
+                <p class="text-lg text-white max-w-3xl mx-auto leading-relaxed">
+                    Most cyberattacks stop critical operations. With an AI-powered EDR/XDR platform, your company can
+                    prevent, detect, and respond in real-time without affecting productivity.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-64 relative z-10 px-6">
                 <!-- Threat Box -->
                 <div
-                    class="  p-8 rounded-3xl border bg-white/[0.02] backdrop-blur-xl border-white/10 relative overflow-hidden group">
+                    class="p-8 rounded-3xl border bg-white/[0.02] backdrop-blur-xl border-white/10 relative overflow-hidden group">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, rgb(239,68,68) 0%, transparent 70%); filter: blur(60px);">
                     </div>
@@ -841,7 +841,7 @@
 
                 <!-- Safe Box -->
                 <div
-                    class="  p-8 rounded-3xl border bg-white/[0.02] backdrop-blur-xl border-white/10 relative overflow-hidden group">
+                    class="p-8 rounded-3xl border bg-white/[0.02] backdrop-blur-xl border-white/10 relative overflow-hidden group">
                     <div class="absolute inset-0 opacity-20 pointer-events-none"
                         style="background: radial-gradient(circle at center, var(--primary) 0%, transparent 70%); filter: blur(60px);">
                     </div>
@@ -884,8 +884,8 @@
         <div class="max-w-7xl mx-auto px-6 relative z-20 w-full flex flex-col items-center">
             <!-- Columna Izquierda: Contenido / Header -->
             <div class="w-full">
-                <div class=" text-left mb-8">
-                    <h2 class="text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+                <div class="text-left mb-8">
+                    <h2 class="text-5xl font-extrabold leading-tight mb-6">
                         What is <span class="text-scheme-primary">SentinelOne</span>?
                     </h2>
                     <div class="flex flex-wrap gap-4 mb-8">
@@ -893,16 +893,16 @@
                         <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full"
                             style="background-color: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.4); color: rgb(192, 132, 252);">
                             <div class="w-2 h-2 rounded-full bg-purple-500"></div>
-                            <span class="text-lg font-medium tracking-wide">Autonomous response speed</span>
+                            <span class="text-lg font-medium">Autonomous response speed</span>
                         </div>
                         <!-- Badge 2: Security -->
                         <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full"
-                            style="background-color: rgba(0, 217, 255, 0.15); border: 1px solid rgba(0, 217, 255, 0.4); color: var(--primary);">
+                            style="background-color: rgba(0, 217, 255, 0.1); border: 1px solid rgba(0, 217, 255, 0.3); color: #00D9FF;">
                             <div class="w-2 h-2 rounded-full bg-scheme-primary"></div>
-                            <span class="text-lg font-medium tracking-wide">AI-enhanced security</span>
+                            <span class="text-lg font-medium">AI-Enhanced Security</span>
                         </div>
                     </div>
-                    <p class="text-2xl text-white leading-relaxed max-w-3xl">
+                    <p class="text-lg text-white leading-relaxed max-w-3xl">
                         SentinelOne is an autonomous cybersecurity platform powered by artificial intelligence that
                         protects endpoints, servers, and cloud environments against advanced threats such as ransomware,
                         malware, file-less attacks, and zero-day exploits.
@@ -911,13 +911,13 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 w-full">
                     <!-- Card 1: AI (Core Technology) -->
-                    <div class=" feature-grid-card">
+                    <div class="feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
                             <div
                                 class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
                                 <i data-lucide="brain" class="w-7 h-7 text-scheme-primary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Core
+                            <span class="text-lg font-medium text-scheme-primary uppercase">Core
                                 Technology</span>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Prevention AI & <br>Active
@@ -927,13 +927,13 @@
                     </div>
 
                     <!-- Card 2: Response (Immediate Action) -->
-                    <div class="  feature-grid-card">
+                    <div class="feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
                             <div
                                 class="w-14 h-14 rounded-2xl bg-scheme-secondary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
                                 <i data-lucide="zap" class="w-7 h-7 text-scheme-secondary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-scheme-secondary uppercase">Immediate
+                            <span class="text-lg font-medium text-scheme-secondary uppercase">Immediate
                                 Action</span>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Autonomous Response <br>without
@@ -943,13 +943,13 @@
                     </div>
 
                     <!-- Card 3: Visibility (Total Control) -->
-                    <div class="  feature-grid-card">
+                    <div class="feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
                             <div
                                 class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
                                 <i data-lucide="search" class="w-7 h-7 text-scheme-primary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Total
+                            <span class="text-lg font-medium text-scheme-primary uppercase">Total
                                 Control</span>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Centralized Visibility <br>& Total
@@ -971,11 +971,11 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full">
-            <div class=" text-center mb-16">
-                <h2 class="text-5xl font-extrabold tracking-tight max-w-4xl mx-auto mb-6 leading-tight">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-extrabold leading-tight mb-6">
                     SentinelOne Solutions for <span class="text-scheme-primary">Total Protection</span>
                 </h2>
-                <p class="text-2xl text-white max-w-2xl mx-auto leading-relaxed">
+                <p class="text-lg text-white max-w-2xl mx-auto leading-relaxed">
                     Explore our unified platform designed to stop attacks before they happen.
                 </p>
             </div>
@@ -1101,11 +1101,11 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto">
-            <div class=" text-center mb-4">
+            <div class="text-center mb-4">
                 <!-- Logo con resplandor morado -->
 
 
-                <h2 class="text-5xl font-extrabold tracking-tight max-w-3xl mx-auto mb-2 leading-tight">
+                <h2 class="text-5xl font-extrabold leading-tight max-w-3xl mx-auto mb-2">
                     Why settle for alerts, when you can have absolute resilience?
                 </h2>
             </div>
@@ -1130,7 +1130,7 @@
                 </div>
             </div>
 
-            <div class=" mt-2 p-4 text-center text-lg">
+            <div class="mt-2 p-4 text-center text-lg">
                 <b class="font-semibold text-white">Your peace of mind is not optional: </b>
                 <span class="text-white">We move from detection to automatic response. <b class="text-[#00D9FF]">Your
                         operation will not stop.</b></span>
@@ -1148,8 +1148,8 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto">
-            <div class=" mb-16">
-                <h2 class="text-5xl font-extrabold tracking-tight mb-4 leading-tight">Protection by Sector.</h2>
+            <div class="mb-16">
+                <h2 class="text-5xl font-extrabold leading-tight mb-4">Protection by Sector.</h2>
                 <p class="text-2xl text-white max-w-4xl leading-relaxed">
                     Tailored solutions for Manufacturing, Retail, and Enterprise.
                 </p>
@@ -1157,7 +1157,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Industry -->
-                <div class="  py-10 flex flex-col h-full group">
+                <div class="py-10 flex flex-col h-full group">
                     <div class="relative z-20 flex flex-col h-full">
                         <i data-lucide="factory"
                             class="w-16 h-16 mb-8 text-scheme-secondary transition-transform duration-700"></i>
@@ -1177,7 +1177,7 @@
                     </div>
                 </div>
                 <!-- Retail -->
-                <div class="  py-10 flex flex-col h-full group">
+                <div class="py-10 flex flex-col h-full group">
                     <div class="relative z-20 flex flex-col h-full">
                         <i data-lucide="landmark"
                             class="w-16 h-16 mb-8 text-scheme-primary transition-transform duration-700"></i>
@@ -1196,7 +1196,7 @@
                     </div>
                 </div>
                 <!-- Corporate -->
-                <div class="  py-10 flex flex-col h-full group">
+                <div class="py-10 flex flex-col h-full group">
                     <div class="relative z-20 flex flex-col h-full">
                         <i data-lucide="building-2"
                             class="w-16 h-16 mb-8 text-white transition-transform duration-700"></i>
@@ -1253,9 +1253,9 @@
         <div class="relative z-10 max-w-5xl mx-auto">
 
 
-            <div class=" text-center mb-16">
+            <div class="text-center mb-16">
 
-                <h2 class="text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white px-2">
+                <h2 class="text-5xl font-extrabold leading-tight mb-6 text-white px-2">
                     Traditional vs. SentinelOne
                 </h2>
                 <p class="text-2xl text-white max-w-3xl mx-auto leading-relaxed">
@@ -1263,7 +1263,7 @@
                 </p>
             </div>
 
-            <div class=" mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full px-4">
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full px-4">
                 <!-- CrowdStrike -->
                 <button onclick="openComparisonModal('crowdstrike')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
@@ -1349,8 +1349,8 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full">
-            <div class=" text-center mb-20">
-                <h2 class="text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-extrabold leading-tight text-white">
                     Singularity™ Plans
                 </h2>
                 <p class="text-2xl text-white max-w-3xl mx-auto leading-relaxed">
@@ -1360,10 +1360,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1: Complete -->
-                <div class="  p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all">
+                <div class="p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all">
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
-                        <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Complete</div>
+                        <div class="text-2xl text-slate-950 mb-6 font-bold">Complete</div>
                         <div class="flex items-baseline gap-2">
                             <span class="text-5xl text-slate-950 font-bold">$179.99</span>
                             <span class="text-lg text-slate-950 font-bold opacity-60">USD</span>
@@ -1398,13 +1398,13 @@
 
                 <!-- Card 2: Commercial -->
                 <div
-                    class="  p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group relative overflow-hidden border-2 border-scheme-secondary/30">
+                    class="p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group relative overflow-hidden border-2 border-scheme-secondary/30">
                     <div
-                        class="absolute top-0 right-0 p-4 bg-scheme-secondary text-white text-lg tracking-widest uppercase shadow-md">
+                        class="absolute top-0 right-0 p-4 bg-scheme-secondary text-white text-lg uppercase shadow-md">
                         Most Popular</div>
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
-                        <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Commercial</div>
+                        <div class="text-2xl text-slate-950 mb-6 font-bold">Commercial</div>
                         <div class="flex items-baseline gap-2">
                             <span class="text-5xl text-slate-950 font-bold">$229.99</span>
                             <span class="text-lg text-slate-950 font-bold opacity-60">USD</span>
@@ -1436,10 +1436,10 @@
 
                 <!-- Card 3: Enterprise -->
                 <div
-                    class="  p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all border border-slate-400/50">
+                    class="p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all border border-slate-400/50">
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
-                        <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Enterprise</div>
+                        <div class="text-2xl text-slate-950 mb-6 font-bold">Enterprise</div>
                         <div class="mt-4">
                             <span class="text-5xl text-slate-950 font-bold">Contact Sales</span>
                         </div>
@@ -1476,16 +1476,16 @@
             class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-scheme-primary/30 to-transparent">
         </div>
 
+        <div class="relative z-10 w-full max-w-[1440px] mx-auto text-center mb-16">
+            <h2 class="text-5xl font-extrabold leading-tight text-white mb-6">
+                Premium <span class="text-scheme-primary">Accompaniment Policy</span>
+            </h2>
+            <p class="text-2xl text-white max-w-3xl mx-auto leading-relaxed">
+                Faro Protec Engineering: We raise the support standard for SentinelOne in Mexico.
+            </p>
+        </div>
+
         <div class="relative z-10 w-full max-w-[1440px] mx-auto">
-            <!-- Title -->
-            <div class="text-center mb-24">
-                <h2 class="text-6xl font-extrabold tracking-tight text-white mb-6">
-                    Premium Support <span class="text-scheme-primary">Policy</span>
-                </h2>
-                <div class="w-32 h-1.5 bg-scheme-primary mx-auto rounded-full mb-8"></div>
-                <!-- Branding Integration -->
-                <div class="flex items-center justify-center gap-6 opacity-80">
-                    <img src="./public/images/faroprotec.webp" class="h-14 w-auto object-contain" alt="Faroprotec">
                 </div>
             </div>
 
@@ -2091,7 +2091,7 @@
     <footer class="relative bg-black border-t border-white/10 py-8 text-center z-10 w-full mt-auto">
         <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
             <p
-                class="text-white text-lg md:text-lg tracking-widest flex flex-col md:flex-row items-center gap-2 font-medium">
+                class="text-white text-lg md:text-lg flex flex-col md:flex-row items-center gap-2 font-medium">
                 <span>Copyright &copy; 2026 Faro Soluciones</span>
                 <span class="hidden md:inline text-white">|</span>
                 <a href="https://www.faroprotec.com/aviso-de-privacidad" target="_blank"
