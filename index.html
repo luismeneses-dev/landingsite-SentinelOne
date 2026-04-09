@@ -21,7 +21,7 @@
 
     <script>
         // High-speed reveal logic (no waiting for DOMContentLoaded)
-        (function() {
+        (function () {
             function reveal() { document.body.style.opacity = '1'; }
             if (document.readyState === 'loading') {
                 window.addEventListener('load', reveal);
@@ -577,8 +577,6 @@
                 transform: translateX(-50%);
             }
         }
-
-
     </style>
 </head>
 
@@ -587,7 +585,7 @@
         // IP-Based Geolocation and Redirection Logic (IP-API.com)
         async function detectLanguageAndRedirect() {
             console.log("Iniciando detección de idioma...");
-            
+
             // Omitir redirección en auditorías de rendimiento o bots
             if (navigator.userAgent.includes('Chrome-Lighthouse') || navigator.webdriver) {
                 console.log("Modo auditoría detectado. Omitiendo redirección.");
@@ -654,15 +652,14 @@
                         style="background-color: rgba(0,217,255,0.15); border: 1px solid rgba(0,217,255,0.4); color: var(--primary);">
                         <div class="w-2 h-2 rounded-full bg-scheme-primary"
                             style="box-shadow: 0 0 0 4px rgba(0,217,255,0.3);"></div>
-                        <span class="text-lg md:text-lg  tracking-wide">Seguridad mejorada con IA</span>
+                        <span class="text-2xl tracking-wide">Seguridad mejorada con IA</span>
                     </div>
 
                     <h1 class="  text-5xl md:text-7xl tracking-tight mb-4  leading-[1.1]">
                         <span class="text-scheme-primary">
                             Protege tu empresa
                         </span> <span class="text-white">con</span> <br />
-                        <img src="./public/images/s1-logo-dark.svg"
-                            alt="SentinelOne" fetchpriority="high"
+                        <img src="./public/images/s1-logo-dark.svg" alt="SentinelOne" fetchpriority="high"
                             class="h-14 md:h-20 inline-block mt-6 filter brightness-0 invert" />
 
                     </h1>
@@ -766,7 +763,7 @@
                 <h2 class="text-5xl  leading-tight mb-6">
                     Continuidad operativa <span class="text-scheme-primary">en riesgo.</span>
                 </h2>
-                <p class="text-lg text-white max-w-3xl mx-auto leading-relaxed">
+                <p class="text-2xl text-white max-w-3xl mx-auto leading-relaxed">
                     La mayoría de los ciberataques detienen operaciones críticas. Con una plataforma EDR/XDR impulsada
                     por IA, tu empresa puede prevenir, detectar y responder en tiempo real sin afectar la productividad.
                 </p>
@@ -860,16 +857,16 @@
                         <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full"
                             style="background-color: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.4); color: rgb(192, 132, 252);">
                             <div class="w-2 h-2 rounded-full bg-purple-500"></div>
-                            <span class="text-lg ">Velocidad de respuesta autónoma</span>
+                            <span class="text-2xl ">Velocidad de respuesta autónoma</span>
                         </div>
                         <!-- Badge 2: Seguridad -->
                         <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full"
                             style="background-color: rgba(0, 217, 255, 0.15); border: 1px solid rgba(0, 217, 255, 0.4); color: var(--primary);">
                             <div class="w-2 h-2 rounded-full bg-scheme-primary"></div>
-                            <span class="text-lg ">Seguridad mejorada con IA</span>
+                            <span class="text-2xl ">Seguridad mejorada con IA</span>
                         </div>
                     </div>
-                    <p class="text-lg text-white leading-relaxed max-w-3xl">
+                    <p class="text-2xl text-white leading-relaxed max-w-3xl">
                         SentinelOne es una plataforma de ciberseguridad autónoma impulsada por inteligencia artificial
                         que protege endpoints, servidores y entornos cloud contra amenazas avanzadas como ransomware,
                         malware, ataques sin archivo (fileless) y exploits de día cero.
@@ -922,7 +919,7 @@
                         <h3 class="text-2xl  text-white mb-6 leading-tight">Visibilidad Centralizada <br>y
                             Trazabilidad Total</h3>
                         <p class="text-lg text-white leading-relaxed">Inventario en tiempo real y trazabilidad
-                            absoluta de cada evento en tus endpoints y nube con Storyline™.</p>
+                            absoluta de cada evento en tus endpoints y nube con Storyline.</p>
                     </div>
                 </div>
             </div>
@@ -945,7 +942,7 @@
                 <h2 class="text-5xl  max-w-4xl mx-auto mb-6 leading-tight">
                     Soluciones SentinelOne para una <span class="text-scheme-primary">Protección Total</span>
                 </h2>
-                <p class="text-lg text-white max-w-2xl mx-auto leading-relaxed">
+                <p class="text-2xl text-white max-w-2xl mx-auto leading-relaxed">
                     Explora nuestra plataforma unificada diseñada para detener ataques antes de que sucedan.
                 </p>
             </div>
@@ -955,7 +952,7 @@
                 <button onclick="openProductModal('platform')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
                         <i data-lucide="lock" class="w-8 h-8 text-scheme-primary"></i>
-                        <h3 class="text-2xl  text-white leading-tight">Singularity™ Platform</h3>
+                        <h3 class="text-2xl  text-white leading-tight">Singularity Platform</h3>
                         <div class="mt-auto flex items-center gap-2 text-scheme-primary  text-lg">
                             <span>Saber más</span>
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -967,7 +964,7 @@
                 <button onclick="openProductModal('endpoint')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
                         <i data-lucide="shield" class="w-8 h-8 text-scheme-primary"></i>
-                        <h3 class="text-2xl  text-white leading-tight">Singularity™ Endpoint (EDR)</h3>
+                        <h3 class="text-2xl  text-white leading-tight">Singularity Endpoint (EDR)</h3>
                         <div class="mt-auto flex items-center gap-2 text-scheme-primary  text-lg">
                             <span>Saber más</span>
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -979,7 +976,7 @@
                 <button onclick="openProductModal('xdr')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
                         <i data-lucide="globe" class="w-8 h-8 text-scheme-primary"></i>
-                        <h3 class="text-2xl  text-white leading-tight">Singularity™ XDR</h3>
+                        <h3 class="text-2xl  text-white leading-tight">Singularity XDR</h3>
                         <div class="mt-auto flex items-center gap-2 text-scheme-primary  text-lg">
                             <span>Saber más</span>
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -991,7 +988,7 @@
                 <button onclick="openProductModal('cloud')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
                         <i data-lucide="cloud" class="w-8 h-8 text-scheme-primary"></i>
-                        <h3 class="text-2xl  text-white leading-tight">Singularity™ Cloud Security</h3>
+                        <h3 class="text-2xl  text-white leading-tight">Singularity Cloud Security</h3>
                         <div class="mt-auto flex items-center gap-2 text-scheme-primary  text-lg">
                             <span>Saber más</span>
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -1003,7 +1000,7 @@
                 <button onclick="openProductModal('identity')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
                         <i data-lucide="user-check" class="w-8 h-8 text-scheme-primary"></i>
-                        <h3 class="text-2xl  text-white leading-tight">Singularity™ Identity</h3>
+                        <h3 class="text-2xl  text-white leading-tight">Singularity Identity</h3>
                         <div class="mt-auto flex items-center gap-2 text-scheme-primary  text-lg">
                             <span>Saber más</span>
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -1015,7 +1012,7 @@
                 <button onclick="openProductModal('data-lake')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
                         <i data-lucide="database" class="w-8 h-8 text-scheme-primary"></i>
-                        <h3 class="text-2xl  text-white leading-tight">Singularity™ Data Lake</h3>
+                        <h3 class="text-2xl  text-white leading-tight">Singularity Data Lake</h3>
                         <div class="mt-auto flex items-center gap-2 text-scheme-primary  text-lg">
                             <span>Saber más</span>
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -1027,7 +1024,7 @@
                 <button onclick="openProductModal('ranger')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
                         <i data-lucide="zap" class="w-8 h-8 text-scheme-primary"></i>
-                        <h3 class="text-2xl  text-white leading-tight">Singularity™ Ranger</h3>
+                        <h3 class="text-2xl  text-white leading-tight">Singularity Ranger</h3>
                         <div class="mt-auto flex items-center gap-2 text-scheme-primary  text-lg">
                             <span>Saber más</span>
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -1039,7 +1036,7 @@
                 <button onclick="openProductModal('threat-intel')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex flex-col items-start gap-4 p-8">
                         <i data-lucide="microscope" class="w-8 h-8 text-scheme-primary"></i>
-                        <h3 class="text-2xl  text-white leading-tight">Singularity™ Threat Intelligence</h3>
+                        <h3 class="text-2xl  text-white leading-tight">Singularity Threat Intelligence</h3>
                         <div class="mt-auto flex items-center gap-2 text-scheme-primary  text-lg">
                             <span>Saber más</span>
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -1062,7 +1059,7 @@
         <div class="relative z-10 max-w-7xl mx-auto">
             <div class=" mb-16">
                 <h2 class="text-5xl  leading-tight mb-4">Protección por Sector.</h2>
-                <p class="text-lg text-white max-w-4xl leading-relaxed">
+                <p class="text-2xl text-white max-w-4xl leading-relaxed">
                     Soluciones específicas para Manufactura, Retail y Corporativos.
                 </p>
             </div>
@@ -1075,7 +1072,8 @@
                             class="w-16 h-16 mb-8 text-scheme-secondary transition-transform duration-700"></i>
                         <h3 class="text-2xl leading-tight mb-4">Manufactura</h3>
                         <p class="text-lg text-white flex-grow mb-8 leading-relaxed">
-                            Diseñado para entornos donde la continuidad operativa es la prioridad absoluta.
+                            Seguridad diseñada para entornos industriales donde los paros de línea por ransomware son
+                            inaceptables. Protección de sistemas OT e IT bajo una misma consola.
                         </p>
                         <div class="flex flex-nowrap gap-2">
                             <span
@@ -1096,7 +1094,8 @@
                             class="w-16 h-16 mb-8 text-scheme-primary transition-transform duration-700"></i>
                         <h3 class="text-2xl leading-tight mb-4">Retail</h3>
                         <p class="text-lg text-white flex-grow mb-8 leading-relaxed">
-                            Blindaje para transacciones y usuarios con el menor impacto en la operación técnica.
+                            Blindaje de terminales de punto de venta y protección de datos de clientes, cumpliendo con
+                            estándares de auditoría y compliance sin afectar la velocidad de transacción
                         </p>
                         <div class="flex flex-nowrap gap-2">
                             <span
@@ -1116,7 +1115,8 @@
                             class="w-16 h-16 mb-8 text-white transition-transform duration-700"></i>
                         <h3 class="text-2xl leading-tight mb-4">Corporativos</h3>
                         <p class="text-lg text-white flex-grow mb-8 leading-relaxed">
-                            Seguridad escalable que simplifica la visibilidad sin recargar a tu equipo de TI.
+                            Seguridad autónoma y escalable que simplifica radicalmente la visibilidad de la red. Elimina
+                            la fatiga de alertas para tu equipo de TI mediante la auto-remediación impulsada por IA
                         </p>
                         <div class="flex flex-nowrap gap-2">
                             <span
@@ -1172,7 +1172,7 @@
                 <h2 class="text-5xl  leading-tight text-white mb-6 px-2">
                     Tradicional vs. SentinelOne
                 </h2>
-                <p class="text-lg text-white max-w-3xl mx-auto leading-relaxed">
+                <p class="text-2xl text-white max-w-3xl mx-auto leading-relaxed">
                     Compara las diferencias entre las principales soluciones de seguridad.
                 </p>
             </div>
@@ -1259,11 +1259,8 @@
         <div class="relative z-10 max-w-7xl mx-auto w-full">
             <div class=" text-center mb-20">
                 <h2 class="text-5xl  leading-tight text-white">
-                    Planes Singularity™
+                    Planes Singularity
                 </h2>
-                <p class="text-lg text-white max-w-3xl mx-auto leading-relaxed">
-                    Seguridad de nivel empresarial que escala con tu negocio.
-                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -1307,8 +1304,7 @@
                 <!-- Card 2: Commercial -->
                 <div
                     class="  p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group relative overflow-hidden border-2 border-scheme-secondary/30">
-                    <div
-                        class="absolute top-0 right-0 p-4 bg-scheme-secondary text-white text-lg uppercase shadow-md">
+                    <div class="absolute top-0 right-0 p-4 bg-scheme-secondary text-white text-lg uppercase shadow-md">
                         Más Popular</div>
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
@@ -1402,40 +1398,40 @@
                         planeación e implementación</p>
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/1.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/1.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                 </div>
                 <div class="  flex items-center gap-5 justify-end w-full">
                     <p class="text-2xl text-white leading-snug text-right">Ejecutivo de cuenta asignado</p>
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/2.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/2.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                 </div>
                 <div class="  flex items-center gap-5 justify-end w-full">
                     <p class="text-2xl text-white leading-snug text-right">Tiempo de respuesta de 3 horas</p>
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/3.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/3.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                 </div>
                 <div class="  flex items-center gap-5 justify-end w-full">
                     <p class="text-2xl text-white leading-snug text-right">Portal para casos de soporte</p>
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/4.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/4.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                 </div>
                 <div class="  flex items-center gap-5 justify-end w-full">
                     <p class="text-2xl text-white leading-snug text-right">Depuración de Alertas</p>
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/5.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/5.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                 </div>
                 <div class="  flex items-center gap-5 justify-end w-full">
@@ -1443,8 +1439,8 @@
                         Durante el 1er mes</p>
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/6.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/6.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                 </div>
             </div>
@@ -1456,7 +1452,8 @@
                         class="absolute -inset-10 bg-scheme-primary/20 rounded-full blur-[80px] transition duration-1000">
                     </div>
                     <img src="./public/images/polizas/poliza-demo.png"
-                        class="relative w-[380px] h-auto transition duration-700" decoding="async" alt="Póliza de Soporte">
+                        class="relative w-[380px] h-auto transition duration-700" decoding="async"
+                        alt="Póliza de Soporte">
                 </div>
             </div>
 
@@ -1465,8 +1462,8 @@
                 <div class=" flex items-center gap-5">
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/7.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/7.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                     <p class="text-2xl text-white leading-snug">Transferencia de conocimientos hasta para 3
                         ingenieros</p>
@@ -1474,40 +1471,40 @@
                 <div class="  flex items-center gap-5">
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/8.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/8.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                     <p class="text-2xl text-white leading-snug">Sesiones Remotas Ilimitada</p>
                 </div>
                 <div class="  flex items-center gap-5">
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/9.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/9.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                     <p class="text-2xl text-white leading-snug">Número 800 dedicado a soporte</p>
                 </div>
                 <div class="  flex items-center gap-5">
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/10.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/10.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                     <p class="text-2xl text-white leading-snug">Plan de revisiones periódicas</p>
                 </div>
                 <div class="  flex items-center gap-5">
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/11.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/11.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                     <p class="text-2xl text-white leading-snug">Ingenieros certificados</p>
                 </div>
                 <div class="  flex items-center gap-5">
                     <div
                         class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                        <img src="./public/images/polizas/12.png"
-                            class="w-full h-full object-contain" decoding="async" alt="">
+                        <img src="./public/images/polizas/12.png" class="w-full h-full object-contain" decoding="async"
+                            alt="">
                     </div>
                     <p class="text-2xl text-white leading-snug">Escalación de casos prioritarios</p>
                 </div>
@@ -1565,7 +1562,8 @@
                                         data-src="./public/videos/motion2Fast_Motion_Tip_Strength_5_Describe_Red_sparks_hitting__0.mp4"
                                         type="video/mp4">
                                 </video>
-                                <video data-video="Detección en Tiempo Real" autoplay muted loop playsinline preload="none"
+                                <video data-video="Detección en Tiempo Real" autoplay muted loop playsinline
+                                    preload="none"
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Demostración Detección en Tiempo Real">
                                     <source
@@ -1579,7 +1577,8 @@
                                         data-src="./public/videos/hailuo-2_3_Cinematic_time-reversal_effect._The_glass_shards_on_the_floor_magnetically_lift_-0.mp4"
                                         type="video/mp4">
                                 </video>
-                                <video data-video="Control de Dispositivos" autoplay muted loop playsinline preload="none"
+                                <video data-video="Control de Dispositivos" autoplay muted loop playsinline
+                                    preload="none"
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Demostración de Control de Dispositivos">
                                     <source
@@ -1593,7 +1592,7 @@
                                         data-src="./public/videos/hailuo-2_3_Motion_Tip_Strength_5._Describe_A_circular_light_beam_sweeping_the_floor_and_rev-0.mp4"
                                         type="video/mp4">
                                 </video>
-                                <video data-video="Visibilidad Storyline™" autoplay muted loop playsinline preload="none"
+                                <video data-video="Visibilidad Storyline" autoplay muted loop playsinline preload="none"
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Demostración de Visibilidad Storyline">
                                     <source
@@ -1703,7 +1702,7 @@
                                 <div class="w-7 h-7 rounded-lg bg-scheme-primary/10 flex items-center justify-center">
                                     <i data-lucide="eye" class="w-4 h-4 text-scheme-primary"></i>
                                 </div>
-                                <h3 class="text-2xl leading-tight ">Visibilidad Storyline™</h3>
+                                <h3 class="text-2xl leading-tight ">Visibilidad Storyline</h3>
                                 <i data-lucide="chevron-down"
                                     class="w-5 h-5 ml-auto text-scheme-primary accordion-arrow animate-pulse"></i>
                             </div>
@@ -1983,8 +1982,7 @@
     <!-- FOOTER -->
     <footer class="relative bg-black border-t border-white/10 py-8 text-center z-10 w-full mt-auto">
         <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
-            <p
-                class="text-white text-lg md:text-lg flex flex-col md:flex-row items-center gap-2 ">
+            <p class="text-white text-lg md:text-lg flex flex-col md:flex-row items-center gap-2 ">
                 <span>Copyright &copy; 2026 Faro Soluciones</span>
                 <span class="hidden md:inline text-white">|</span>
                 <a href="https://www.faroprotec.com/aviso-de-privacidad" target="_blank"
@@ -2068,35 +2066,35 @@
     <script>
         const productData = {
             'platform': {
-                title: 'Singularity™ Platform',
+                title: 'Singularity Platform',
                 description: 'La plataforma unificada que integra prevención, detección y respuesta en un solo agente.'
             },
             'endpoint': {
-                title: 'Singularity™ Endpoint (EDR)',
+                title: 'Singularity Endpoint (EDR)',
                 description: 'Protección avanzada de endpoints con capacidades EDR (Endpoint Detection and Response) que detecta y responde automáticamente a amenazas en computadoras, laptops y servidores.'
             },
             'xdr': {
-                title: 'Singularity™ XDR',
+                title: 'Singularity XDR',
                 description: 'Extiende la visibilidad más allá del endpoint para correlacionar datos de múltiples fuentes y detectar ataques complejos en toda la infraestructura.'
             },
             'cloud': {
-                title: 'Singularity™ Cloud Security',
+                title: 'Singularity Cloud Security',
                 description: 'Protección para cargas de trabajo en la nube, contenedores y Kubernetes, con monitoreo continuo y detección de vulnerabilidades.'
             },
             'identity': {
-                title: 'Singularity™ Identity',
+                title: 'Singularity Identity',
                 description: 'Protección contra ataques dirigidos a credenciales e identidades, incluyendo movimientos laterales y escalamiento de privilegios.'
             },
             'data-lake': {
-                title: 'Singularity™ Data Lake',
+                title: 'Singularity Data Lake',
                 description: 'Almacenamiento centralizado para análisis avanzado de amenazas y cumplimiento regulatorio.'
             },
             'ranger': {
-                title: 'Singularity™ Ranger',
+                title: 'Singularity Ranger',
                 description: 'Descubre automáticamente dispositivos conectados a la red, incluyendo equipos no gestionados e IoT.'
             },
             'threat-intel': {
-                title: 'Singularity™ Threat Intelligence',
+                title: 'Singularity Threat Intelligence',
                 description: 'Inteligencia de amenazas en tiempo real para anticipar ataques y mejorar la postura de seguridad.'
             }
         };
@@ -2192,7 +2190,7 @@
                     { label: 'Remediación', s1: 'Rollback con 1 clic', comp: 'Restablecimiento manual completo' }
                 ],
                 bullets: [
-                    'Storyline™ vincula eventos automáticamente vs. búsquedas manuales tediosas entre interfaces.',
+                    'Storyline vincula eventos automáticamente vs. búsquedas manuales tediosas entre interfaces.',
                     'Reduzca costos eliminando módulos adicionales necesarios para detecciones eficaces en TM.',
                     'Gestión unificada de endpoints, nube e identidad desde un solo agente ligero.'
                 ]
@@ -2221,7 +2219,7 @@
                     { label: 'Evaluación MITRE', s1: '100% Visibilidad en 174 pasos', comp: 'Sin participación reciente' },
                     { label: 'Impacto Económico', s1: '353% de ROI (Forrester)', comp: 'Metodologías arcaicas y lentas' },
                     { label: 'Detección', s1: 'IA Autónoma (24/7)', comp: 'Reactiva / Retrasos en OS' },
-                    { label: 'Remediación', s1: '1-Click Rollback / Storyline™', comp: 'Tediosa escritura de scripts' }
+                    { label: 'Remediación', s1: '1-Click Rollback / Storyline', comp: 'Tediosa escritura de scripts' }
                 ],
                 bullets: [
                     'SentinelOne desplaza a los vendors legados con una arquitectura diseñada para hoy.',
@@ -2320,7 +2318,7 @@
             <div class="p-8 border-b border-white/10 flex justify-between items-start bg-white/[0.02]">
                 <div>
                     <h2 id="modal-title" class="text-5xl  text-white mb-2 tracking-tight"></h2>
-                    <p id="modal-desc" class="text-lg text-white leading-relaxed"></p>
+                    <p id="modal-desc" class="text-2xl text-white leading-relaxed"></p>
                 </div>
                 <button onclick="closeComparisonModal()"
                     class="p-2 rounded-full hover:bg-white/10 transition-colors group">
