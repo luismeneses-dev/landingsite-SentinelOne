@@ -13,11 +13,15 @@
 
 
 
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Preload critical assets to improve LCP -->
+    <link rel="preload" href="https://unpkg.com/lucide@latest" as="script">
+    <link rel="preload" href="./assets/js/tailwindcss.js" as="script">
 
-    <!-- Tailwind CSS (Local Asset) -->
-    <script src="./assets/js/tailwindcss.js"></script>
+    <!-- Lucide Icons (Deferred) -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <!-- Tailwind CSS (Local Asset - Deferred) -->
+    <script src="./assets/js/tailwindcss.js" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -99,6 +103,12 @@
             contain-intrinsic-size: 1px 1000px;
         }
 
+        /* Prevent FOUC (Flash of Unstyled Content) */
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
         /* Pricing White Cards */
         .metallic-neon-card {
             background-color: #ffffff !important;
@@ -177,7 +187,7 @@
         body {
             font-family: 'Panton', sans-serif !important;
             font-weight: 400 !important;
-            background-image: url('./public/images/fondo-landing.png');
+            background-image: url('./public/images/fondo-landing.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -695,9 +705,6 @@
                 <div class="  w-full max-w-3xl" style="perspective: 1000px;">
                     <div class="relative p-4 rounded-2xl border backdrop-blur-md overflow-hidden"
                         style="border-color: rgba(0,217,255,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-                        <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-screen"
-                            style="background-image: url('./public/images/A futuristic cyber network bathed in a soft dreamy atmosphere with bright vibrant colors, where a glowing artificial intelligence wave neutralizes incoming red threat signals across a digital infrastructure, .jpg');">
-                        </div>
                         <div class="absolute inset-0 bg-black/60"></div>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 relative">
                             <!-- KPI 1 -->
@@ -752,12 +759,12 @@
             <div class="logo-marquee">
                 <!-- Primera iteración -->
                 <div class="logo-item">
-                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.svg"
+                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.webp"
                         alt="Companies trust SentinelOne" class="h-8 md:h-12 w-auto max-w-none" />
                 </div>
                 <!-- Segunda iteración para loop infinito fluido -->
                 <div class="logo-item" aria-hidden="true">
-                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.svg"
+                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.webp"
                         alt="Companies trust SentinelOne" class="h-8 md:h-12 w-auto max-w-none" />
                 </div>
             </div>
@@ -792,7 +799,7 @@
                     <div
                         class="relative w-full h-48 mb-8 rounded-xl overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
                         <div class="absolute inset-0 z-10" style="box-shadow: inset 0 0-40px black;"></div>
-                        <img loading="lazy" src="./public/images/threat.png" alt="Compromised company"
+                        <img loading="lazy" src="./public/images/threat.webp" alt="Compromised company"
                             class="w-full h-full object-cover filter grayscale contrast-125"
                             style="mask-image: radial-gradient(circle, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(circle, black 30%, transparent 80%);"
                             onerror="this.src='https://images.unsplash.com/photo-1614064641936-38998970c926?auto=format&fit=crop&q=80'" />
@@ -824,7 +831,7 @@
                     <div
                         class="relative w-full h-48 mb-8 rounded-xl overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
                         <div class="absolute inset-0 z-10" style="box-shadow: inset 0 0-40px black;"></div>
-                        <img loading="lazy" src="./public/images/safe.png" alt="Protected company"
+                        <img loading="lazy" src="./public/images/safe.webp" alt="Protected company"
                             class="w-full h-full object-cover filter contrast-125"
                             style="mask-image: radial-gradient(circle, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(circle, black 30%, transparent 80%);"
                             onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80'" />
@@ -1085,7 +1092,7 @@
 
                     <div
                         class="relative overflow-hidden rounded-[2.5rem] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.6)]">
-                        <img loading="lazy" src="./public/images/arquitectura-resiliencia2.png"
+                        <img loading="lazy" src="./public/images/arquitectura-resiliencia2.webp"
                             alt="Architecture Resilience"
                             class="w-full max-h-[55vh] object-contain transform transition-all duration-1000 group-hover:scale-[1.015]">
                     </div>
@@ -1190,7 +1197,7 @@
                 <div class="relative w-full">
                     <div class="absolute inset-0 bg-scheme-primary/5 blur-[120px] rounded-full opacity-30"></div>
                     <img loading="lazy"
-                        src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Close-up_of_a_cybernetic_j-0.jpg"
+                        src="./public/images/lucid-origin_A_elegant_minimalist_image_for_section_of_a_webpage_._Close-up_of_a_cybernetic_j-0.webp"
                         class="w-full h-auto mix-blend-screen filter brightness-105 contrast-110"
                         alt="SentinelOne Cyber Puma"
                         style="mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 80%);" />
@@ -1435,53 +1442,59 @@
     </section>
 
     <!-- PREMIUM SUPPORT POLICY -->
-    <section class="cv-auto elegant-fusion relative min-h-screen flex flex-col justify-center py-20 px-6 overflow-hidden" id="soporte">
-        <div class="divider-cyan"></div>
-        <div class="relative z-10 w-full max-w-[1440px] mx-auto">
+    <section id="soporte" class="cv-auto relative py-32 px-6 bg-black overflow-hidden border-t border-white/5">
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-scheme-primary/30 to-transparent">
+        </div>
 
+        <div class="relative z-10 w-full max-w-[1440px] mx-auto">
             <!-- Title -->
-            <div class=" text-center mb-20">
-                <h2 class="text-5xl font-extrabold tracking-tight leading-tight">
-                    Premium Support Policy
+            <div class="text-center mb-24">
+                <h2 class="text-6xl font-extrabold tracking-tight text-white mb-6">
+                    Premium Support <span class="text-scheme-primary">Policy</span>
                 </h2>
+                <div class="w-32 h-1.5 bg-scheme-primary mx-auto rounded-full mb-8"></div>
+                <!-- Branding Integration -->
+                <div class="flex items-center justify-center gap-6 opacity-80">
+                    <img src="./public/images/faroprotec.webp" class="h-14 w-auto object-contain" alt="Faroprotec">
+                </div>
             </div>
 
-            <!-- 3-column Equal Layout -->
-            <div class="flex flex-col lg:flex-row items-center w-full gap-0">
+            <!-- 3-column Layout -->
+            <div class="flex flex-col lg:flex-row items-center w-full gap-8">
 
-                <!-- Left Column -->
+                <!-- Column Left -->
                 <div class="flex flex-col gap-9 lg:w-1/3 items-end pr-8">
-                    <div class=" flex items-center gap-5 justify-end w-full">
+                    <div class="flex items-center gap-5 justify-end w-full">
                         <p class="text-2xl text-white leading-snug text-right">Assistance in the entire planning and implementation process</p>
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/1.png" class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
-                    <div class="  flex items-center gap-5 justify-end w-full">
+                    <div class="flex items-center gap-5 justify-end w-full">
                         <p class="text-2xl text-white leading-snug text-right">Assigned account executive</p>
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/2.png" class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
-                    <div class="  flex items-center gap-5 justify-end w-full">
+                    <div class="flex items-center gap-5 justify-end w-full">
                         <p class="text-2xl text-white leading-snug text-right">3-hour response time</p>
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/3.png" class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
-                    <div class="  flex items-center gap-5 justify-end w-full">
+                    <div class="flex items-center gap-5 justify-end w-full">
                         <p class="text-2xl text-white leading-snug text-right">Portal for support cases</p>
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/4.png" class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
-                    <div class="  flex items-center gap-5 justify-end w-full">
+                    <div class="flex items-center gap-5 justify-end w-full">
                         <p class="text-2xl text-white leading-snug text-right">Alert Debugging</p>
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/5.png" class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
-                    <div class="  flex items-center gap-5 justify-end w-full">
+                    <div class="flex items-center gap-5 justify-end w-full">
                         <p class="text-2xl text-white leading-snug text-right">Weekly technical accelerators during the 1st month</p>
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/6.png" class="w-full h-full object-contain" alt="">
@@ -1490,48 +1503,47 @@
                 </div>
 
                 <!-- Center Column -->
-                <div class=" lg:w-1/3 flex justify-center items-center py-12 lg:py-0">
-                    <div class="relative">
-                        <div class="absolute -inset-10 bg-scheme-primary/20 rounded-full blur-[80px] transition duration-1000"></div>
+                <div class="lg:w-1/3 flex justify-center items-center py-12 lg:py-0">
+                    <div class="relative group">
+                        <div class="absolute -inset-10 bg-scheme-primary/20 rounded-full blur-[80px] group-hover:bg-scheme-primary/30 transition duration-1000"></div>
                         <img src="https://www.faroprotec.com/assets/images/polizas/demo/poliza-demo.png"
-                            class="relative w-[380px] h-auto transition duration-700"
-                            alt="Support Policy">
+                            class="relative w-[380px] h-auto transition duration-700 group-hover:scale-105" alt="Support Policy">
                     </div>
                 </div>
 
-                <!-- Right Column -->
+                <!-- Column Right -->
                 <div class="flex flex-col gap-9 lg:w-1/3 items-start pl-8">
-                    <div class=" flex items-center gap-5">
+                    <div class="flex items-center gap-5">
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/7.png" class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Knowledge transfer for up to 3 engineers</p>
                     </div>
-                    <div class="  flex items-center gap-5">
+                    <div class="flex items-center gap-5">
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/8.png" class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Unlimited Remote Sessions</p>
                     </div>
-                    <div class="  flex items-center gap-5">
+                    <div class="flex items-center gap-5">
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/9.png" class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Dedicated 800 number for support</p>
                     </div>
-                    <div class="  flex items-center gap-5">
+                    <div class="flex items-center gap-5">
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/10.png" class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Periodic review plan</p>
                     </div>
-                    <div class="  flex items-center gap-5">
+                    <div class="flex items-center gap-5">
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/11.png" class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Certified Engineers</p>
                     </div>
-                    <div class="  flex items-center gap-5">
+                    <div class="flex items-center gap-5">
                         <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
                             <img src="https://www.faroprotec.com/assets/images/polizas/12.png" class="w-full h-full object-contain" alt="">
                         </div>
@@ -1545,7 +1557,6 @@
 
     <!-- SINGULARITY PLATFORM (Advanced Detail) -->
     <section class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
-        <div class="divider-cyan"></div>
         <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent z-10"></div>
         <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-10">
         </div>
@@ -1575,49 +1586,49 @@
                             <div class="video-stack relative w-full h-full overflow-hidden">
                                 <!-- Default video defines the container size -->
                                 <video data-video="default" autoplay muted loop playsinline
-                                    class="relative w-full h-full object-cover transition-opacity duration-700 opacity-100 transform scale-105 group-hover:scale-110 transition-transform duration-1000"
+                                    class="relative w-full h-full object-cover transition-opacity duration-700 opacity-100"
                                     title="SentinelOne Singularity Platform">
                                     <source data-src="./public/videos/hailuo-2_3_Glowing_digital_particles_moving_between_stacked_transparent_cyber_layers_repres-0.mp4"
                                         type="video/mp4">
                                 </video>
                                 <!-- Other videos stack on top -->
                                 <video data-video="Proactive Defense" autoplay muted loop playsinline
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 transform scale-105 group-hover:scale-110 transition-transform duration-1000"
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Static AI Demonstration">
                                     <source
                                         src="./public/videos/motion2Fast_Motion_Tip_Strength_5_Describe_Red_sparks_hitting__0.mp4"
                                         type="video/mp4">
                                 </video>
                                 <video data-video="Real-Time Detection" autoplay muted loop playsinline
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 transform scale-105 group-hover:scale-110 transition-transform duration-1000"
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Behavioral AI Demonstration">
                                     <source
                                         src="./public/videos/hailuo-2_3_Slow_mechanical_rotation_of_the_geometric_structure._Gentle_pulses_of_magenta_li-0.mp4"
                                         type="video/mp4">
                                 </video>
                                 <video data-video="Active Rollback" autoplay muted loop playsinline
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 transform scale-105 group-hover:scale-110 transition-transform duration-1000"
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Active Rollback Demonstration">
                                     <source
                                         src="./public/videos/hailuo-2_3_Cinematic_time-reversal_effect._The_glass_shards_on_the_floor_magnetically_lift_-0.mp4"
                                         type="video/mp4">
                                 </video>
                                 <video data-video="Device Control" autoplay muted loop playsinline
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 transform scale-105 group-hover:scale-110 transition-transform duration-1000"
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Device Control Demonstration">
                                     <source
                                         src="./public/videos/motion2Fast_Cyan_light_pulses_radiating_outwards_from_the_cent_0.mp4"
                                         type="video/mp4">
                                 </video>
                                 <video data-video="Network Control" autoplay muted loop playsinline
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 transform scale-105 group-hover:scale-110 transition-transform duration-1000"
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Ranger Scan Demonstration">
                                     <source
                                         src="./public/videos/hailuo-2_3_Motion_Tip_Strength_5._Describe_A_circular_light_beam_sweeping_the_floor_and_rev-0.mp4"
                                         type="video/mp4">
                                 </video>
                                 <video data-video="Storyline™ Visibility" autoplay muted loop playsinline
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 transform scale-105 group-hover:scale-110 transition-transform duration-1000"
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Storyline Visibility Demonstration">
                                     <source
                                         src="./public/videos/hailuo-2_3_Motion_Tip_Strength_4._Describe_Glowing_lines_being_drawn_across_the_screen_conn-0.mp4"
@@ -1748,7 +1759,7 @@
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <!-- New Full Section Background -->
             <div class="absolute inset-0 w-full h-full bg-cover bg-right md:bg-center opacity-40 md:opacity-100"
-                style="background-image: url('./public/images/universal_upscale_0_5999234b-abec-437d-811b-d6b9d0bdb8da_0.jpg'); filter: brightness(1.1) contrast(1.1) saturate(1.1) ;"
+                style="background-image: url('./public/images/universal_upscale_0_5999234b-abec-437d-811b-d6b9d0bdb8da_0.webp'); filter: brightness(1.1) contrast(1.1) saturate(1.1) ;"
                 loading="lazy">
             </div>
             <!-- Vignette for depth and contrast -->
@@ -1823,7 +1834,7 @@
         <!-- Fondo con Patrón Hexagonal y Resplandores -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-30 select-none pointer-events-none"
-                style="background-image: url('./public/images/A_sleek_professional_cyberV2.jpg');" loading="lazy">
+                style="background-image: url('./public/images/A_sleek_professional_cyberV2.webp');" loading="lazy">
             </div>
             <!-- Hex Pattern Overlay -->
             <div class="absolute inset-0 opacity-10"
@@ -2030,12 +2041,13 @@
 
     <!-- SCRIPTS MÁGICOS -->
     <script>
-        // 1. Iniciar Lucide Icons
-        lucide.createIcons();
-
-
-
-
+        // 1. Iniciar Lucide Icons y revelar el cuerpo de la página
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+            document.body.style.opacity = "1";
+        });
     </script>
     <script>
         // Lógica de Ventajas Desplegables
@@ -2422,7 +2434,6 @@
             </div>
             <div class="p-8">
                 <p id="product-modal-desc" class="text-lg text-white leading-relaxed mb-8"></p>
-                <div id="product-modal-keywords" class="p-4 rounded-xl bg-white/[0.03] border border-white/5 text-lg text-white/70 hidden"></div>
             </div>
             <!-- Modal Footer -->
             <div class="p-8 border-t border-white/10 bg-white/[0.02] flex flex-col md:flex-row gap-6 items-center justify-between">
