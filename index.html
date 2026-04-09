@@ -101,6 +101,12 @@
             contain-intrinsic-size: 1px 1000px;
         }
 
+        /* Prevent FOUC (Flash of Unstyled Content) */
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
         /* Pricing White Cards */
         .metallic-neon-card {
             background-color: #ffffff !important;
@@ -2004,11 +2010,12 @@
 
     <!-- SCRIPTS MÁGICOS -->
     <script>
-        // 1. Iniciar Lucide Icons cuando el DOM esté listo (y el script defer haya cargado)
+        // 1. Iniciar Lucide Icons y revelar el cuerpo de la página
         document.addEventListener("DOMContentLoaded", function () {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
+            document.body.style.opacity = "1";
         });
     </script>
     <script>
