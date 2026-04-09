@@ -211,7 +211,8 @@
             color: #fff;
             scroll-behavior: smooth;
             overflow-x: hidden;
-            letter-spacing: -0.015em; /* tracking-tight uniformity */
+            letter-spacing: -0.015em;
+            /* tracking-tight uniformity */
         }
 
         /* Force Panton Regular (400) on ALL elements */
@@ -380,9 +381,11 @@
         .accordion-arrow {
             transition: transform 0.3s ease;
         }
+
         .logo-link i {
             transition: all 0.3s ease;
         }
+
         .security-accordion-item.active .accordion-arrow {
             transform: rotate(180deg);
             filter: none;
@@ -689,8 +692,7 @@
                         <span class="text-lg md:text-lg font-medium tracking-wide">AI-Enhanced Security</span>
                     </div>
 
-                    <h1
-                        class="  text-5xl md:text-7xl tracking-tight mb-4 font-extrabold leading-[1.1]">
+                    <h1 class="  text-5xl md:text-7xl tracking-tight mb-4 font-extrabold leading-[1.1]">
                         <span class="text-scheme-primary">
                             Protect your company
                         </span> <span class="text-white">with</span> <br />
@@ -775,12 +777,12 @@
             <div class="logo-marquee">
                 <!-- Primera iteración -->
                 <div class="logo-item">
-                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.webp"
+                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.svg"
                         alt="Companies trust SentinelOne" class="h-8 md:h-12 w-auto max-w-none" />
                 </div>
                 <!-- Segunda iteración para loop infinito fluido -->
                 <div class="logo-item" aria-hidden="true">
-                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.webp"
+                    <img loading="lazy" src="./public/images/logo_empresas_sentinel.svg"
                         alt="Companies trust SentinelOne" class="h-8 md:h-12 w-auto max-w-none" />
                 </div>
             </div>
@@ -911,46 +913,60 @@
                     <!-- Card 1: AI (Core Technology) -->
                     <div class=" feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
                                 <i data-lucide="brain" class="w-7 h-7 text-scheme-primary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Core Technology</span>
+                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Core
+                                Technology</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Prevention AI & <br>Active Detection</h3>
-                        <p class="text-lg text-white leading-relaxed">Detect known and unknown threats in milliseconds using advanced behavioral analysis and proactive heuristics.</p>
+                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Prevention AI & <br>Active
+                            Detection</h3>
+                        <p class="text-lg text-white leading-relaxed">Detect known and unknown threats in milliseconds
+                            using advanced behavioral analysis and proactive heuristics.</p>
                     </div>
 
                     <!-- Card 2: Response (Immediate Action) -->
                     <div class="  feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-scheme-secondary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-scheme-secondary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
                                 <i data-lucide="zap" class="w-7 h-7 text-scheme-secondary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-scheme-secondary uppercase">Immediate Action</span>
+                            <span class="text-lg font-medium tracking-widest text-scheme-secondary uppercase">Immediate
+                                Action</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Autonomous Response <br>without intervention</h3>
-                        <p class="text-lg text-white leading-relaxed">We contain the attack automatically on the endpoint, isolating the threat instantly to prevent spread.</p>
+                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Autonomous Response <br>without
+                            intervention</h3>
+                        <p class="text-lg text-white leading-relaxed">We contain the attack automatically on the
+                            endpoint, isolating the threat instantly to prevent spread.</p>
                     </div>
 
                     <!-- Card 3: Visibility (Total Control) -->
                     <div class="  feature-grid-card">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-scheme-primary/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
                                 <i data-lucide="search" class="w-7 h-7 text-scheme-primary"></i>
                             </div>
-                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Total Control</span>
+                            <span class="text-lg font-medium tracking-widest text-scheme-primary uppercase">Total
+                                Control</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Centralized Visibility <br>& Total Traceability</h3>
-                        <p class="text-lg text-white leading-relaxed">Real-time inventory and absolute traceability of every event across your endpoints and cloud with Storyline™.</p>
+                        <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Centralized Visibility <br>& Total
+                            Traceability</h3>
+                        <p class="text-lg text-white leading-relaxed">Real-time inventory and absolute traceability of
+                            every event across your endpoints and cloud with Storyline™.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        <section id="solutions" class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
+    <section id="solutions"
+        class="cv-auto elegant-fusion relative min-h-screen flex items-center py-20 px-6 overflow-hidden">
         <div class="divider-cyan"></div>
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)] opacity-80"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)] opacity-80">
+            </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/80"></div>
         </div>
 
@@ -1089,8 +1105,7 @@
                 <!-- Logo con resplandor morado -->
 
 
-                <h2
-                    class="text-5xl font-extrabold tracking-tight max-w-3xl mx-auto mb-2 leading-tight">
+                <h2 class="text-5xl font-extrabold tracking-tight max-w-3xl mx-auto mb-2 leading-tight">
                     Why settle for alerts, when you can have absolute resilience?
                 </h2>
             </div>
@@ -1248,8 +1263,7 @@
                 </p>
             </div>
 
-            <div
-                class=" mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full px-4">
+            <div class=" mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full px-4">
                 <!-- CrowdStrike -->
                 <button onclick="openComparisonModal('crowdstrike')" class="neon-compare-btn w-full text-left group">
                     <div class="neon-compare-btn-inner flex items-center justify-between gap-4">
@@ -1346,8 +1360,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1: Complete -->
-                <div
-                    class="  p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all">
+                <div class="  p-10 rounded-[2rem] metallic-neon-card flex flex-col h-full group transition-all">
                     <div class="mb-8">
                         <h3 class="text-2xl text-slate-900/60 mb-2">Singularity</h3>
                         <div class="text-2xl text-slate-950 mb-6 font-bold tracking-tight">Complete</div>
@@ -1459,7 +1472,8 @@
 
     <!-- PREMIUM SUPPORT POLICY -->
     <section id="soporte" class="cv-auto relative py-32 px-6 bg-black overflow-hidden border-t border-white/5">
-        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-scheme-primary/30 to-transparent">
+        <div
+            class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-scheme-primary/30 to-transparent">
         </div>
 
         <div class="relative z-10 w-full max-w-[1440px] mx-auto">
@@ -1481,39 +1495,53 @@
                 <!-- Column Left -->
                 <div class="flex flex-col gap-9 lg:w-1/3 items-end pr-8">
                     <div class="flex items-center gap-5 justify-end w-full">
-                        <p class="text-2xl text-white leading-snug text-right">Assistance in the entire planning and implementation process</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/1.png" class="w-full h-full object-contain" alt="">
+                        <p class="text-2xl text-white leading-snug text-right">Assistance in the entire planning and
+                            implementation process</p>
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/1.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                     <div class="flex items-center gap-5 justify-end w-full">
                         <p class="text-2xl text-white leading-snug text-right">Assigned account executive</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/2.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/2.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                     <div class="flex items-center gap-5 justify-end w-full">
                         <p class="text-2xl text-white leading-snug text-right">3-hour response time</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/3.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/3.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                     <div class="flex items-center gap-5 justify-end w-full">
                         <p class="text-2xl text-white leading-snug text-right">Portal for support cases</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/4.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/4.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                     <div class="flex items-center gap-5 justify-end w-full">
                         <p class="text-2xl text-white leading-snug text-right">Alert Debugging</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/5.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/5.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                     <div class="flex items-center gap-5 justify-end w-full">
-                        <p class="text-2xl text-white leading-snug text-right">Weekly technical accelerators during the 1st month</p>
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/6.png" class="w-full h-full object-contain" alt="">
+                        <p class="text-2xl text-white leading-snug text-right">Weekly technical accelerators during the
+                            1st month</p>
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/6.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                     </div>
                 </div>
@@ -1521,47 +1549,62 @@
                 <!-- Center Column -->
                 <div class="lg:w-1/3 flex justify-center items-center py-12 lg:py-0">
                     <div class="relative group">
-                        <div class="absolute -inset-10 bg-scheme-primary/20 rounded-full blur-[80px] group-hover:bg-scheme-primary/30 transition duration-1000"></div>
+                        <div
+                            class="absolute -inset-10 bg-scheme-primary/20 rounded-full blur-[80px] group-hover:bg-scheme-primary/30 transition duration-1000">
+                        </div>
                         <img src="https://www.faroprotec.com/assets/images/polizas/demo/poliza-demo.png"
-                            class="relative w-[380px] h-auto transition duration-700 group-hover:scale-105" alt="Support Policy">
+                            class="relative w-[380px] h-auto transition duration-700 group-hover:scale-105"
+                            alt="Support Policy">
                     </div>
                 </div>
 
                 <!-- Column Right -->
                 <div class="flex flex-col gap-9 lg:w-1/3 items-start pl-8">
                     <div class="flex items-center gap-5">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/7.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/7.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Knowledge transfer for up to 3 engineers</p>
                     </div>
                     <div class="flex items-center gap-5">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/8.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/8.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Unlimited Remote Sessions</p>
                     </div>
                     <div class="flex items-center gap-5">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/9.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/9.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Dedicated 800 number for support</p>
                     </div>
                     <div class="flex items-center gap-5">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/10.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/10.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Periodic review plan</p>
                     </div>
                     <div class="flex items-center gap-5">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/11.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/11.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Certified Engineers</p>
                     </div>
                     <div class="flex items-center gap-5">
-                        <div class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
-                            <img src="https://www.faroprotec.com/assets/images/polizas/12.png" class="w-full h-full object-contain" alt="">
+                        <div
+                            class="w-14 h-14 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+                            <img src="https://www.faroprotec.com/assets/images/polizas/12.png"
+                                class="w-full h-full object-contain" alt="">
                         </div>
                         <p class="text-2xl text-white leading-snug">Escalation of priority cases</p>
                     </div>
@@ -1604,7 +1647,8 @@
                                 <video data-video="default" autoplay muted loop playsinline
                                     class="relative w-full h-full object-cover transition-opacity duration-700 opacity-100"
                                     title="SentinelOne Singularity Platform">
-                                    <source data-src="./public/videos/hailuo-2_3_Glowing_digital_particles_moving_between_stacked_transparent_cyber_layers_repres-0.mp4"
+                                    <source
+                                        data-src="./public/videos/hailuo-2_3_Glowing_digital_particles_moving_between_stacked_transparent_cyber_layers_repres-0.mp4"
                                         type="video/mp4">
                                 </video>
                                 <!-- Other videos stack on top -->
@@ -1814,7 +1858,8 @@
                 <!-- Human Support -->
                 <div class="py-10 border-b border-white/10">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                        <div
+                            class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
                             <i data-lucide="headphones" class="w-7 h-7 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-medium text-white">Post-Acquisition Service</h3>
@@ -1824,7 +1869,8 @@
                 <!-- Expert Consulting -->
                 <div class="py-10 border-b border-white/10">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                        <div
+                            class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
                             <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-medium text-white">Certified Engineering</h3>
@@ -1834,7 +1880,8 @@
                 <!-- Deployment -->
                 <div class="py-10 border-b border-white/10">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                        <div
+                            class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
                             <i data-lucide="zap" class="w-7 h-7 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-medium text-white">Guaranteed Deployment</h3>
@@ -2180,43 +2227,35 @@
         const productData = {
             'platform': {
                 title: 'Singularity™ Platform',
-                description: 'The unified platform that integrates prevention, detection, and response in a single agent.',
-                keywords: 'Unified platform, Prevention, Detection, Automatic response'
+                description: 'The unified platform that integrates prevention, detection, and response in a single agent.'
             },
             'endpoint': {
                 title: 'Singularity™ Endpoint (EDR)',
-                description: 'Advanced endpoint protection with EDR (Endpoint Detection and Response) capabilities that automatically detects and responds to threats on computers, laptops, and servers.',
-                keywords: 'EDR, endpoint protection, next-gen antivirus'
+                description: 'Autonomous protection for endpoints that stops malware, ransomware, and exploits in real time.'
             },
             'xdr': {
                 title: 'Singularity™ XDR',
-                description: 'Extends visibility beyond the endpoint to correlate data from multiple sources and detect complex attacks across the entire infrastructure.',
-                keywords: 'XDR, visibility, event correlation'
+                description: 'Extended detection and response that unifies security across endpoints, networks, and cloud.'
             },
             'cloud': {
                 title: 'Singularity™ Cloud Security',
-                description: 'Protection for cloud workloads, containers, and Kubernetes, with continuous monitoring and vulnerability detection.',
-                keywords: 'cloud security, cloud workload protection'
+                description: 'Protection for cloud workloads, containers, and serverless environments with AI.'
             },
             'identity': {
                 title: 'Singularity™ Identity',
-                description: 'Protection against attacks targeting credentials and identities, including lateral movement and privilege escalation.',
-                keywords: 'identity security, identity protection'
+                description: 'Protects active directory and identity infrastructure against credential theft and lateral movement.'
             },
             'data-lake': {
                 title: 'Singularity™ Data Lake',
-                description: 'Centralized storage for advanced threat analysis and regulatory compliance.',
-                keywords: 'Data Lake, Centralized storage, Regulatory compliance'
+                description: 'Unified security data lake for massive ingestion and high-speed searching for forensic analysis.'
             },
             'ranger': {
                 title: 'Singularity™ Ranger',
-                description: 'Automatically discovers devices connected to the network, including unmanaged equipment and IoT.',
-                keywords: 'asset discovery, IoT security'
+                description: 'Automatically discovers devices connected to the network, including unmanaged equipment and IoT.'
             },
             'threat-intel': {
                 title: 'Singularity™ Threat Intelligence',
-                description: 'Real-time threat intelligence to anticipate attacks and improve security posture.',
-                keywords: 'Threat Intelligence, predictive AI, Security posture'
+                description: 'Real-time threat intelligence to anticipate attacks and improve security posture.'
             }
         };
 
@@ -2226,14 +2265,6 @@
 
             document.getElementById('product-modal-title').textContent = data.title;
             document.getElementById('product-modal-desc').textContent = data.description;
-            
-            const kwContainer = document.getElementById('product-modal-keywords');
-            if (data.keywords) {
-                kwContainer.innerHTML = `<span class="text-scheme-primary font-bold">Keywords:</span> ${data.keywords}`;
-                kwContainer.classList.remove('hidden');
-            } else {
-                kwContainer.classList.add('hidden');
-            }
 
             // Re-initialize icons
             if (typeof lucide !== 'undefined') {
@@ -2440,11 +2471,13 @@
     </script>
     <!-- Product Modal -->
     <div id="product-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center p-4 md:p-6 bg-black/80">
-        <div class="modal-content relative w-full max-w-2xl bg-gradient-to-br from-slate-900 to-black rounded-3xl border border-white/10 shadow-[0_0_100px_rgba(0,217,255,0.15)] overflow-hidden flex flex-col">
+        <div
+            class="modal-content relative w-full max-w-2xl bg-gradient-to-br from-slate-900 to-black rounded-3xl border border-white/10 shadow-[0_0_100px_rgba(0,217,255,0.15)] overflow-hidden flex flex-col">
             <!-- Modal Header -->
             <div class="p-8 border-b border-white/10 flex justify-between items-start bg-white/[0.02]">
                 <h2 id="product-modal-title" class="text-5xl font-extrabold text-white tracking-tight"></h2>
-                <button onclick="closeProductModal()" class="p-2 rounded-full hover:bg-white/10 transition-colors group">
+                <button onclick="closeProductModal()"
+                    class="p-2 rounded-full hover:bg-white/10 transition-colors group">
                     <i data-lucide="x" class="w-8 h-8 text-white group-hover:text-white"></i>
                 </button>
             </div>
@@ -2452,11 +2485,14 @@
                 <p id="product-modal-desc" class="text-lg text-white leading-relaxed mb-8"></p>
             </div>
             <!-- Modal Footer -->
-            <div class="p-8 border-t border-white/10 bg-white/[0.02] flex flex-col md:flex-row gap-6 items-center justify-between">
-                <button onclick="closeProductModal()" class="text-white hover:text-scheme-primary transition-colors text-lg font-bold">
+            <div
+                class="p-8 border-t border-white/10 bg-white/[0.02] flex flex-col md:flex-row gap-6 items-center justify-between">
+                <button onclick="closeProductModal()"
+                    class="text-white hover:text-scheme-primary transition-colors text-lg font-bold">
                     Close
                 </button>
-                <a href="#contacto" onclick="closeProductModal()" class="px-12 py-4 rounded-full bg-scheme-primary text-white font-bold text-lg hover:shadow-lg transition-all text-center">
+                <a href="#contacto" onclick="closeProductModal()"
+                    class="px-12 py-4 rounded-full bg-scheme-primary text-white font-bold text-lg hover:shadow-lg transition-all text-center">
                     Request Technical Information
                 </a>
             </div>
@@ -2466,10 +2502,10 @@
 
     <script>
         // Lazy load for default background video using IntersectionObserver
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var videoStack = document.querySelector('.video-stack');
             if (videoStack) {
-                var observer = new IntersectionObserver(function(entries) {
+                var observer = new IntersectionObserver(function (entries) {
                     if (entries[0].isIntersecting) {
                         var defaultVideo = videoStack.querySelector('video[data-video="default"]');
                         if (defaultVideo) {
@@ -2489,4 +2525,5 @@
         });
     </script>
 </body>
+
 </html>
