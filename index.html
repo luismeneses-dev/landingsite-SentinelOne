@@ -1724,10 +1724,8 @@
         <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
         </div>
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <!-- New Full Section Background -->
-            <div class="absolute inset-0 w-full h-full bg-cover bg-right md:bg-center opacity-40 md:opacity-100"
-                style="background-image: url('./public/images/universal_upscale_0_5999234b-abec-437d-811b-d6b9d0bdb8da_0.webp'); filter: brightness(1.1) contrast(1.1) saturate(1.1) ;"
-                loading="lazy">
+            <!-- Deep Dark Background -->
+            <div class="absolute inset-0 w-full h-full bg-black/60">
             </div>
             <!-- Vignette for depth and contrast -->
             <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)] opacity-30">
@@ -1740,41 +1738,56 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full">
-            <h2 class="text-5xl  mb-8 leading-tight text-white text-center md:text-left">
-                IA con calidad humana
-            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Lado Izquierdo: Texto y Beneficios -->
+                <div class="lg:col-span-5">
+                    <h2 class="text-5xl  mb-12 leading-tight text-white text-center md:text-left">
+                        IA con calidad humana
+                    </h2>
 
-            <div class="mt-12 space-y-0">
-                <!-- Soporte Humano -->
-                <div class="py-10">
-                    <div class="flex items-center gap-6">
-                        <div
-                            class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
-                            <i data-lucide="headphones" class="w-7 h-7 text-white"></i>
+                    <div class="space-y-4">
+                        <!-- Soporte Humano -->
+                        <div class="py-6 border-b border-white/5 group hover:border-white/20 transition-colors">
+                            <div class="flex items-center gap-6">
+                                <div
+                                    class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0 group-hover:bg-scheme-primary/20 transition-colors">
+                                    <i data-lucide="headphones" class="w-7 h-7 text-white"></i>
+                                </div>
+                                <h3 class="text-2xl  text-white">Servicio Post-Adquisición</h3>
+                            </div>
                         </div>
-                        <h3 class="text-2xl  text-white">Servicio Post-Adquisición</h3>
+
+                        <!-- Consultoría -->
+                        <div class="py-6 border-b border-white/5 group hover:border-white/20 transition-colors">
+                            <div class="flex items-center gap-6">
+                                <div
+                                    class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0 group-hover:bg-scheme-primary/20 transition-colors">
+                                    <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
+                                </div>
+                                <h3 class="text-2xl  text-white">Ingeniería Certificada</h3>
+                            </div>
+                        </div>
+
+                        <!-- Implementación -->
+                        <div class="py-6 group">
+                            <div class="flex items-center gap-6">
+                                <div
+                                    class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0 group-hover:bg-scheme-primary/20 transition-colors">
+                                    <i data-lucide="zap" class="w-7 h-7 text-white"></i>
+                                </div>
+                                <h3 class="text-2xl  text-white">Despliegue Garantizado</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Consultoría -->
-                <div class="py-10">
-                    <div class="flex items-center gap-6">
-                        <div
-                            class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
-                            <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
-                        </div>
-                        <h3 class="text-2xl  text-white">Ingeniería Certificada</h3>
-                    </div>
-                </div>
-
-                <!-- Implementación -->
-                <div class="py-10">
-                    <div class="flex items-center gap-6">
-                        <div
-                            class="w-14 h-14 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
-                            <i data-lucide="zap" class="w-7 h-7 text-white"></i>
-                        </div>
-                        <h3 class="text-2xl  text-white">Despliegue Garantizado</h3>
+                <!-- Lado Derecho: La Alianza (Enorme) -->
+                <div class="lg:col-span-7 relative flex justify-center lg:justify-end">
+                    <div class="w-full max-w-7xl">
+                        <img src="./public/images/LogosJuntos.webp" alt="SentinelOne & Faro Protec"
+                            class="w-full h-auto object-contain brightness-110 contrast-110"
+                            style="mask-image: radial-gradient(circle, black 70%, transparent 95%); -webkit-mask-image: radial-gradient(circle, black 70%, transparent 95%);"
+                            loading="lazy">
                     </div>
                 </div>
             </div>
