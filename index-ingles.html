@@ -1620,7 +1620,7 @@
                             <!-- Video Stack for Seamless Switching -->
                             <div class="video-stack relative w-full h-full overflow-hidden">
                                 <!-- Default video defines the container size -->
-                                <video data-video="default" autoplay muted loop playsinline
+                                <video data-video="default" autoplay muted loop playsinline preload="none"
                                     class="relative w-full h-full object-cover transition-opacity duration-700 opacity-100"
                                     title="SentinelOne Singularity Platform">
                                     <source
@@ -1628,46 +1628,46 @@
                                         type="video/mp4">
                                 </video>
                                 <!-- Other videos stack on top -->
-                                <video data-video="Proactive Defense" autoplay muted loop playsinline
+                                <video data-video="Proactive Defense" autoplay muted loop playsinline preload="none"
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Static AI Demonstration">
                                     <source
-                                        src="./public/videos/motion2Fast_Motion_Tip_Strength_5_Describe_Red_sparks_hitting__0.mp4"
+                                        data-src="./public/videos/motion2Fast_Motion_Tip_Strength_5_Describe_Red_sparks_hitting__0.mp4"
                                         type="video/mp4">
                                 </video>
-                                <video data-video="Real-Time Detection" autoplay muted loop playsinline
+                                <video data-video="Real-Time Detection" autoplay muted loop playsinline preload="none"
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Behavioral AI Demonstration">
                                     <source
-                                        src="./public/videos/hailuo-2_3_Slow_mechanical_rotation_of_the_geometric_structure._Gentle_pulses_of_magenta_li-0.mp4"
+                                        data-src="./public/videos/hailuo-2_3_Slow_mechanical_rotation_of_the_geometric_structure._Gentle_pulses_of_magenta_li-0.mp4"
                                         type="video/mp4">
                                 </video>
-                                <video data-video="Active Rollback" autoplay muted loop playsinline
+                                <video data-video="Active Rollback" autoplay muted loop playsinline preload="none"
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Active Rollback Demonstration">
                                     <source
-                                        src="./public/videos/hailuo-2_3_Cinematic_time-reversal_effect._The_glass_shards_on_the_floor_magnetically_lift_-0.mp4"
+                                        data-src="./public/videos/hailuo-2_3_Cinematic_time-reversal_effect._The_glass_shards_on_the_floor_magnetically_lift_-0.mp4"
                                         type="video/mp4">
                                 </video>
-                                <video data-video="Device Control" autoplay muted loop playsinline
+                                <video data-video="Device Control" autoplay muted loop playsinline preload="none"
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Device Control Demonstration">
                                     <source
-                                        src="./public/videos/motion2Fast_Cyan_light_pulses_radiating_outwards_from_the_cent_0.mp4"
+                                        data-src="./public/videos/motion2Fast_Cyan_light_pulses_radiating_outwards_from_the_cent_0.mp4"
                                         type="video/mp4">
                                 </video>
-                                <video data-video="Network Control" autoplay muted loop playsinline
+                                <video data-video="Network Control" autoplay muted loop playsinline preload="none"
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Ranger Scan Demonstration">
                                     <source
-                                        src="./public/videos/hailuo-2_3_Motion_Tip_Strength_5._Describe_A_circular_light_beam_sweeping_the_floor_and_rev-0.mp4"
+                                        data-src="./public/videos/hailuo-2_3_Motion_Tip_Strength_5._Describe_A_circular_light_beam_sweeping_the_floor_and_rev-0.mp4"
                                         type="video/mp4">
                                 </video>
-                                <video data-video="Storyline™ Visibility" autoplay muted loop playsinline
+                                <video data-video="Storyline™ Visibility" autoplay muted loop playsinline preload="none"
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
                                     title="Storyline Visibility Demonstration">
                                     <source
-                                        src="./public/videos/hailuo-2_3_Motion_Tip_Strength_4._Describe_Glowing_lines_being_drawn_across_the_screen_conn-0.mp4"
+                                        data-src="./public/videos/hailuo-2_3_Motion_Tip_Strength_4._Describe_Glowing_lines_being_drawn_across_the_screen_conn-0.mp4"
                                         type="video/mp4">
                                 </video>
 
@@ -2124,7 +2124,30 @@
         }
     </script>
 
-
+    <script>
+        // Lazy load for default background video using IntersectionObserver
+        document.addEventListener("DOMContentLoaded", function () {
+            var videoStack = document.querySelector('.video-stack');
+            if (videoStack) {
+                var observer = new IntersectionObserver(function (entries) {
+                    if (entries[0].isIntersecting) {
+                        var defaultVideo = videoStack.querySelector('video[data-video="default"]');
+                        if (defaultVideo) {
+                            var source = defaultVideo.querySelector('source');
+                            if (source && source.hasAttribute('data-src')) {
+                                source.setAttribute('src', source.getAttribute('data-src'));
+                                source.removeAttribute('data-src');
+                                defaultVideo.load();
+                                defaultVideo.play().catch(e => console.log('Autoplay prevented', e));
+                            }
+                        }
+                        observer.disconnect();
+                    }
+                }, { rootMargin: '200px' });
+                observer.observe(videoStack);
+            }
+        });
+    </script>
 
     <!-- Comparison Modal -->
     <div id="comparison-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center p-4 md:p-6 bg-black/80">
