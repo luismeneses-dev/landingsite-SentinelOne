@@ -147,9 +147,10 @@
             contain-intrinsic-size: 1px 1000px;
         }
 
-        /* Allow immediate rendering to eliminate LCP delay */
+        /* Prevent FOUC (Flash of Unstyled Content) */
         body {
-            opacity: 1;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
         }
 
         /* Pricing White Cards */
@@ -2060,13 +2061,14 @@
         </div>
     </footer>
 
-    <!-- MAGIC SCRIPTS -->
+    <!-- SCRIPTS MÁGICOS -->
     <script>
-        // 1. Start Lucide Icons and ensure visibility
+        // 1. Iniciar Lucide Icons y revelar el cuerpo de la página
         document.addEventListener("DOMContentLoaded", function () {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
+            document.body.style.opacity = "1";
         });
     </script>
     <script>
