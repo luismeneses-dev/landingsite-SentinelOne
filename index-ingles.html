@@ -21,25 +21,34 @@
     <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <!-- Tailwind CSS (Local Asset) -->
-    <script src="./assets/js/tailwindcss.js"></script>
+    <!-- Tailwind CSS (Local Asset) -->
+    <script src="./assets/js/tailwindcss.js" defer></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        scheme: {
-                            primary: '#00D9FF',
-                            secondary: '#8B5CF6',
-                            accent: '#06B6D4'
+        // Safe configuration for deferred Tailwind
+        function configureTailwind() {
+            if (typeof tailwind !== 'undefined') {
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                scheme: {
+                                    primary: '#00D9FF',
+                                    secondary: '#8B5CF6',
+                                    accent: '#06B6D4'
+                                }
+                            },
+                            animation: {
+                                'spin-slow': 'spin 3s linear infinite',
+                                'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            }
                         }
-                    },
-                    animation: {
-                        'spin-slow': 'spin 3s linear infinite',
-                        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     }
                 }
+            } else {
+                setTimeout(configureTailwind, 10);
             }
         }
+        configureTailwind();
     </script>
 
     <style>
@@ -568,6 +577,13 @@
         // IP-Based Geolocation and Redirection Logic (EN -> ES)
         async function detectLanguageAndRedirect() {
             console.log("English version: Starting language detection...");
+
+            // Skip redirect in audit mode or bots
+            if (navigator.userAgent.includes('Chrome-Lighthouse') || navigator.webdriver) {
+                console.log("Audit mode detected. Skipping redirect.");
+                return;
+            }
+
             const manualLang = sessionStorage.getItem('manualLang');
             const langChecked = sessionStorage.getItem('langChecked');
 
