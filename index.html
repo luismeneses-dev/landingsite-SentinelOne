@@ -11,6 +11,25 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https: *; connect-src 'self' http: https:; frame-src 'self' https://sentinelone.storylane.io https://*.storylane.io;">
 
+    <style>
+        /* Prevent FOUC and enable smooth entry */
+        body {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+
+    <script>
+        // High-speed reveal logic (no waiting for DOMContentLoaded)
+        (function() {
+            function reveal() { document.body.style.opacity = '1'; }
+            if (document.readyState === 'loading') {
+                window.addEventListener('load', reveal);
+                setTimeout(reveal, 400); // Fail-safe
+            } else { reveal(); }
+        })();
+    </script>
+
     <!-- Preload critical assets to improve LCP -->
     <link rel="preload" href="https://unpkg.com/lucide@latest" as="script">
     <link rel="preload" href="./assets/js/tailwindcss.js" as="script">
@@ -135,11 +154,6 @@
         .cv-auto {
             content-visibility: auto;
             contain-intrinsic-size: 1px 1000px;
-        }
-
-        /* Allow immediate rendering to eliminate LCP delay */
-        body {
-            opacity: 1;
         }
 
         /* Pricing White Cards */
