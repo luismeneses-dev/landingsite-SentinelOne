@@ -1219,9 +1219,9 @@
                         control real.
                     </p>
                 </div>
-                <button onclick="openInfographicModal()"
+                <button onclick="openDatasheetModal()"
                     class="px-10 py-5 rounded-full bg-scheme-secondary text-white text-lg font-bold shadow-lg shadow-scheme-secondary/20 text-center">
-                    Ver infografía
+                    Ver Datasheet
                 </button>
             </div>
         </div>
@@ -2087,25 +2087,26 @@
         </div>
     </section>
 
-    <!-- Infographic Modal -->
-    <div id="infographic-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 md:p-8">
+    <!-- Datasheet Modal -->
+    <div id="datasheet-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 md:p-8">
         <!-- Backdrop -->
         <div class="absolute inset-0 bg-black/90 backdrop-blur-xl transition-opacity duration-500 opacity-0 modal-backdrop"
-            onclick="closeInfographicModal()"></div>
+            onclick="closeDatasheetModal()"></div>
 
         <!-- Modal Content Container -->
         <div
-            class="relative z-[210] max-w-4xl w-full max-h-full overflow-hidden flex flex-col items-center transition-all duration-500 scale-90 opacity-0 modal-content">
+            class="relative z-[210] max-w-6xl w-full max-h-[95vh] overflow-hidden flex flex-col items-center transition-all duration-500 scale-90 opacity-0 modal-content">
             <!-- Close Button -->
-            <button onclick="closeInfographicModal()"
-                class="absolute top-4 right-4 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all z-20">
+            <button onclick="closeDatasheetModal()"
+                class="absolute top-4 right-4 w-12 h-12 flex items-center justify-center rounded-full bg-black/40 border border-white/20 text-white hover:bg-black/60 transition-all z-20">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
 
-            <!-- Scrollable Image Container -->
-            <div class="w-full overflow-y-auto rounded-3xl shadow-2xl border border-white/10 scrollbar-hide">
-                <img src="./public/images/mcp-risks-infographic.avif" alt="Top 10 MCP Security Risks Infographic"
-                    class="w-full h-auto object-contain">
+            <!-- PDF Viewer Container -->
+            <div class="w-full h-full rounded-3xl shadow-2xl border border-white/10 overflow-hidden bg-white/5 backdrop-blur-md">
+                <iframe src="./public/pdf/Datasheet_Prompt_Security_DS_v2.pdf" 
+                    class="w-full h-[85vh] md:h-[90vh] border-none" 
+                    title="Prompt Security Datasheet"></iframe>
             </div>
         </div>
     </div>
@@ -2200,9 +2201,9 @@
             }
         }
 
-        // --- MCP Infographic Modal Logic ---
-        function openInfographicModal() {
-            const modal = document.getElementById('infographic-modal');
+        // --- Datasheet Modal Logic ---
+        function openDatasheetModal() {
+            const modal = document.getElementById('datasheet-modal');
             const backdrop = modal.querySelector('.modal-backdrop');
             const content = modal.querySelector('.modal-content');
 
@@ -2222,8 +2223,8 @@
             }, 10);
         }
 
-        function closeInfographicModal() {
-            const modal = document.getElementById('infographic-modal');
+        function closeDatasheetModal() {
+            const modal = document.getElementById('datasheet-modal');
             const backdrop = modal.querySelector('.modal-backdrop');
             const content = modal.querySelector('.modal-content');
 
