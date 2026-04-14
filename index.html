@@ -2114,7 +2114,7 @@
 
             <!-- PDF Viewer Container -->
             <div class="w-full h-full rounded-3xl shadow-2xl border border-white/10 overflow-hidden bg-white/5 backdrop-blur-md">
-                <iframe src="./public/pdf/Datasheet_Prompt_Security_DS_v2.pdf#zoom=60" 
+                <iframe data-src="./public/pdf/Datasheet_Prompt_Security_DS_v2.pdf#zoom=60" src="about:blank"
                     class="w-full h-[85vh] md:h-[90vh] border-none" 
                     title="Prompt Security Datasheet"></iframe>
             </div>
@@ -2216,6 +2216,12 @@
             const modal = document.getElementById('datasheet-modal');
             const backdrop = modal.querySelector('.modal-backdrop');
             const content = modal.querySelector('.modal-content');
+            const iframe = modal.querySelector('iframe');
+
+            // Load PDF only when opening
+            if (iframe && iframe.getAttribute('data-src')) {
+                iframe.src = iframe.getAttribute('data-src');
+            }
 
             modal.classList.remove('hidden');
             modal.classList.add('flex');
@@ -2237,6 +2243,7 @@
             const modal = document.getElementById('datasheet-modal');
             const backdrop = modal.querySelector('.modal-backdrop');
             const content = modal.querySelector('.modal-content');
+            const iframe = modal.querySelector('iframe');
 
             backdrop.classList.remove('opacity-100');
             content.classList.remove('scale-100', 'opacity-100');
@@ -2245,6 +2252,10 @@
                 modal.classList.remove('flex');
                 modal.classList.add('hidden');
                 document.body.style.overflow = '';
+                // Unload PDF to save memory/bandwidth
+                if (iframe) {
+                    iframe.src = 'about:blank';
+                }
             }, 500);
         }
 
