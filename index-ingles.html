@@ -1924,7 +1924,7 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:items-center">
 
                 <!-- Left Side: Glassmorphic Form (Larger and Complete) -->
                 <div class="lg:col-span-6 order-2 lg:order-1">
@@ -1936,29 +1936,28 @@
                         </div>
 
                         <div class="relative z-10">
-                            <p class="text-2xl text-white  mb-2">
-                                See SentinelOne in action
+                            <p class="text-2xl text-white mb-1">
+                                Ready for the next level?
                             </p>
-                            <h2 class="text-5xl  text-white mb-6 tracking-tight">Schedule a Demo
-                            </h2>
+                            <h2 class="text-5xl  text-white mb-4 tracking-tight">Schedule a Personalized Demo</h2>
 
-                            <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8"
+                            <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6"
                                 onsubmit="event.preventDefault();">
                                 <!-- First Name | Last Name -->
                                 <div class="space-y-2">
                                     <input id="first_name" type="text" placeholder="First Name"
-                                        class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg" />
+                                        class="w-full bg-white/[0.07] border border-white/10 px-5 py-3.5 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg" />
                                 </div>
                                 <div class="space-y-2">
                                     <input id="last_name" type="text" placeholder="Last Name"
-                                        class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg" />
+                                        class="w-full bg-white/[0.07] border border-white/10 px-5 py-3.5 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg" />
                                 </div>
 
 
-                                <!-- Business Email (Full Width) -->
-                                <div class="md:col-span-2 space-y-2">
+                                <!-- Business Email -->
+                                <div class="space-y-2">
                                     <input id="email" type="email" placeholder="email@yourcompany.com"
-                                        class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg" />
+                                        class="w-full bg-white/[0.07] border border-white/10 px-5 py-3.5 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg" />
                                 </div>
 
 
@@ -1987,12 +1986,12 @@
                                 <!-- Phone | Country -->
                                 <div class="space-y-2">
                                     <input id="phone" type="tel" placeholder="Phone number"
-                                        class="w-full bg-white/[0.07] border border-white/10 px-5 py-3 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg" />
+                                        class="w-full bg-white/[0.07] border border-white/10 px-5 py-3.5 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg" />
                                 </div>
                                 <div class="space-y-2">
                                     <div class="relative">
                                         <select id="country" aria-label="Country"
-                                            class="w-full bg-white/[0.07] border border-white/10 px-5 py-3 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg appearance-none cursor-pointer">
+                                            class="w-full bg-white/[0.07] border border-white/10 px-5 py-3.5 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg appearance-none cursor-pointer">
 
                                             <option value="" class="bg-slate-900">Country</option>
                                             <option value="México" class="bg-slate-900" selected>Mexico</option>
@@ -2004,11 +2003,11 @@
                                     </div>
                                 </div>
 
-                                <!-- Interest (Full Width) -->
-                                <div class="md:col-span-2 space-y-2">
+                                <!-- Interest -->
+                                <div class="space-y-2">
                                     <div class="relative">
                                         <select id="interest" aria-label="Interest"
-                                            class="w-full bg-white/[0.07] border border-white/10 px-5 py-4 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg appearance-none cursor-pointer">
+                                            class="w-full bg-white/[0.07] border border-white/10 px-5 py-3.5 rounded-xl outline-none text-white focus:border-scheme-primary/50 focus:bg-white/[0.1] transition-all text-lg appearance-none cursor-pointer">
 
                                             <option value="" class="bg-slate-900 text-white italic">I'm interested in
                                                 ...
@@ -2032,7 +2031,7 @@
                                         Send Request
                                     </button>
 
-                                    <p class="text-lg text-white text-center mt-4 leading-relaxed px-4">
+                                    <p class="text-lg text-white text-center mt-2 leading-relaxed px-4">
                                         By sending this form, you agree that Faroprotec treats your personal data
                                         according to its Privacy Policy. You can withdraw your consent at any time.
                                     </p>
@@ -2043,11 +2042,12 @@
                 </div>
 
                 <!-- Right Side: Marketing Content -->
-                <div class="lg:col-span-6 order-1 lg:order-2 text-left pt-14 md:pt-24">
+                <div class="lg:col-span-6 order-1 lg:order-2 text-left py-12 lg:py-20">
                     <div class="mb-14">
 
-                        <h2 class="text-5xl  text-white mb-8 leading-[1.1] tracking-tight">
-                            AI Cybersecurity designed for Speed and Scale
+                        <h2 class="text-5xl  text-white mb-8 leading-tight tracking-tight">
+                            Architecture designed to <br class="hidden lg:block"> <span
+                                class="text-scheme-primary">stop the unknown</span>
                         </h2>
 
                         <p class="text-lg text-white leading-relaxed">
@@ -2074,7 +2074,7 @@
                                 <i data-lucide="check" class="w-4 h-4 text-scheme-secondary"></i>
                             </div>
                             <div>
-                                <h3 class="text-white  text-2xl mb-2">Outpace Threats</h3>
+                                <h3 class="text-white  text-2xl mb-2">Outsmart Threats</h3>
                                 <p class="text-white text-lg leading-relaxed">Turn data into
                                     actionable insights in real time, with autonomous security that keeps you always one
                                     step
