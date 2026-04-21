@@ -528,6 +528,9 @@
     .card {
       border-radius: 28px;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-soft);
     }
 
 
@@ -559,13 +562,16 @@
 
     .card-body {
       padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .card-body p {
       margin: 0;
       color: var(--muted);
       font-size: 14px;
-      min-height: 72px;
+      margin-bottom: 24px;
     }
 
     .two-col,
@@ -1264,7 +1270,7 @@
             <div class="card-body">
               <p>Ayuda a adoptar herramientas de IA sin perder visibilidad, gobierno ni protección de datos frente a
                 Shadow AI y riesgos regulatorios.</p>
-              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Evaluar uso seguro</a>
+              <a class="btn btn-outline" href="#cotizar" style="margin-top:auto;">Evaluar uso seguro</a>
             </div>
           </article>
           <article class="card">
@@ -1274,7 +1280,7 @@
             <div class="card-body">
               <p>Protege secretos, PII e IP cuando los equipos usan asistentes como GitHub Copilot o Cursor, con
                 visibilidad y gobierno de uso.</p>
-              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Proteger copilots</a>
+              <a class="btn btn-outline" href="#cotizar" style="margin-top:auto;">Proteger copilots</a>
             </div>
           </article>
           <article class="card">
@@ -1284,7 +1290,7 @@
             <div class="card-body">
               <p>Reduce riesgos como prompt injection, jailbreaks, filtrado de datos, respuestas dañinas y otras fallas
                 en aplicaciones con LLM.</p>
-              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Blindar apps</a>
+              <a class="btn btn-outline" href="#cotizar" style="margin-top:auto;">Blindar apps</a>
             </div>
           </article>
           <article class="card">
@@ -1294,7 +1300,8 @@
             <div class="card-body">
               <p>Da visibilidad sobre agentes, actividad MCP, scoring dinámico de riesgo y enforcement para reducir
                 abuso, exceso de permisos y exposición.</p>
-              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Evaluar agentes</a>
+              <a class="btn btn-outline" href="#cotizar" style="margin-top:auto;">Evaluar agentes</a>
+            </div>
             </div>
           </article>
         </div>
