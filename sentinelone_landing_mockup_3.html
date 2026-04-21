@@ -1173,6 +1173,16 @@
     </div>
   </header>
 
+  <style>
+    .section-vh {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 0;
+    }
+  </style>
+
   <main id="contenido-principal">
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
@@ -1226,11 +1236,91 @@
           </div>
         </aside>
       </div>
-      <div class="container" style="padding-bottom:120px; display: flex; justify-content: center;">
-        <figure class="media-slot hero-3d" aria-label="Consola de gestión y dashboard de SentinelOne">
+    </section>
+
+    <!-- SECTION 2: PROMPT SECURITY (Full height) -->
+    <section id="prompt-security" class="section-soft section-vh" aria-labelledby="prompt-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Prompt Security, a SentinelOne company</p>
+            <h2 id="prompt-title">Extiende la defensa de SentinelOne hacia el uso seguro de IA en toda la organización
+            </h2>
+            <p class="section-desc">
+              Mientras SentinelOne protege endpoints, identidades, nube y operación de seguridad, Prompt Security agrega
+              una capa especializada para uso seguro de IA en empleados, copilots, aplicaciones propias y agentes de IA.
+              Juntas, ambas tecnologías ayudan a reducir riesgo operativo, fuga de datos y exposición a nuevas amenazas
+              impulsadas por IA.
+            </p>
+          </div>
+          <a href="#cotizar"><strong>Solicitar evaluación →</strong></a>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-visual">
+              <div><small>IA 01</small><strong>Uso de IA por empleados</strong></div>
+            </div>
+            <div class="card-body">
+              <p>Ayuda a adoptar herramientas de IA sin perder visibilidad, gobierno ni protección de datos frente a
+                Shadow AI y riesgos regulatorios.</p>
+              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Evaluar uso seguro</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-visual">
+              <div><small>IA 02</small><strong>AI Code Assistants</strong></div>
+            </div>
+            <div class="card-body">
+              <p>Protege secretos, PII e IP cuando los equipos usan asistentes como GitHub Copilot o Cursor, con
+                visibilidad y gobierno de uso.</p>
+              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Proteger copilots</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-visual">
+              <div><small>IA 03</small><strong>Apps de IA propias</strong></div>
+            </div>
+            <div class="card-body">
+              <p>Reduce riesgos como prompt injection, jailbreaks, filtrado de datos, respuestas dañinas y otras fallas
+                en aplicaciones con LLM.</p>
+              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Blindar apps</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-visual">
+              <div><small>IA 04</small><strong>Agentic AI y MCP</strong></div>
+            </div>
+            <div class="card-body">
+              <p>Da visibilidad sobre agentes, actividad MCP, scoring dinámico de riesgo y enforcement para reducir
+                abuso, exceso de permisos y exposición.</p>
+              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Evaluar agentes</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CONSOLE SHOWCASE -->
+    <section id="console-showcase" class="section-dark" style="text-align: center; border-top: 1px solid var(--line); padding: 100px 0;">
+      <div class="container">
+        <div class="section-head" style="justify-content: center; margin-bottom: 60px;">
+          <div style="max-width: 900px;">
+            <p class="kicker">Gestión Autónoma y Visibilidad XDR</p>
+            <h2 style="font-size: 52px; line-height: 1.1; margin-bottom: 20px;">Visibilidad y Control Total sobre cada Amenaza</h2>
+            <p class="section-desc" style="margin: 0 auto; max-width: 700px;">Optimiza la respuesta ante incidentes con una consola centralizada que unifica la detección en endpoints, nube e identidad.</p>
+          </div>
+        </div>
+        
+        <figure class="media-slot hero-3d" style="margin-bottom: 60px; max-width: 1100px; margin-left: auto; margin-right: auto;">
           <img src="./public/images/hp_hero_crop.webp" alt="SentinelOne Official Management Console Dashboard"
-            loading="lazy" style="border-radius: 24px;" />
+            loading="lazy" style="border-radius: 24px; width: 100%; box-shadow: 0 30px 60px rgba(0,0,0,0.5);" />
         </figure>
+
+        <div style="display: flex; justify-content: center; gap: 20px;">
+          <a class="btn btn-primary" href="#cotizar" style="padding: 18px 40px; font-size: 16px;">Hablar con un experto</a>
+          <a class="btn btn-outline" href="javascript:void(0)" style="padding: 18px 40px; font-size: 16px;">Ver la demo</a>
+        </div>
       </div>
     </section>
 
@@ -1530,67 +1620,6 @@
     </section>
 
 
-    <section id="prompt-security" class="section-soft" aria-labelledby="prompt-title">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="kicker">Prompt Security, a SentinelOne company</p>
-            <h2 id="prompt-title">Extiende la defensa de SentinelOne hacia el uso seguro de IA en toda la organización
-            </h2>
-            <p class="section-desc">
-              Mientras SentinelOne protege endpoints, identidades, nube y operación de seguridad, Prompt Security agrega
-              una capa especializada para uso seguro de IA en empleados, copilots, aplicaciones propias y agentes de IA.
-              Juntas, ambas tecnologías ayudan a reducir riesgo operativo, fuga de datos y exposición a nuevas amenazas
-              impulsadas por IA.
-            </p>
-          </div>
-          <a href="#cotizar"><strong>Solicitar evaluación →</strong></a>
-        </div>
-
-        <div class="cards-grid">
-          <article class="card">
-            <div class="card-visual">
-              <div><small>IA 01</small><strong>Uso de IA por empleados</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Ayuda a adoptar herramientas de IA sin perder visibilidad, gobierno ni protección de datos frente a
-                Shadow AI y riesgos regulatorios.</p>
-              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Evaluar uso seguro</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-visual">
-              <div><small>IA 02</small><strong>AI Code Assistants</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Protege secretos, PII e IP cuando los equipos usan asistentes como GitHub Copilot o Cursor, con
-                visibilidad y gobierno de uso.</p>
-              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Proteger copilots</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-visual">
-              <div><small>IA 03</small><strong>Apps de IA propias</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Reduce riesgos como prompt injection, jailbreaks, filtrado de datos, respuestas dañinas y otras fallas
-                en aplicaciones con LLM.</p>
-              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Blindar apps</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-visual">
-              <div><small>IA 04</small><strong>Agentic AI y MCP</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Da visibilidad sobre agentes, actividad MCP, scoring dinámico de riesgo y enforcement para reducir
-                abuso, exceso de permisos y exposición.</p>
-              <a class="btn btn-outline" href="#cotizar" style="margin-top:16px;">Evaluar agentes</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section class="section-soft" aria-labelledby="ia-riesgos-title">
       <div class="container two-col">
