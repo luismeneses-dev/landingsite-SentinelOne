@@ -336,6 +336,35 @@
       margin-top: 50px;
     }
 
+    .hero-benefits {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .benefit-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 200px;
+    }
+
+    .benefit-item strong {
+      display: block;
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .benefit-item span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
     .mini-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1328,8 +1357,20 @@
           <div class="hero-actions" style="justify-content: center;">
             <a class="btn btn-outline" href="#soluciones">Hablar con un especialista</a>
           </div>
-
-
+          <div class="hero-benefits">
+            <div class="benefit-item">
+              <strong>Prevención</strong>
+              <span>Protección empresarial en milisegundos</span>
+            </div>
+            <div class="benefit-item">
+              <strong>Respuesta</strong>
+              <span>Contención y reversión del daño</span>
+            </div>
+            <div class="benefit-item">
+              <strong>Visibilidad</strong>
+              <span>Detección inteligente con Storyline™</span>
+            </div>
+          </div>
         </div>
 
         <aside class="risk-card glass-premium shimmer-line" aria-labelledby="riesgo-title">
