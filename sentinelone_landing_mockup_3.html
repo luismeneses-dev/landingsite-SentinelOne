@@ -582,6 +582,89 @@
       margin-top: 26px;
     }
 
+    /* Symmetrical Support Section (Kaspersky Style) */
+    .support-sym-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 30px;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .support-side-col {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .support-side-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #fff;
+      transition: opacity 0.3s ease;
+    }
+
+    .support-side-item.left {
+      text-align: right;
+      justify-content: flex-end;
+    }
+
+    .support-side-item.right {
+      text-align: left;
+      justify-content: flex-start;
+    }
+
+    .support-icon-card {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease;
+    }
+
+    .support-side-item:hover .support-icon-card {
+      transform: scale(1.15);
+      border-color: var(--primary);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .support-icon-card svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--primary);
+      filter: drop-shadow(0 0 8px var(--primary));
+    }
+
+    .support-center-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .support-center-visual img {
+      width: 100%;
+      max-width: 520px;
+      mask-image: radial-gradient(circle, #000 45%, transparent 85%);
+      -webkit-mask-image: radial-gradient(circle, #000 45%, transparent 85%);
+      filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.15));
+    }
+
+    .support-sym-text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: #fff;
+      max-width: 220px;
+    }
+
     .feature-box,
     .sector-card,
     .support-item,
@@ -1655,61 +1738,76 @@
     </section>
 
     <section id="soporte" aria-labelledby="soporte-title">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="kicker">Póliza de soporte premium Faro Protec</p>
-            <h2 id="soporte-title">Asistencia en todo el proceso de planeación e implementación</h2>
-            <p class="section-desc">Cobertura especializada para acompañar la operación, la implementación y la
-              escalación de casos prioritarios.</p>
+      <div class="container" style="max-width: 1300px;">
+        <div class="section-head" style="justify-content: center; text-align: center; margin-bottom: 40px;">
+          <div style="max-width: 800px;">
+            <p class="kicker" style="margin: 0 auto 10px;">Ingeniería Faro Protec</p>
+            <h2 id="soporte-title" style="font-size: 48px; margin-bottom: 16px;">Póliza de Acompañamiento Premium</h2>
+            <p class="section-desc">Elevamos el estándar de soporte para SentinelOne en México con un enfoque proactivo y humano.</p>
           </div>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature-box">
-            <h3>Ejecutivo de cuenta asignado</h3>
-          </article>
-          <article class="feature-box">
-            <h3>Tiempo de respuesta de 3 horas</h3>
-          </article>
-          <article class="feature-box">
-            <h3>Portal para casos de soporte</h3>
-          </article>
-          <article class="feature-box">
-            <h3>Depuración de alertas</h3>
-          </article>
-
-          <!-- Central Image Slot -->
-          <article class="feature-box" style="padding: 0; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.02);">
-            <div style="padding: 30px; width: 100%;">
-              <img src="./public/images/LogosJuntos.webp" alt="Faro Protec & SentinelOne" style="width: 100%; border-radius: 12px;" />
+        <div class="support-sym-wrapper">
+          <!-- Left Column -->
+          <div class="support-side-col">
+            <div class="support-side-item left">
+              <span class="support-sym-text">Asistencia en planeación e implementación</span>
+              <div class="support-icon-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4-4-4"/><path d="M3 3.44a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16.56a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3.44Z"/><path d="M7 11h1"/></svg>
+              </div>
             </div>
-          </article>
+            <div class="support-side-item left">
+              <span class="support-sym-text">Ejecutivo de cuenta asignado</span>
+              <div class="support-icon-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+            <div class="support-side-item left">
+              <span class="support-sym-text">Tiempo de respuesta de 3 horas</span>
+              <div class="support-icon-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+            </div>
+            <div class="support-side-item left">
+              <span class="support-sym-text">Portal para casos de soporte</span>
+              <div class="support-icon-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" x="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              </div>
+            </div>
+          </div>
 
-          <article class="feature-box">
-            <h3>Aceleradores técnicos semanales</h3>
-            <p>Sesiones enfocadas durante el primer mes para optimizar la puesta en marcha.</p>
-          </article>
-          <article class="feature-box">
-            <h3>Transferencia de conocimientos</h3>
-            <p>Capacitación técnica para hasta 3 ingenieros de tu organización.</p>
-          </article>
-          <article class="feature-box">
-            <h3>Sesiones remotas ilimitadas</h3>
-          </article>
-          <article class="feature-box">
-            <h3>Número 800 dedicado</h3>
-            <p>Línea directa exclusiva para atención de soporte técnico.</p>
-          </article>
-          <article class="feature-box">
-            <h3>Plan de revisiones periódicas</h3>
-          </article>
-          <article class="feature-box">
-            <h3>Ingenieros certificados</h3>
-          </article>
-          <article class="feature-box">
-            <h3>Escalación de casos prioritarios</h3>
-          </article>
+          <!-- Center Visual -->
+          <div class="support-center-visual">
+            <img src="./public/images/LogosJuntos.webp" alt="Alianza Faro Protec & SentinelOne" />
+          </div>
+
+          <!-- Right Column -->
+          <div class="support-side-col">
+            <div class="support-side-item right">
+              <div class="support-icon-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h6"/><path d="M8 11h8"/><path d="M8 15h6"/></svg>
+              </div>
+              <span class="support-sym-text">Transferencia de conocimientos (3 ing.)</span>
+            </div>
+            <div class="support-side-item right">
+              <div class="support-icon-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <span class="support-sym-text">Sesiones remotas ilimitadas</span>
+            </div>
+            <div class="support-side-item right">
+              <div class="support-icon-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <span class="support-sym-text">Número 800 dedicado a soporte</span>
+            </div>
+            <div class="support-side-item right">
+              <div class="support-icon-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <span class="support-sym-text">Escalación de casos prioritarios</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
