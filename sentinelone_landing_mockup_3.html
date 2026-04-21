@@ -859,7 +859,7 @@
       color: var(--muted);
       font-size: 16px;
     }
-    
+
     .footer h2,
     .footer h3,
     .footer h4 {
@@ -1053,6 +1053,127 @@
       section {
         padding-top: 52px;
         padding-bottom: 52px;
+      }
+    }
+
+    /* Comparison Table Styles */
+    .comp-section {
+      padding: 100px 0;
+      background: radial-gradient(circle at center, rgba(139, 92, 246, 0.05), transparent);
+    }
+
+    .comp-container {
+      overflow-x: auto;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .comp-table th,
+    .comp-table td {
+      padding: 20px 24px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .comp-table th:first-child,
+    .comp-table td:first-child {
+      text-align: left;
+      position: sticky;
+      left: 0;
+      background: rgba(5, 5, 5, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      width: 300px;
+      min-width: 300px;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .comp-table thead th {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .comp-table thead th:first-child {
+      color: #fff;
+      z-index: 30;
+    }
+
+    .comp-category {
+      background: rgba(255, 255, 255, 0.05);
+      text-align: left !important;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #86efac;
+      font-size: 14px;
+    }
+
+    .comp-feature-name {
+      font-weight: 500;
+      color: #cbd5e1;
+    }
+
+    .comp-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .comp-check {
+      color: var(--primary);
+      font-size: 20px;
+      font-weight: 900;
+      filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.4));
+    }
+
+    .comp-cross {
+      color: rgba(255, 255, 255, 0.1);
+      font-size: 18px;
+    }
+
+    .comp-tag {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .comp-price {
+      display: block;
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 4px;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 768px) {
+
+      .comp-table th:first-child,
+      .comp-table td:first-child {
+        width: 200px;
+        min-width: 200px;
       }
     }
   </style>
@@ -1308,6 +1429,214 @@
       </div>
     </section>
 
+    <!-- SECTION: COMPARATIVA DE PAQUETES -->
+    <section id="comparativa" class="comp-section">
+      <div class="container">
+        <div class="section-head" style="text-align: center; justify-content: center; display: block; margin-bottom: 60px;">
+          <p class="kicker">Comparativa Detallada</p>
+          <h2>Singularity™ Packages</h2>
+          <p class="section-desc" style="margin: 20px auto 0;">Compara las capacidades de cada nivel para encontrar la solución que mejor se adapte a tu organización.</p>
+        </div>
+
+        <div class="comp-container">
+          <table class="comp-table">
+            <thead>
+              <tr>
+                <th>Capacidades</th>
+                <th>Core <span class="comp-price">$69.99<br><small>per endpoint</small></span></th>
+                <th>Control <span class="comp-price">$79.99<br><small>per endpoint</small></span></th>
+                <th>Complete <span class="comp-price">$179.99<br><small>per endpoint</small></span></th>
+                <th>Commercial <span class="comp-price">$229.99<br><small>per endpoint</small></span></th>
+                <th>Enterprise <span class="comp-price">Call for Pricing</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Management -->
+              <tr>
+                <td colspan="6" class="comp-category">Management</td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Role-Based Access Control</td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Multi-Tenant Management</td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+
+              <!-- Endpoint Security -->
+              <tr>
+                <td colspan="6" class="comp-category">Endpoint Security</td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Endpoint Protection Platform (EPP)</td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Advanced EPP Controls <br><small>(Device, Firewall, Remote Shell)</small></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Extended Detection and Response (EDR)</td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+
+              <!-- Cloud Security -->
+              <tr>
+                <td colspan="6" class="comp-category">Cloud Security</td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Cloud Workload Protection Platform</td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+
+              <!-- AI Security -->
+              <tr>
+                <td colspan="6" class="comp-category">AI Security</td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Autonomous Prevention, Detection & Response</td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">AI Security Assistant <span class="comp-tag">New</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Agentic AI SOC Analyst <span class="comp-tag">New</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+
+              <!-- Data -->
+              <tr>
+                <td colspan="6" class="comp-category">Data</td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Data Retention</td>
+                <td><span class="comp-cross">-</span></td>
+                <td><span class="comp-cross">-</span></td>
+                <td>14 Days</td>
+                <td>90 Days</td>
+                <td>Unlimited/Custom</td>
+              </tr>
+
+              <!-- Identity Security -->
+              <tr>
+                <td colspan="6" class="comp-category">Identity Security</td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Identity Threat Detection and Response</td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+
+              <!-- Managed Services -->
+              <tr>
+                <td colspan="6" class="comp-category">Managed Services</td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Managed Threat Hunting</td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Managed Detection and Response</td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+
+              <!-- Network & Forensics -->
+              <tr>
+                <td colspan="6" class="comp-category">Network & Forensics</td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Network Discovery</td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Forensic Data Collection</td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+
+              <!-- Deployment Services -->
+              <tr>
+                <td colspan="6" class="comp-category">Deployment Services</td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Guided Onboarding & Deployment Advisory</td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="comp-feature-name">Training Services</td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-cross">×</span></td>
+                <td><span class="comp-check">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 3: IA RISKS (Relocated) -->
     <section class="section-soft" aria-labelledby="ia-riesgos-title">
       <div class="container two-col">
@@ -1379,10 +1708,10 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2 id="soluciones-title">Explora el portafolio SentinelOne</h2>
+            <h2 id="soluciones-title">Explora las funcionalidades de SentinelOne</h2>
 
           </div>
-          <a href="#cotizar"><strong>Solicitar cotización →</strong></a>
+          <a href="#comparativa"><strong>Ver comparativa →</strong></a>
         </div>
 
         <div class="cards-grid">
