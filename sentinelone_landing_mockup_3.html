@@ -790,6 +790,34 @@
       }
     }
 
+    /* Minimalist 3 (Horizontal Clean) */
+    .support-minimalist-3 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px 60px;
+    }
+
+    .support-item-3 {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .support-item-3 svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .support-item-3 h4 {
+      font-size: 17px;
+      font-weight: 400;
+      margin: 0;
+    }
+
     .feature-box,
     .sector-card,
     .support-item,
@@ -2437,14 +2465,7 @@
     <!-- PROPOSAL 2: MINIMALIST & ELEGANT -->
     <section id="soporte-minimal" class="section-dark" style="border-top: 1px solid var(--line);">
       <div class="container">
-        <div class="section-head" style="justify-content: center; text-align: center; margin-bottom: 60px;">
-          <div style="max-width: 800px;">
-            <p class="kicker">Propuesta Minimalista</p>
-            <h2 style="font-size: 42px;">Póliza de Acompañamiento Faro Protec</h2>
-            <p class="section-desc" style="margin: 20px auto 0;">Un enfoque limpio centrado en la eficiencia y la
-              asistencia técnica directa.</p>
-          </div>
-        </div>
+        <!-- No headers for Prop 2 -->
 
         <div class="support-minimalist-grid">
           <div class="support-item-min">
@@ -2483,6 +2504,50 @@
           <div class="support-visual-min">
             <img src="./public/images/LogosJuntos.webp" alt="Faro Protec & SentinelOne" />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPOSAL 3: HORIZONTAL MINIMALIST -->
+    <section id="soporte-minimal-3" class="section-dark" style="border-top: 1px solid var(--line);">
+      <div class="container">
+        <div class="support-minimalist-3">
+          <div class="support-item-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <h4>Asistencia en planeación e implementación</h4>
+          </div>
+          <div class="support-item-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <h4>Ejecutivo de cuenta asignado</h4>
+          </div>
+          <div class="support-item-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <h4>Tiempo de respuesta de 3 horas</h4>
+          </div>
+          <div class="support-item-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <h4>Portal para casos de soporte</h4>
+          </div>
+          <div class="support-item-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <h4>Transferencia de conocimientos (3 ing.)</h4>
+          </div>
+          <div class="support-item-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <h4>Sesiones remotas ilimitadas</h4>
+          </div>
+          <div class="support-item-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <h4>Número 800 dedicado a soporte</h4>
+          </div>
+          <div class="support-item-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <h4>Escalación de casos prioritarios</h4>
+          </div>
+        </div>
+
+        <div class="support-visual-min" style="margin-top: 40px;">
+          <img src="./public/images/LogosJuntos.webp" alt="Faro Protec & SentinelOne" style="max-width: 240px;" />
         </div>
       </div>
     </section>
