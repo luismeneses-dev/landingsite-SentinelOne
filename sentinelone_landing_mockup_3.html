@@ -1359,18 +1359,37 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.98);
+      background: rgba(0, 0, 0, 0.85);
       z-index: 10000;
       display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      backdrop-filter: blur(15px);
+    }
+    .modal-content-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      height: 90vh;
+      background: #000;
+      border-radius: 32px;
+      border: 1px solid var(--line);
+      display: flex;
       flex-direction: column;
-      backdrop-filter: blur(10px);
+      overflow: hidden;
+      box-shadow: 0 0 100px rgba(0, 217, 255, 0.15);
+      animation: modalFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalFadeUp {
+      from { opacity: 0; transform: translateY(40px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
     }
     .modal-header {
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #000;
+      background: #05080f;
       border-bottom: 1px solid var(--line);
     }
     .modal-header span {
@@ -1379,25 +1398,27 @@
       color: var(--primary);
     }
     .modal-close {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
       border: none;
       color: #fff;
-      font-size: 24px;
-      width: 40px;
-      height: 40px;
+      font-size: 20px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.3s;
+      transition: all 0.3s;
     }
     .modal-close:hover {
       background: var(--danger);
+      transform: rotate(90deg);
     }
     .modal-body {
       flex: 1;
       overflow: hidden;
+      background: #fff;
     }
     .modal-body iframe {
       width: 100%;
@@ -2416,13 +2437,15 @@
     </div>
   </footer>
   <!-- PDF Modal Structure -->
-  <div id="pdfModal" class="modal-overlay">
-    <div class="modal-header">
-      <span>Hoja de Datos - SentinelOne</span>
-      <button class="modal-close" onclick="closePdfModal()" aria-label="Cerrar modal">&times;</button>
-    </div>
-    <div class="modal-body">
-      <iframe src="./hoja_datos_sentinel.pdf" title="Hoja técnica SentinelOne"></iframe>
+  <div id="pdfModal" class="modal-overlay" onclick="if(event.target === this) closePdfModal()">
+    <div class="modal-content-wrapper">
+      <div class="modal-header">
+        <span>Hoja de Datos - SentinelOne</span>
+        <button class="modal-close" onclick="closePdfModal()" aria-label="Cerrar modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe src="./public/pdf/hoja_datos_sentinel.pdf" title="Hoja técnica SentinelOne"></iframe>
+      </div>
     </div>
   </div>
 
