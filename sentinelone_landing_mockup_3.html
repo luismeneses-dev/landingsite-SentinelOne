@@ -723,6 +723,73 @@
       }
     }
 
+    /* Minimalist Support Proposal Styles */
+    .support-minimalist-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .support-item-min {
+      position: relative;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transition: border-color 0.4s ease;
+    }
+
+    .support-item-min:hover {
+      border-color: var(--primary);
+    }
+
+    .support-item-min .num {
+      display: block;
+      font-size: 14px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .support-item-min h4 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .support-visual-min {
+      grid-column: span 4;
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+      opacity: 0.8;
+      filter: grayscale(0.5);
+      transition: all 0.5s ease;
+    }
+
+    .support-visual-min:hover {
+      opacity: 1;
+      filter: grayscale(0);
+    }
+
+    .support-visual-min img {
+      max-width: 320px;
+    }
+
+    @media (max-width: 992px) {
+      .support-minimalist-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .support-minimalist-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .feature-box,
     .sector-card,
     .support-item,
@@ -2363,6 +2430,59 @@
             </div>
             <h3>Escalación de casos prioritarios</h3>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPOSAL 2: MINIMALIST & ELEGANT -->
+    <section id="soporte-minimal" class="section-dark" style="border-top: 1px solid var(--line);">
+      <div class="container">
+        <div class="section-head" style="justify-content: center; text-align: center; margin-bottom: 60px;">
+          <div style="max-width: 800px;">
+            <p class="kicker">Propuesta Minimalista</p>
+            <h2 style="font-size: 42px;">Póliza de Acompañamiento Faro Protec</h2>
+            <p class="section-desc" style="margin: 20px auto 0;">Un enfoque limpio centrado en la eficiencia y la
+              asistencia técnica directa.</p>
+          </div>
+        </div>
+
+        <div class="support-minimalist-grid">
+          <div class="support-item-min">
+            <span class="num">01</span>
+            <h4>Asistencia en planeación e implementación</h4>
+          </div>
+          <div class="support-item-min">
+            <span class="num">02</span>
+            <h4>Ejecutivo de cuenta asignado</h4>
+          </div>
+          <div class="support-item-min">
+            <span class="num">03</span>
+            <h4>Tiempo de respuesta de 3 horas</h4>
+          </div>
+          <div class="support-item-min">
+            <span class="num">04</span>
+            <h4>Portal para casos de soporte</h4>
+          </div>
+          <div class="support-item-min">
+            <span class="num">05</span>
+            <h4>Transferencia de conocimientos (3 ing.)</h4>
+          </div>
+          <div class="support-item-min">
+            <span class="num">06</span>
+            <h4>Sesiones remotas ilimitadas</h4>
+          </div>
+          <div class="support-item-min">
+            <span class="num">07</span>
+            <h4>Número 800 dedicado a soporte</h4>
+          </div>
+          <div class="support-item-min">
+            <span class="num">08</span>
+            <h4>Escalación de casos prioritarios</h4>
+          </div>
+
+          <div class="support-visual-min">
+            <img src="./public/images/LogosJuntos.webp" alt="Faro Protec & SentinelOne" />
+          </div>
         </div>
       </div>
     </section>
