@@ -1352,7 +1352,8 @@
       overflow: auto;
       max-height: calc(100vh - 280px);
       border-radius: 28px;
-      background: #050505;
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       position: relative;
     }
@@ -1377,7 +1378,8 @@
       text-align: left;
       position: sticky;
       left: 0;
-      background: #050505;
+      background: rgba(5, 5, 5, 0.95);
+      backdrop-filter: blur(10px);
       z-index: 10;
       width: 300px;
       min-width: 300px;
@@ -1386,7 +1388,7 @@
 
     .comp-table thead th {
       vertical-align: top;
-      background: #050505;
+      background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(10px);
       font-weight: 700;
       font-size: 19px;
@@ -1430,7 +1432,7 @@
     }
 
     .comp-cross {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.1);
       font-size: 19px;
     }
 
@@ -1793,7 +1795,7 @@
 
     <!-- SECTION 3: IA RISKS (Relocated) -->
     <section class="section-dark" aria-labelledby="ia-riesgos-title">
-      <div class="container two-col" style="align-items: center;">
+      <div class="container two-col">
         <div>
           <p class="kicker">Riesgos de IA que ya impactan a la empresa</p>
           <h2 id="ia-riesgos-title">De Shadow AI a prompt injection: una superficie nueva que también necesita
@@ -2161,15 +2163,17 @@
     <section class="section-soft" aria-labelledby="que-es-title">
       <div class="container">
         <div class="section-head" style="display: block; text-align: left; margin-bottom: 60px;">
-          <p class="kicker">¿Qué es SentinelOne?</p>
-          <h2 id="que-es-title" style="margin-bottom: 24px;">Velocidad de respuesta autónoma</h2>
-          <p class="section-desc">
-            Detecta amenazas conocidas y desconocidas en milisegundos, contiene ataques automáticamente en el endpoint y
-            ofrece visibilidad centralizada con Storyline™.
+          <p class="kicker">Singularity™ Platform</p>
+          <h2 id="que-es-title" style="margin-bottom: 24px; background: linear-gradient(90deg, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
+            Ciberseguridad Autónoma: La IA que Actúa por Ti
+          </h2>
+          <p class="section-desc" style="max-width: 850px;">
+            No esperes a un analista. <strong>Singularity™</strong> detecta, bloquea y remedia amenazas en milisegundos, 
+            unificando endpoint, identidad y nube en una <strong>defensa imparable</strong>.
           </p>
         </div>
 
-        <div class="support-grid-premium" style="align-items: stretch;">
+        <div class="support-grid-premium" style="align-items: stretch; margin-bottom: 40px;">
           <!-- Feature Stack -->
           <div style="display: flex; flex-direction: column; gap: 16px; grid-column: span 2;">
             <article class="support-item-v3" style="margin: 0; flex: 1;">
@@ -2657,46 +2661,7 @@
 
     <!-- Minimalist Support Section Applied -->
 
-    <section id="faq-section" class="section-soft" aria-labelledby="faq-title">
-      <div class="container">
-        <p class="kicker">Preguntas frecuentes</p>
-        <h2 id="faq-title">Información clave sobre SentinelOne y protección empresarial</h2>
-        <div class="feature-grid">
-          <article class="feature-box">
-            <h3>¿SentinelOne es antivirus?</h3>
-            <p>SentinelOne puede formar parte de una estrategia moderna de protección endpoint al combinar prevención,
-              detección y respuesta (EDR).</p>
-          </article>
-          <article class="feature-box">
-            <h3>¿Cómo protege contra ransomware?</h3>
-            <p>Monitorea procesos y comportamientos en tiempo real; si detecta actividad maliciosa, puede revertir los
-              cambios a un estado seguro (Rollback).</p>
-          </article>
-          <article class="feature-box">
-            <h3>¿Qué ventaja tiene la IA en el agente?</h3>
-            <p>Permite tomar decisiones de seguridad sin depender de firmas estáticas o conexión constante a la nube,
-              acelerando la respuesta.</p>
-          </article>
-          <article class="feature-box">
-            <h3>¿Qué es Storyline™?</h3>
-            <p>Es una tecnología que agrupa eventos relacionados en una línea de tiempo clara, facilitando la
-              investigación forense y el contexto.</p>
-          </article>
-          <article class="feature-box">
-            <h3>¿Es compatible con otros sistemas?</h3>
-            <p>Se integra vía API con herramientas de SIEM, SOAR y firewalls para automatizar la postura de seguridad en
-              toda la red.</p>
-          </article>
-          <article class="feature-box">
-            <h3>¿Ayuda con el cumplimiento (compliance)?</h3>
-            <p>Genera reportes detallados y mantiene logs de actividad que son fundamentales para auditorías de
-              seguridad y gobierno de datos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="cotizar" class="section-dark" aria-labelledby="cotizar-title">
+    <section id="cotizar" class="section-soft" aria-labelledby="cotizar-title">
       <div class="container form-grid">
 
         <div>
@@ -2781,6 +2746,45 @@
             <p class="fineprint">Al enviar este formulario, aceptas que Faro Protec trate tus datos personales de
               acuerdo con su política de privacidad. Puedes retirar tu consentimiento en cualquier momento.</p>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark" aria-labelledby="faq-title">
+      <div class="container">
+        <p class="kicker">Preguntas frecuentes</p>
+        <h2 id="faq-title">Información clave sobre SentinelOne y protección empresarial</h2>
+        <div class="feature-grid">
+          <article class="feature-box">
+            <h3>¿SentinelOne es antivirus?</h3>
+            <p>SentinelOne puede formar parte de una estrategia moderna de protección endpoint al combinar prevención,
+              detección y respuesta (EDR).</p>
+          </article>
+          <article class="feature-box">
+            <h3>¿Cómo protege contra ransomware?</h3>
+            <p>Monitorea procesos y comportamientos en tiempo real; si detecta actividad maliciosa, puede revertir los
+              cambios a un estado seguro (Rollback).</p>
+          </article>
+          <article class="feature-box">
+            <h3>¿Qué ventaja tiene la IA en el agente?</h3>
+            <p>Permite tomar decisiones de seguridad sin depender de firmas estáticas o conexión constante a la nube,
+              acelerando la respuesta.</p>
+          </article>
+          <article class="feature-box">
+            <h3>¿Qué es Storyline™?</h3>
+            <p>Es una tecnología que agrupa eventos relacionados en una línea de tiempo clara, facilitando la
+              investigación forense y el contexto.</p>
+          </article>
+          <article class="feature-box">
+            <h3>¿Es compatible con otros sistemas?</h3>
+            <p>Se integra vía API con herramientas de SIEM, SOAR y firewalls para automatizar la postura de seguridad en
+              toda la red.</p>
+          </article>
+          <article class="feature-box">
+            <h3>¿Ayuda con el cumplimiento (compliance)?</h3>
+            <p>Genera reportes detallados y mantiene logs de actividad que son fundamentales para auditorías de
+              seguridad y gobierno de datos.</p>
+          </article>
         </div>
       </div>
     </section>
