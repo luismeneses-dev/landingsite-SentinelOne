@@ -790,32 +790,102 @@
       }
     }
 
-    /* Minimalist 3 (Horizontal Clean) */
-    .support-minimalist-3 {
+    /* Bento Grid Support Styles */
+    .support-bento {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px 60px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
+      gap: 16px;
+      margin-top: 50px;
     }
 
-    .support-item-3 {
+    .bento-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .bento-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--primary-soft);
+      transform: translateY(-4px);
+    }
+
+    .bento-card .icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      justify-content: center;
+      background: rgba(0, 217, 255, 0.05);
+      border: 1px solid rgba(0, 217, 255, 0.1);
+      border-radius: 12px;
     }
 
-    .support-item-3 svg {
-      width: 20px;
-      height: 20px;
+    .bento-card .icon svg {
+      width: 22px;
+      height: 22px;
       stroke: var(--primary);
-      flex-shrink: 0;
     }
 
-    .support-item-3 h4 {
-      font-size: 17px;
-      font-weight: 400;
+    .bento-card h3 {
+      font-size: 18px;
+      font-weight: 500;
       margin: 0;
+      line-height: 1.4;
+    }
+
+    .bento-visual {
+      grid-column: 3;
+      grid-row: span 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, rgba(0, 217, 255, 0.08), transparent);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 32px;
+      padding: 20px;
+    }
+
+    .bento-visual img {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.2));
+    }
+
+    .bento-wide {
+      grid-column: span 3;
+    }
+
+    @media (max-width: 992px) {
+      .support-bento {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .bento-visual {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+      .bento-wide {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .support-bento {
+        grid-template-columns: 1fr;
+      }
+      .bento-visual, .bento-wide {
+        grid-column: span 1;
+      }
     }
 
     .feature-box,
@@ -2351,110 +2421,72 @@
           </div>
         </div>
 
-        <div class="support-grid-premium">
+        <div class="support-bento">
           <!-- Card 1 -->
-          <article class="support-card">
-            <div class="support-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="m12 14 4-4-4-4" />
-                <path d="M3 3.44a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16.56a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3.44Z" />
-                <path d="M7 11h1" />
-              </svg>
+          <article class="bento-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4-4-4"/><path d="M3 3.44a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16.56a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3.44Z"/><path d="M7 11h1"/></svg>
             </div>
             <h3>Asistencia en planeación e implementación</h3>
           </article>
 
           <!-- Card 2 -->
-          <article class="support-card">
-            <div class="support-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
+          <article class="bento-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <h3>Ejecutivo de cuenta asignado</h3>
           </article>
 
+          <!-- Visual Card (Top Right) -->
+          <div class="bento-visual">
+            <img src="./public/images/LogosJuntos.webp" alt="Alianza Faro Protec & SentinelOne" />
+          </div>
+
           <!-- Card 3 -->
-          <article class="support-card">
-            <div class="support-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
+          <article class="bento-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <h3>Tiempo de respuesta de 3 horas</h3>
           </article>
 
           <!-- Card 4 -->
-          <article class="support-card">
-            <div class="support-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <rect width="20" height="14" x="2" y="3" rx="2" />
-                <line x1="8" x2="16" y1="21" y2="21" />
-                <line x1="12" x2="12" y1="17" y2="21" />
-              </svg>
+          <article class="bento-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
             </div>
             <h3>Portal para casos de soporte</h3>
           </article>
 
-          <!-- Card 5 (Visual) -->
-          <div class="support-card-visual">
-            <img src="./public/images/LogosJuntos.webp" alt="Alianza Faro Protec & SentinelOne" />
-          </div>
-
-          <!-- Card 6 -->
-          <article class="support-card">
-            <div class="support-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
-                <path d="M8 7h6" />
-                <path d="M8 11h8" />
-                <path d="M8 15h6" />
-              </svg>
+          <!-- Card 5 -->
+          <article class="bento-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h6"/><path d="M8 11h8"/><path d="M8 15h6"/></svg>
             </div>
             <h3>Transferencia de conocimientos (3 ing.)</h3>
           </article>
 
-          <!-- Card 7 -->
-          <article class="support-card">
-            <div class="support-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <rect width="18" height="18" x="3" y="3" rx="2" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>
+          <!-- Card 6 -->
+          <article class="bento-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
             </div>
             <h3>Sesiones remotas ilimitadas</h3>
           </article>
 
-          <!-- Card 8 -->
-          <article class="support-card">
-            <div class="support-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
+          <!-- Card 7 -->
+          <article class="bento-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <h3>Número 800 dedicado a soporte</h3>
           </article>
 
-          <!-- Card 9 -->
-          <article class="support-card">
-            <div class="support-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>
+          <!-- Card 8 -->
+          <article class="bento-card bento-wide">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
             </div>
             <h3>Escalación de casos prioritarios</h3>
           </article>
@@ -2462,95 +2494,7 @@
       </div>
     </section>
 
-    <!-- PROPOSAL 2: MINIMALIST & ELEGANT -->
-    <section id="soporte-minimal" class="section-dark" style="border-top: 1px solid var(--line);">
-      <div class="container">
-        <!-- No headers for Prop 2 -->
-
-        <div class="support-minimalist-grid">
-          <div class="support-item-min">
-            <span class="num">01</span>
-            <h4>Asistencia en planeación e implementación</h4>
-          </div>
-          <div class="support-item-min">
-            <span class="num">02</span>
-            <h4>Ejecutivo de cuenta asignado</h4>
-          </div>
-          <div class="support-item-min">
-            <span class="num">03</span>
-            <h4>Tiempo de respuesta de 3 horas</h4>
-          </div>
-          <div class="support-item-min">
-            <span class="num">04</span>
-            <h4>Portal para casos de soporte</h4>
-          </div>
-          <div class="support-item-min">
-            <span class="num">05</span>
-            <h4>Transferencia de conocimientos (3 ing.)</h4>
-          </div>
-          <div class="support-item-min">
-            <span class="num">06</span>
-            <h4>Sesiones remotas ilimitadas</h4>
-          </div>
-          <div class="support-item-min">
-            <span class="num">07</span>
-            <h4>Número 800 dedicado a soporte</h4>
-          </div>
-          <div class="support-item-min">
-            <span class="num">08</span>
-            <h4>Escalación de casos prioritarios</h4>
-          </div>
-
-          <div class="support-visual-min">
-            <img src="./public/images/LogosJuntos.webp" alt="Faro Protec & SentinelOne" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROPOSAL 3: HORIZONTAL MINIMALIST -->
-    <section id="soporte-minimal-3" class="section-dark" style="border-top: 1px solid var(--line);">
-      <div class="container">
-        <div class="support-minimalist-3">
-          <div class="support-item-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <h4>Asistencia en planeación e implementación</h4>
-          </div>
-          <div class="support-item-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <h4>Ejecutivo de cuenta asignado</h4>
-          </div>
-          <div class="support-item-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <h4>Tiempo de respuesta de 3 horas</h4>
-          </div>
-          <div class="support-item-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <h4>Portal para casos de soporte</h4>
-          </div>
-          <div class="support-item-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <h4>Transferencia de conocimientos (3 ing.)</h4>
-          </div>
-          <div class="support-item-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <h4>Sesiones remotas ilimitadas</h4>
-          </div>
-          <div class="support-item-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <h4>Número 800 dedicado a soporte</h4>
-          </div>
-          <div class="support-item-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <h4>Escalación de casos prioritarios</h4>
-          </div>
-        </div>
-
-        <div class="support-visual-min" style="margin-top: 40px;">
-          <img src="./public/images/LogosJuntos.webp" alt="Faro Protec & SentinelOne" style="max-width: 240px;" />
-        </div>
-      </div>
-    </section>
+    <!-- Minimalist Support Section Applied -->
 
     <section id="cotizar" class="section-soft" aria-labelledby="cotizar-title">
       <div class="container form-grid">
