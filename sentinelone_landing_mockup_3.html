@@ -625,7 +625,7 @@
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 40px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .trust-grid {
@@ -1142,10 +1142,13 @@
     }
 
     .form-note ul {
-      margin: 14px 0 0;
+      margin: 20px 0 0;
       padding-left: 18px;
       color: var(--muted);
       font-size: 17px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
     .form-row {
@@ -2847,13 +2850,13 @@
     <section id="cotizar" class="section-dark" aria-labelledby="cotizar-title">
       <div class="container form-grid">
 
-        <div>
+        <div style="display: flex; flex-direction: column;">
           <p class="kicker">Agenda una demo</p>
           <h2 id="cotizar-title">Solicita cotización o asesoría técnica</h2>
           <p class="section-desc">Protección total, impulsada por IA. Unifica tu defensa, supera a las amenazas y
             potencia a tus analistas con seguridad autónoma.</p>
 
-          <div class="form-note">
+          <div class="form-note" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
             <h3>Ventajas clave</h3>
             <ul>
               <li>Unifica endpoint, nube, SIEM e IA para una protección más completa.</li>
