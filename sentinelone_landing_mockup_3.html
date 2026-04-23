@@ -362,7 +362,6 @@
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 24px;
       backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
     }
 
     .benefit-item strong {
@@ -400,7 +399,7 @@
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      transition: none;
     }
 
     .mini-card {
@@ -657,12 +656,10 @@
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: border-color 0.3s ease;
+      transition: none;
     }
 
-    .support-card:hover {
-      border-color: var(--primary-soft);
-    }
+
 
     .support-card .support-icon {
       width: 52px;
@@ -733,9 +730,7 @@
       transition: border-color 0.4s ease;
     }
 
-    .support-item-min:hover {
-      border-color: var(--primary);
-    }
+
 
     .support-item-min .num {
       display: block;
@@ -764,10 +759,7 @@
       transition: all 0.5s ease;
     }
 
-    .support-visual-min:hover {
-      opacity: 1;
-      filter: grayscale(0);
-    }
+
 
     .support-visual-min img {
       max-width: 320px;
@@ -1434,9 +1426,7 @@
       color: #cbd5e1;
     }
 
-    .comp-table tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
-    }
+
 
     .comp-check {
       color: var(--primary);
@@ -1680,7 +1670,6 @@
 
     .modal-close:hover {
       background: var(--danger);
-      transform: rotate(90deg);
     }
 
     .modal-body {
