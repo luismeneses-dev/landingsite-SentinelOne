@@ -1185,16 +1185,39 @@
     textarea {
       resize: vertical;
       min-height: 130px;
-    }
+}
 
-    .fineprint {
+      .fineprint {
       margin-top: 14px;
       color: #64748b;
       font-size: 17px;
     }
 
     .footer {
-      padding: 100px 0;
+      padding: 60px 0;
+      border-top: 1px solid var(--line);
+      background: #000;
+    }
+
+    .footer p {
+      font-size: 17px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .footer a:hover {
+      opacity: 0.8;
     }
 
     .footer section {
@@ -1374,7 +1397,6 @@
       }
       h1 { font-size: 40px !important; }
       h2 { font-size: 32px !important; }
-      .footer h2 { font-size: 24px !important; }
       .section-desc { font-size: 17px !important; }
       .support-header-v3 { padding: 10px 20px; }
       .support-header-v3 h3 { font-size: 17px !important; }
@@ -2908,21 +2930,12 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-grid">
-      <section aria-labelledby="footer-brand-title">
-        <h2 id="footer-brand-title">Ciberseguridad con IA diseñada para velocidad y escala</h2>
-        <p>Experimenta una protección orientada a continuidad operativa, visibilidad y respuesta automatizada.</p>
-      </section>
-      <section aria-labelledby="footer-beneficios-title">
-        <h3 id="footer-beneficios-title">Beneficios</h3>
-        <p>Unifica tu defensa, supera a las amenazas y potencia a tus analistas con seguridad autónoma para endpoints.
-        </p>
-      </section>
-      <section aria-labelledby="footer-legal-title">
-        <h3 id="footer-legal-title">Faro Protec</h3>
-        <p>SentinelOne en México con enfoque en implementación, soporte, continuidad operativa y seguridad de IA con
-          Prompt Security.</p>
-      </section>
+    <div class="container">
+      <p>
+        <span>Copyright © 2026 Faro Soluciones</span>
+        <span style="opacity: 0.3;">|</span>
+        <a href="https://www.faroprotec.com/aviso-de-privacidad" target="_blank">Aviso de privacidad</a>
+      </p>
     </div>
   </footer>
   <!-- PDF Modal Structure -->
