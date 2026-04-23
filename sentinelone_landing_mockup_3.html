@@ -1643,6 +1643,26 @@
       letter-spacing: 0;
     }
 
+    /* Fit Planes section on laptop screens (125% zoom) */
+    @media (max-height: 900px) {
+      #planes {
+        padding: 60px 0 !important;
+      }
+      #planes h2 {
+        font-size: 38px !important;
+      }
+      .plans-grid {
+        margin-top: 24px !important;
+      }
+      .plan-card {
+        padding: 16px 20px !important;
+      }
+      #planes .btn-outline {
+        padding: 14px 40px !important;
+        font-size: 17px !important;
+      }
+    }
+
     @media (max-width: 768px) {
 
       .comp-table th:first-child,
@@ -2590,7 +2610,7 @@
             </div>
           </article>
         </div>
-        <div style="margin-top: 48px; display: flex; justify-content: center;">
+        <div class="planes-btn-wrap" style="margin-top: 32px; display: flex; justify-content: center;">
           <a class="btn btn-outline" href="#cotizar" style="padding: 18px 60px; font-size: 19px;">Solicitar demo</a>
         </div>
       </div>
