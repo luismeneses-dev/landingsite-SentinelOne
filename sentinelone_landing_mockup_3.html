@@ -1516,12 +1516,14 @@
       .support-list,
       .form-row,
       .mini-stats,
-      .footer-grid {
+      .footer-grid,
+      .hero-benefits {
         grid-template-columns: 1fr;
       }
 
-      .topbar-note {
-        display: none;
+      .topbar-note,
+      .hide-mobile {
+        display: none !important;
       }
 
       .hero-grid,
@@ -1753,7 +1755,7 @@
   <header class="header">
     <div class="container header-inner">
       <div style="font-size: 17px; font-weight: 600; color: #fff;">
-        Faro Protec <span style="color: var(--primary); margin: 0 8px;">|</span> Distribuidor Oficial en México
+        Faro Protec <span class="hide-mobile"><span style="color: var(--primary); margin: 0 8px;">|</span> Distribuidor Oficial en México</span>
       </div>
 
       <nav class="nav" aria-label="Navegación principal">
