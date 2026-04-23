@@ -1181,7 +1181,8 @@
     .form-row {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
     label {
@@ -1199,7 +1200,7 @@
       margin-top: 8px;
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 14px 16px;
+      padding: 10px 14px;
       font: inherit;
       font-weight: 400;
       color: #fff;
@@ -1214,7 +1215,8 @@
 
     textarea {
       resize: vertical;
-      min-height: 130px;
+      min-height: 64px;
+      height: 64px;
     }
 
     .fineprint {
@@ -1452,27 +1454,6 @@
 
       #console-showcase .section-head {
         margin-bottom: 16px !important;
-      }
-
-      /* Form Compaction for Laptop */
-      #cotizar .form-row {
-        margin-bottom: 10px !important;
-        gap: 10px !important;
-      }
-
-      #cotizar input,
-      #cotizar select,
-      #cotizar textarea {
-        padding: 10px 14px !important;
-      }
-
-      #cotizar textarea {
-        min-height: 80px !important;
-      }
-
-      #cotizar .form-note ul {
-        gap: 20px !important;
-        margin-top: 20px !important;
       }
     }
 
