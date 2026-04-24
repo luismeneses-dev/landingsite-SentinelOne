@@ -596,6 +596,17 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
+    .support-split {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .support-split .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
 
 
     .card-visual small {
@@ -1460,6 +1471,10 @@
     @media (max-width: 1100px) {
       .cards-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .support-split {
+        grid-template-columns: 1fr;
       }
 
       .plans-grid,
@@ -2617,9 +2632,9 @@
     </section>
 
     <section id="soporte" class="section-soft" aria-labelledby="soporte-title">
-      <div class="container" style="max-width: 1300px;">
-        <div class="section-head" style="justify-content: flex-start; text-align: left; margin-bottom: 32px;">
-          <div style="max-width: 900px;">
+      <div class="container support-split" style="max-width: 1300px;">
+        <div class="section-head" style="justify-content: flex-start; text-align: left; margin-bottom: 0;">
+          <div style="max-width: 900px; position: sticky; top: 120px;">
             <p class="kicker">Póliza de soporte premium</p>
             <h2 id="soporte-title">Faro Protec te ofrece asistencia en todo
               el proceso de implementación</h2>
