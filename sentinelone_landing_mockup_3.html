@@ -1574,6 +1574,33 @@
         padding-top: 52px;
         padding-bottom: 52px;
       }
+
+      /* Mobile Table Optimization */
+      .comp-table th:first-child,
+      .comp-table td:first-child {
+        width: 140px !important;
+        min-width: 140px !important;
+        font-size: 14px !important;
+      }
+
+      .comp-table thead th {
+        font-size: 14px !important;
+        padding: 8px !important;
+      }
+
+      .comp-table td {
+        font-size: 14px !important;
+        padding: 8px !important;
+      }
+
+      .comp-table {
+        min-width: 500px !important;
+        /* Reduce total width to make scroll faster */
+      }
+
+      .comp-category {
+        font-size: 13px !important;
+      }
     }
 
     /* Comparison Table Styles */
