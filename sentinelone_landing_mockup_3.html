@@ -607,6 +607,28 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
+    .support-text-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 32px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .support-text-grid li {
+      display: flex;
+      gap: 12px;
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.5;
+      align-items: flex-start;
+    }
+
+    .support-text-grid li strong {
+      color: #fff;
+    }
+
 
 
     .card-visual small {
@@ -1474,6 +1496,10 @@
       }
 
       .support-split {
+        grid-template-columns: 1fr;
+      }
+      
+      .support-text-grid {
         grid-template-columns: 1fr;
       }
 
@@ -2641,125 +2667,40 @@
           </div>
         </div>
 
-        <div class="cards-grid">
-          <article class="card">
-            <div class="card-visual" style="display: flex; align-items: center; gap: 12px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" width="24" height="24" style="min-width: 24px;">
-                <path d="m12 14 4-4-4-4" />
-                <path d="M3 3.44a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16.56a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3.44Z" />
-                <path d="M7 11h1" />
-              </svg>
-              <div><strong>Planeación e implementación</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Arquitectura, despliegue y configuración inicial a la medida de tu red.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" style="display: flex; align-items: center; gap: 12px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" width="24" height="24" style="min-width: 24px;">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-              <div><strong>Ejecutivo de cuenta asignado</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Contacto directo para seguimiento estratégico y evaluación continua de tu consola.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" style="display: flex; align-items: center; gap: 12px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" width="24" height="24" style="min-width: 24px;">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <div><strong>Tiempo de respuesta de 3 horas</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Atención rápida garantizada ante incidentes críticos para minimizar el impacto.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" style="display: flex; align-items: center; gap: 12px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" width="24" height="24" style="min-width: 24px;">
-                <rect width="20" height="14" x="2" y="3" rx="2" />
-                <line x1="8" x2="16" y1="21" y2="21" />
-                <line x1="12" x2="12" y1="17" y2="21" />
-              </svg>
-              <div><strong>Portal para casos de soporte</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Plataforma centralizada para gestión de tickets y seguimiento en tiempo real.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" style="display: flex; align-items: center; gap: 12px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" width="24" height="24" style="min-width: 24px;">
-                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
-                <path d="M8 7h6" />
-                <path d="M8 11h8" />
-                <path d="M8 15h6" />
-              </svg>
-              <div><strong>Transferencia de conocimientos</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Capacitación para que tu equipo domine y administre la consola de forma óptima.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" style="display: flex; align-items: center; gap: 12px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" width="24" height="24" style="min-width: 24px;">
-                <rect width="18" height="18" x="3" y="3" rx="2" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>
-              <div><strong>Sesiones remotas ilimitadas</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Soporte remoto sin límite para resolver dudas y ajustar configuraciones.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" style="display: flex; align-items: center; gap: 12px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" width="24" height="24" style="min-width: 24px;">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-              <div><strong>Número 800 dedicado a soporte</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Línea telefónica directa para atención inmediata sin barreras de comunicación.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" style="display: flex; align-items: center; gap: 12px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" width="24" height="24" style="min-width: 24px;">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>
-              <div><strong>Escalación de casos prioritarios</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Protocolo para elevar incidentes críticos al equipo de ingeniería avanzada.</p>
-            </div>
-          </article>
-        </div>
+        <ul class="support-text-grid">
+          <li>
+            <span class="dot-ok" aria-hidden="true" style="margin-top: 6px; min-width: 8px;"></span>
+            <div><strong>Planeación e implementación:</strong> Arquitectura, despliegue y configuración inicial a la medida de tu red.</div>
+          </li>
+          <li>
+            <span class="dot-ok" aria-hidden="true" style="margin-top: 6px; min-width: 8px;"></span>
+            <div><strong>Ejecutivo de cuenta asignado:</strong> Contacto directo para seguimiento estratégico y evaluación continua de tu consola.</div>
+          </li>
+          <li>
+            <span class="dot-ok" aria-hidden="true" style="margin-top: 6px; min-width: 8px;"></span>
+            <div><strong>Tiempo de respuesta de 3 horas:</strong> Atención rápida garantizada ante incidentes críticos para minimizar el impacto.</div>
+          </li>
+          <li>
+            <span class="dot-ok" aria-hidden="true" style="margin-top: 6px; min-width: 8px;"></span>
+            <div><strong>Portal para casos de soporte:</strong> Plataforma centralizada para gestión de tickets y seguimiento en tiempo real.</div>
+          </li>
+          <li>
+            <span class="dot-ok" aria-hidden="true" style="margin-top: 6px; min-width: 8px;"></span>
+            <div><strong>Transferencia de conocimientos:</strong> Capacitación para que tu equipo domine y administre la consola de forma óptima.</div>
+          </li>
+          <li>
+            <span class="dot-ok" aria-hidden="true" style="margin-top: 6px; min-width: 8px;"></span>
+            <div><strong>Sesiones remotas ilimitadas:</strong> Soporte remoto sin límite para resolver dudas y ajustar configuraciones.</div>
+          </li>
+          <li>
+            <span class="dot-ok" aria-hidden="true" style="margin-top: 6px; min-width: 8px;"></span>
+            <div><strong>Número 800 dedicado a soporte:</strong> Línea telefónica directa para atención inmediata sin barreras de comunicación.</div>
+          </li>
+          <li>
+            <span class="dot-ok" aria-hidden="true" style="margin-top: 6px; min-width: 8px;"></span>
+            <div><strong>Escalación de casos prioritarios:</strong> Protocolo para elevar incidentes críticos al equipo de ingeniería avanzada.</div>
+          </li>
+        </ul>
       </div>
     </section>
 
