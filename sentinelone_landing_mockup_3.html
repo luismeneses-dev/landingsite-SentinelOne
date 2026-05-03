@@ -2149,7 +2149,7 @@
               fuga de
               datos y exposición a nuevas amenazas.
             </p>
-            <button class="btn btn-primary" onclick="openPdfModal('./public/pdf/Datasheet_Prompt_Security_DS_v2.pdf')" style="margin-top: 24px;">Programa Demo</button>
+            <button class="btn btn-primary" onclick="openModal('https://www.youtube.com/embed/DBVNVlBYLIk', 'Demo - Prompt Security')" style="margin-top: 24px;">Ver Demo</button>
           </div>
         </div>
 
@@ -3166,38 +3166,46 @@
       </p>
     </div>
   </footer>
-  <!-- PDF Modal Structure -->
-  <div id="pdfModal" class="modal-overlay" onclick="if(event.target === this) closePdfModal()">
+  <!-- Dynamic Modal Structure -->
+  <div id="dynamicModal" class="modal-overlay" onclick="if(event.target === this) closeModal()">
     <div class="modal-content-wrapper">
       <div class="modal-header">
-        <span>Hoja de Datos - SentinelOne</span>
-        <button class="modal-close" onclick="closePdfModal()" aria-label="Cerrar modal">&times;</button>
+        <span id="modalTitle">Hoja de Datos - SentinelOne</span>
+        <button class="modal-close" onclick="closeModal()" aria-label="Cerrar modal">&times;</button>
       </div>
       <div class="modal-body">
-        <iframe id="pdfIframe" src=""></iframe>
+        <iframe id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
   <script>
-    function openPdfModal(pdfPath) {
-      const modal = document.getElementById('pdfModal');
-      const iframe = document.getElementById('pdfIframe');
-      iframe.src = pdfPath;
+    function openModal(url, title = 'Documentación - SentinelOne') {
+      const modal = document.getElementById('dynamicModal');
+      const iframe = document.getElementById('modalIframe');
+      const titleSpan = document.getElementById('modalTitle');
+      
+      titleSpan.textContent = title;
+      iframe.src = url;
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
-    function closePdfModal() {
-      const modal = document.getElementById('pdfModal');
-      const iframe = document.getElementById('pdfIframe');
+
+    function closeModal() {
+      const modal = document.getElementById('dynamicModal');
+      const iframe = document.getElementById('modalIframe');
       iframe.src = '';
       modal.style.display = 'none';
       document.body.style.overflow = 'auto';
     }
 
+    // Keep aliases for compatibility with other buttons if any
+    window.openPdfModal = (path) => openModal(path, 'Hoja de Datos - SentinelOne');
+    window.closePdfModal = closeModal;
+
     // Cerrar con tecla Esc
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closePdfModal();
+      if (e.key === 'Escape') closeModal();
     });
 
     // Accordion Logic
