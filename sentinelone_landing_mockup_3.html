@@ -1566,6 +1566,24 @@
       .trust-grid {
         grid-template-columns: 1fr;
       }
+
+      /* Fix hero column layout when stacked */
+      .hero-grid > div:first-child {
+        height: auto !important;
+      }
+
+      .hero-grid > div:first-child .hero-benefits {
+        margin: 24px 0 0 !important;
+      }
+
+      .hero-grid > div:first-child .hero-actions {
+        margin-top: 20px !important;
+      }
+
+      /* Hide risk card on tablet/mobile */
+      .risk-card {
+        display: none !important;
+      }
     }
 
     @media (max-width: 820px) {
