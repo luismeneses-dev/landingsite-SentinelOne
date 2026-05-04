@@ -2156,9 +2156,12 @@
             </p>
             <button class="btn btn-primary" onclick="openModal('https://www.youtube.com/embed/DBVNVlBYLIk', 'Demo - Prompt Security')" style="margin-top: 24px;">Ver Demo</button>
           </div>
-          <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center;">
+          <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center; background: transparent;">
             <img src="./public/images/securityprompt-diagram.svg" alt="Diagrama de Intercepción de Prompt Security"
-              style="width: 100%; max-width: 600px; height: auto;" />
+              onclick="openImageModal('./public/images/securityprompt-diagram.svg', 'Diagrama de Intercepción de Prompt Security')"
+              title="Clic para ampliar"
+              style="width: 100%; max-width: 600px; height: auto; cursor: zoom-in; transition: opacity 0.2s;"
+              onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" />
           </div>
         </div>
 
