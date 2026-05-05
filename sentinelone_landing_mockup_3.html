@@ -1639,10 +1639,31 @@
         max-height: 350px !important;
       }
 
-      /* Planes: Keep 3 columns in laptop/tablet */
+      /* Planes: Keep 3 columns in laptop/tablet and compress vertically for short screens */
       .plans-grid {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 15px !important;
+        margin-top: 20px !important;
+      }
+      #planes h2 {
+        font-size: 32px !important;
+        margin-bottom: 15px !important;
+      }
+      .plan-card {
+        padding: 20px !important;
+      }
+      .plan-features {
+        gap: 8px !important;
+      }
+      .planes-btn-wrap {
+        margin-top: 16px !important;
+      }
+
+      /* Specific fix for very short screens (like 680px height) */
+      @media (max-height: 750px) {
+        #planes {
+          padding: 40px 0 !important;
+        }
       }
 
       /* Confianza Section: Smaller image and wider text on laptop */
