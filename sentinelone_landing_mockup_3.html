@@ -1531,8 +1531,9 @@
         min-height: auto;
       }
 
-      h1 { font-size: 48px; }
-      h2 { font-size: 44px; }
+      h1, h2 {
+        /* font-size scales handled at 1100px and 820px to respect 3-size rule */
+      }
 
       .section-desc {
         font-size: 17px !important;
