@@ -1593,7 +1593,13 @@
       }
 
       /* Fix gap in Proteccion Empresarial section on laptop */
+      #proteccion-empresarial .two-col {
+        grid-template-columns: 1fr 540px !important;
+        align-items: center !important;
+      }
       #proteccion-empresarial .sidebar-card {
+        max-width: 540px !important;
+        justify-self: center;
         justify-content: flex-start !important;
       }
       #proteccion-empresarial .sidebar-card div:last-child {
