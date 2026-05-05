@@ -2974,17 +2974,24 @@
             </div>
           </div>
 
-          <!-- Nueva Visual Card: Solo la imagen ocupando 3/4 de la sección -->
-          <div style="width: 100%; border-radius: 28px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-            <img src="./public/images/Singularity_Complete.jpg" 
-                 alt="Singularity Complete Dashboard"
-                 style="
-                   width: 100%; 
-                   height: auto;
-                   display: block;
-                   cursor: zoom-in;
-                 "
-                 onclick="openImageModal('./public/images/Singularity_Complete.jpg', 'Singularity Complete Dashboard')">
+          <!-- Nueva Visual Card: Imagen 3/4 + Botón Datasheet -->
+          <div style="display: flex; flex-direction: column; gap: 24px; align-items: center;">
+            <div style="width: 100%; border-radius: 28px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+              <img src="./public/images/Singularity_Complete.jpg" 
+                   alt="Singularity Complete Dashboard"
+                   style="
+                     width: 100%; 
+                     height: auto;
+                     display: block;
+                     cursor: zoom-in;
+                   "
+                   onclick="openImageModal('./public/images/Singularity_Complete.jpg', 'Singularity Complete Dashboard')">
+            </div>
+            <button class="btn btn-primary" 
+                    onclick="openPdfModal('./public/pdf/hoja_datos_sentinel_storyline.pdf')"
+                    style="max-width: 400px; width: 100%;">
+              Ver hoja técnica Storyline
+            </button>
           </div>
         </div>
       </div>
