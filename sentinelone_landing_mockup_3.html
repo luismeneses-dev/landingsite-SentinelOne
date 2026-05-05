@@ -1630,8 +1630,16 @@
         margin-top: 4px !important;
       }
       #soluciones .two-col {
-        grid-template-columns: 2fr 1fr !important;
+        grid-template-columns: 3fr 1fr !important; /* Image even smaller */
         gap: 20px !important;
+        align-items: center !important; /* Don't stretch image to full card height */
+      }
+      #soluciones .two-col > div:last-child {
+        max-height: 380px !important;
+      }
+      #soluciones .two-col > div:last-child img {
+        height: auto !important;
+        object-fit: contain !important;
       }
 
       .support-split,
