@@ -1661,24 +1661,24 @@
       @media (max-height: 750px) {
         /* Keep 60px padding and 54px title as requested */
       }
-      /* Confianza Section: Smaller image and compressed gaps on laptop */
+      /* Confianza Section: Smaller image and much wider text column to reduce height */
       #confianza {
         padding: 60px 0 !important;
       }
       #confianza .two-col {
-        grid-template-columns: 0.8fr 1.2fr !important;
+        grid-template-columns: 0.5fr 1.5fr !important; /* Widened text column */
         align-items: center !important;
         gap: 20px !important;
       }
       #confianza .two-col > div:first-child {
-        max-height: 350px !important;
+        max-height: 280px !important; /* Smaller image */
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
       }
       #confianza img {
-        max-height: 350px !important;
+        max-height: 280px !important;
         width: auto !important;
         object-fit: contain !important;
       }
