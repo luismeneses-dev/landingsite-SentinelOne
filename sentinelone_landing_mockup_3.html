@@ -1642,17 +1642,24 @@
         object-fit: contain !important;
       }
 
+      /* Global size reduction for laptops */
+      body {
+        font-size: 15px !important;
+      }
+      section, .section-soft, .section-dark {
+        padding: 40px 0 !important;
+      }
+
       .support-split,
       .support-text-grid,
       .plans-grid,
       .hero-grid,
-      .two-col,
-      .support-grid,
-      .form-grid,
       .sectors-grid,
       .trust-grid {
         grid-template-columns: 1fr;
       }
+
+      /* Keep two-col and feature-grid side-by-side longer (until 820px) */
 
       /* Fix hero column layout when stacked */
       .hero-grid>div:first-child {
