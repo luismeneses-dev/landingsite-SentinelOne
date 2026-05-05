@@ -1713,6 +1713,19 @@
         grid-template-columns: 1fr;
       }
 
+      /* Hide platform diagram on mobile — cards are enough */
+      .sol-img-col {
+        display: none !important;
+      }
+
+      /* Make cards use full width when image is hidden */
+      #soluciones .two-col {
+        grid-template-columns: 1fr !important;
+      }
+      #soluciones .cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
       .feature-image-container {
         grid-column: 1;
       }
