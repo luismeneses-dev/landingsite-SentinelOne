@@ -1582,16 +1582,24 @@
         grid-template-columns: 1.2fr 0.8fr !important;
         gap: 20px !important;
       }
-      #soluciones img { max-height: 300px !important; }
 
       #soluciones .sol-img-col {
         max-width: 540px !important;
         overflow: hidden;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 24px !important;
+        padding: 20px !important;
+        align-self: center !important;
       }
       #soluciones .sol-img-col img {
         width: 100% !important;
         height: auto !important;
-        max-height: 300px !important;
+        max-height: 280px !important;
         object-fit: contain !important;
       }
 
