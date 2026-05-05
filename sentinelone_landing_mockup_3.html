@@ -1565,6 +1565,19 @@
         gap: 30px !important;
       }
 
+      /* Force image column in soluciones to be small — overrides the global .two-col rule above */
+      #soluciones .two-col {
+        grid-template-columns: 1fr 300px !important;
+      }
+      #soluciones .sol-img-col {
+        max-width: 300px !important;
+        overflow: hidden;
+      }
+      #soluciones .sol-img-col img {
+        width: 100% !important;
+        height: auto !important;
+      }
+
       #confianza .two-col > div:last-child {
         gap: 20px !important; /* Reduce vertical gap between text blocks */
       }
@@ -2378,7 +2391,7 @@
           <a href="#comparativa" class="btn btn-primary">Ver comparativa</a>
         </div>
 
-        <div class="two-col" style="align-items: stretch; gap: 40px;">
+        <div class="two-col" style="align-items: stretch; gap: 40px; grid-template-columns: 1fr 300px;">
           <!-- Left: Grid de 8 cards (2 columnas) -->
           <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr);">
           <article class="card">
