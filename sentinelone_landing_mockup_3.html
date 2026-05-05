@@ -2974,8 +2974,8 @@
             </div>
           </div>
 
-          <!-- Nueva Video Card Premium: Sustituyendo la card estática de Storyline -->
-          <div class="video-card-premium" style="
+          <!-- Nueva Visual Card Premium: Sustituyendo el video por imagen de Singularity Complete -->
+          <div class="visual-card-premium" style="
             position: relative; 
             width: 100%; 
             max-width: 680px; 
@@ -2991,14 +2991,16 @@
             margin-left: auto;
             aspect-ratio: 16/10;
           ">
-            <video autoplay loop muted playsinline style="
-              width: 100%; 
-              border-radius: 18px; 
-              box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-              border: 1px solid rgba(255,255,255,0.05);
-            ">
-              <source src="./public/videos/SecuringAI_DSPM.mp4" type="video/mp4">
-            </video>
+            <img src="./public/images/Singularity_Complete.jpg" 
+                 alt="Singularity Complete Dashboard"
+                 style="
+                   width: 100%; 
+                   border-radius: 18px; 
+                   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+                   border: 1px solid rgba(255,255,255,0.05);
+                   cursor: zoom-in;
+                 "
+                 onclick="openImageModal('./public/images/Singularity_Complete.jpg', 'Singularity Complete Dashboard')">
           </div>
         </div>
       </div>
