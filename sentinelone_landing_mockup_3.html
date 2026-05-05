@@ -730,7 +730,8 @@
     }
 
     .feature-image-container img {
-      max-height: 480px; /* Prevent vertical overflow on desktop */
+      max-height: 480px;
+      /* Prevent vertical overflow on desktop */
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -1535,6 +1536,7 @@
     }
 
     @media (max-width: 1600px) {
+
       section,
       .hero,
       .section-vh,
@@ -1544,7 +1546,8 @@
         min-height: auto;
       }
 
-      h1, h2 {
+      h1,
+      h2 {
         /* font-size scales handled at 1100px and 820px to respect 3-size rule */
       }
 
@@ -1580,6 +1583,7 @@
         grid-template-columns: 1.2fr 0.8fr !important;
         gap: 40px !important;
       }
+
       #arquitectura h2 {
         font-size: 42px !important;
       }
@@ -1589,6 +1593,7 @@
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 12px !important;
       }
+
       #soluciones .two-col {
         grid-template-columns: 1.2fr 0.8fr !important;
         gap: 20px !important;
@@ -1607,6 +1612,7 @@
         padding: 20px !important;
         align-self: center !important;
       }
+
       #soluciones .sol-img-col img {
         width: 100% !important;
         height: auto !important;
@@ -1618,11 +1624,13 @@
       #ia-riesgos {
         padding: 60px 0 !important;
       }
+
       #ia-riesgos .two-col {
         grid-template-columns: 1fr 540px !important;
         align-items: center !important;
         gap: 20px !important;
       }
+
       #ia-riesgos .ai-risk-card {
         max-width: 540px !important;
         padding: 20px !important;
@@ -1634,19 +1642,23 @@
         align-items: center !important;
         justify-content: center !important;
       }
+
       #ia-riesgos .ai-risk-card img {
         max-height: 300px !important;
         width: auto !important;
         object-fit: contain !important;
       }
+
       /* FAQ Section: Balanced columns and vertical compression */
       #faq-section .feature-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 20px !important;
       }
+
       @media (max-height: 750px) {
         #faq-section .feature-grid {
-          grid-template-columns: repeat(3, 1fr) !important; /* 3 cols = 2 rows */
+          grid-template-columns: repeat(3, 1fr) !important;
+          /* 3 cols = 2 rows */
           gap: 12px !important;
         }
       }
@@ -1654,25 +1666,33 @@
       /* Integración Prompt Security: Vertical compression via gaps and internal padding */
       #prompt-security .feature-grid {
         grid-template-columns: 1.5fr 1fr !important;
-        gap: 10px !important; /* Tight row and column gaps */
+        gap: 10px !important;
+        /* Tight row and column gaps */
       }
+
       #prompt-security .section-head {
-        margin-bottom: 16px !important; /* Reclaim space above the grid */
+        margin-bottom: 16px !important;
+        /* Reclaim space above the grid */
       }
+
       #prompt-security .feature-box {
         padding: 12px !important;
       }
+
       #prompt-security .feature-box h3 {
         margin-bottom: 8px !important;
       }
+
       #prompt-security .feature-box p {
         margin-top: 4px !important;
       }
+
       .feature-image-container {
         grid-row: span 3 !important;
         grid-column: 2 !important;
         height: 100% !important;
       }
+
       .feature-image-container img {
         height: 100% !important;
         width: 100% !important;
@@ -1686,20 +1706,25 @@
         gap: 15px !important;
         margin-top: 20px !important;
       }
+
       /* Specific fix for very short screens (like 680px height) */
       @media (max-height: 750px) {
         /* Keep 60px padding and 54px title as requested */
       }
+
       /* Confianza Section: Balanced image size and wide text column */
       #confianza {
         padding: 60px 0 !important;
       }
+
       #confianza .two-col {
-        grid-template-columns: 350px 1fr !important; /* Balanced image column */
+        grid-template-columns: 350px 1fr !important;
+        /* Balanced image column */
         align-items: center !important;
-        gap: 40px !important; 
+        gap: 40px !important;
       }
-      #confianza .two-col > div:first-child {
+
+      #confianza .two-col>div:first-child {
         max-width: 350px !important;
         height: auto !important;
         overflow: hidden;
@@ -1707,8 +1732,10 @@
         align-items: center;
         justify-content: center;
       }
+
       #confianza img {
-        max-width: 320px !important; /* Middle ground size */
+        max-width: 320px !important;
+        /* Middle ground size */
         height: auto !important;
         width: auto !important;
         object-fit: contain !important;
@@ -1716,15 +1743,20 @@
       }
 
       /* Vertical compression for text column without changing font-size */
-      #confianza .two-col > div:last-child {
-        gap: 16px !important; /* Compressed from 32px */
+      #confianza .two-col>div:last-child {
+        gap: 16px !important;
+        /* Compressed from 32px */
       }
+
       #confianza .trust-card {
         padding: 16px !important;
       }
+
       #confianza .trust-card p {
-        margin-bottom: 12px !important; /* Compressed from 24px */
+        margin-bottom: 12px !important;
+        /* Compressed from 24px */
       }
+
       #confianza .check-list {
         gap: 8px !important;
       }
@@ -1734,33 +1766,51 @@
         grid-template-columns: 1fr 540px !important;
         align-items: center !important;
       }
+
       #proteccion-empresarial .sidebar-card {
         max-width: 540px !important;
         justify-self: center;
         justify-content: flex-start !important;
       }
+
       #proteccion-empresarial .sidebar-card div:last-child {
         margin-top: 32px !important;
       }
+
       #proteccion-empresarial .tags {
         margin-top: 24px !important;
         margin-bottom: 16px !important;
       }
 
       .trust-card {
-        padding: 20px !important; /* Slightly more padding for breathability */
+        padding: 20px !important;
+        /* Slightly more padding for breathability */
       }
     }
 
     @media (max-width: 1100px) {
-      section, .section-soft, .section-dark {
+
+      section,
+      .section-soft,
+      .section-dark {
         padding: 60px 0;
       }
 
-      h1 { font-size: 40px; }
-      h2 { font-size: 30px; }
-      h3, p, .section-desc, .card-visual strong, .brand-title, .kicker { 
-        font-size: 15px !important; 
+      h1 {
+        font-size: 40px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      h3,
+      p,
+      .section-desc,
+      .card-visual strong,
+      .brand-title,
+      .kicker {
+        font-size: 15px !important;
       }
 
       .section-head {
@@ -1789,38 +1839,48 @@
       #soluciones {
         padding: 20px 0 !important;
       }
+
       #soluciones h2 {
         font-size: 30px !important;
       }
-      #soluciones .container > div:first-child {
+
+      #soluciones .container>div:first-child {
         margin-bottom: 16px !important;
         gap: 12px !important;
       }
+
       #soluciones .cards-grid {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 8px !important;
       }
+
       #soluciones .card {
         padding: 10px !important;
       }
+
       #soluciones .card-visual {
         padding: 8px 10px !important;
       }
+
       #soluciones .card-visual strong {
         font-size: 15px !important;
       }
+
       #soluciones .card-body p {
         font-size: 15px !important;
         line-height: 1.2;
         margin-top: 4px !important;
       }
+
       /* Hide image at tablet — too cramped with the cards */
       #soluciones .sol-img-col {
         display: none !important;
       }
+
       #soluciones .two-col {
         grid-template-columns: 1fr !important;
       }
+
       #soluciones .cards-grid {
         grid-template-columns: repeat(2, 1fr) !important;
       }
@@ -1829,6 +1889,7 @@
       #ia-riesgos .ai-risk-card {
         display: none !important;
       }
+
       #ia-riesgos .two-col {
         grid-template-columns: 1fr !important;
       }
@@ -1864,15 +1925,30 @@
     }
 
     @media (max-width: 820px) {
-      section, .section-soft, .section-dark {
+
+      section,
+      .section-soft,
+      .section-dark {
         padding: 20px 0 !important;
       }
 
-      h1 { font-size: 32px; margin-bottom: 12px !important; }
-      h2 { font-size: 15px; margin-bottom: 10px !important; }
-      .kicker { margin-bottom: 6px !important; }
+      h1 {
+        font-size: 32px;
+        margin-bottom: 12px !important;
+      }
 
-      .nav { display: none !important; }
+      h2 {
+        font-size: 15px;
+        margin-bottom: 10px !important;
+      }
+
+      .kicker {
+        margin-bottom: 6px !important;
+      }
+
+      .nav {
+        display: none !important;
+      }
 
       .header .btn {
         padding: 8px 16px;
@@ -1900,6 +1976,7 @@
       #soluciones .two-col {
         grid-template-columns: 1fr !important;
       }
+
       #soluciones .cards-grid {
         grid-template-columns: repeat(2, 1fr) !important;
       }
@@ -2549,10 +2626,9 @@
         </div>
 
         <aside class="sidebar-card ai-risk-card glass-premium">
-          <img src="./public/images/Prompt_Agents_MCP_Visual.png" 
-               alt="Control de Agentes de IA y Servidores MCP"
-               onclick="openImageModal('./public/images/Prompt_Agents_MCP_Visual.png', 'Visualización de Control de Agentes de IA')"
-               title="Clic para ampliar">
+          <img src="./public/images/Prompt_Agents_MCP_Visual.png" alt="Control de Agentes de IA y Servidores MCP"
+            onclick="openImageModal('./public/images/Prompt_Agents_MCP_Visual.png', 'Visualización de Control de Agentes de IA')"
+            title="Clic para ampliar">
         </aside>
       </div>
     </section>
@@ -2586,55 +2662,55 @@
         <div class="two-col" style="align-items: stretch; gap: 40px; grid-template-columns: 1fr 540px;">
           <!-- Left: Grid de 8 cards (2 columnas) -->
           <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr);">
-          <article class="card">
-            <div class="card-visual">
-              <div><strong>Protección de Endpoints</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Prevención, detección y respuesta en un agente ligero.</p>
-            </div>
-          </article>
+            <article class="card">
+              <div class="card-visual">
+                <div><strong>Protección de Endpoints</strong></div>
+              </div>
+              <div class="card-body">
+                <p>Prevención, detección y respuesta en un agente ligero.</p>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-visual">
-              <div><strong>Seguridad en la Nube</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Defensa precisa con contexto unificado en endpoints y nube.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-visual">
-              <div><strong>Prevención de Ransomware</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Contención inmediata y rollback activo ante cualquier daño.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-visual">
-              <div><strong>IDR</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Protege credenciales y reduce la superficie de ataque.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-visual">
-              <div><strong>Managed Threat Hunting</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Monitoreo proactivo continuo para cazar amenazas ocultas.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-visual">
-              <div><strong>Arquitectura Multinivel</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Capas de defensa integradas con control granular de red y periférico</p>
-            </div>
-          </article>
+            <article class="card">
+              <div class="card-visual">
+                <div><strong>Seguridad en la Nube</strong></div>
+              </div>
+              <div class="card-body">
+                <p>Defensa precisa con contexto unificado en endpoints y nube.</p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-visual">
+                <div><strong>Prevención de Ransomware</strong></div>
+              </div>
+              <div class="card-body">
+                <p>Contención inmediata y rollback activo ante cualquier daño.</p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-visual">
+                <div><strong>IDR</strong></div>
+              </div>
+              <div class="card-body">
+                <p>Protege credenciales y reduce la superficie de ataque.</p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-visual">
+                <div><strong>Managed Threat Hunting</strong></div>
+              </div>
+              <div class="card-body">
+                <p>Monitoreo proactivo continuo para cazar amenazas ocultas.</p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-visual">
+                <div><strong>Arquitectura Multinivel</strong></div>
+              </div>
+              <div class="card-body">
+                <p>Capas de defensa integradas con control granular de red y periférico</p>
+              </div>
+            </article>
 
           </div>
 
@@ -2879,11 +2955,11 @@
     <section id="que-es-sentinel" class="section-dark" aria-labelledby="que-es-title">
       <div class="container">
         <div class="two-col"
-          style="grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; margin-bottom: 48px;">
+          style="grid-template-columns: 0.5fr 1.5fr; align-items: center; gap: 40px; margin-bottom: 48px;">
           <div style="display: flex; flex-direction: column; gap: 24px;">
             <div>
               <p class="kicker">¿Qué es SentinelOne?</p>
-              <h2 id="que-es-title" style="line-height: 1.2;">Defensa en Tiempo Real a la Velocidad de la IA</h2>
+              <h2 id="que-es-title" style="line-height: 1.2;">Defensa en Tiempo Real</h2>
               <p class="section-desc" style="margin-top: 16px;">
                 SentinelOne no solo alerta, resuelve. Storyline™ reconstruye los ataques automáticamente mientras el
                 agente
@@ -2902,24 +2978,24 @@
           <div class="video-card-premium" style="
             position: relative; 
             width: 100%; 
-            max-width: 750px; 
+            max-width: 1100px; 
             border-radius: 40px; 
             overflow: hidden; 
             background: url('./public/images/storyline_video_bg.png') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px 15px; /* Vertical alto, Horizontal corto para expandir video */
-            box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+            padding: 100px 20px; /* Masivo verticalmente */
+            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
             border: 1px solid rgba(255,255,255,0.1);
             margin-left: auto;
-            aspect-ratio: 16/13; /* Más alto verticalmente */
+            aspect-ratio: 16/9; /* Formato panorámico */
           ">
             <video autoplay loop muted playsinline style="
               width: 100%; 
-              border-radius: 18px; 
-              box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-              border: 1px solid rgba(255,255,255,0.1);
+              border-radius: 20px; 
+              box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+              border: 1px solid rgba(255,255,255,0.15);
             ">
               <source src="./public/videos/SecuringAI_DSPM.mp4" type="video/mp4">
             </video>
@@ -3028,9 +3104,8 @@
       <div class="container two-col" style="align-items: stretch;">
         <!-- Imagen a la Izquierda -->
         <div style="border-radius: 28px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-          <img src="./public/images/SentinelOne_Brand_Graphic.png" 
-               alt="SentinelOne Brand Graphic"
-               style="width: 100%; height: auto; object-fit: contain; object-position: center; display: block;">
+          <img src="./public/images/SentinelOne_Brand_Graphic.png" alt="SentinelOne Brand Graphic"
+            style="width: 100%; height: auto; object-fit: contain; object-position: center; display: block;">
         </div>
 
         <!-- Textos a la Derecha -->
@@ -3038,21 +3113,24 @@
           <div>
             <p class="kicker">Valor para la empresa</p>
             <h2 id="confianza-title">¿Por qué SentinelOne destaca?</h2>
-            <p class="section-desc">Protección autónoma impulsada por IA que unifica prevención, detección y respuesta en
+            <p class="section-desc">Protección autónoma impulsada por IA que unifica prevención, detección y respuesta
+              en
               una sola operación de seguridad empresarial.</p>
           </div>
-          
+
           <div class="trust-card">
             <h3>Capacidades clave de seguridad</h3>
             <p style="margin-bottom: 24px; opacity: 0.9; text-align: justify;">Tecnología de vanguardia diseñada para
               neutralizar amenazas complejas antes de que impacten en su infraestructura crítica, garantizando la
               continuidad operativa de su empresa.</p>
             <div class="check-list">
-              <div class="check-item"><span class="dot-ok" aria-hidden="true"></span> Prevención y contención automatizada
+              <div class="check-item"><span class="dot-ok" aria-hidden="true"></span> Prevención y contención
+                automatizada
               </div>
               <div class="check-item"><span class="dot-ok" aria-hidden="true"></span> Detección de malware y ransomware
               </div>
-              <div class="check-item"><span class="dot-ok" aria-hidden="true"></span> Visibilidad unificada en tiempo real
+              <div class="check-item"><span class="dot-ok" aria-hidden="true"></span> Visibilidad unificada en tiempo
+                real
               </div>
               <div class="check-item"><span class="dot-ok" aria-hidden="true"></span> Reducción de carga operativa en TI
               </div>
@@ -3080,14 +3158,13 @@
               intrusivo para uso seguro.</p>
           </article>
 
-          
+
           <!-- Imagen a la derecha, ocupando 3 filas -->
           <div class="feature-image-container">
-            <img src="./public/images/Prompt_Protect_Module05@2x-1.avif" 
-                 alt="Módulos de Protección de Prompt Security"
-                 onclick="openImageModal('./public/images/Prompt_Protect_Module05@2x-1.avif', 'Módulos de Protección de Prompt Security')"
-                 title="Clic para ampliar"
-                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 28px; cursor: zoom-in; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+            <img src="./public/images/Prompt_Protect_Module05@2x-1.avif" alt="Módulos de Protección de Prompt Security"
+              onclick="openImageModal('./public/images/Prompt_Protect_Module05@2x-1.avif', 'Módulos de Protección de Prompt Security')"
+              title="Clic para ampliar"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: 28px; cursor: zoom-in; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
           </div>
 
           <article class="feature-box">
