@@ -977,6 +977,25 @@
       justify-content: center;
     }
 
+    .ai-risk-card {
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+      min-height: 460px;
+    }
+
+    .ai-risk-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+      transform: scale(1.25);
+    }
+
     .trust-card {
       border-radius: 28px;
       padding: 12px;
@@ -1622,6 +1641,15 @@
         grid-column: 1;
       }
 
+      .ai-risk-card {
+        min-height: 220px;
+        margin-top: 24px;
+      }
+
+      .ai-risk-card img {
+        transform: scale(1.1);
+      }
+
       .topbar-note,
       .hide-mobile {
         display: none !important;
@@ -2253,12 +2281,11 @@
           </div>
         </div>
 
-        <aside class="sidebar-card glass-premium" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-top: 50px; min-height: 460px;">
+        <aside class="sidebar-card ai-risk-card glass-premium">
           <img src="./public/images/Prompt_Agents_MCP_Visual.png" 
                alt="Control de Agentes de IA y Servidores MCP"
                onclick="openImageModal('./public/images/Prompt_Agents_MCP_Visual.png', 'Visualización de Control de Agentes de IA')"
-               title="Clic para ampliar"
-               style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in; transform: scale(1.25);">
+               title="Clic para ampliar">
         </aside>
       </div>
     </section>
