@@ -1529,7 +1529,7 @@
       .section-vh,
       .section-soft,
       .section-dark {
-        padding: 50px 0 !important;
+        padding: 30px 0 !important;
         min-height: auto;
       }
 
@@ -1565,11 +1565,17 @@
         gap: 30px !important;
       }
 
-      /* Force image column in soluciones to be small — overrides the global .two-col rule above */
-      #soluciones .two-col {
-        grid-template-columns: 1fr 540px !important;
-        align-items: center !important;
+      /* Soluciones: 3 columns to save height on laptop */
+      #soluciones .cards-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
       }
+      #soluciones .two-col {
+        grid-template-columns: 1.2fr 0.8fr !important;
+        gap: 20px !important;
+      }
+      #soluciones img { max-height: 350px !important; }
+
       #soluciones .sol-img-col {
         max-width: 540px !important;
         overflow: hidden;
@@ -1577,21 +1583,37 @@
       #soluciones .sol-img-col img {
         width: 100% !important;
         height: auto !important;
-        max-height: 450px !important;
+        max-height: 350px !important;
         object-fit: contain !important;
       }
 
       /* AI Risks Section treatment */
+      #ia-riesgos {
+        padding: 24px 0 !important;
+      }
       #ia-riesgos .two-col {
         grid-template-columns: 1fr 540px !important;
         align-items: center !important;
+        gap: 20px !important;
       }
       #ia-riesgos .ai-risk-card {
         max-width: 540px !important;
       }
-      #ia-riesgos .ai-risk-card img {
-        max-height: 450px !important;
-        object-fit: contain !important;
+      /* Integración Prompt Security: Avoid vertical stack */
+      .feature-grid {
+        grid-template-columns: 1.5fr 1fr !important;
+        gap: 15px !important;
+      }
+      .feature-image-container {
+        grid-row: span 3 !important;
+        grid-column: 2 !important;
+        max-height: 400px !important;
+      }
+
+      /* Planes: Keep 3 columns in laptop/tablet */
+      .plans-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 15px !important;
       }
 
       #confianza .two-col > div:last-child {
@@ -1734,14 +1756,12 @@
 
     @media (max-width: 820px) {
       section, .section-soft, .section-dark {
-        padding: 50px 0;
+        padding: 20px 0 !important;
       }
 
-      h1 { font-size: 32px; }
-      h2 { font-size: 15px; }
-      p, body, li, span, .section-desc, .brand-title, .kicker, .tag { 
-        font-size: 13px !important; 
-      }
+      h1 { font-size: 32px; margin-bottom: 12px !important; }
+      h2 { font-size: 15px; margin-bottom: 10px !important; }
+      .kicker { margin-bottom: 6px !important; }
 
       .nav { display: none !important; }
 
@@ -1759,6 +1779,7 @@
       .footer-grid,
       .hero-benefits {
         grid-template-columns: 1fr;
+        gap: 8px !important;
       }
 
       /* Hide platform diagram on mobile — cards are enough */
