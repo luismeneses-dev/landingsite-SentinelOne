@@ -1529,7 +1529,7 @@
       .section-vh,
       .section-soft,
       .section-dark {
-        padding: 80px 0;
+        padding: 50px 0 !important;
         min-height: auto;
       }
 
@@ -1577,6 +1577,8 @@
       #soluciones .sol-img-col img {
         width: 100% !important;
         height: auto !important;
+        max-height: 450px !important;
+        object-fit: contain !important;
       }
 
       /* AI Risks Section treatment */
@@ -1586,6 +1588,10 @@
       }
       #ia-riesgos .ai-risk-card {
         max-width: 540px !important;
+      }
+      #ia-riesgos .ai-risk-card img {
+        max-height: 450px !important;
+        object-fit: contain !important;
       }
 
       #confianza .two-col > div:last-child {
