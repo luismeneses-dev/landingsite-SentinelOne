@@ -1592,6 +1592,18 @@
         gap: 20px !important; /* Reduce vertical gap between text blocks */
       }
 
+      /* Fix gap in Proteccion Empresarial section on laptop */
+      #proteccion-empresarial .sidebar-card {
+        justify-content: flex-start !important;
+      }
+      #proteccion-empresarial .sidebar-card div:last-child {
+        margin-top: 32px !important;
+      }
+      #proteccion-empresarial .tags {
+        margin-top: 24px !important;
+        margin-bottom: 16px !important;
+      }
+
       .trust-card {
         padding: 20px !important; /* Slightly more padding for breathability */
       }
@@ -2811,7 +2823,7 @@
       </div>
     </section>
 
-    <section class="section-soft" aria-labelledby="valor-title-2">
+    <section id="proteccion-empresarial" class="section-soft" aria-labelledby="valor-title-2">
       <div class="container two-col" style="align-items: stretch;">
         <div>
           <p class="kicker">Protección empresarial</p>
