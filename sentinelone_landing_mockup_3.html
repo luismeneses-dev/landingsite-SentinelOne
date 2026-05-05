@@ -2898,20 +2898,32 @@
             </div>
           </div>
 
-          <aside class="sidebar-card" style="max-width: 440px; margin-left: auto;">
-            <p>Contexto absoluto de cada evento. Storyline™ agrupa automáticamente los ataques en una línea de tiempo
-              clara.
-            </p>
-
-
-
-            <div class="hero-actions"
-              style="width: 100%; margin-top: 24px; display: flex; flex-direction: column; align-items: center;">
-              <button class="btn btn-primary" onclick="openPdfModal('./public/pdf/hoja_datos_sentinel_storyline.pdf')"
-                style="width: 100%; margin-bottom: 16px;">Ver hoja técnica Storyline</button>
-              <a href="#cotizar" style="color: #fff; text-decoration: none;">Hablar con un especialista →</a>
-            </div>
-          </aside>
+          <!-- Nueva Video Card Premium: Sustituyendo la card estática de Storyline -->
+          <div class="video-card-premium" style="
+            position: relative; 
+            width: 100%; 
+            max-width: 540px; 
+            border-radius: 32px; 
+            overflow: hidden; 
+            background: url('./public/images/storyline_video_bg.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-left: auto;
+            aspect-ratio: 16/11;
+          ">
+            <video autoplay loop muted playsinline style="
+              width: 100%; 
+              border-radius: 14px; 
+              box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+              border: 1px solid rgba(255,255,255,0.05);
+            ">
+              <source src="./public/videos/SecuringAI_DSPM.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </section>
