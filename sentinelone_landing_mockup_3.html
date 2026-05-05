@@ -1628,8 +1628,28 @@
         width: auto !important;
         object-fit: contain !important;
       }
+      /* FAQ Section: Balanced columns and vertical compression */
+      #faq-section .feature-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+      #faq-section h2 {
+        font-size: 32px !important;
+        margin-bottom: 20px !important;
+      }
+
+      @media (max-height: 750px) {
+        #faq-section {
+          padding: 40px 0 !important;
+        }
+        #faq-section .feature-grid {
+          grid-template-columns: repeat(3, 1fr) !important; /* 3 cols = 2 rows */
+          gap: 12px !important;
+        }
+      }
+
       /* Integración Prompt Security: Avoid vertical stack */
-      .feature-grid {
+      #prompt-security .feature-grid {
         grid-template-columns: 1.5fr 1fr !important;
         gap: 15px !important;
       }
