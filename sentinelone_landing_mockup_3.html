@@ -719,6 +719,11 @@
       margin-top: 26px;
     }
 
+    .feature-image-container {
+      grid-column: 3;
+      grid-row: span 3;
+    }
+
     /* Premium Support Card Grid */
     .support-grid-premium {
       display: grid;
@@ -1498,26 +1503,17 @@
     }
 
     @media (max-width: 1440px) {
-
       section,
       .hero,
       .section-vh,
       .section-soft,
       .section-dark {
-        padding: 40px 0 !important;
-        min-height: auto !important;
+        padding: 80px 0;
+        min-height: auto;
       }
 
-      h1 {
-        font-size: 40px !important;
-      }
-
-      h2,
-      #planes h2,
-      #soporte-title,
-      #cotizar-title {
-        font-size: 32px !important;
-      }
+      h1 { font-size: 48px; }
+      h2 { font-size: 44px; }
 
       .section-desc {
         font-size: 17px !important;
@@ -1543,24 +1539,35 @@
     }
 
     @media (max-width: 1100px) {
+      section, .section-soft, .section-dark {
+        padding: 60px 0;
+      }
+
+      h1 { font-size: 40px; }
+      h2 { font-size: 36px; }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .feature-image-container {
+        grid-column: span 2;
+        grid-row: auto;
+        margin-top: 20px;
+      }
+
       .cards-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .support-split {
-        grid-template-columns: 1fr;
-      }
-
-      .support-text-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .support-split,
+      .support-text-grid,
       .plans-grid,
       .hero-grid,
       .two-col,
       .support-grid,
       .form-grid,
-      .feature-grid,
       .sectors-grid,
       .trust-grid {
         grid-template-columns: 1fr;
@@ -1586,15 +1593,21 @@
     }
 
     @media (max-width: 820px) {
-      .nav {
-        display: none !important;
+      section, .section-soft, .section-dark {
+        padding: 50px 0;
       }
+
+      h1 { font-size: 36px; }
+      h2 { font-size: 32px; }
+
+      .nav { display: none !important; }
 
       .header .btn {
-        padding: 8px 16px !important;
-        font-size: 15px !important;
+        padding: 8px 16px;
+        font-size: 15px;
       }
 
+      .feature-grid,
       .cards-grid,
       .plans-grid,
       .support-list,
@@ -1603,6 +1616,10 @@
       .footer-grid,
       .hero-benefits {
         grid-template-columns: 1fr;
+      }
+
+      .feature-image-container {
+        grid-column: 1;
       }
 
       .topbar-note,
@@ -2781,7 +2798,7 @@
           </article>
           
           <!-- Imagen a la derecha, ocupando 3 filas -->
-          <div style="grid-column: 3; grid-row: span 3; display: flex; align-items: stretch;">
+          <div class="feature-image-container" style="display: flex; align-items: stretch;">
             <img src="./public/images/Prompt_Protect_Module05@2x-1.avif" 
                  alt="Módulos de Protección de Prompt Security"
                  onclick="openImageModal('./public/images/Prompt_Protect_Module05@2x-1.avif', 'Módulos de Protección de Prompt Security')"
