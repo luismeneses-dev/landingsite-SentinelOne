@@ -1647,14 +1647,15 @@
         line-height: 1.2;
         margin-top: 4px !important;
       }
+      /* Hide image at tablet — too cramped with the cards */
       #soluciones .sol-img-col {
-        max-width: 280px !important;
-        justify-self: end;
+        display: none !important;
       }
-      #soluciones .sol-img-col img {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: cover !important;
+      #soluciones .two-col {
+        grid-template-columns: 1fr !important;
+      }
+      #soluciones .cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
       }
 
       .support-split,
