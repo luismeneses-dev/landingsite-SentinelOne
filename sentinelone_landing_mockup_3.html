@@ -1648,7 +1648,13 @@
       .feature-image-container {
         grid-row: span 3 !important;
         grid-column: 2 !important;
-        max-height: 350px !important;
+        height: 100% !important;
+      }
+      .feature-image-container img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        border-radius: 24px !important;
       }
 
       /* Planes: Keep 3 columns in laptop/tablet and compress vertically for short screens */
