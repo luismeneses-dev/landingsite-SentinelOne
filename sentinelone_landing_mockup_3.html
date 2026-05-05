@@ -1579,6 +1579,15 @@
         height: auto !important;
       }
 
+      /* AI Risks Section treatment */
+      #ia-riesgos .two-col {
+        grid-template-columns: 1fr 540px !important;
+        align-items: center !important;
+      }
+      #ia-riesgos .ai-risk-card {
+        max-width: 540px !important;
+      }
+
       #confianza .two-col > div:last-child {
         gap: 20px !important; /* Reduce vertical gap between text blocks */
       }
@@ -1656,6 +1665,14 @@
       }
       #soluciones .cards-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      /* Hide AI Risks image at tablet */
+      #ia-riesgos .ai-risk-card {
+        display: none !important;
+      }
+      #ia-riesgos .two-col {
+        grid-template-columns: 1fr !important;
       }
 
       .support-split,
@@ -2345,7 +2362,7 @@
 
 
     <!-- SECTION 3: IA RISKS (Relocated) -->
-    <section class="section-dark" aria-labelledby="ia-riesgos-title">
+    <section id="ia-riesgos" class="section-dark" aria-labelledby="ia-riesgos-title">
       <div class="container two-col" style="align-items: flex-start;">
         <div>
           <p class="kicker">Riesgos de IA en operación real</p>
