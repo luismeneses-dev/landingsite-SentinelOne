@@ -1633,18 +1633,13 @@
         line-height: 1.2;
         margin-top: 4px !important;
       }
-      #soluciones .two-col {
-        grid-template-columns: 3fr 1fr !important; /* Image even smaller */
-        gap: 20px !important;
-        align-items: center !important; /* Don't stretch image to full card height */
+      #soluciones .sol-img-col {
+        max-width: 280px !important;
+        justify-self: end;
       }
-      #soluciones .two-col > div:last-child {
-        max-height: 300px !important;
-        overflow: hidden;
-      }
-      #soluciones .two-col > div:last-child img {
+      #soluciones .sol-img-col img {
         width: 100% !important;
-        height: 300px !important;
+        height: auto !important;
         object-fit: cover !important;
       }
 
@@ -2439,7 +2434,7 @@
           </div>
 
           <!-- Right: Imagen -->
-          <div style="overflow: hidden; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+          <div class="sol-img-col" style="overflow: hidden; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
             <img src="./public/images/Singularity_Platform_Graphic-Managed-Services_LG-scaled.avif"
               alt="Singularity Platform Graphic"
               onclick="openImageModal('./public/images/Singularity_Platform_Graphic-Managed-Services_LG-scaled.avif', 'Singularity Platform - Arquitectura Managed Services')"
