@@ -715,13 +715,14 @@
 
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 20px;
       margin-top: 26px;
+      align-items: stretch;
     }
 
     .feature-image-container {
-      grid-column: 3;
+      grid-column: 2;
       grid-row: span 3;
     }
 
@@ -1590,6 +1591,10 @@
         grid-column: span 2;
         grid-row: auto;
         margin-top: 20px;
+      }
+
+      .feature-image-container img {
+        height: auto !important;
       }
 
       .cards-grid {
@@ -2817,19 +2822,15 @@
             <p>Visibilidad sobre herramientas de IA en uso, reducción de Shadow AI, protección de datos y coaching no
               intrusivo para uso seguro.</p>
           </article>
-          <article class="feature-box">
-            <h3>Para desarrollo</h3>
-            <p>Adopción de asistentes de código con redacción y sanitización de secretos, visibilidad de uso y gobierno
-              durante el ciclo de desarrollo.</p>
-          </article>
+
           
           <!-- Imagen a la derecha, ocupando 3 filas -->
-          <div class="feature-image-container" style="display: flex; align-items: center; justify-content: center;">
+          <div class="feature-image-container">
             <img src="./public/images/Prompt_Protect_Module05@2x-1.avif" 
                  alt="Módulos de Protección de Prompt Security"
                  onclick="openImageModal('./public/images/Prompt_Protect_Module05@2x-1.avif', 'Módulos de Protección de Prompt Security')"
                  title="Clic para ampliar"
-                 style="width: 100%; height: auto; border-radius: 28px; cursor: zoom-in; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 28px; cursor: zoom-in; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
           </div>
 
           <article class="feature-box">
@@ -2837,21 +2838,13 @@
             <p>Protección contra prompt injection, data leaks, contenido inseguro, RCE, denial of wallet y otras
               exposiciones en apps propias.</p>
           </article>
-          <article class="feature-box">
-            <h3>Para agentes de IA</h3>
-            <p>Descubrimiento de agentes y MCP, scoring de riesgo, least privilege, logging y supervisión continua de
-              decisiones e interacciones.</p>
-          </article>
+
           <article class="feature-box">
             <h3>Para compliance</h3>
             <p>Reglas granulares por departamento o usuario, visibilidad centralizada y mejores bases para auditoría,
               revisión forense y gobierno.</p>
           </article>
-          <article class="feature-box">
-            <h3>Para innovación segura</h3>
-            <p>La meta no es frenar la adopción de IA, sino permitir que el negocio la use con más confianza, control y
-              velocidad de respuesta.</p>
-          </article>
+
         </div>
       </div>
     </section>
