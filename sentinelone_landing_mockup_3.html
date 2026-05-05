@@ -1557,6 +1557,20 @@
       .section-desc {
         margin-top: 0 !important;
       }
+
+      /* Specific adjustment for two-col on laptops to prevent text compression */
+      .two-col {
+        grid-template-columns: 1fr 1.2fr !important;
+        gap: 30px !important;
+      }
+
+      #confianza .two-col > div:last-child {
+        gap: 20px !important; /* Reduce vertical gap between text blocks */
+      }
+
+      .trust-card {
+        padding: 20px !important; /* Slightly more padding for breathability */
+      }
     }
 
     @media (max-width: 1100px) {
