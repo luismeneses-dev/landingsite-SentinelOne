@@ -1640,10 +1640,22 @@
         }
       }
 
-      /* Integración Prompt Security: Avoid vertical stack */
+      /* Integración Prompt Security: Vertical compression via gaps and internal padding */
       #prompt-security .feature-grid {
         grid-template-columns: 1.5fr 1fr !important;
-        gap: 15px !important;
+        gap: 10px !important; /* Tight row and column gaps */
+      }
+      #prompt-security .section-head {
+        margin-bottom: 16px !important; /* Reclaim space above the grid */
+      }
+      #prompt-security .feature-box {
+        padding: 12px !important;
+      }
+      #prompt-security .feature-box h3 {
+        margin-bottom: 8px !important;
+      }
+      #prompt-security .feature-box p {
+        margin-top: 4px !important;
       }
       .feature-image-container {
         grid-row: span 3 !important;
