@@ -1579,8 +1579,8 @@
         padding: 60px 0;
       }
 
-      h1 { font-size: 28px !important; }
-      h2 { font-size: 22px !important; }
+      h1 { font-size: 40px; }
+      h2 { font-size: 36px; }
 
       .section-head {
         margin-bottom: 16px !important;
@@ -1639,20 +1639,13 @@
         align-items: center !important; /* Don't stretch image to full card height */
       }
       #soluciones .two-col > div:last-child {
-        max-height: 380px !important;
+        max-height: 300px !important;
+        overflow: hidden;
       }
       #soluciones .two-col > div:last-child img {
-        height: auto !important;
-        object-fit: contain !important;
-      }
-
-      /* Global 20% size reduction for laptops */
-      body {
-        font-size: 14px !important;
-        zoom: 0.8; 
-      }
-      section, .section-soft, .section-dark {
-        padding: 20px 0 !important;
+        width: 100% !important;
+        height: 300px !important;
+        object-fit: cover !important;
       }
 
       .support-split,
