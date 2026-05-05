@@ -1661,8 +1661,7 @@
       @media (max-height: 750px) {
         /* Keep 60px padding and 54px title as requested */
       }
-
-      /* Confianza Section: Smaller image and wider text on laptop */
+      /* Confianza Section: Smaller image and compressed gaps on laptop */
       #confianza {
         padding: 60px 0 !important;
       }
@@ -1684,14 +1683,18 @@
         object-fit: contain !important;
       }
 
+      /* Vertical compression for text column without changing font-size */
       #confianza .two-col > div:last-child {
-        gap: 16px !important; /* Even tighter vertical gap */
+        gap: 16px !important; /* Compressed from 32px */
       }
-      #confianza h2 {
-        margin-bottom: 8px !important;
+      #confianza .trust-card {
+        padding: 16px !important;
       }
       #confianza .trust-card p {
-        margin-bottom: 12px !important;
+        margin-bottom: 12px !important; /* Compressed from 24px */
+      }
+      #confianza .check-list {
+        gap: 8px !important;
       }
 
       /* Fix gap in Proteccion Empresarial section on laptop */
