@@ -2318,7 +2318,9 @@
           <a href="#comparativa" class="btn btn-primary">Ver comparativa</a>
         </div>
 
-        <div class="cards-grid">
+        <div class="two-col" style="align-items: stretch; gap: 40px;">
+          <!-- Left: Grid de 8 cards (2 columnas) -->
+          <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr);">
           <article class="card">
             <div class="card-visual">
               <div><strong>Protección de Endpoints</strong></div>
@@ -2327,14 +2329,7 @@
               <p>Prevención, detección y respuesta en un agente ligero.</p>
             </div>
           </article>
-          <article class="card">
-            <div class="card-visual">
-              <div><strong>Visibilidad XDR / SIEM</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Trazabilidad de eventos en tiempo real con Storyline™.</p>
-            </div>
-          </article>
+
           <article class="card">
             <div class="card-visual">
               <div><strong>Seguridad en la Nube</strong></div>
@@ -2375,14 +2370,18 @@
               <p>Capas de defensa integradas con control granular de red y periférico</p>
             </div>
           </article>
-          <article class="card">
-            <div class="card-visual">
-              <div><strong>Soporte Premium</strong></div>
-            </div>
-            <div class="card-body">
-              <p>Implementación certificada y escalación de casos prioritarios.</p>
-            </div>
-          </article>
+
+          </div>
+
+          <!-- Right: Imagen -->
+          <div style="overflow: hidden; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+            <img src="./public/images/Singularity_Platform_Graphic-Managed-Services_LG-scaled.avif"
+              alt="Singularity Platform Graphic"
+              onclick="openImageModal('./public/images/Singularity_Platform_Graphic-Managed-Services_LG-scaled.avif', 'Singularity Platform - Arquitectura Managed Services')"
+              title="Clic para ampliar"
+              style="width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; display: block; transition: opacity 0.2s;"
+              onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" />
+          </div>
         </div>
       </div>
     </section>
